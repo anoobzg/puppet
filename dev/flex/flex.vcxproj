@@ -19,30 +19,44 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\tinycompiler\ANALYZE.C" />
-    <ClCompile Include="..\..\src\tinycompiler\CGEN.C" />
-    <ClCompile Include="..\..\src\tinycompiler\CODE.C" />
-    <ClCompile Include="..\..\src\tinycompiler\MAIN.C" />
-    <ClCompile Include="..\..\src\tinycompiler\PARSE.C" />
-    <ClCompile Include="..\..\src\tinycompiler\SCAN.C" />
-    <ClCompile Include="..\..\src\tinycompiler\SYMTAB.C" />
-    <ClCompile Include="..\..\src\tinycompiler\UTIL.C" />
+    <ClCompile Include="..\..\src\flex\buf.c" />
+    <ClCompile Include="..\..\src\flex\ccl.c" />
+    <ClCompile Include="..\..\src\flex\dfa.c" />
+    <ClCompile Include="..\..\src\flex\ecs.c" />
+    <ClCompile Include="..\..\src\flex\filter.c" />
+    <ClCompile Include="..\..\src\flex\gen.c" />
+    <ClCompile Include="..\..\src\flex\libmain.c" />
+    <ClCompile Include="..\..\src\flex\libyywrap.c" />
+    <ClCompile Include="..\..\src\flex\main.c" />
+    <ClCompile Include="..\..\src\flex\misc.c" />
+    <ClCompile Include="..\..\src\flex\nfa.c" />
+    <ClCompile Include="..\..\src\flex\options.c" />
+    <ClCompile Include="..\..\src\flex\regex.c" />
+    <ClCompile Include="..\..\src\flex\scanflags.c" />
+    <ClCompile Include="..\..\src\flex\scanopt.c" />
+    <ClCompile Include="..\..\src\flex\sym.c" />
+    <ClCompile Include="..\..\src\flex\tables.c" />
+    <ClCompile Include="..\..\src\flex\tables_shared.c" />
+    <ClCompile Include="..\..\src\flex\tblcmp.c" />
+    <ClCompile Include="..\..\src\flex\yylex.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\tinycompiler\ANALYZE.H" />
-    <ClInclude Include="..\..\src\tinycompiler\CGEN.H" />
-    <ClInclude Include="..\..\src\tinycompiler\CODE.H" />
-    <ClInclude Include="..\..\src\tinycompiler\GLOBALS.H" />
-    <ClInclude Include="..\..\src\tinycompiler\PARSE.H" />
-    <ClInclude Include="..\..\src\tinycompiler\SCAN.H" />
-    <ClInclude Include="..\..\src\tinycompiler\SYMTAB.H" />
-    <ClInclude Include="..\..\src\tinycompiler\UTIL.H" />
+    <ClInclude Include="..\..\src\flex\flexdef.h" />
+    <ClInclude Include="..\..\src\flex\flexint.h" />
+    <ClInclude Include="..\..\src\flex\flexint_shared.h" />
+    <ClInclude Include="..\..\src\flex\FlexLexer.h" />
+    <ClInclude Include="..\..\src\flex\gettext.h" />
+    <ClInclude Include="..\..\src\flex\options.h" />
+    <ClInclude Include="..\..\src\flex\scanopt.h" />
+    <ClInclude Include="..\..\src\flex\tables.h" />
+    <ClInclude Include="..\..\src\flex\tables_shared.h" />
+    <ClInclude Include="..\..\src\flex\version.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{6F94BA89-E628-4012-A00D-37654EE048FF}</ProjectGuid>
+    <ProjectGuid>{fae48f23-e5cc-4c43-96a6-4cea9497428d}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>tinycompiler</RootNamespace>
+    <RootNamespace>flex</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tinycompiler", "tinycompiler.vcxproj", "{6F94BA89-E628-4012-A00D-37654EE048FF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "flex", "..\flex\flex.vcxproj", "{98BBCC6A-06D0-421A-AC58-FBC5F9E7C398}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{6F94BA89-E628-4012-A00D-37654EE048FF}.Release|x64.Build.0 = Release|x64
 		{6F94BA89-E628-4012-A00D-37654EE048FF}.Release|x86.ActiveCfg = Release|Win32
 		{6F94BA89-E628-4012-A00D-37654EE048FF}.Release|x86.Build.0 = Release|Win32
+		{98BBCC6A-06D0-421A-AC58-FBC5F9E7C398}.Debug|x64.ActiveCfg = Debug|x64
+		{98BBCC6A-06D0-421A-AC58-FBC5F9E7C398}.Debug|x64.Build.0 = Debug|x64
+		{98BBCC6A-06D0-421A-AC58-FBC5F9E7C398}.Debug|x86.ActiveCfg = Debug|Win32
+		{98BBCC6A-06D0-421A-AC58-FBC5F9E7C398}.Debug|x86.Build.0 = Debug|Win32
+		{98BBCC6A-06D0-421A-AC58-FBC5F9E7C398}.Release|x64.ActiveCfg = Release|x64
+		{98BBCC6A-06D0-421A-AC58-FBC5F9E7C398}.Release|x64.Build.0 = Release|x64
+		{98BBCC6A-06D0-421A-AC58-FBC5F9E7C398}.Release|x86.ActiveCfg = Release|Win32
+		{98BBCC6A-06D0-421A-AC58-FBC5F9E7C398}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
