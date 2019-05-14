@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{b37fd52a-4292-4068-ac21-b6e3bbfa01aa}</ProjectGuid>
+    <RootNamespace>OSG</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OSG\include\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;OSG_LIBRARY;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenThread.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OSG\include\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;OSG_LIBRARY;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenThread.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OSG\osg\dxtctool.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\GLStaticLibrary.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\dict-list.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\dict.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\geom.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\memalloc.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\mesh.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\normal.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\priorityq-heap.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\priorityq-sort.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\priorityq.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\render.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\sweep.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\tess.h" />
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\tessmono.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OSG\osg\AlphaFunc.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\AnimationPath.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ApplicationUsage.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ArgumentParser.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Array.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ArrayDispatchers.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\AudioStream.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\AutoTransform.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Billboard.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\BlendColor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\BlendEquation.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\BlendEquationi.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\BlendFunc.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\BlendFunci.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\BufferIndexBinding.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\BufferObject.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Callback.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Camera.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\CameraView.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Capability.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ClampColor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ClearNode.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ClipControl.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ClipNode.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ClipPlane.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ClusterCullingCallback.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\CollectOccludersVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ColorMask.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ColorMaski.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ColorMatrix.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ComputeBoundsVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ConvexPlanarOccluder.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ConvexPlanarPolygon.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\CoordinateSystemNode.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\CopyOp.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\CullFace.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\CullingSet.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\CullSettings.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\CullStack.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\DeleteHandler.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Depth.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\DisplaySettings.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Drawable.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\DrawPixels.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\dxtctool.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Fog.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\FragmentProgram.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\FrameBufferObject.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\FrameStamp.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\FrontFace.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Geode.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Geometry.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\GLBeginEndAdapter.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\GLExtensions.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\GLObjects.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\GLStaticLibrary.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\dict.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\geom.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\memalloc.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\mesh.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\normal.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\priorityq.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\render.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\sweep.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\tess.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\tessmono.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libutil\error.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libutil\mipmap.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\GraphicsContext.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\GraphicsCostEstimator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\GraphicsThread.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Group.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Hint.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Image.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ImageSequence.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ImageStream.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ImageUtils.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\KdTree.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Light.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\LightModel.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\LightSource.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\LineSegment.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\LineStipple.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\LineWidth.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\LOD.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\LogicOp.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Material.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Math.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Matrixd.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\MatrixDecomposition.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Matrixf.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\MatrixTransform.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Multisample.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Node.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\NodeTrackerCallback.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\NodeVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Notify.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Object.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Observer.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ObserverNodePath.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\OccluderNode.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\OcclusionQueryNode.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\OperationThread.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\PagedLOD.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\PatchParameter.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Point.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\PointSprite.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\PolygonMode.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\PolygonOffset.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\PolygonStipple.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\PositionAttitudeTransform.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\PrimitiveRestartIndex.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\PrimitiveSet.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Program.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Projection.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ProxyNode.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Quat.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Referenced.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\SampleMaski.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Scissor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ScriptEngine.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Sequence.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ShadeModel.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Shader.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ShaderAttribute.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ShaderComposer.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ShadowVolumeOccluder.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Shape.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\ShapeDrawable.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\State.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\StateAttribute.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\StateSet.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Stats.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Stencil.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\StencilTwoSided.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Switch.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\TexEnv.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\TexEnvCombine.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\TexEnvFilter.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\TexGen.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\TexGenNode.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\TexMat.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Texture.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Texture1D.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Texture2D.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Texture2DArray.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Texture2DMultisample.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Texture3D.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\TextureBuffer.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\TextureCubeMap.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\TextureRectangle.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Timer.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\TransferFunction.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Transform.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Uniform.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\UserDataContainer.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Version.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\VertexAttribDivisor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\VertexProgram.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\View.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osg\Viewport.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\OSG\include\osg\AlphaFunc" />
+    <None Include="..\..\..\src\OSG\include\osg\AnimationPath" />
+    <None Include="..\..\..\src\OSG\include\osg\ApplicationUsage" />
+    <None Include="..\..\..\src\OSG\include\osg\ArgumentParser" />
+    <None Include="..\..\..\src\OSG\include\osg\Array" />
+    <None Include="..\..\..\src\OSG\include\osg\ArrayDispatchers" />
+    <None Include="..\..\..\src\OSG\include\osg\AudioStream" />
+    <None Include="..\..\..\src\OSG\include\osg\AutoTransform" />
+    <None Include="..\..\..\src\OSG\include\osg\Billboard" />
+    <None Include="..\..\..\src\OSG\include\osg\BlendColor" />
+    <None Include="..\..\..\src\OSG\include\osg\BlendEquation" />
+    <None Include="..\..\..\src\OSG\include\osg\BlendEquationi" />
+    <None Include="..\..\..\src\OSG\include\osg\BlendFunc" />
+    <None Include="..\..\..\src\OSG\include\osg\BlendFunci" />
+    <None Include="..\..\..\src\OSG\include\osg\BoundingBox" />
+    <None Include="..\..\..\src\OSG\include\osg\BoundingSphere" />
+    <None Include="..\..\..\src\OSG\include\osg\BoundsChecking" />
+    <None Include="..\..\..\src\OSG\include\osg\buffered_value" />
+    <None Include="..\..\..\src\OSG\include\osg\BufferIndexBinding" />
+    <None Include="..\..\..\src\OSG\include\osg\BufferObject" />
+    <None Include="..\..\..\src\OSG\include\osg\BufferTemplate" />
+    <None Include="..\..\..\src\OSG\include\osg\Callback" />
+    <None Include="..\..\..\src\OSG\include\osg\Camera" />
+    <None Include="..\..\..\src\OSG\include\osg\CameraView" />
+    <None Include="..\..\..\src\OSG\include\osg\Capability" />
+    <None Include="..\..\..\src\OSG\include\osg\ClampColor" />
+    <None Include="..\..\..\src\OSG\include\osg\ClearNode" />
+    <None Include="..\..\..\src\OSG\include\osg\ClipControl" />
+    <None Include="..\..\..\src\OSG\include\osg\ClipNode" />
+    <None Include="..\..\..\src\OSG\include\osg\ClipPlane" />
+    <None Include="..\..\..\src\OSG\include\osg\ClusterCullingCallback" />
+    <None Include="..\..\..\src\OSG\include\osg\CollectOccludersVisitor" />
+    <None Include="..\..\..\src\OSG\include\osg\ColorMask" />
+    <None Include="..\..\..\src\OSG\include\osg\ColorMaski" />
+    <None Include="..\..\..\src\OSG\include\osg\ColorMatrix" />
+    <None Include="..\..\..\src\OSG\include\osg\ComputeBoundsVisitor" />
+    <None Include="..\..\..\src\OSG\include\osg\Config" />
+    <None Include="..\..\..\src\OSG\include\osg\ConvexPlanarOccluder" />
+    <None Include="..\..\..\src\OSG\include\osg\ConvexPlanarPolygon" />
+    <None Include="..\..\..\src\OSG\include\osg\CoordinateSystemNode" />
+    <None Include="..\..\..\src\OSG\include\osg\CopyOp" />
+    <None Include="..\..\..\src\OSG\include\osg\CullFace" />
+    <None Include="..\..\..\src\OSG\include\osg\CullingSet" />
+    <None Include="..\..\..\src\OSG\include\osg\CullSettings" />
+    <None Include="..\..\..\src\OSG\include\osg\CullStack" />
+    <None Include="..\..\..\src\OSG\include\osg\DeleteHandler" />
+    <None Include="..\..\..\src\OSG\include\osg\Depth" />
+    <None Include="..\..\..\src\OSG\include\osg\DisplaySettings" />
+    <None Include="..\..\..\src\OSG\include\osg\Drawable" />
+    <None Include="..\..\..\src\OSG\include\osg\DrawPixels" />
+    <None Include="..\..\..\src\OSG\include\osg\Endian" />
+    <None Include="..\..\..\src\OSG\include\osg\Export" />
+    <None Include="..\..\..\src\OSG\include\osg\fast_back_stack" />
+    <None Include="..\..\..\src\OSG\include\osg\Fog" />
+    <None Include="..\..\..\src\OSG\include\osg\FragmentProgram" />
+    <None Include="..\..\..\src\OSG\include\osg\FrameBufferObject" />
+    <None Include="..\..\..\src\OSG\include\osg\FrameStamp" />
+    <None Include="..\..\..\src\OSG\include\osg\FrontFace" />
+    <None Include="..\..\..\src\OSG\include\osg\Geode" />
+    <None Include="..\..\..\src\OSG\include\osg\Geometry" />
+    <None Include="..\..\..\src\OSG\include\osg\GL" />
+    <None Include="..\..\..\src\OSG\include\osg\GL2Extensions" />
+    <None Include="..\..\..\src\OSG\include\osg\GLBeginEndAdapter" />
+    <None Include="..\..\..\src\OSG\include\osg\GLDefines" />
+    <None Include="..\..\..\src\OSG\include\osg\GLExtensions" />
+    <None Include="..\..\..\src\OSG\include\osg\GLObjects" />
+    <None Include="..\..\..\src\OSG\include\osg\GLU" />
+    <None Include="..\..\..\src\OSG\include\osg\GraphicsContext" />
+    <None Include="..\..\..\src\OSG\include\osg\GraphicsCostEstimator" />
+    <None Include="..\..\..\src\OSG\include\osg\GraphicsThread" />
+    <None Include="..\..\..\src\OSG\include\osg\Group" />
+    <None Include="..\..\..\src\OSG\include\osg\Hint" />
+    <None Include="..\..\..\src\OSG\include\osg\Image" />
+    <None Include="..\..\..\src\OSG\include\osg\ImageSequence" />
+    <None Include="..\..\..\src\OSG\include\osg\ImageStream" />
+    <None Include="..\..\..\src\OSG\include\osg\ImageUtils" />
+    <None Include="..\..\..\src\OSG\include\osg\io_utils" />
+    <None Include="..\..\..\src\OSG\include\osg\KdTree" />
+    <None Include="..\..\..\src\OSG\include\osg\Light" />
+    <None Include="..\..\..\src\OSG\include\osg\LightModel" />
+    <None Include="..\..\..\src\OSG\include\osg\LightSource" />
+    <None Include="..\..\..\src\OSG\include\osg\LineSegment" />
+    <None Include="..\..\..\src\OSG\include\osg\LineStipple" />
+    <None Include="..\..\..\src\OSG\include\osg\LineWidth" />
+    <None Include="..\..\..\src\OSG\include\osg\LOD" />
+    <None Include="..\..\..\src\OSG\include\osg\LogicOp" />
+    <None Include="..\..\..\src\OSG\include\osg\Material" />
+    <None Include="..\..\..\src\OSG\include\osg\Math" />
+    <None Include="..\..\..\src\OSG\include\osg\Matrix" />
+    <None Include="..\..\..\src\OSG\include\osg\Matrixd" />
+    <None Include="..\..\..\src\OSG\include\osg\Matrixf" />
+    <None Include="..\..\..\src\OSG\include\osg\MatrixTransform" />
+    <None Include="..\..\..\src\OSG\include\osg\MixinVector" />
+    <None Include="..\..\..\src\OSG\include\osg\Multisample" />
+    <None Include="..\..\..\src\OSG\include\osg\Node" />
+    <None Include="..\..\..\src\OSG\include\osg\NodeCallback" />
+    <None Include="..\..\..\src\OSG\include\osg\NodeTrackerCallback" />
+    <None Include="..\..\..\src\OSG\include\osg\NodeVisitor" />
+    <None Include="..\..\..\src\OSG\include\osg\Notify" />
+    <None Include="..\..\..\src\OSG\include\osg\Object" />
+    <None Include="..\..\..\src\OSG\include\osg\Observer" />
+    <None Include="..\..\..\src\OSG\include\osg\ObserverNodePath" />
+    <None Include="..\..\..\src\OSG\include\osg\observer_ptr" />
+    <None Include="..\..\..\src\OSG\include\osg\OccluderNode" />
+    <None Include="..\..\..\src\OSG\include\osg\OcclusionQueryNode" />
+    <None Include="..\..\..\src\OSG\include\osg\OperationThread" />
+    <None Include="..\..\..\src\OSG\include\osg\PagedLOD" />
+    <None Include="..\..\..\src\OSG\include\osg\PatchParameter" />
+    <None Include="..\..\..\src\OSG\include\osg\Plane" />
+    <None Include="..\..\..\src\OSG\include\osg\Point" />
+    <None Include="..\..\..\src\OSG\include\osg\PointSprite" />
+    <None Include="..\..\..\src\OSG\include\osg\PolygonMode" />
+    <None Include="..\..\..\src\OSG\include\osg\PolygonOffset" />
+    <None Include="..\..\..\src\OSG\include\osg\PolygonStipple" />
+    <None Include="..\..\..\src\OSG\include\osg\Polytope" />
+    <None Include="..\..\..\src\OSG\include\osg\PositionAttitudeTransform" />
+    <None Include="..\..\..\src\OSG\include\osg\PrimitiveRestartIndex" />
+    <None Include="..\..\..\src\OSG\include\osg\PrimitiveSet" />
+    <None Include="..\..\..\src\OSG\include\osg\Program" />
+    <None Include="..\..\..\src\OSG\include\osg\Projection" />
+    <None Include="..\..\..\src\OSG\include\osg\ProxyNode" />
+    <None Include="..\..\..\src\OSG\include\osg\Quat" />
+    <None Include="..\..\..\src\OSG\include\osg\Referenced" />
+    <None Include="..\..\..\src\OSG\include\osg\ref_ptr" />
+    <None Include="..\..\..\src\OSG\include\osg\RenderInfo" />
+    <None Include="..\..\..\src\OSG\include\osg\SampleMaski" />
+    <None Include="..\..\..\src\OSG\include\osg\Scissor" />
+    <None Include="..\..\..\src\OSG\include\osg\ScriptEngine" />
+    <None Include="..\..\..\src\OSG\include\osg\Sequence" />
+    <None Include="..\..\..\src\OSG\include\osg\ShadeModel" />
+    <None Include="..\..\..\src\OSG\include\osg\Shader" />
+    <None Include="..\..\..\src\OSG\include\osg\ShaderAttribute" />
+    <None Include="..\..\..\src\OSG\include\osg\ShaderComposer" />
+    <None Include="..\..\..\src\OSG\include\osg\ShadowVolumeOccluder" />
+    <None Include="..\..\..\src\OSG\include\osg\Shape" />
+    <None Include="..\..\..\src\OSG\include\osg\ShapeDrawable" />
+    <None Include="..\..\..\src\OSG\include\osg\State" />
+    <None Include="..\..\..\src\OSG\include\osg\StateAttribute" />
+    <None Include="..\..\..\src\OSG\include\osg\StateAttributeCallback" />
+    <None Include="..\..\..\src\OSG\include\osg\StateSet" />
+    <None Include="..\..\..\src\OSG\include\osg\Stats" />
+    <None Include="..\..\..\src\OSG\include\osg\Stencil" />
+    <None Include="..\..\..\src\OSG\include\osg\StencilTwoSided" />
+    <None Include="..\..\..\src\OSG\include\osg\Switch" />
+    <None Include="..\..\..\src\OSG\include\osg\TemplatePrimitiveFunctor" />
+    <None Include="..\..\..\src\OSG\include\osg\TexEnv" />
+    <None Include="..\..\..\src\OSG\include\osg\TexEnvCombine" />
+    <None Include="..\..\..\src\OSG\include\osg\TexEnvFilter" />
+    <None Include="..\..\..\src\OSG\include\osg\TexGen" />
+    <None Include="..\..\..\src\OSG\include\osg\TexGenNode" />
+    <None Include="..\..\..\src\OSG\include\osg\TexMat" />
+    <None Include="..\..\..\src\OSG\include\osg\Texture" />
+    <None Include="..\..\..\src\OSG\include\osg\Texture1D" />
+    <None Include="..\..\..\src\OSG\include\osg\Texture2D" />
+    <None Include="..\..\..\src\OSG\include\osg\Texture2DArray" />
+    <None Include="..\..\..\src\OSG\include\osg\Texture2DMultisample" />
+    <None Include="..\..\..\src\OSG\include\osg\Texture3D" />
+    <None Include="..\..\..\src\OSG\include\osg\TextureBuffer" />
+    <None Include="..\..\..\src\OSG\include\osg\TextureCubeMap" />
+    <None Include="..\..\..\src\OSG\include\osg\TextureRectangle" />
+    <None Include="..\..\..\src\OSG\include\osg\Timer" />
+    <None Include="..\..\..\src\OSG\include\osg\TransferFunction" />
+    <None Include="..\..\..\src\OSG\include\osg\Transform" />
+    <None Include="..\..\..\src\OSG\include\osg\TriangleFunctor" />
+    <None Include="..\..\..\src\OSG\include\osg\TriangleIndexFunctor" />
+    <None Include="..\..\..\src\OSG\include\osg\TriangleLinePointIndexFunctor" />
+    <None Include="..\..\..\src\OSG\include\osg\Types" />
+    <None Include="..\..\..\src\OSG\include\osg\Uniform" />
+    <None Include="..\..\..\src\OSG\include\osg\UserDataContainer" />
+    <None Include="..\..\..\src\OSG\include\osg\ValueObject" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec2" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec2b" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec2d" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec2f" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec2i" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec2s" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec2ub" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec2ui" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec2us" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec3" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec3b" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec3d" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec3f" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec3i" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec3s" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec3ub" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec3ui" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec3us" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec4" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec4b" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec4d" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec4f" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec4i" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec4s" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec4ub" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec4ui" />
+    <None Include="..\..\..\src\OSG\include\osg\Vec4us" />
+    <None Include="..\..\..\src\OSG\include\osg\Version" />
+    <None Include="..\..\..\src\OSG\include\osg\VertexAttribDivisor" />
+    <None Include="..\..\..\src\OSG\include\osg\VertexProgram" />
+    <None Include="..\..\..\src\OSG\include\osg\View" />
+    <None Include="..\..\..\src\OSG\include\osg\Viewport" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

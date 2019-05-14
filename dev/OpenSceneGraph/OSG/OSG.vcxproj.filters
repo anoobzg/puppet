@@ -1,0 +1,1157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\dict-list.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\dict.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\geom.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\memalloc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\mesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\normal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\priorityq-heap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\priorityq-sort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\priorityq.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\render.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\sweep.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\tess.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\glu\libtess\tessmono.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\dxtctool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osg\GLStaticLibrary.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\dict.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\geom.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\memalloc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\mesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\normal.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\priorityq.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\render.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\sweep.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\tess.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libtess\tessmono.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libutil\error.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\glu\libutil\mipmap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\AlphaFunc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\AnimationPath.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ApplicationUsage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ArgumentParser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Array.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ArrayDispatchers.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\AudioStream.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\AutoTransform.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Billboard.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\BlendColor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\BlendEquation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\BlendEquationi.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\BlendFunc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\BlendFunci.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\BufferIndexBinding.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\BufferObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Callback.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Camera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\CameraView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Capability.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ClampColor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ClearNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ClipControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ClipNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ClipPlane.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ClusterCullingCallback.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\CollectOccludersVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ColorMask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ColorMaski.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ColorMatrix.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ComputeBoundsVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ConvexPlanarOccluder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ConvexPlanarPolygon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\CoordinateSystemNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\CopyOp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\CullFace.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\CullingSet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\CullSettings.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\CullStack.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\DeleteHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Depth.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\DisplaySettings.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Drawable.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\DrawPixels.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\dxtctool.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Fog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\FragmentProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\FrameBufferObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\FrameStamp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\FrontFace.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Geode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Geometry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\GLBeginEndAdapter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\GLExtensions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\GLObjects.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\GLStaticLibrary.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\GraphicsContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\GraphicsCostEstimator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\GraphicsThread.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Group.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Hint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Image.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ImageSequence.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ImageStream.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ImageUtils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\KdTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Light.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\LightModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\LightSource.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\LineSegment.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\LineStipple.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\LineWidth.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\LOD.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\LogicOp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Material.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Math.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Matrixd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\MatrixDecomposition.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Matrixf.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\MatrixTransform.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Multisample.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Node.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\NodeTrackerCallback.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\NodeVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Notify.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Object.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Observer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ObserverNodePath.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\OccluderNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\OcclusionQueryNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\OperationThread.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\PagedLOD.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\PatchParameter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Point.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\PointSprite.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\PolygonMode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\PolygonOffset.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\PolygonStipple.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\PositionAttitudeTransform.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\PrimitiveRestartIndex.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\PrimitiveSet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Program.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Projection.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ProxyNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Quat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Referenced.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\SampleMaski.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Scissor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ScriptEngine.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Sequence.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ShadeModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Shader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ShaderAttribute.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ShaderComposer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ShadowVolumeOccluder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Shape.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\ShapeDrawable.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\State.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\StateAttribute.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\StateSet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Stats.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Stencil.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\StencilTwoSided.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Switch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\TexEnv.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\TexEnvCombine.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\TexEnvFilter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\TexGen.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\TexGenNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\TexMat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Texture1D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Texture2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Texture2DArray.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Texture2DMultisample.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Texture3D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\TextureBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\TextureCubeMap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\TextureRectangle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Timer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\TransferFunction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Transform.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Uniform.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\UserDataContainer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Version.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\VertexAttribDivisor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\VertexProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\View.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osg\Viewport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\OSG\include\osg\ClipNode">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ClipPlane">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ClusterCullingCallback">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\CollectOccludersVisitor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ColorMask">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ColorMaski">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ColorMatrix">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ComputeBoundsVisitor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Config">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ConvexPlanarOccluder">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ConvexPlanarPolygon">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\CoordinateSystemNode">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\CopyOp">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\CullFace">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\CullingSet">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\CullSettings">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\CullStack">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\DeleteHandler">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Depth">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\DisplaySettings">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Drawable">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\DrawPixels">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Endian">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Export">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\fast_back_stack">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Fog">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\FragmentProgram">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\FrameBufferObject">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\FrameStamp">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\FrontFace">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Geode">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Geometry">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\GL">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\GL2Extensions">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\GLBeginEndAdapter">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\GLDefines">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\GLExtensions">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\GLObjects">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\GLU">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\GraphicsContext">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\GraphicsCostEstimator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\GraphicsThread">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Group">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Hint">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Image">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ImageSequence">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ImageStream">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ImageUtils">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\io_utils">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\KdTree">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Light">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\LightModel">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\LightSource">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\LineSegment">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\LineStipple">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\LineWidth">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\LOD">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\LogicOp">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Material">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Math">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Matrix">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Matrixd">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Matrixf">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\MatrixTransform">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\MixinVector">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Multisample">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Node">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\NodeCallback">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\NodeTrackerCallback">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\NodeVisitor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Notify">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Object">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Observer">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\observer_ptr">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ObserverNodePath">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\OccluderNode">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\OcclusionQueryNode">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\OperationThread">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\PagedLOD">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\PatchParameter">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Plane">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Point">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\PointSprite">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\PolygonMode">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\PolygonOffset">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\PolygonStipple">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Polytope">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\PositionAttitudeTransform">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\PrimitiveRestartIndex">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\PrimitiveSet">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Program">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Projection">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ProxyNode">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Quat">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ref_ptr">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Referenced">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\RenderInfo">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\SampleMaski">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Scissor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ScriptEngine">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Sequence">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ShadeModel">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Shader">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ShaderAttribute">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ShaderComposer">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ShadowVolumeOccluder">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Shape">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ShapeDrawable">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\State">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\StateAttribute">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\StateAttributeCallback">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\StateSet">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Stats">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Stencil">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\StencilTwoSided">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Switch">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TemplatePrimitiveFunctor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TexEnv">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TexEnvCombine">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TexEnvFilter">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TexGen">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TexGenNode">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TexMat">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Texture">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Texture1D">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Texture2D">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Texture2DArray">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Texture2DMultisample">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Texture3D">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TextureBuffer">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TextureCubeMap">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TextureRectangle">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Timer">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TransferFunction">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Transform">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TriangleFunctor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TriangleIndexFunctor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\TriangleLinePointIndexFunctor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Types">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Uniform">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\UserDataContainer">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ValueObject">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec2">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec2b">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec2d">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec2f">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec2i">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec2s">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec2ub">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec2ui">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec2us">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec3">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec3b">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec3d">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec3f">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec3i">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec3s">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec3ub">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec3ui">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec3us">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec4">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec4b">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec4d">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec4f">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec4i">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec4s">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec4ub">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec4ui">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Vec4us">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Version">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\VertexAttribDivisor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\VertexProgram">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\View">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Viewport">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\AlphaFunc">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\AnimationPath">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ApplicationUsage">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ArgumentParser">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Array">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ArrayDispatchers">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\AudioStream">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\AutoTransform">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Billboard">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\BlendColor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\BlendEquation">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\BlendEquationi">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\BlendFunc">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\BlendFunci">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\BoundingBox">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\BoundingSphere">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\BoundsChecking">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\buffered_value">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\BufferIndexBinding">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\BufferObject">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\BufferTemplate">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Callback">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Camera">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\CameraView">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\Capability">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ClampColor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ClearNode">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osg\ClipControl">
+      <Filter>头文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>
