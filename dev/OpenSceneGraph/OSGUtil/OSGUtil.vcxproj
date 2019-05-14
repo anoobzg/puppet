@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{b6da697e-0bdb-4233-823d-772f4750d54f}</ProjectGuid>
+    <RootNamespace>OSGUtil</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OSG\include\;$(SolutionDir)..\..\src\OSG\osgUtil\tristripper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;OSGUTIL_LIBRARY;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenThread.lib;OSG.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OSG\include\;$(SolutionDir)..\..\src\OSG\osgUtil\tristripper\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;OSGUTIL_LIBRARY;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <AdditionalDependencies>OpenThread.lib;OSG.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\detail\cache_simulator.h" />
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\detail\connectivity_graph.h" />
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\detail\graph_array.h" />
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\detail\heap_array.h" />
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\detail\policy.h" />
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\detail\types.h" />
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\public_types.h" />
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\tri_stripper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\CubeMapGenerator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\CullVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\DelaunayTriangulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\DisplayRequirementsVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\DrawElementTypeSimplifier.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\EdgeCollector.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\GLObjectsVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\HalfWayMapGenerator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\HighlightMapGenerator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\IncrementalCompileOperation.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\IntersectionVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\IntersectVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\LineSegmentIntersector.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\MeshOptimizers.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\Optimizer.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\PerlinNoise.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\PlaneIntersector.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\PolytopeIntersector.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\PositionalStateContainer.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\PrintVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\RayIntersector.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\RenderBin.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\RenderLeaf.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\RenderStage.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\ReversePrimitiveFunctor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\SceneGraphBuilder.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\SceneView.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\ShaderGen.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\Simplifier.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\SmoothingVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\StateGraph.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\Statistics.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\TangentSpaceGenerator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\Tessellator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\TransformAttributeFunctor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\TransformCallback.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\tristripper\src\connectivity_graph.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\tristripper\src\policy.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\tristripper\src\tri_stripper.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\TriStripVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\UpdateVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\Version.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\OSG\include\osgUtil\ConvertVec" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\CubeMapGenerator" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\CullVisitor" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\DelaunayTriangulator" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\DisplayRequirementsVisitor" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\DrawElementTypeSimplifier" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\EdgeCollector" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\Export" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\GLObjectsVisitor" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\HalfWayMapGenerator" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\HighlightMapGenerator" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\IncrementalCompileOperation" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\IntersectionVisitor" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\IntersectVisitor" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\LineSegmentIntersector" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\MeshOptimizers" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\OperationArrayFunctor" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\Optimizer" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\PerlinNoise" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\PlaneIntersector" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\PolytopeIntersector" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\PositionalStateContainer" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\PrintVisitor" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\RayIntersector" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\ReflectionMapGenerator" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\RenderBin" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\RenderLeaf" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\RenderStage" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\ReversePrimitiveFunctor" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\SceneGraphBuilder" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\SceneView" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\ShaderGen" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\Simplifier" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\SmoothingVisitor" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\StateGraph" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\Statistics" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\TangentSpaceGenerator" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\Tessellator" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\TransformAttributeFunctor" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\TransformCallback" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\TriStripVisitor" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\UpdateVisitor" />
+    <None Include="..\..\..\src\OSG\include\osgUtil\Version" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

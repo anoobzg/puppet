@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\detail\cache_simulator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\detail\connectivity_graph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\detail\graph_array.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\detail\heap_array.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\detail\policy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\detail\types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\public_types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osgUtil\tristripper\include\tri_stripper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\tristripper\src\connectivity_graph.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\tristripper\src\policy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\tristripper\src\tri_stripper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\CubeMapGenerator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\CullVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\DelaunayTriangulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\DisplayRequirementsVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\DrawElementTypeSimplifier.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\EdgeCollector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\GLObjectsVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\HalfWayMapGenerator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\HighlightMapGenerator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\IncrementalCompileOperation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\IntersectionVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\IntersectVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\LineSegmentIntersector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\MeshOptimizers.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\Optimizer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\PerlinNoise.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\PlaneIntersector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\PolytopeIntersector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\PositionalStateContainer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\PrintVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\RayIntersector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\RenderBin.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\RenderLeaf.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\RenderStage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\ReversePrimitiveFunctor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\SceneGraphBuilder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\SceneView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\ShaderGen.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\Simplifier.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\SmoothingVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\StateGraph.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\Statistics.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\TangentSpaceGenerator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\Tessellator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\TransformAttributeFunctor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\TransformCallback.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\TriStripVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\UpdateVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgUtil\Version.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\OSG\include\osgUtil\Export">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\GLObjectsVisitor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\HalfWayMapGenerator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\HighlightMapGenerator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\IncrementalCompileOperation">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\IntersectionVisitor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\IntersectVisitor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\LineSegmentIntersector">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\MeshOptimizers">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\OperationArrayFunctor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\Optimizer">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\PerlinNoise">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\PlaneIntersector">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\PolytopeIntersector">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\PositionalStateContainer">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\PrintVisitor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\RayIntersector">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\ReflectionMapGenerator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\RenderBin">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\RenderLeaf">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\RenderStage">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\ReversePrimitiveFunctor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\SceneGraphBuilder">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\SceneView">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\ShaderGen">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\Simplifier">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\SmoothingVisitor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\StateGraph">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\Statistics">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\TangentSpaceGenerator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\Tessellator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\TransformAttributeFunctor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\TransformCallback">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\TriStripVisitor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\UpdateVisitor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\Version">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\ConvertVec">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\CubeMapGenerator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\CullVisitor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\DelaunayTriangulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\DisplayRequirementsVisitor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\DrawElementTypeSimplifier">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgUtil\EdgeCollector">
+      <Filter>头文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>
