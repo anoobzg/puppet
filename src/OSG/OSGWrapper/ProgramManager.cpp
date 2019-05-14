@@ -87,11 +87,11 @@ bool ProgramManager::Load(osg::Program* program, const char* name)
 	if(path)
 		prefix = std::string(path) + "\\" + prefix;
 
-	static char* extension[] = { ".vert", ".geom", ".frag", 0 };
+	static const char* extension[] = { ".vert", ".geom", ".frag", 0 };
 	static osg::Shader::Type type[] = { osg::Shader::VERTEX, osg::Shader::GEOMETRY, osg::Shader::FRAGMENT };
 
 	program->setName(name);
-	char** tmp = extension;
+	char** tmp = (char**)extension;
 	unsigned i = 0;
 	for (char* s = *tmp; s; s = *(++tmp), ++i)
 	{

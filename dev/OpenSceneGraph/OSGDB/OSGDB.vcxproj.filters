@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ObjectWrapper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Options.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Output.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\OutputStream.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\PluginQuery.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ReaderWriter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ReadFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Registry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\SharedStateManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\StreamOperator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Version.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\WriteFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\XmlParser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Archive.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\AuthenticationMap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Callbacks.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ClassInterface.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Compressors.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ConvertBase64.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ConvertUTF.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\DatabasePager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\DatabaseRevisions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\DotOsgWrapper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\DynamicLibrary.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ExternalFileWriter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Field.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\FieldReader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\FieldReaderIterator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\FileCache.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\FileNameUtils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\FileUtils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\fstream.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ImageOptions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ImagePager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Input.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\InputStream.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\MimeTypes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ObjectCache.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\OSG\include\osgDB\Archive">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\AuthenticationMap">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\Callbacks">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\ClassInterface">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\ConvertBase64">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\ConvertUTF">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\DatabasePager">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\DatabaseRevisions">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\DataTypes">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\DotOsgWrapper">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\DynamicLibrary">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\Export">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\ExternalFileWriter">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\FileCache">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\FileNameUtils">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\FileUtils">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\fstream">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\ImageOptions">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\ImagePager">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\ImageProcessor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\Input">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\InputStream">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\ObjectCache">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\ObjectWrapper">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\Options">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\Output">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\OutputStream">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\ParameterOutput">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\PluginQuery">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\ReaderWriter">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\ReadFile">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\Registry">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\Serializer">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\SharedStateManager">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\StreamOperator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\Version">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\WriteFile">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgDB\XmlParser">
+      <Filter>头文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{deebae5b-5f24-441d-b259-6cc5e000347c}</ProjectGuid>
+    <RootNamespace>OSGDB</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OSG\include\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;OSGDB_LIBRARY;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenThread.lib;OSG.lib;OSGUtil.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OSG\include\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;OSGDB_LIBRARY;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenThread.lib;OSG.lib;OSGUtil.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Archive.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\AuthenticationMap.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Callbacks.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ClassInterface.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Compressors.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ConvertBase64.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ConvertUTF.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\DatabasePager.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\DatabaseRevisions.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\DotOsgWrapper.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\DynamicLibrary.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ExternalFileWriter.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Field.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\FieldReader.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\FieldReaderIterator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\FileCache.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\FileNameUtils.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\FileUtils.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\fstream.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ImageOptions.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ImagePager.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Input.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\InputStream.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\MimeTypes.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ObjectCache.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ObjectWrapper.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Options.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Output.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\OutputStream.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\PluginQuery.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ReaderWriter.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\ReadFile.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Registry.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\SharedStateManager.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\StreamOperator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\Version.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\WriteFile.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgDB\XmlParser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\OSG\include\osgDB\Archive" />
+    <None Include="..\..\..\src\OSG\include\osgDB\AuthenticationMap" />
+    <None Include="..\..\..\src\OSG\include\osgDB\Callbacks" />
+    <None Include="..\..\..\src\OSG\include\osgDB\ClassInterface" />
+    <None Include="..\..\..\src\OSG\include\osgDB\ConvertBase64" />
+    <None Include="..\..\..\src\OSG\include\osgDB\ConvertUTF" />
+    <None Include="..\..\..\src\OSG\include\osgDB\DatabasePager" />
+    <None Include="..\..\..\src\OSG\include\osgDB\DatabaseRevisions" />
+    <None Include="..\..\..\src\OSG\include\osgDB\DataTypes" />
+    <None Include="..\..\..\src\OSG\include\osgDB\DotOsgWrapper" />
+    <None Include="..\..\..\src\OSG\include\osgDB\DynamicLibrary" />
+    <None Include="..\..\..\src\OSG\include\osgDB\Export" />
+    <None Include="..\..\..\src\OSG\include\osgDB\ExternalFileWriter" />
+    <None Include="..\..\..\src\OSG\include\osgDB\FileCache" />
+    <None Include="..\..\..\src\OSG\include\osgDB\FileNameUtils" />
+    <None Include="..\..\..\src\OSG\include\osgDB\FileUtils" />
+    <None Include="..\..\..\src\OSG\include\osgDB\fstream" />
+    <None Include="..\..\..\src\OSG\include\osgDB\ImageOptions" />
+    <None Include="..\..\..\src\OSG\include\osgDB\ImagePager" />
+    <None Include="..\..\..\src\OSG\include\osgDB\ImageProcessor" />
+    <None Include="..\..\..\src\OSG\include\osgDB\Input" />
+    <None Include="..\..\..\src\OSG\include\osgDB\InputStream" />
+    <None Include="..\..\..\src\OSG\include\osgDB\ObjectCache" />
+    <None Include="..\..\..\src\OSG\include\osgDB\ObjectWrapper" />
+    <None Include="..\..\..\src\OSG\include\osgDB\Options" />
+    <None Include="..\..\..\src\OSG\include\osgDB\Output" />
+    <None Include="..\..\..\src\OSG\include\osgDB\OutputStream" />
+    <None Include="..\..\..\src\OSG\include\osgDB\ParameterOutput" />
+    <None Include="..\..\..\src\OSG\include\osgDB\PluginQuery" />
+    <None Include="..\..\..\src\OSG\include\osgDB\ReaderWriter" />
+    <None Include="..\..\..\src\OSG\include\osgDB\ReadFile" />
+    <None Include="..\..\..\src\OSG\include\osgDB\Registry" />
+    <None Include="..\..\..\src\OSG\include\osgDB\Serializer" />
+    <None Include="..\..\..\src\OSG\include\osgDB\SharedStateManager" />
+    <None Include="..\..\..\src\OSG\include\osgDB\StreamOperator" />
+    <None Include="..\..\..\src\OSG\include\osgDB\Version" />
+    <None Include="..\..\..\src\OSG\include\osgDB\WriteFile" />
+    <None Include="..\..\..\src\OSG\include\osgDB\XmlParser" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\GUIEventAdapter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\GUIEventHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\KeySwitchMatrixManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\MultiTouchTrackballManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\NodeTrackerManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\OrbitManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\SphericalManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\StandardManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\StateSetManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\TerrainManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\TrackballManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\UFOManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\Version.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\Widget.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\AnimationPathManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\CameraManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\CameraViewSwitchManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\Device.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\DriveManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\Event.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\EventHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\EventQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\EventVisitor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\FirstPersonManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\FlightManipulator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\OSG\include\osgGA\EventHandler">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\EventQueue">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\EventVisitor">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\Export">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\FirstPersonManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\FlightManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\GUIActionAdapter">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\GUIEventAdapter">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\GUIEventHandler">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\KeySwitchMatrixManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\MultiTouchTrackballManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\NodeTrackerManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\OrbitManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\SphericalManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\StandardManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\StateSetManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\TerrainManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\TrackballManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\UFOManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\Version">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\Widget">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\AnimationPathManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\CameraManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\CameraViewSwitchManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\Device">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\DriveManipulator">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgGA\Event">
+      <Filter>头文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>

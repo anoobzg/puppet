@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{559d0d76-ac16-411d-ae15-f29f8c6de08c}</ProjectGuid>
+    <RootNamespace>OSGGA</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_DEBUG;WIN32;%(PreprocessorDefinitions);OSGGA_LIBRARY</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OSG\include\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenThread.lib;OSG.lib;OSGDB.lib;OSGUtil.lib;OSGText.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions);OSGGA_LIBRARY</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OSG\include\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <AdditionalDependencies>OpenThread.lib;OSG.lib;OSGDB.lib;OSGUtil.lib;OSGText.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OSG\osgGA\AnimationPathManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\CameraManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\CameraViewSwitchManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\Device.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\DriveManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\Event.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\EventHandler.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\EventQueue.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\EventVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\FirstPersonManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\FlightManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\GUIEventAdapter.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\GUIEventHandler.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\KeySwitchMatrixManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\MultiTouchTrackballManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\NodeTrackerManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\OrbitManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\SphericalManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\StandardManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\StateSetManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\TerrainManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\TrackballManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\UFOManipulator.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\Version.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\osgGA\Widget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\OSG\include\osgGA\AnimationPathManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\CameraManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\CameraViewSwitchManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\Device" />
+    <None Include="..\..\..\src\OSG\include\osgGA\DriveManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\Event" />
+    <None Include="..\..\..\src\OSG\include\osgGA\EventHandler" />
+    <None Include="..\..\..\src\OSG\include\osgGA\EventQueue" />
+    <None Include="..\..\..\src\OSG\include\osgGA\EventVisitor" />
+    <None Include="..\..\..\src\OSG\include\osgGA\Export" />
+    <None Include="..\..\..\src\OSG\include\osgGA\FirstPersonManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\FlightManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\GUIActionAdapter" />
+    <None Include="..\..\..\src\OSG\include\osgGA\GUIEventAdapter" />
+    <None Include="..\..\..\src\OSG\include\osgGA\GUIEventHandler" />
+    <None Include="..\..\..\src\OSG\include\osgGA\KeySwitchMatrixManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\MultiTouchTrackballManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\NodeTrackerManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\OrbitManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\SphericalManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\StandardManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\StateSetManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\TerrainManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\TrackballManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\UFOManipulator" />
+    <None Include="..\..\..\src\OSG\include\osgGA\Version" />
+    <None Include="..\..\..\src\OSG\include\osgGA\Widget" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

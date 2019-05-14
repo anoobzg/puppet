@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OSG\osgViewer\DarwinUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\osgViewer\IOSUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\GraphicsWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\GraphicsWindowCarbon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\GraphicsWindowWin32.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\HelpHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\Keystone.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\PixelBufferCarbon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\PixelBufferWin32.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\Renderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\Scene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\ScreenCaptureHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\StatsHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\Version.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\View.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\Viewer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\ViewerBase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\ViewerEventHandlers.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\config\AcrossAllScreens.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\config\PanoramicSphericalDisplay.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\config\SingleScreen.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\config\SingleWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\config\SphericalDisplay.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\config\WoWVxDisplay.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\osgViewer\CompositeViewer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\OSG\osgViewer\PixelBufferCocoa.mm" />
+    <None Include="..\..\..\src\OSG\include\osgViewer\CompositeViewer">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\Export">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\GraphicsWindow">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\Keystone">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\Renderer">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\Scene">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\Version">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\View">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\Viewer">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\ViewerBase">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\ViewerEventHandlers">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\api\Win32\GraphicsHandleWin32">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\api\Win32\GraphicsWindowWin32">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\api\Win32\PixelBufferWin32">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\config\WoWVxDisplay">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\config\AcrossAllScreens">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\config\PanoramicSphericalDisplay">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\config\SingleScreen">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\config\SingleWindow">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="..\..\..\src\OSG\include\osgViewer\config\SphericalDisplay">
+      <Filter>头文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>
