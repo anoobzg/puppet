@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\m4">
+      <UniqueIdentifier>{9a2dba41-8692-49e7-9b5b-37521032fb91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\misc">
+      <UniqueIdentifier>{9871dceb-bf30-4545-a1d7-a1ffd31eda01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\m4">
+      <UniqueIdentifier>{63a9faac-2f03-4f1e-ab88-ea13eadf82b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\misc">
+      <UniqueIdentifier>{93659b3e-2cf9-4c1f-8130-aa911d7e4842}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\m4.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\xvasprintf.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\binary-io.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\clean-temp.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\cloexec.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\closein.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\closeout.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\close-stream.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\c-stack.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\execute.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\filenamecat.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\fpending.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\freadahead.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\gl_anyhash_list1.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\gl_anyhash_list2.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\gl_anylinked_list1.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\gl_anylinked_list2.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\gl_anytree_oset.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\gl_array_list.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\gl_avltree_oset.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\gl_linkedhash_list.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\gl_list.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\gl_oset.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\gl_xlist.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\gl_xoset.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\ignore-value.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\malloca.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\memchr2.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\pathmax.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\printf-args.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\printf-parse.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\progname.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\regex.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\regex_internal.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\stdio--.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\stdlib--.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\stdlib-safer.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\tempname.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\tmpdir.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\unistd--.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\unistd-safer.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\vasnprintf.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\verror.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\version-etc.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\w32spawn.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\xmalloca.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\xprintf.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\m4\lib\xsize.h">
+      <Filter>头文件\m4</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\xtime.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\abitset.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\argmatch.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\arg-nonnull.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\bbitset.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\bitrotate.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\bitset.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\bitset_stats.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\bitsetv.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\bitsetv-print.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\c-ctype.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\cjk.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\concat-filename.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\config.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\c-strcase.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\c-strcaseeq.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\dirname.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\dosname.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\ebitset.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\error.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\exitfail.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\filename.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\get-errno.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\gethrxtime.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\getopt.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\getopt_int.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\gettext.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\hash.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\lbitset.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\libiberty.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\localcharset.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\mbswidth.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\obstack.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\path-join.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\progname.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\quote.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\quotearg.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\relocatable.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\stdbool.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\stdio-safer.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\streq.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\system.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\timespec.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\timevar.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\unitypes.in.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\uniwidth.in.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\vbitset.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\verify.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\xalloc.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\xmemdup0.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\winflexbison\common\misc\xstrndup.h">
+      <Filter>头文件\misc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\symtab.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\builtin.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\debug.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\eval.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\format.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\freeze.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\input.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\m4.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\macro.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\output.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\path.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\regex.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\regex_internal.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\tempname.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\tmpdir.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\vasnprintf.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\vasprintf.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\verror.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\xasprintf.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\xprintf.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\xvasprintf.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\clean-temp.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\cloexec.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\closein.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\closeout.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\close-stream.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\execute.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\fd-safer.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\filenamecat-lgpl.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\gl_array_list.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\gl_avltree_oset.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\gl_linkedhash_list.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\gl_list.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\gl_oset.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\gl_xlist.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\gl_xoset.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\memchr2.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\mkdtemp.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\mkstemp.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\mkstemp-safer.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\printf-args.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\m4\lib\printf-parse.c">
+      <Filter>源文件\m4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\xtime.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\abitset.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\app_path.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\argmatch.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\basename-lgpl.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\bitset.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\bitset_stats.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\bitsetv.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\bitsetv-print.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\c-ctype.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\concat-filename.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\c-strcasecmp.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\c-strncasecmp.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\dirname.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\dirname-lgpl.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\ebitset.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\error.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\exitfail.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\getdelim.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\get-errno.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\gethrxtime.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\getline.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\getopt.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\getopt1.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\hash.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\lbitset.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\localcharset.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\mbswidth.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\obstack.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\obstack_printf.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\path-join.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\progname.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\quotearg.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\relocatable.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\strverscmp.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\timespec.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\timevar.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\vbitset.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\wcwidth.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\width.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\xalloc-die.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\xconcat-filename.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\xmalloc.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\xmemdup0.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\winflexbison\common\misc\xstrndup.c">
+      <Filter>源文件\misc</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
