@@ -6,3 +6,6 @@ dev/OpenSceneGraph/.vs/
 dev/vstemplate/.vs/
 lib/x64/
 dev/winflexbison/.vs/
+dev/Geometry/.vs/
+dev/CGAL/.vs/
+dev/Simulation/.vs/

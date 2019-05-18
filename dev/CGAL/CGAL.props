@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\CGAL\Surface_mesh_simplification\;$(SolutionDir)..\..\src\CGAL\BGL\;$(SolutionDir)..\..\src\CGAL\Property_map\;$(SolutionDir)..\..\src\CGAL\Circulator\;$(SolutionDir)..\..\src\CGAL\Polyhedron_IO\;$(SolutionDir)..\..\src\CGAL\Polyhedron\;$(SolutionDir)..\..\src\CGAL\HalfedgeDS\;$(SolutionDir)..\..\src\CGAL\Hash_map\;$(SolutionDir)..\..\src\CGAL\Modifier\;$(SolutionDir)..\..\src\CGAL\;$(SolutionDir)..\..\src\CGAL\User\;$(SolutionDir)..\..\src\CGAL\Polynomial\;$(SolutionDir)..\..\src\CGAL\Arithmetic_kernel\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
