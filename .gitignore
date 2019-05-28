@@ -12,3 +12,5 @@ dev/Simulation/.vs/
 dev/pthread/.vs/
 dev/zlib/.vs/
 dev/freetype/.vs/
+dev/test/.vs/
+dev/utils/.vs/
