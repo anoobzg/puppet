@@ -16,7 +16,8 @@ int main(int argc, char* argv[])
 
 	int newlen = -1;
 	string_util::preprocess_include(data, filelen, newlen);
-	std::string tmp(data);
+	std::string tmp(data, data + newlen);
+	std::cout << tmp.c_str() << std::endl;
 	delete[]data;
 	return EXIT_SUCCESS;
 }
