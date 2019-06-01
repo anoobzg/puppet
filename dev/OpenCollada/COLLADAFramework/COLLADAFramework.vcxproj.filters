@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFW.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnimatable.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnimatableFloat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnimation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnimationClip.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnimationCurve.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnimationList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnnotate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWArray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWArrayPrimitiveType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAxisInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWCamera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWCode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWColor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWColorOrTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWConstants.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWEdge.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWEffect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWEffectCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWException.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWFileInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWFloatOrDoubleArray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWFloatOrParam.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWFormula.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWFormulaNewParam.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWFormulas.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWGeometry.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWHashFunctions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWILoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWImage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWImageSource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInclude.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWIndexList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceBindingBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceCamera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceGeometry.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceKinematicsScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceLight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceSceneGraph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceVisualScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWIWriter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWJoint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWJointPrimitive.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWKinematicsController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWKinematicsModel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWKinematicsScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWLibraryNodes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWLight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWLines.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWLinestrips.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWLoaderUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWLookat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMaterial.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMaterialBinding.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMatrix.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMeshPrimitive.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMeshPrimitiveWithFaceVertexCount.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMeshVertexData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWModifier.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMorphController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMotionProfile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWNewParam.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWParam.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPassClear.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPassOutput.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPassTarget.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPointerArray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPolygons.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPolylist.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPrerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWRenderDraw.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWRenderState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWRenderStateStatic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWRoot.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWRotate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSampler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWScale.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSemantic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSetParam.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShaderBlinn.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShaderConstantFX.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShaderElement.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShaderLambert.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShaderPhong.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShear.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSkew.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSkinController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSkinControllerData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSpline.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWStableHeaders.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTarget.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTargetableValue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTechnique.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTextureCoordinateBinding.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTransformation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTranslate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTriangles.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTrifans.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTristrips.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTypes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWUniqueId.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWValidate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWValueType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWVisualScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWAnimationClip.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWAxisInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWCamera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWColor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWConstants.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWEffect.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWEffectCommon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWFileInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWFloatOrDoubleArray.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWFormula.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWFormulas.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWGeometry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWInstanceKinematicsScene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWKinematicsController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWKinematicsModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWKinematicsScene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWLight.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWLoaderUtils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWMaterial.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWMatrix.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWMesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWMeshPrimitive.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWMorphController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWPrecompiledHeaders.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWRenderState.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWRoot.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWRotate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWSampler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWScale.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWSkinController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWSkinControllerData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWSpline.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWTransformation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWTranslate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWUniqueId.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWValidate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWVisualScene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

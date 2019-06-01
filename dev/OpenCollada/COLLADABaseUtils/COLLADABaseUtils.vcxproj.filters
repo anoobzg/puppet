@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABU.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABUException.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABUHashFunctions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABUhash_map.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABUIDList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABUNativeString.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABUPcreCompiledPattern.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABUPlatform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABUPrerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABUStableHeaders.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABUStringUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABUURI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABUUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\COLLADABUVersionInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\Math\COLLADABUMathMatrix3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\Math\COLLADABUMathMatrix4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\Math\COLLADABUMathPrerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\Math\COLLADABUMathQuaternion.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\Math\COLLADABUMathUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADABaseUtils\include\Math\COLLADABUMathVector3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADABaseUtils\src\COLLADABUHashFunctions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADABaseUtils\src\COLLADABUIDList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADABaseUtils\src\COLLADABUNativeString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADABaseUtils\src\COLLADABUPcreCompiledPattern.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADABaseUtils\src\COLLADABUPrecompiledHeaders.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADABaseUtils\src\COLLADABUStringUtils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADABaseUtils\src\COLLADABUURI.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADABaseUtils\src\COLLADABUUtils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADABaseUtils\src\Math\COLLADABUMathMatrix3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADABaseUtils\src\Math\COLLADABUMathMatrix4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADABaseUtils\src\Math\COLLADABUMathQuaternion.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADABaseUtils\src\Math\COLLADABUMathUtils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADABaseUtils\src\Math\COLLADABUMathVector3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

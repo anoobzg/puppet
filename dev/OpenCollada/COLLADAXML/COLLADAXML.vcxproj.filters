@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\libxml">
+      <UniqueIdentifier>{de068154-13e8-4bdd-b504-4ed4a0c8f972}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\c14n.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\catalog.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\chvalid.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\debugXML.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\dict.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\DOCBparser.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\encoding.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\entities.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\error.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\globals.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\hash.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\HTMLparser.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\HTMLtree.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\legacy.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\list.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\nanoftp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\nanohttp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\parser.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\parserInternals.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\pattern.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\relaxng.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\rngparser.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\SAX.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\SAX2.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\threads.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\tree.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\uri.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\valid.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xinclude.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xlink.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlIO.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlmemory.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlmodule.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlreader.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlregexp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlsave.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlschemas.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlschemastypes.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlstring.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlunicode.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlwriter.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xpath.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\c14n.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\catalog.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\chvalid.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\debugXML.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\dict.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\DOCBparser.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\encoding.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\entities.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\globals.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\hash.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\HTMLparser.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\HTMLtree.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\list.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\nanoftp.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\nanohttp.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\parser.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\parserInternals.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\pattern.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\relaxng.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\SAX.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\SAX2.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\schemasInternals.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\schematron.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\threads.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\tree.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\uri.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\valid.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xinclude.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xlink.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlautomata.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlerror.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlexports.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlIO.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlmemory.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlmodule.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlreader.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlregexp.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlsave.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlschemas.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlschemastypes.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlstring.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlunicode.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlversion.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlwin32version.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlwriter.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xpath.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xpathInternals.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xpointer.h">
+      <Filter>头文件\libxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\elfgcchack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\triodef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\trionan.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserCoutErrorHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserExpatSaxParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserIErrorHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserINamespaceHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserIUnknownElementHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserLibxmlSaxParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserNamespaceStack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserParserError.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserParserTemplate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserParserTemplateBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserPrerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserRawUnknownElementHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserSaxParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserStackMemoryManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserTypes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\GeneratedSaxParser\include\GeneratedSaxParserUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OpenCollada\GeneratedSaxParser\src\GeneratedSaxParserCoutErrorHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\GeneratedSaxParser\src\GeneratedSaxParserLibxmlSaxParser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\GeneratedSaxParser\src\GeneratedSaxParserNamespaceStack.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\GeneratedSaxParser\src\GeneratedSaxParserParser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\GeneratedSaxParser\src\GeneratedSaxParserParserError.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\GeneratedSaxParser\src\GeneratedSaxParserParserTemplate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\GeneratedSaxParser\src\GeneratedSaxParserParserTemplateBase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\GeneratedSaxParser\src\GeneratedSaxParserRawUnknownElementHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\GeneratedSaxParser\src\GeneratedSaxParserSaxParser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\GeneratedSaxParser\src\GeneratedSaxParserStackMemoryManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\GeneratedSaxParser\src\GeneratedSaxParserUtils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

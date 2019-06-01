@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWAnnotation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWAsset.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWBaseElement.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWBaseInputElement.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWBindMaterial.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWCamera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWCameraOptic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWCode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWColor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWColorOrTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWConstants.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWControlVertices.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWEffectProfile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWElementWriter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWException.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWExtra.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWExtraTechnique.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWFormatHint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWImage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInclude.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInputList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceCamera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceEffect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceGeometry.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceLight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceMaterial.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstancePhysicsModel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceRigidBody.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibrary.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryAnimationClips.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryAnimations.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryCameras.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryControllers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryEffects.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryGeometries.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryImages.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryLights.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryMaterials.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryNodes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryPhysicsModels.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryPhysicsScenes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryVisualScenes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWOpenGLConstants.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWParamBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWParamTemplate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWPass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWPlatform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWPrerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWPrimitves.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWRenderState.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWRenderStateStatic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWSampler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWShader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWSource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWStreamWriter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWSurfaceInitOption.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWTechnique.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWTechniqueFX.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWValueType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWVertices.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWAsset.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWBaseElement.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWBaseInputElement.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWBindMaterial.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWCamera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWCameraOptic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWColor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWConstants.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWControlVertices.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWEffectProfile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWElementWriter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWException.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWExtra.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWExtraTechnique.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWFormatHint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInputList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceCamera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceEffect.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceGeometry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceLight.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceMaterial.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstancePhysicsModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceRigidBody.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibrary.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryAnimationClips.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryAnimations.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryCameras.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryControllers.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryEffects.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryGeometries.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryImages.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryLights.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryMaterials.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryNodes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryPhysicsModels.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryPhysicsScenes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryVisualScenes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLight.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWParamBase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWPass.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWPrimitves.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWRenderState.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWSampler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWScene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWShader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWSource.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWStreamWriter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWSurfaceInitOption.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWTechnique.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWTechniqueFX.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWTexture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWVertices.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

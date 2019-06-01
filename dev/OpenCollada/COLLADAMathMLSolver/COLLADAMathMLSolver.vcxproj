@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{b35e4f28-0cae-4ce4-a36c-670201ee74a9}</ProjectGuid>
+    <RootNamespace>COLLADAMathMLSolver</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\;$(SolutionDir)..\..\src\OpenCollada\COLLADAMathMLSolver\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\;$(SolutionDir)..\..\src\OpenCollada\COLLADAMathMLSolver\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4819;</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\MathMLASTArithmeticExpression.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\MathMLASTBinaryComparisionExpression.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\MathMLASTConstantExpression.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\MathMLASTFragmentExpression.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\MathMLASTFunctionExpression.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\MathMLASTLogicExpression.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\MathMLASTNode.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\MathMLASTStringVisitor.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\MathMLASTUnaryArithmeticExpression.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\MathMLASTVariableExpression.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\MathMLASTVisitor.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLError.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLEvaluatorVisitor.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLParser.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLParserConstants.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLPlatform.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLSerializationUtil.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLSerializationVisitor.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLSingleton.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLSolverFunctionExtensions.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLSolverPrerequisites.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLSolverStableHeaders.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLStreamParser.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLStreamParserHandler.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLString.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\include\MathMLSymbolTable.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\AST\MathMLASTArithmeticExpression.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\AST\MathMLASTBinaryComparisionExpression.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\AST\MathMLASTConstantExpression.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\AST\MathMLASTFragmentExpression.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\AST\MathMLASTFunctionExpression.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\AST\MathMLASTLogicExpression.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\AST\MathMLASTStringVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\AST\MathMLASTUnaryArithmeticExpression.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\AST\MathMLASTVariableExpression.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\MathMLEvaluatorVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\MathMLSerializationUtil.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\MathMLSerializationVisitor.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\MathMLSolverFunctionExtensions.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\MathMLSolverPrecompiled.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\MathMLString.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAMathMLSolver\src\MathMLSymbolTable.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

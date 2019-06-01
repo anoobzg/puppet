@@ -1,0 +1,726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLAccessor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLArrayElement.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLAssetLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLCOLLADACsymbol.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLDocumentProcessor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLException.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLExtraDataElementHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLExtraDataLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLFileLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLFilePartLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLFormulasLinker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLFormulasLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLGeometryLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLGeometryMaterialIdInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLHelperLoaderBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLIError.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLIErrorHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLIExtraDataCallbackHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLIFilePartLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLInputShared.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLInputUnshared.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLInstanceArticulatedSystemLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLInstanceKinematicsModelLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLIntermediateTargetable.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLInterpolationTypeSource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLIParserImpl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLIParserImpl14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLIParserImpl15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLJointsLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLKinematicsIntermediateData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLKinematicsSceneCreator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryAnimationClipsLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryAnimationsLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryArticulatedSystemsLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryCamerasLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryControllersLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryEffectsLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryFormulasLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryImagesLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryJointsLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryKinematicsModelsLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryKinematicsScenesLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryLightsLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryMaterialsLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLibraryNodesLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLMeshLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLMeshPrimitiveInputList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLNodeLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLPHElement.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLPolygons.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLPostProcessor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLPrerequisites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLPrimitiveBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLRootParser14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLRootParser15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLSaxFWLError.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLSaxParserError.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLSaxParserErrorHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLSceneLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLSidAddress.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLSidTreeNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLSource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLSourceArrayLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLSplineLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLStableHeaders.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLTechniqueCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLTransformationLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLTypes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLVersionParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLVertices.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLVisualSceneLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\COLLADASaxFWLXmlTypes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLAssetLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLColladaParserAutoGen14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLColladaParserAutoGen14Attributes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLColladaParserAutoGen14Enums.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLColladaParserAutoGen14FunctionMapFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLColladaParserAutoGen14Private.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLColladaParserAutoGen14ValidationData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLGeometryLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLLibraryAnimationClipsLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLLibraryAnimationsLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLLibraryCamerasLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLLibraryControllersLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLLibraryEffectsLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLLibraryImagesLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLLibraryLightsLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLLibraryMaterialsLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLLibraryNodesLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLMeshLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLNodeLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLSceneLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLSourceArrayLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLSplineLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated14\COLLADASaxFWLVisualSceneLoader14.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLAssetLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLColladaParserAutoGen15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLColladaParserAutoGen15Attributes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLColladaParserAutoGen15Enums.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLColladaParserAutoGen15FunctionMapFactory.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLColladaParserAutoGen15Private.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLColladaParserAutoGen15ValidationData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLFormulasLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLGeometryLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryAnimationClipsLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryAnimationsLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryArticulatedSystemsLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryCamerasLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryControllersLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryEffectsLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryFormulasLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryImagesLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryJointsLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryKinematicsModelsLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryKinematicsScenesLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryLightsLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryMaterialsLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLLibraryNodesLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLMeshLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLNodeLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLSceneLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLSourceArrayLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\include\generated15\COLLADASaxFWLVisualSceneLoader15.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLAssetLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLCOLLADACsymbol.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLDocumentProcessor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLExtraDataElementHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLExtraDataLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLFileLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLFilePartLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLFormulasLinker.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLFormulasLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLGeometryLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLGeometryMaterialIdInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLIError.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLIErrorHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLIExtraDataCallbackHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLIFilePartLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLInputUnshared.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLInstanceArticulatedSystemLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLInstanceKinematicsModelLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLIParserImpl14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLIParserImpl15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLJointsLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLKinematicsIntermediateData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLKinematicsSceneCreator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryAnimationClipsLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryAnimationsLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryArticulatedSystemsLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryCamerasLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryControllersLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryEffectsLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryFormulasLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryImagesLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryJointsLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryKinematicsModelsLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryKinematicsScenesLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryLightsLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryMaterialsLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLibraryNodesLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLMeshLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLMeshPrimitiveInputList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLNodeLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLPostProcessor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLPrecompiledHeaders.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLRootParser14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLRootParser15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLSaxFWLError.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLSaxParserError.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLSaxParserErrorHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLSceneLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLSidAddress.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLSidTreeNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLSourceArrayLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLSplineLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLTransformationLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLTypes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLVersionParser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\COLLADASaxFWLVisualSceneLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLAssetLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLColladaParserAutoGen14Private.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLColladaParserAutoGen14PrivateEnums.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLColladaParserAutoGen14PrivateFindElementHash.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLColladaParserAutoGen14PrivateFunctionMap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLColladaParserAutoGen14PrivateFunctionMapFactory.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLColladaParserAutoGen14PrivateNameMap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLColladaParserAutoGen14PrivateValidation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLGeometryLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLLibraryAnimationClipsLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLLibraryAnimationsLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLLibraryCamerasLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLLibraryControllersLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLLibraryEffectsLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLLibraryImagesLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLLibraryLightsLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLLibraryMaterialsLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLLibraryNodesLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLMeshLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLNodeLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLSceneLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLSourceArrayLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLSplineLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated14\COLLADASaxFWLVisualSceneLoader14.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLAssetLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLColladaParserAutoGen15Private.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLColladaParserAutoGen15PrivateEnums.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLColladaParserAutoGen15PrivateFindElementHash.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLColladaParserAutoGen15PrivateFunctionMap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLColladaParserAutoGen15PrivateFunctionMapFactory.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLColladaParserAutoGen15PrivateNameMap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLColladaParserAutoGen15PrivateValidation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLFormulasLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLGeometryLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryAnimationClipsLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryAnimationsLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryArticulatedSystemsLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryCamerasLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryControllersLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryEffectsLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryFormulasLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryImagesLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryJointsLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryKinematicsModelsLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryKinematicsScenesLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryLightsLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryMaterialsLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLLibraryNodesLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLMeshLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLNodeLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLSceneLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLSourceArrayLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADASaxFrameworkLoader\src\generated15\COLLADASaxFWLVisualSceneLoader15.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

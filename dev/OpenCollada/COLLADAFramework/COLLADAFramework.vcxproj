@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{a90ce4f1-ae4a-404e-9e7d-41acb10fa2b3}</ProjectGuid>
+    <RootNamespace>COLLADAFramework</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OpenCollada\COLLADAFramework\include\;$(SolutionDir)..\..\src\OpenCollada\COLLADABaseUtils\include\;$(SolutionDir)..\..\src\OpenCollada\COLLADAMathMLSolver\include\;$(SolutionDir)..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OpenCollada\COLLADAFramework\include\;$(SolutionDir)..\..\src\OpenCollada\COLLADABaseUtils\include\;$(SolutionDir)..\..\src\OpenCollada\COLLADAMathMLSolver\include\;$(SolutionDir)..\..\src\OpenCollada\COLLADAMathMLSolver\include\AST\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFW.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnimatable.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnimatableFloat.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnimation.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnimationClip.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnimationCurve.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnimationList.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAnnotate.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWArray.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWArrayPrimitiveType.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWAxisInfo.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWCamera.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWCode.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWColor.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWColorOrTexture.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWConstants.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWController.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWEdge.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWEffect.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWEffectCommon.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWException.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWFileInfo.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWFloatOrDoubleArray.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWFloatOrParam.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWFormula.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWFormulaNewParam.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWFormulas.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWGeometry.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWHashFunctions.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWILoader.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWImage.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWImageSource.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInclude.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWIndexList.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceBase.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceBindingBase.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceCamera.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceController.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceGeometry.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceKinematicsScene.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceLight.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceNode.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceSceneGraph.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWInstanceVisualScene.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWIWriter.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWJoint.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWJointPrimitive.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWKinematicsController.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWKinematicsModel.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWKinematicsScene.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWLibraryNodes.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWLight.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWLines.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWLinestrips.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWLoaderUtils.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWLookat.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMaterial.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMaterialBinding.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMatrix.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMesh.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMeshPrimitive.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMeshPrimitiveWithFaceVertexCount.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMeshVertexData.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWModifier.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMorphController.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWMotionProfile.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWNewParam.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWNode.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWObject.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWParam.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPass.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPassClear.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPassOutput.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPassTarget.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPointerArray.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPolygons.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPolylist.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWPrerequisites.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWRenderDraw.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWRenderState.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWRenderStateStatic.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWRoot.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWRotate.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSampler.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWScale.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWScene.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSemantic.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSetParam.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShader.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShaderBlinn.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShaderConstantFX.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShaderElement.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShaderLambert.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShaderPhong.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWShear.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSkew.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSkinController.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSkinControllerData.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWSpline.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWStableHeaders.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTarget.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTargetableValue.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTechnique.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTexture.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTextureCoordinateBinding.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTransformation.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTranslate.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTriangles.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTrifans.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTristrips.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWTypes.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWUniqueId.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWValidate.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWValueType.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAFramework\include\COLLADAFWVisualScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWAnimationClip.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWAxisInfo.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWCamera.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWColor.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWConstants.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWEffect.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWEffectCommon.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWFileInfo.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWFloatOrDoubleArray.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWFormula.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWFormulas.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWGeometry.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWImage.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWInstanceKinematicsScene.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWKinematicsController.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWKinematicsModel.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWKinematicsScene.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWLight.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWLoaderUtils.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWMaterial.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWMatrix.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWMesh.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWMeshPrimitive.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWMorphController.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWNode.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWPrecompiledHeaders.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWRenderState.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWRoot.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWRotate.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWSampler.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWScale.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWSkinController.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWSkinControllerData.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWSpline.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWTexture.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWTransformation.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWTranslate.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWUniqueId.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWValidate.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAFramework\src\COLLADAFWVisualScene.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

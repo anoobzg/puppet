@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{05e7c86d-6fa4-42ae-b7b6-c3c5e83be1fe}</ProjectGuid>
+    <RootNamespace>COLLADAStreamWriter</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING;_DEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OpenCollada\COLLADAStreamWriter\include\;$(SolutionDir)..\..\src\OpenCollada\COLLADABaseUtils\include\;$(SolutionDir)..\..\src\OpenCollada\COLLADABuffer\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING;NDEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OpenCollada\COLLADAStreamWriter\include\;$(SolutionDir)..\..\src\OpenCollada\COLLADABaseUtils\include\;$(SolutionDir)..\..\src\OpenCollada\COLLADABuffer\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWAnnotation.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWAsset.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWBaseElement.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWBaseInputElement.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWBindMaterial.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWBuffer.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWCamera.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWCameraOptic.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWCode.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWColor.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWColorOrTexture.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWConstants.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWControlVertices.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWEffectProfile.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWElementWriter.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWException.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWExtra.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWExtraTechnique.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWFormatHint.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWImage.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInclude.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInputList.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceCamera.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceController.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceEffect.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceGeometry.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceLight.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceMaterial.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceNode.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstancePhysicsModel.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWInstanceRigidBody.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibrary.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryAnimationClips.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryAnimations.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryCameras.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryControllers.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryEffects.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryGeometries.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryImages.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryLights.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryMaterials.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryNodes.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryPhysicsModels.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryPhysicsScenes.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLibraryVisualScenes.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWLight.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWNode.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWOpenGLConstants.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWParamBase.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWParamTemplate.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWPass.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWPlatform.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWPrerequisites.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWPrimitves.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWRenderState.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWRenderStateStatic.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWSampler.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWScene.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWShader.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWSource.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWStreamWriter.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWSurfaceInitOption.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWTechnique.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWTechniqueFX.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWTexture.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWValueType.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\include\COLLADASWVertices.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWAsset.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWBaseElement.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWBaseInputElement.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWBindMaterial.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWCamera.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWCameraOptic.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWColor.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWConstants.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWControlVertices.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWEffectProfile.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWElementWriter.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWException.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWExtra.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWExtraTechnique.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWFormatHint.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWImage.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInputList.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceCamera.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceController.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceEffect.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceGeometry.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceLight.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceMaterial.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceNode.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstancePhysicsModel.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWInstanceRigidBody.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibrary.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryAnimationClips.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryAnimations.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryCameras.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryControllers.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryEffects.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryGeometries.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryImages.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryLights.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryMaterials.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryNodes.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryPhysicsModels.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryPhysicsScenes.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLibraryVisualScenes.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWLight.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWNode.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWParamBase.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWPass.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWPrimitves.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWRenderState.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWSampler.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWScene.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWShader.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWSource.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWStreamWriter.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWSurfaceInitOption.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWTechnique.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWTechniqueFX.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWTexture.cpp" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAStreamWriter\src\COLLADASWVertices.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

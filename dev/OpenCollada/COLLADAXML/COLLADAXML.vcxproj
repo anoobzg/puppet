@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{c6a6d16a-0431-4e78-8daa-909925fe6176}</ProjectGuid>
+    <RootNamespace>COLLADAXML</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OpenCollada\COLLADAXML\;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;GENERATEDSAXPARSER_XMLPARSER_LIBXML;XMLPARSER_LIBXML;LIBXML_AUTOMATA_ENABLED;LIBXML_HTTP_ENABLED;LIBXML_PATTERN_ENABLED;LIBXML_REGEXP_ENABLED;LIBXML_SCHEMAS_ENABLED;LIBXML_XPATH_ENABLED;LIBXML_TREE_ENABLED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4311;4267;4244;4819;4005;4312;4996;</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OpenCollada\COLLADAXML\;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;GENERATEDSAXPARSER_XMLPARSER_LIBXML;XMLPARSER_LIBXML;LIBXML_AUTOMATA_ENABLED;LIBXML_HTTP_ENABLED;LIBXML_PATTERN_ENABLED;LIBXML_REGEXP_ENABLED;LIBXML_SCHEMAS_ENABLED;LIBXML_XPATH_ENABLED;LIBXML_TREE_ENABLED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4311;4267;4244;4819;4005;4312;4996;</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\c14n.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\catalog.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\chvalid.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\debugXML.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\dict.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\DOCBparser.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\encoding.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\entities.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\error.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\globals.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\hash.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\HTMLparser.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\HTMLtree.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\legacy.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\list.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\nanoftp.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\nanohttp.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\parser.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\parserInternals.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\pattern.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\relaxng.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\rngparser.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\SAX.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\SAX2.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\threads.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\tree.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\uri.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\valid.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xinclude.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xlink.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlIO.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlmemory.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlmodule.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlreader.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlregexp.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlsave.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlschemas.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlschemastypes.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlstring.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlunicode.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xmlwriter.c" />
+    <ClCompile Include="..\..\..\src\OpenCollada\COLLADAXML\xpath.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\config.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\elfgcchack.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\c14n.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\catalog.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\chvalid.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\debugXML.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\dict.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\DOCBparser.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\encoding.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\entities.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\globals.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\hash.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\HTMLparser.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\HTMLtree.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\list.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\nanoftp.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\nanohttp.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\parser.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\parserInternals.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\pattern.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\relaxng.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\SAX.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\SAX2.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\schemasInternals.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\schematron.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\threads.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\tree.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\uri.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\valid.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xinclude.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xlink.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlautomata.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlerror.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlexports.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlIO.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlmemory.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlmodule.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlreader.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlregexp.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlsave.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlschemas.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlschemastypes.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlstring.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlunicode.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlversion.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlwin32version.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xmlwriter.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xpath.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xpathInternals.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\libxml\xpointer.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\triodef.h" />
+    <ClInclude Include="..\..\..\src\OpenCollada\COLLADAXML\trionan.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
