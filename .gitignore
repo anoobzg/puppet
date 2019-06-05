@@ -19,5 +19,4 @@ dev/OpenCollada/.vs/
 dev/JPEG/.vs/
 dev/TIFF/.vs/
 dev/FFTW/.vs/
-dev/QT/
-src/qt/msvc2017_64/
+dev/QT/.vs/
