@@ -6,6 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "harmonic_field_tooth_segment_simulation", "harmonic_field_tooth_segment_simulation\harmonic_field_tooth_segment_simulation.vcxproj", "{6DC68715-F4B7-4F65-8F6D-AB09DCD2C99C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lasso", "lasso\lasso.vcxproj", "{29BC90C0-6817-4648-98DE-5CA50C2AEBE3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{83FAE4DC-890C-433F-A494-DDABD47C144A} = {83FAE4DC-890C-433F-A494-DDABD47C144A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lasso_lib", "lasso_lib\lasso_lib.vcxproj", "{83FAE4DC-890C-433F-A494-DDABD47C144A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +36,14 @@ Global
 		{29BC90C0-6817-4648-98DE-5CA50C2AEBE3}.Release|x64.Build.0 = Release|x64
 		{29BC90C0-6817-4648-98DE-5CA50C2AEBE3}.Release|x86.ActiveCfg = Release|Win32
 		{29BC90C0-6817-4648-98DE-5CA50C2AEBE3}.Release|x86.Build.0 = Release|Win32
+		{83FAE4DC-890C-433F-A494-DDABD47C144A}.Debug|x64.ActiveCfg = Debug|x64
+		{83FAE4DC-890C-433F-A494-DDABD47C144A}.Debug|x64.Build.0 = Debug|x64
+		{83FAE4DC-890C-433F-A494-DDABD47C144A}.Debug|x86.ActiveCfg = Debug|Win32
+		{83FAE4DC-890C-433F-A494-DDABD47C144A}.Debug|x86.Build.0 = Debug|Win32
+		{83FAE4DC-890C-433F-A494-DDABD47C144A}.Release|x64.ActiveCfg = Release|x64
+		{83FAE4DC-890C-433F-A494-DDABD47C144A}.Release|x64.Build.0 = Release|x64
+		{83FAE4DC-890C-433F-A494-DDABD47C144A}.Release|x86.ActiveCfg = Release|Win32
+		{83FAE4DC-890C-433F-A494-DDABD47C144A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

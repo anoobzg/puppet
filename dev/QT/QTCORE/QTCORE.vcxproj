@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qbig5codec.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qeucjpcodec.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qeuckrcodec.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qgb18030codec.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qisciicodec.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qjiscodec.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qjpunicode.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qlatincodec.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qsimplecodec.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qsjiscodec.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qtextcodec.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qtsciicodec.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qutfcodec.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qwindowscodec.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\archdetect.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qconfig.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qendian.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qfloat16.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qfloat16tables.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qfloat16_f16c.c" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qglobal.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qhooks.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qlibraryinfo.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qlogging.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qmalloc.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qnumeric.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qoperatingsystemversion.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qoperatingsystemversion_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qrandom.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qversiontagging.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qabstractfileengine.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qbuffer.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qdataurl.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qdebug.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qdir.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qdiriterator.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfile.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfiledevice.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfileinfo.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfileselector.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemengine.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemengine_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystementry.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemiterator_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher_polling.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfsfileengine.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfsfileengine_iterator.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfsfileengine_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qiodevice.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qipaddress.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qlockfile.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qlockfile_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qloggingcategory.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qloggingregistry.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qnoncontiguousbytedevice.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qprocess.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qprocess_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qresource.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qresource_iterator.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qsavefile.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qsettings.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qsettings_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qstandardpaths.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qstandardpaths_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qstorageinfo.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qstorageinfo_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qtemporarydir.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qtemporaryfile.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qtldurl.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qurl.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qurlidna.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qurlquery.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qurlrecode.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qwindowspipereader.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qwindowspipewriter.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qabstractitemmodel.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qabstractproxymodel.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qidentityproxymodel.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qitemselectionmodel.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qsortfilterproxymodel.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qstringlistmodel.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qabstracteventdispatcher.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qabstractnativeeventfilter.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qbasictimer.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qcoreapplication.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qcoreapplication_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qcoreevent.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qcoreglobaldata.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qdeadlinetimer.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qelapsedtimer.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qelapsedtimer_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qeventdispatcher_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qeventloop.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qmath.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qmetaobject.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qmetaobjectbuilder.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qmetatype.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qmimedata.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qobject.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qobjectcleanuphandler.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qpointer.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsharedmemory.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsharedmemory_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsignalmapper.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsocketnotifier.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsystemerror.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsystemsemaphore.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsystemsemaphore_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qtimer.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qtranslator.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qvariant.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qwineventnotifier.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimedatabase.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimeglobpattern.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimemagicrule.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimemagicrulematcher.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimeprovider.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimetype.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimetypeparser.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qelfparser_p.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qfactoryinterface.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qfactoryloader.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qlibrary.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qlibrary_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qmachparser.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qpluginloader.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qsystemlibrary.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\quuid.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qcbordiagnostic.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qcborstream.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qcborvalue.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qdatastream.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjson.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsonarray.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsoncbor.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsondocument.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsonobject.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsonparser.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsonvalue.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsonwriter.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qtextstream.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qxmlstream.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qxmlutils.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qatomic.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qexception.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qfutureinterface.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qfuturewatcher.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qmutex.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qmutexpool.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qreadwritelock.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qresultstore.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qrunnable.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qsemaphore.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qthread.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qthreadpool.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qthreadstorage.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qthread_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qwaitcondition_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qarraydata.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qbitarray.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qbytearray.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qbytearraylist.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qbytearraymatcher.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcollator.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcollator_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcommandlineoption.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcommandlineparser.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcontiguouscache.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcryptographichash.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qdatetime.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qdatetimeparser.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qeasingcurve.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qfreelist.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qhash.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qline.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qlist.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qlocale.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qlocale_tools.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qlocale_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qmap.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qmargins.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qmessageauthenticationcode.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qpoint.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qrect.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qrefcount.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qregexp.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qregularexpression.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qringbuffer.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qscopedpointer.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qscopedvaluerollback.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qshareddata.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qsharedpointer.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qsimd.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qsimd_x86.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qsize.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qstack.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qstring.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qstringlist.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qstringview.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtimezone.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtimezoneprivate.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtimezoneprivate_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qversionnumber.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qvsnprintf.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher_polling_p.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qstringlistmodel.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qsortfilterproxymodel.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qitemselectionmodel.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qidentityproxymodel.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qabstractproxymodel.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qabstractitemmodel.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfileselector.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qtimer.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsignalmapper.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsharedmemory.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qobjectcleanuphandler.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qpluginloader.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qfactoryloader_p.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qlibrary.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qfuturewatcher.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qabstracteventdispatcher.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qsavefile.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcryptographichash.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qeasingcurve.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qbuffer.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qtemporaryfile.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qtranslator.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher_p.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfiledevice.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfile.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qsettings.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qcoreapplication.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qcborvalue.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qthreadpool.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qthread.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qcoreevent.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qeventloop.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qiodevice.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\global\qnamespace.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qobject.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qcborcommon.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qcborstream.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qnoncontiguousbytedevice_p.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qprocess.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qstandardpaths.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qmimedata.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qeventdispatcher_win_p.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsocketnotifier.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qwindowspipereader_p.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qwindowspipewriter_p.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qwineventnotifier.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher_win_p.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qwineventnotifier_p.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimetype.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qexception.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qlocale.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qtextstream_p.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{42a0ae74-8255-4a4e-9197-fd7ad590ad00}</ProjectGuid>
+    <RootNamespace>QTCORE</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\qt\src\qbase\include\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\5.12.3\;$(SolutionDir)..\..\src\qt\src\qbase\mkspecs\win32-msvc\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\5.12.3\QtCore\;$(SolutionDir)..\..\src\zlib\;$(SolutionDir)..\..\src\qt\gen\;$(SolutionDir)..\..\src\pcre2\;$(SolutionDir)..\..\src\qt\src\qbase\src\3rdparty\tinycbor\src\;$(SolutionDir)..\..\src\qt\src\qbase\src\corelib\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_BUILD_CORE_LIB;WIN32;_CRT_SECURE_NO_WARNINGS;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_NO_DOUBLECONVERSION;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>zlib.lib;Ws2_32.lib;Netapi32.lib;pcre2.lib;version.lib;winmm.lib;mpr.lib;userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\qt\src\qbase\include\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\5.12.3\;$(SolutionDir)..\..\src\qt\src\qbase\mkspecs\win32-msvc\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\5.12.3\QtCore\;$(SolutionDir)..\..\src\zlib\;$(SolutionDir)..\..\src\qt\gen\;$(SolutionDir)..\..\src\pcre2\;$(SolutionDir)..\..\src\qt\src\qbase\src\3rdparty\tinycbor\src\;$(SolutionDir)..\..\src\qt\src\qbase\src\corelib\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>QT_BUILD_CORE_LIB;WIN32;_CRT_SECURE_NO_WARNINGS;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_NO_DOUBLECONVERSION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <AdditionalDependencies>zlib.lib;Ws2_32.lib;Netapi32.lib;pcre2.lib;version.lib;winmm.lib;mpr.lib;userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
