@@ -66,11 +66,13 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\OpenSceneGraph\OSG.props" />
     <Import Project="..\..\trimesh\trimesh.props" />
+    <Import Project="..\..\GOOGLE_BASE\google_base.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\OpenSceneGraph\OSG.props" />
     <Import Project="..\..\trimesh\trimesh.props" />
+    <Import Project="..\..\GOOGLE_BASE\google_base.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -149,11 +151,15 @@
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpnode.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpscene.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\main.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\renderthread.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\resettask.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\scene.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\screenboundingbox.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\screengraph.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\screenlines.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\simulationscene.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\simulation_entry.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\slammer.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\stepicptask.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\task.cpp" />
   </ItemGroup>
@@ -164,11 +170,16 @@
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\data.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpnode.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpscene.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\interface.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\renderthread.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\resettask.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\scene.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\screenboundingbox.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\screengraph.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\screenlines.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\simulationscene.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\simulation_entry.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\slammer.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\stepicptask.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\task.h" />
   </ItemGroup>

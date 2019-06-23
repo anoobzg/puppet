@@ -7,11 +7,15 @@
 #include "cmdicp.h"
 #include "load_calib.h"
 #include "compute_boundingbox.h"
+#include "simulation_entry.h"
 
 using namespace OSGWrapper;
 
 int main(int argc, char* argv[])
 {
+	if (argc >= 2 && !strcmp("simulation", argv[1]))
+		return simulation_entry(argc, argv);
+
 	if (argc < 4)
 		return EXIT_FAILURE;
 

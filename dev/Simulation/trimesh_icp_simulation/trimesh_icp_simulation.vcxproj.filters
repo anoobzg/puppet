@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="simulation">
+      <UniqueIdentifier>{c6e1dc89-99c3-46c1-a5a5-e1b913498841}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\boundingbox.cpp">
@@ -57,6 +60,18 @@
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\csvwriter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\simulation_entry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\renderthread.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\simulationscene.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\slammer.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\boundingbox.h">
@@ -97,6 +112,21 @@
     </ClInclude>
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\csvwriter.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\simulation_entry.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\simulationscene.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\renderthread.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\slammer.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\interface.h">
+      <Filter>simulation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
