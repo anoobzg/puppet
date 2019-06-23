@@ -66,5 +66,9 @@ void RenderThread::RenderCircle()
 	}
 
 	m_view->SetCurrentScene(NULL);
+	
+	m_viewer.removeView(m_view);
+	m_view = NULL;
+
 	m_exit_event.Signal();
 }
