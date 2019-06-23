@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GoogleBase2015", "GoogleBase2015.vcxproj", "{2585B3AD-974A-4E27-A170-3E0B7FFF3AB7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "google_test_mock", "googletest.vcxproj", "{57B21DB0-C792-4E1A-B060-965A52C8FD54}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "google_test_mock_main", "googletest_main.vcxproj", "{B68DEF42-E8F9-4DAA-87A7-6719FA733EF4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{57B21DB0-C792-4E1A-B060-965A52C8FD54} = {57B21DB0-C792-4E1A-B060-965A52C8FD54}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example_code", "example_code", "{F87F0F0E-A405-4606-96F0-119CE2D0FF9A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "google_example_time_delta", "example_code\google_example_time_delta.vcxproj", "{48957BE0-34AD-4D4B-804C-BF8D4079FAE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2585B3AD-974A-4E27-A170-3E0B7FFF3AB7}.Debug|x64.ActiveCfg = Debug|x64
+		{2585B3AD-974A-4E27-A170-3E0B7FFF3AB7}.Debug|x64.Build.0 = Debug|x64
+		{2585B3AD-974A-4E27-A170-3E0B7FFF3AB7}.Release|x64.ActiveCfg = Release|x64
+		{2585B3AD-974A-4E27-A170-3E0B7FFF3AB7}.Release|x64.Build.0 = Release|x64
+		{57B21DB0-C792-4E1A-B060-965A52C8FD54}.Debug|x64.ActiveCfg = Debug|x64
+		{57B21DB0-C792-4E1A-B060-965A52C8FD54}.Debug|x64.Build.0 = Debug|x64
+		{57B21DB0-C792-4E1A-B060-965A52C8FD54}.Release|x64.ActiveCfg = Release|x64
+		{57B21DB0-C792-4E1A-B060-965A52C8FD54}.Release|x64.Build.0 = Release|x64
+		{B68DEF42-E8F9-4DAA-87A7-6719FA733EF4}.Debug|x64.ActiveCfg = Debug|x64
+		{B68DEF42-E8F9-4DAA-87A7-6719FA733EF4}.Debug|x64.Build.0 = Debug|x64
+		{B68DEF42-E8F9-4DAA-87A7-6719FA733EF4}.Release|x64.ActiveCfg = Release|x64
+		{B68DEF42-E8F9-4DAA-87A7-6719FA733EF4}.Release|x64.Build.0 = Release|x64
+		{48957BE0-34AD-4D4B-804C-BF8D4079FAE3}.Debug|x64.ActiveCfg = Debug|x64
+		{48957BE0-34AD-4D4B-804C-BF8D4079FAE3}.Debug|x64.Build.0 = Debug|x64
+		{48957BE0-34AD-4D4B-804C-BF8D4079FAE3}.Release|x64.ActiveCfg = Release|x64
+		{48957BE0-34AD-4D4B-804C-BF8D4079FAE3}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{48957BE0-34AD-4D4B-804C-BF8D4079FAE3} = {F87F0F0E-A405-4606-96F0-119CE2D0FF9A}
+	EndGlobalSection
+EndGlobal

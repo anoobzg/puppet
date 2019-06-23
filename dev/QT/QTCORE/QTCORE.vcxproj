@@ -194,6 +194,7 @@
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qdatetimeparser.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qeasingcurve.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qfreelist.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qharfbuzz.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qhash.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qline.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qlist.cpp" />
@@ -220,13 +221,18 @@
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qstring.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qstringlist.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qstringview.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtextboundaryfinder.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtimezone.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtimezoneprivate.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtimezoneprivate_win.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qunicodetools.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qversionnumber.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qvsnprintf.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qharfbuzz_p.h" />
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtextboundaryfinder.h" />
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qunicodetools_p.h" />
     <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher_polling_p.h">
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
@@ -722,7 +728,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\qt\src\qbase\include\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\5.12.3\;$(SolutionDir)..\..\src\qt\src\qbase\mkspecs\win32-msvc\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\5.12.3\QtCore\;$(SolutionDir)..\..\src\zlib\;$(SolutionDir)..\..\src\qt\gen\;$(SolutionDir)..\..\src\pcre2\;$(SolutionDir)..\..\src\qt\src\qbase\src\3rdparty\tinycbor\src\;$(SolutionDir)..\..\src\qt\src\qbase\src\corelib\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\qt\src\qbase\include\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\5.12.3\;$(SolutionDir)..\..\src\qt\src\qbase\mkspecs\win32-msvc\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\5.12.3\QtCore\;$(SolutionDir)..\..\src\zlib\;$(SolutionDir)..\..\src\qt\gen\;$(SolutionDir)..\..\src\pcre2\;$(SolutionDir)..\..\src\qt\src\qbase\src\3rdparty\tinycbor\src\;$(SolutionDir)..\..\src\qt\src\qbase\src\corelib\;$(SolutionDir)..\..\src\harfbuzz\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>QT_BUILD_CORE_LIB;WIN32;_CRT_SECURE_NO_WARNINGS;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_NO_DOUBLECONVERSION;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
@@ -730,7 +736,7 @@
       <SubSystem>Console</SubSystem>
       <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>zlib.lib;Ws2_32.lib;Netapi32.lib;pcre2.lib;version.lib;winmm.lib;mpr.lib;userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>zlib.lib;Ws2_32.lib;Netapi32.lib;pcre2.lib;version.lib;winmm.lib;mpr.lib;userenv.lib;harfbuzz.lib;charfbuzz.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -756,7 +762,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\qt\src\qbase\include\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\5.12.3\;$(SolutionDir)..\..\src\qt\src\qbase\mkspecs\win32-msvc\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\5.12.3\QtCore\;$(SolutionDir)..\..\src\zlib\;$(SolutionDir)..\..\src\qt\gen\;$(SolutionDir)..\..\src\pcre2\;$(SolutionDir)..\..\src\qt\src\qbase\src\3rdparty\tinycbor\src\;$(SolutionDir)..\..\src\qt\src\qbase\src\corelib\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\qt\src\qbase\include\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\5.12.3\;$(SolutionDir)..\..\src\qt\src\qbase\mkspecs\win32-msvc\;$(SolutionDir)..\..\src\qt\src\qbase\include\QtCore\5.12.3\QtCore\;$(SolutionDir)..\..\src\zlib\;$(SolutionDir)..\..\src\qt\gen\;$(SolutionDir)..\..\src\pcre2\;$(SolutionDir)..\..\src\qt\src\qbase\src\3rdparty\tinycbor\src\;$(SolutionDir)..\..\src\qt\src\qbase\src\corelib\;$(SolutionDir)..\..\src\harfbuzz\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>QT_BUILD_CORE_LIB;WIN32;_CRT_SECURE_NO_WARNINGS;_ENABLE_EXTENDED_ALIGNED_STORAGE;QT_NO_DOUBLECONVERSION;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
@@ -768,7 +774,7 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
-      <AdditionalDependencies>zlib.lib;Ws2_32.lib;Netapi32.lib;pcre2.lib;version.lib;winmm.lib;mpr.lib;userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>zlib.lib;Ws2_32.lib;Netapi32.lib;pcre2.lib;version.lib;winmm.lib;mpr.lib;userenv.lib;harfbuzz.lib;charfbuzz.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

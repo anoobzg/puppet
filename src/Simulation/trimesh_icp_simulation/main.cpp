@@ -1,0 +1,83 @@
+#include <iostream>
+#include <osgWrapper\RenderService.h>
+#include <osgWrapper\RenderView.h>
+#include "data.h"
+#include "scene.h"
+#include "icpscene.h"
+#include "cmdicp.h"
+#include "load_calib.h"
+#include "compute_boundingbox.h"
+
+using namespace OSGWrapper;
+
+int main(int argc, char* argv[])
+{
+	if (argc < 4)
+		return EXIT_FAILURE;
+
+	std::string source(argv[2]);
+	std::string target(argv[1]);
+	std::string cablifile(argv[3]);
+	trimesh::TriMesh* source_mesh = trimesh::TriMesh::read(source);
+	trimesh::TriMesh* target_mesh = trimesh::TriMesh::read(target);
+
+	if (!source_mesh || !target_mesh)
+	{
+		std::cout << "Source or Target file error." << std::endl;
+		return EXIT_FAILURE;
+	}
+
+	trimesh::CameraData camera_data;
+	if (!load_camera_data_from_file(cablifile, camera_data))
+	{
+		std::cout << "Cabli Data Error." << std::endl;
+		return EXIT_FAILURE;
+	}
+
+	ComputeBoundingbox(source_mesh->vertices, source_mesh->bbox);
+	ComputeBoundingbox(target_mesh->vertices, target_mesh->bbox);
+
+	if (argc >= 5 && !strcmp("cmd", argv[4]))
+	{
+		cmd_test_icp(source_mesh, target_mesh,camera_data);
+		return EXIT_SUCCESS;
+	}
+
+	if (argc >= 7 && !strcmp("analysis", argv[4]))
+	{
+		std::string error_file(argv[5]);
+		std::string time_file(argv[6]);
+		cmd_analysis_icp(source_mesh, target_mesh, camera_data, error_file, time_file);
+		return EXIT_SUCCESS;
+	}
+
+	osg::ref_ptr<RenderView> view = new RenderView();
+	osg::ref_ptr<RenderScene> scene = new ICPScene(camera_data, *source_mesh, *target_mesh);
+	view->SetBackgroundColor(osg::Vec4(0.3f, 0.3f, 0.3f, 1.0f));
+	view->setUpViewInWindow(0, 0, 1920, 1080);
+	view->SetCurrentScene(scene);
+
+	RenderService::Instance().addView(view);
+	RenderService::Instance().setKeyEventSetsDone(0);
+	return RenderService::Instance().Run();
+}
+//
+//int main(int argc, char* argv[])
+//{
+//	if (argc < 2)
+//		return EXIT_FAILURE;
+//
+//	std::string dir(argv[1]);
+//	Data data;
+//	data.Load(dir);
+//
+//	osg::ref_ptr<RenderView> view = new RenderView();
+//	osg::ref_ptr<RenderScene> scene = new Scene(data);
+//	view->SetBackgroundColor(osg::Vec4(0.3f, 0.3f, 0.3f, 1.0f));
+//	view->setUpViewInWindow(50, 50, 1080, 720);
+//	view->SetCurrentScene(scene);
+//
+//	RenderService::Instance().addView(view);
+//	RenderService::Instance().setKeyEventSetsDone(0);
+//	return RenderService::Instance().Run();
+//}

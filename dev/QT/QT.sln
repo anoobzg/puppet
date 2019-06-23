@@ -8,6 +8,12 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtTestCoreApplication", "QtTestCoreApplication\QtTestCoreApplication.vcxproj", "{B9480621-7D0C-423B-932C-E1671C5C0146}"
 	ProjectSection(ProjectDependencies) = postProject
 		{42A0AE74-8255-4A4E-9197-FD7AD590AD00} = {42A0AE74-8255-4A4E-9197-FD7AD590AD00}
+		{D97CD9EF-53B8-4E0D-B722-EFA2C2DC1E6B} = {D97CD9EF-53B8-4E0D-B722-EFA2C2DC1E6B}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QTGUI", "QTGUI\QTGUI.vcxproj", "{D97CD9EF-53B8-4E0D-B722-EFA2C2DC1E6B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{42A0AE74-8255-4A4E-9197-FD7AD590AD00} = {42A0AE74-8255-4A4E-9197-FD7AD590AD00}
 	EndProjectSection
 EndProject
 Global
@@ -34,6 +40,14 @@ Global
 		{B9480621-7D0C-423B-932C-E1671C5C0146}.Release|x64.Build.0 = Release|x64
 		{B9480621-7D0C-423B-932C-E1671C5C0146}.Release|x86.ActiveCfg = Release|Win32
 		{B9480621-7D0C-423B-932C-E1671C5C0146}.Release|x86.Build.0 = Release|Win32
+		{D97CD9EF-53B8-4E0D-B722-EFA2C2DC1E6B}.Debug|x64.ActiveCfg = Debug|x64
+		{D97CD9EF-53B8-4E0D-B722-EFA2C2DC1E6B}.Debug|x64.Build.0 = Debug|x64
+		{D97CD9EF-53B8-4E0D-B722-EFA2C2DC1E6B}.Debug|x86.ActiveCfg = Debug|Win32
+		{D97CD9EF-53B8-4E0D-B722-EFA2C2DC1E6B}.Debug|x86.Build.0 = Debug|Win32
+		{D97CD9EF-53B8-4E0D-B722-EFA2C2DC1E6B}.Release|x64.ActiveCfg = Release|x64
+		{D97CD9EF-53B8-4E0D-B722-EFA2C2DC1E6B}.Release|x64.Build.0 = Release|x64
+		{D97CD9EF-53B8-4E0D-B722-EFA2C2DC1E6B}.Release|x86.ActiveCfg = Release|Win32
+		{D97CD9EF-53B8-4E0D-B722-EFA2C2DC1E6B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

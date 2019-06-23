@@ -8,7 +8,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\qt\include\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>QtCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>QTCORE.lib;QTGUI.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />

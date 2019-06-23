@@ -90,6 +90,7 @@ bool RenderView::handleResizeEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIA
 		if(view_port) m_current_scene->setViewport(view_port->x(), view_port->y(), view_port->width(), view_port->height());
 
 		m_current_scene->OnResize(ea, aa);
+		m_current_scene->SetSize((unsigned)m_width, (unsigned)m_height);
 	}
 	std::cout<<"OSG Resize Event."<<std::endl;
 	return true;

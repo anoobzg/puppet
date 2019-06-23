@@ -1,0 +1,1412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="kernel">
+      <UniqueIdentifier>{ee625797-4301-4d11-b670-5d927b20a3c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="painting">
+      <UniqueIdentifier>{889b7257-9d9b-4c0c-9690-c52eb27134f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="image">
+      <UniqueIdentifier>{98982fb5-d110-4bb6-acc7-ff76b9e48146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math3d">
+      <UniqueIdentifier>{4ded9e52-f6b0-468b-bca5-3b435c6af19b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="opengl">
+      <UniqueIdentifier>{5f10d1c9-6f1e-48f0-9b90-3750067f0332}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="text">
+      <UniqueIdentifier>{cb246a31-e330-4164-9bc9-0ab9e0f00228}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="accessible">
+      <UniqueIdentifier>{832358bf-8ac2-4ef1-8548-4f1a2c19eedd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qcolor.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\math3d\qvector2d.cpp">
+      <Filter>math3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\math3d\qvector3d.cpp">
+      <Filter>math3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\math3d\qvector4d.cpp">
+      <Filter>math3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\math3d\qquaternion.cpp">
+      <Filter>math3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\math3d\qgenericmatrix.cpp">
+      <Filter>math3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\math3d\qmatrix4x4.cpp">
+      <Filter>math3d</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qregion.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpolygon.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qmatrix.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpainterpath.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qtransform.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpaintdevice.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qimage.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qimagereader.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qimagereaderwriterhelpers.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qimagewriter.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qimageiohandler.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qimageiohandler.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpnghandler.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qppmhandler.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qxbmhandler.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qxpmhandler.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpainter.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpixmap.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qimagepixmapcleanuphooks.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qcursor.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qplatformpixmap.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qsurface.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qsurfaceformat.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qopenglcontext.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglfunctions_es2.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglgradientcache.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglpaintdevice.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglpaintengine.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglpixeltransferoptions.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglprogrambinarycache.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglshaderprogram.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltexture.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltextureblitter.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltexturecache.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltextureglyphcache.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltexturehelper.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengl.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengl2pexvertexarray.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglbuffer.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglcustomshaderstage.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengldebug.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglengineshadermanager.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglframebufferobject.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglfunctions.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglversionfunctions.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglversionfunctionsfactory.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglvertexarrayobject.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformintegration.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformintegrationfactory.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qguiapplication.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qicon.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qiconengine.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qiconengineplugin.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qiconloader.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpixmapcache.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qbrush.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpen.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qfont.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontmetrics.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qpalette.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qwindow.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeysequence.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qevent.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qwindowsysteminterface.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qiconengineplugin.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qinputmethod.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qscreen.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qscreen.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextoption.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qimage_compat.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qimage_conversions.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpaintengine.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qstroker.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextformat.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qstatictext.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qrawfont.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qglyphrun.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextlayout.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextobject.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextlist.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocumentlayout.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocumentwriter.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocument.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocument_p.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocumentfragment.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qcssutil.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qcssparser.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qdistancefield.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextengine.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontengine_qpf2.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontengineglyphcache.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontdatabase.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontengine.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qtriangulatingstroker.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qtriangulator.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qtextureglyphcache.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpaintengine_blitter.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpaintengine_raster.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpaintengineex.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qimage.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qdrawhelper.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qdrawhelper_avx2.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qdrawhelper_neon.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qdrawhelper_sse2.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qdrawhelper_sse4.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qdrawhelper_ssse3.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qtextobject.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qtextdocument.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qbitmap.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qbmphandler.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qimage_ssse3.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpixmap_blitter.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpixmap_raster.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpixmap_win.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qblittable.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformscreen.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qdrag.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qclipboard.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qdnd.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qclipboard.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformdrag.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformclipboard.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformcursor.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformdialoghelper.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qdrag.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qguivariant.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qhighdpiscaling.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qinputdevicemanager.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qdnd_p.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformoffscreensurface.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformopenglcontext.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformintegrationplugin.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformmenu.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformnativeinterface.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformdialoghelper.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qrasterwindow.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformservices.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsessionmanager.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsharedgraphicscache.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsurface.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsystemtrayicon.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformtheme.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformthemefactory.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformthemeplugin.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformwindow.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qevent.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qplatformfontdatabase.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qsyntaxhighlighter.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextcursor.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qoffscreensurface.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qoffscreensurface.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qemulationpaintengine.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qgrayraster.c">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qimagescale.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qimagescale_neon.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qimagescale_sse4.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qblendfunctions.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qbackingstore.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qbezier.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qtouchdevice.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qshortcutmap.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformnativeinterface.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessiblecache.cpp">
+      <Filter>accessible</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessibleobject.cpp">
+      <Filter>accessible</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessibleplugin.cpp">
+      <Filter>accessible</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qplatformaccessibility.cpp">
+      <Filter>accessible</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessible.cpp">
+      <Filter>accessible</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessiblebridge.cpp">
+      <Filter>accessible</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qaccessible.cpp">
+      <Filter>accessible</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qaccessiblecache_p.cpp">
+      <Filter>accessible</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qaccessibleplugin.cpp">
+      <Filter>accessible</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qaccessiblebridge.cpp">
+      <Filter>accessible</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qsurfaceformat.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qopenglshaderprogram.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qopenglengineshadermanager_p.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qsessionmanager.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qsessionmanager.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qstylehints.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qsimpledrag.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qstylehints.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qopenglwindow.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qpaintdevicewindow.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qopenglwindow.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qpaintdevicewindow.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qtextlist.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qharfbuzzng.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qzip.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtexttable.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformgraphicsbuffer.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformgraphicsbufferhelper.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatforminputcontext.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatforminputcontextfactory.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatforminputcontextplugin.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qplatforminputcontext.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qinputdevicemanager_p.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextimagehandler.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtexthtmlparser.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qabstracttextdocumentlayout.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qtexttable.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qplatformbackingstore.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformgraphicsbuffer.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qplatforminputcontextplugin_p.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformmenu.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformintegrationplugin.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformthemeplugin.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qrasterizer.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qcolorprofile.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qcompositionfunctions.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qcosmeticstroker.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpagesize.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qmemrotate.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qoutlinemapper.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpagedpaintdevice.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpagelayout.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qrasterwindow.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qsurface.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qshapedpixmapdndwindow.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qshapedpixmapdndwindow_p.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpdfwriter.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpathclipper.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpathsimplifier.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpdf.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qfragmentmap.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontsubset.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontsubset_agl.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qcolor.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qcolor_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qrgba64.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qrgba64_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qrgb.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qmath_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\math3d\qvector2d.h">
+      <Filter>math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\math3d\qvector3d.h">
+      <Filter>math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\math3d\qvector4d.h">
+      <Filter>math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\math3d\qquaternion.h">
+      <Filter>math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\math3d\qgenericmatrix.h">
+      <Filter>math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\math3d\qmatrix4x4.h">
+      <Filter>math3d</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qregion.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpolygon.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpolygonclipper_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qmatrix.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpainterpath.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpainterpath_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qtransform.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpaintdevice.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qimagereader.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qimagereaderwriterhelpers_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qimagewriter.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qpnghandler_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qppmhandler_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qxbmhandler_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qxpmhandler_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpainter.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpainter_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qpixmap.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qimagepixmapcleanuphooks_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qcursor.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qcursor_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qplatformpixmap.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qopenglcontext_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglfunctions_es2.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglgradientcache_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglpaintdevice.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglpaintdevice_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglpaintengine_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglpixeltransferoptions.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglprogrambinarycache_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglqueryhelper_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglshadercache_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltexture.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltexture_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltextureblitter.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltexturecache_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltextureglyphcache_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengl.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengl_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengl2pexvertexarray_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglbuffer.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglcustomshaderstage_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglengineshadersource_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengles2ext.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglext.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglextensions_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglextrafunctions.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglframebufferobject.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglframebufferobject_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglfunctions.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglversionfunctions.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglversionfunctionsfactory_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglvertexarrayobject_p.h">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformintegration.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformintegrationfactory_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qguiapplication.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qguiapplication_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qicon.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qicon_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qiconengine.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qiconloader_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qpixmapcache.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qpixmapcache_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qbrush.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpen.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpen_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfont.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfont_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontmetrics.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qpalette.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qwindow_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qwindowdefs.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qwindowdefs_win.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeysequence.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeysequence_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qevent_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qwindowsysteminterface.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qwindowsysteminterface_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qinputmethod_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qscreen_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextoption.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpaintengine.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qstroker_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextformat.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextformat_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qrawfont_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qstatictext.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qstatictext_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qrawfont.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qglyphrun.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qglyphrun_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextlayout.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextobject_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocumentwriter.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocument_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocumentfragment.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocumentfragment_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qcssutil_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qdistancefield_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qcssparser_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextengine_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontengine_qpf2_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontengineglyphcache_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontdatabase.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontengine_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qtriangulatingstroker_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qtriangulator_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qtextureglyphcache_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpaintengine_blitter_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpaintengine_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpaintengine_raster_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpaintengineex_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qdrawhelper_x86_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qdrawhelper_neon_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qdrawhelper_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qbitmap.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qbmphandler_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qpixmap_blitter_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qpixmap_raster_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qblittable_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformscreen.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformscreen_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformdrag.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformclipboard.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformcursor.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qhighdpiscaling_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qinputdevicemanager_p_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformoffscreensurface.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformopenglcontext.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformwindow_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformservices.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsessionmanager.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsharedgraphicscache.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsurface.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformtheme.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformtheme_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformthemefactory_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformwindow.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qplatformfontdatabase.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextcursor.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextcursor_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qdrawingprimitive_sse2_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qemulationpaintengine_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qfixed_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qgrayraster_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qimagescale_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qblendfunctions_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qbackingstore.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qbezier_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qtouchdevice.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qtouchdevice_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qshortcutmap_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessibleobject.h">
+      <Filter>accessible</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qplatformaccessibility.h">
+      <Filter>accessible</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qsessionmanager_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qsimpledrag_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qpaintdevicewindow_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qharfbuzzng_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtexttable_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qzipreader_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qzipwriter_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformgraphicsbufferhelper.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatforminputcontext_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatforminputcontextfactory_p.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtexthtmlparser_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qabstracttextdocumentlayout_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qplatformbackingstore.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qrasterizer_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qrbtree_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qcolorprofile_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qcoregraphics_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qcosmeticstroker_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpagesize.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qmemrotate_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qoutlinemapper_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpagedpaintdevice.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpagedpaintdevice_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpagelayout.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpdfwriter.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpathclipper_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpathsimplifier_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpdf_p.h">
+      <Filter>painting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfragmentmap_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontsubset_p.h">
+      <Filter>text</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessible.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessiblecache_p.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qoffscreensurface.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qsyntaxhighlighter.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsystemtrayicon.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformdialoghelper.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformnativeinterface.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qclipboard.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qdnd_p.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qdrag.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocument.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocumentlayout_p.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextobject.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qscreen.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qinputmethod.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\image\qiconengineplugin.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\image\qimage.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qevent.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qwindow.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglvertexarrayobject.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengldebug.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qopenglcontext.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\image\qimageiohandler.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessibleplugin.h">
+      <Filter>accessible</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessiblebridge.h">
+      <Filter>accessible</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qsurfaceformat.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglshaderprogram.h">
+      <Filter>opengl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglengineshadermanager_p.h">
+      <Filter>opengl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qsessionmanager.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qstylehints.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qopenglwindow.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qpaintdevicewindow.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextlist.h">
+      <Filter>text</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatforminputcontext.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qinputdevicemanager_p.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextimagehandler_p.h">
+      <Filter>text</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qabstracttextdocumentlayout.h">
+      <Filter>text</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtexttable.h">
+      <Filter>text</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformgraphicsbuffer.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatforminputcontextplugin_p.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformmenu.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformintegrationplugin.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformthemeplugin.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qrasterwindow.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qsurface.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qshapedpixmapdndwindow_p.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

@@ -663,6 +663,15 @@
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qelapsedtimer_win.cpp">
       <Filter>源文件\kernel</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtextboundaryfinder.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qunicodetools.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qharfbuzz.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qexception.h">
@@ -670,6 +679,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qwineventnotifier_p.h">
       <Filter>源文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtextboundaryfinder.h">
+      <Filter>源文件\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qunicodetools_p.h">
+      <Filter>源文件\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qharfbuzz_p.h">
+      <Filter>源文件\tools</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

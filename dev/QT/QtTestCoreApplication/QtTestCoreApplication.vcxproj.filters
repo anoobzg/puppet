@@ -15,8 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\qt\test\test_coreapplication.cpp">
+    <ClCompile Include="..\..\..\src\qt\test\QtTestCoreApplication\test_coreapplication.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\test\QtTestCoreApplication\listener.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\src\qt\test\QtTestCoreApplication\listener.h">
+      <Filter>头文件</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>

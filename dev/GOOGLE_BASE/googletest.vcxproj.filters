@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{3b6a133c-7ffa-4dfa-b871-d05ec4a5ff5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{02ddb539-1ceb-4999-98bb-bd6a3fc82e30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\gmock">
+      <UniqueIdentifier>{437e3cf5-24d3-4516-96f4-4855a383b1f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\gtest">
+      <UniqueIdentifier>{60028a7c-8d65-42f6-8517-a11e2e7577dd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\extern\GB2015\google_test_mock\src\gtest-all.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\extern\GB2015\google_test_mock\src\gmock-all.cc">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\gmock-function-mocker.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\gmock-generated-actions.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\gmock-generated-function-mockers.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\gmock-generated-matchers.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\gmock-generated-nice-strict.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\gmock-matchers.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\gmock-more-actions.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\gmock-more-matchers.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\gmock-spec-builders.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\internal\custom\gmock-generated-actions.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\internal\custom\gmock-matchers.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\internal\custom\gmock-port.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\internal\gmock-generated-internal-utils.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\internal\gmock-internal-utils.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\internal\gmock-port.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\internal\gmock-pp.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\gmock.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\gmock-actions.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gmock\gmock-cardinalities.h">
+      <Filter>include\gmock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\gtest.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\gtest_pred_impl.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\gtest_prod.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\gtest-death-test.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\gtest-matchers.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\gtest-message.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\gtest-param-test.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\gtest-printers.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\gtest-spi.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\gtest-test-part.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\gtest-typed-test.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\internal\custom\gtest-port.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\internal\custom\gtest-printers.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\internal\custom\gtest.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\internal\gtest-death-test-internal.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\internal\gtest-filepath.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\internal\gtest-internal.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\internal\gtest-param-util-generated.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\internal\gtest-param-util.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\internal\gtest-port-arch.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\internal\gtest-port.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\internal\gtest-string.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\GB2015\google_test_mock\include\gtest\internal\gtest-type-util.h">
+      <Filter>include\gtest</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
