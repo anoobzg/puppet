@@ -149,6 +149,7 @@
     <ClCompile Include="..\..\..\src\trimesh\projectionicpmapping.cpp" />
     <ClCompile Include="..\..\..\src\trimesh\remove.cc" />
     <ClCompile Include="..\..\..\src\trimesh\reorder_verts.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\space.cpp" />
     <ClCompile Include="..\..\..\src\trimesh\TriMesh_bounding.cc" />
     <ClCompile Include="..\..\..\src\trimesh\TriMesh_connectivity.cc" />
     <ClCompile Include="..\..\..\src\trimesh\TriMesh_curvature.cc" />
@@ -178,6 +179,7 @@
     <ClInclude Include="..\..\..\src\trimesh\projectionicpestimation.h" />
     <ClInclude Include="..\..\..\src\trimesh\projectionicpheader.h" />
     <ClInclude Include="..\..\..\src\trimesh\projectionicpmapping.h" />
+    <ClInclude Include="..\..\..\src\trimesh\space.h" />
     <ClInclude Include="..\..\..\src\trimesh\strutil.h" />
     <ClInclude Include="..\..\..\src\trimesh\timestamp.h" />
     <ClInclude Include="..\..\..\src\trimesh\tnt_matrix.h" />

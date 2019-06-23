@@ -75,6 +75,9 @@
     <ClCompile Include="..\..\..\src\trimesh\reorder_verts.cc">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\trimesh\space.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\trimesh\load_calib.h">
@@ -159,6 +162,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\trimesh\endianutil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\trimesh\space.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
