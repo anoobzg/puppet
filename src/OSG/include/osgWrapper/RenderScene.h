@@ -57,6 +57,8 @@ namespace OSGWrapper
 		osg::ref_ptr<osg::Uniform> m_projection_matrix_uniform;
 		osg::ref_ptr<osg::Uniform> m_viewport_matrix_uniform;
 
+		osg::ref_ptr<osg::Uniform> m_width_uniform;
+		osg::ref_ptr<osg::Uniform> m_height_uniform;
 	protected:
 		RenderView* m_render_view;
 	};

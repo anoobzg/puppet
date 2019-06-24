@@ -1,0 +1,851 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\global">
+      <UniqueIdentifier>{ae7fadbd-16ea-4159-8aa2-e6c94b0acd73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\tools">
+      <UniqueIdentifier>{301317a1-1ac1-493f-9ae1-2d27fb38292f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\thread">
+      <UniqueIdentifier>{77332c50-304c-45c5-99b9-7f328c066c16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\kernel">
+      <UniqueIdentifier>{c7e8621c-eb38-4d62-9245-bab5f5f03e85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\io">
+      <UniqueIdentifier>{f5dc52f5-ff50-4419-9724-4daa4647b3e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\serialization">
+      <UniqueIdentifier>{ca4b5b5a-f209-44fd-91c2-ff5e351257a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\codecs">
+      <UniqueIdentifier>{72a4c927-3775-4864-a8c3-6ad174178970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\plugin">
+      <UniqueIdentifier>{43a1dfb6-7363-4569-b565-8bde0cdf9520}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\itemmodels">
+      <UniqueIdentifier>{4555a860-95f6-4c2b-8e6f-18ec1fcf9acb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\minetypes">
+      <UniqueIdentifier>{a173a763-b711-4c83-92c8-f2885543b605}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\archdetect.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qmalloc.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qversiontagging.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qatomic.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qrefcount.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qmath.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qstring.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qdebug.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qdatastream.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qarraydata.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qmetaobject.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcollator.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qregexp.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qbytearray.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qexception.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qlist.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qtextstream.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qlocale.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qmetatype.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qhash.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qobject.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qendian.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qlogging.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qmap.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qoperatingsystemversion.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qiodevice.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qsize.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qstack.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qvariant.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qline.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qpoint.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qrect.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qdatetime.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qmutex.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qeventloop.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qreadwritelock.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qelapsedtimer.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qwaitcondition_win.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qdeadlinetimer.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qcoreevent.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qthread.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjson.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsonarray.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qthread_win.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qthreadpool.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsonvalue.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\quuid.cpp">
+      <Filter>源文件\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qcborvalue.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qdatetimeparser.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qcoreapplication.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qsettings.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfile.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qdiriterator.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfiledevice.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfileinfo.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qloggingcategory.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtimezone.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtimezoneprivate.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtimezoneprivate_win.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qdir.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfsfileengine.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfsfileengine_iterator.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfsfileengine_win.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemengine.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemengine_win.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystementry.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemiterator_win.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qtranslator.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qtextcodec.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qutfcodec.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qeuckrcodec.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qsjiscodec.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qtsciicodec.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qbig5codec.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qeucjpcodec.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qgb18030codec.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qisciicodec.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qjiscodec.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qjpunicode.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qlatincodec.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qsimplecodec.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qcoreglobaldata.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsonparser.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsonwriter.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsoncbor.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsondocument.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qjsonobject.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qurl.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qurlidna.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qurlquery.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qurlrecode.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qtldurl.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qresultstore.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qrunnable.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qsemaphore.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qtemporarydir.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qtemporaryfile.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qabstractfileengine.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qbuffer.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qringbuffer.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qscopedpointer.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qeasingcurve.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qfreelist.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qbitarray.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qbytearraylist.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qbytearraymatcher.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcommandlineparser.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcryptographichash.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcollator_win.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcommandlineoption.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qresource.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qresource_iterator.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qsavefile.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qabstracteventdispatcher.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qabstractnativeeventfilter.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qbasictimer.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qloggingregistry.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qlocale_win.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qmargins.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qmessageauthenticationcode.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qvsnprintf.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qversionnumber.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qfuturewatcher.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qfutureinterface.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qxmlstream.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qxmlutils.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qlibrary_win.cpp">
+      <Filter>源文件\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qlibrary.cpp">
+      <Filter>源文件\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qfactoryinterface.cpp">
+      <Filter>源文件\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qfactoryloader.cpp">
+      <Filter>源文件\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qpluginloader.cpp">
+      <Filter>源文件\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qsystemlibrary.cpp">
+      <Filter>源文件\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qcoreapplication_win.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qeventdispatcher_win.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qtimer.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qwineventnotifier.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qmetaobjectbuilder.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qobjectcleanuphandler.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qpointer.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsharedmemory.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsharedmemory_win.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsignalmapper.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsystemerror.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsystemsemaphore.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsystemsemaphore_win.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qfloat16_f16c.c">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qfloat16.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qglobal.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qhooks.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qlibraryinfo.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qnumeric.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qoperatingsystemversion_win.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qrandom.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\codecs\qwindowscodec.cpp">
+      <Filter>源文件\codecs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher_win.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qdataurl.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfileselector.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qlockfile_win.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qregularexpression.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qthreadstorage.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qsortfilterproxymodel.cpp">
+      <Filter>源文件\itemmodels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qstringlistmodel.cpp">
+      <Filter>源文件\itemmodels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qabstractitemmodel.cpp">
+      <Filter>源文件\itemmodels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qabstractproxymodel.cpp">
+      <Filter>源文件\itemmodels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qidentityproxymodel.cpp">
+      <Filter>源文件\itemmodels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qitemselectionmodel.cpp">
+      <Filter>源文件\itemmodels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher_polling.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qsharedpointer.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qsimd.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qsimd_x86.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qscopedvaluerollback.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qshareddata.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qsettings_win.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimedatabase.cpp">
+      <Filter>源文件\minetypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimeglobpattern.cpp">
+      <Filter>源文件\minetypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimemagicrule.cpp">
+      <Filter>源文件\minetypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimemagicrulematcher.cpp">
+      <Filter>源文件\minetypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimeprovider.cpp">
+      <Filter>源文件\minetypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimetype.cpp">
+      <Filter>源文件\minetypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimetypeparser.cpp">
+      <Filter>源文件\minetypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qlocale_tools.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qconfig.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qcborstream.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qprocess.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qprocess_win.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qnoncontiguousbytedevice.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qstorageinfo_win.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qstandardpaths.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qstandardpaths_win.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qstorageinfo.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qwindowspipereader.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qwindowspipewriter.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qmachparser.cpp">
+      <Filter>源文件\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qelfparser_p.cpp">
+      <Filter>源文件\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qcbordiagnostic.cpp">
+      <Filter>源文件\serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qstringlist.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qmimedata.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qmutexpool.cpp">
+      <Filter>源文件\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsocketnotifier.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\global\qfloat16tables.cpp">
+      <Filter>源文件\global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcontiguouscache.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qstringview.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qipaddress.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\io\qlockfile.cpp">
+      <Filter>源文件\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qelapsedtimer_win.cpp">
+      <Filter>源文件\kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtextboundaryfinder.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qunicodetools.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qharfbuzz.cpp">
+      <Filter>源文件\tools</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qexception.h">
+      <Filter>源文件\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qwineventnotifier_p.h">
+      <Filter>源文件\kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qtextboundaryfinder.h">
+      <Filter>源文件\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qunicodetools_p.h">
+      <Filter>源文件\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qharfbuzz_p.h">
+      <Filter>源文件\tools</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qtextstream_p.h">
+      <Filter>源文件\serialization</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qlocale.h">
+      <Filter>源文件\tools</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\global\qnamespace.h">
+      <Filter>源文件\global</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qobject.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qiodevice.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qeventloop.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qcoreevent.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qthread.h">
+      <Filter>源文件\thread</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qthreadpool.h">
+      <Filter>源文件\thread</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qcborvalue.h">
+      <Filter>源文件\serialization</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qcoreapplication.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qsettings.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfile.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfiledevice.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher_p.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qtranslator.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qtemporaryfile.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qbuffer.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qeasingcurve.h">
+      <Filter>源文件\tools</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\tools\qcryptographichash.h">
+      <Filter>源文件\tools</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qsavefile.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qabstracteventdispatcher.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\thread\qfuturewatcher.h">
+      <Filter>源文件\thread</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qlibrary.h">
+      <Filter>源文件\plugin</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qfactoryloader_p.h">
+      <Filter>源文件\plugin</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\plugin\qpluginloader.h">
+      <Filter>源文件\plugin</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qobjectcleanuphandler.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsharedmemory.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsignalmapper.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qtimer.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfileselector.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qabstractitemmodel.h">
+      <Filter>源文件\itemmodels</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qabstractproxymodel.h">
+      <Filter>源文件\itemmodels</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qidentityproxymodel.h">
+      <Filter>源文件\itemmodels</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qitemselectionmodel.h">
+      <Filter>源文件\itemmodels</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qsortfilterproxymodel.h">
+      <Filter>源文件\itemmodels</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\itemmodels\qstringlistmodel.h">
+      <Filter>源文件\itemmodels</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher_polling_p.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qcborcommon.h">
+      <Filter>源文件\serialization</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\serialization\qcborstream.h">
+      <Filter>源文件\serialization</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qnoncontiguousbytedevice_p.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qprocess.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qstandardpaths.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qmimedata.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qeventdispatcher_win_p.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qsocketnotifier.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qwindowspipereader_p.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qwindowspipewriter_p.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\kernel\qwineventnotifier.h">
+      <Filter>源文件\kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\mimetypes\qmimetype.h">
+      <Filter>源文件\minetypes</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\corelib\io\qfilesystemwatcher_win_p.h">
+      <Filter>源文件\io</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

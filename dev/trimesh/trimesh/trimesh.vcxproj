@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{eff4d0b0-9525-4735-bea0-a8784a6ac5e3}</ProjectGuid>
+    <RootNamespace>trimesh</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\obj\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4244;4267;4018;</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4244;4267;4018;</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\trimesh\compute_boundingbox.cpp" />
+    <ClCompile Include="..\..\..\src\trimesh\get_boundingbox_corner.cpp" />
+    <ClCompile Include="..\..\..\src\trimesh\ICP.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\KDtree.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\load_calib.cpp" />
+    <ClCompile Include="..\..\..\src\trimesh\projectionicp.cpp" />
+    <ClCompile Include="..\..\..\src\trimesh\projectionicpestimation.cpp" />
+    <ClCompile Include="..\..\..\src\trimesh\projectionicpmapping.cpp" />
+    <ClCompile Include="..\..\..\src\trimesh\remove.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\reorder_verts.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\space.cpp" />
+    <ClCompile Include="..\..\..\src\trimesh\TriMesh_bounding.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\TriMesh_connectivity.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\TriMesh_curvature.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\TriMesh_grid.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\TriMesh_io.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\TriMesh_normals.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\TriMesh_pointareas.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\TriMesh_stats.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\TriMesh_tstrips.cc" />
+    <ClCompile Include="..\..\..\src\trimesh\vector_util.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\trimesh\Box.h" />
+    <ClInclude Include="..\..\..\src\trimesh\bsphere.h" />
+    <ClInclude Include="..\..\..\src\trimesh\Color.h" />
+    <ClInclude Include="..\..\..\src\trimesh\colorUtils.h" />
+    <ClInclude Include="..\..\..\src\trimesh\compute_boundingbox.h" />
+    <ClInclude Include="..\..\..\src\trimesh\endianutil.h" />
+    <ClInclude Include="..\..\..\src\trimesh\get_boundingbox_corner.h" />
+    <ClInclude Include="..\..\..\src\trimesh\ICP.h" />
+    <ClInclude Include="..\..\..\src\trimesh\KDtree.h" />
+    <ClInclude Include="..\..\..\src\trimesh\lineqn.h" />
+    <ClInclude Include="..\..\..\src\trimesh\load_calib.h" />
+    <ClInclude Include="..\..\..\src\trimesh\mathcompat.h" />
+    <ClInclude Include="..\..\..\src\trimesh\mathutil.h" />
+    <ClInclude Include="..\..\..\src\trimesh\projectionicp.h" />
+    <ClInclude Include="..\..\..\src\trimesh\projectionicpestimation.h" />
+    <ClInclude Include="..\..\..\src\trimesh\projectionicpheader.h" />
+    <ClInclude Include="..\..\..\src\trimesh\projectionicpmapping.h" />
+    <ClInclude Include="..\..\..\src\trimesh\space.h" />
+    <ClInclude Include="..\..\..\src\trimesh\strutil.h" />
+    <ClInclude Include="..\..\..\src\trimesh\timestamp.h" />
+    <ClInclude Include="..\..\..\src\trimesh\tnt_matrix.h" />
+    <ClInclude Include="..\..\..\src\trimesh\tnt_subscript.h" />
+    <ClInclude Include="..\..\..\src\trimesh\tnt_vector.h" />
+    <ClInclude Include="..\..\..\src\trimesh\TriMesh.h" />
+    <ClInclude Include="..\..\..\src\trimesh\TriMesh_algo.h" />
+    <ClInclude Include="..\..\..\src\trimesh\Vec.h" />
+    <ClInclude Include="..\..\..\src\trimesh\vector_util.h" />
+    <ClInclude Include="..\..\..\src\trimesh\Xform.h" />
+    <ClInclude Include="..\..\..\src\trimesh\xform_io.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-buffer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-common.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-unicode.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-font.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-face.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-blob.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-shape-plan.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-shape.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-shaper.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-use-table.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-fallback.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-normalize.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-arabic.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-default.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-hangul.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-hebrew.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-indic.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-indic-table.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-myanmar.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-thai.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-tibetan.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-use.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-font.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-layout.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-map.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-math.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-buffer-serialize.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-set.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-warning.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-tag.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\harfbuzz-ng\src\hb-ot-var.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-shaper-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-string-array.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-unicode-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-utf-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-atomic-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-buffer-deserialize-json.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-buffer-deserialize-text.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-buffer-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-cache-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-debug.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-dsalgs.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-face-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-font-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-mutex-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-object-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-open-file-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-open-type-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-cbdt-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-cmap-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-glyf-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-head-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-hhea-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-hmtx-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-kern-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-layout-common-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-layout-gdef-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-layout-gpos-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-layout-gsubgpos-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-layout-gsub-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-layout-jstf-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-layout-math-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-layout-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-map-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-math-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-maxp-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-name-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-os2-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-post-macroman.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-post-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-arabic-fallback.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-arabic-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-arabic-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-arabic-win1256.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-indic-machine.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-indic-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-myanmar-machine.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-use-machine.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-complex-use-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-fallback-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-normalize-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-var-avar-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-var-fvar-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-var-hvar-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-var-mvar-table.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-set-digest-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-set-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-shape-plan-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-shaper-impl-private.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-shaper-list.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-version.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-blob.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-coretext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-deprecated.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-face.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-font.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-font.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-layout.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-math.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-shape.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-tag.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-ot-var.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-set.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-shape.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-shape-plan.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\harfbuzz-ng\src\hb-unicode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

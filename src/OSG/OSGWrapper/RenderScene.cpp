@@ -12,6 +12,10 @@ namespace OSGWrapper
 		getOrCreateStateSet()->addUniform(m_projection_matrix_uniform, state_on);
 		getOrCreateStateSet()->addUniform(m_viewport_matrix_uniform, state_on);
 
+		m_width_uniform = new osg::Uniform("viewport_width", (float)m_width);
+		m_height_uniform = new osg::Uniform("viewport_height", (float)m_height);
+		getOrCreateStateSet()->addUniform(m_width_uniform, state_on);
+		getOrCreateStateSet()->addUniform(m_height_uniform, state_on);
 		SetViewMatrix(osg::Matrixf::identity());
 		UpdateProjectionMatrix();
 		UpdateViewportMatrix();
@@ -52,6 +56,9 @@ namespace OSGWrapper
 		m_width = width;
 		m_height = height;
 		UpdateProjectionMatrix();
+
+		m_width_uniform->set(float(m_width));
+		m_height_uniform->set(float(m_height));
 	}
 
 	float RenderScene::GetFovy()
