@@ -165,4 +165,9 @@
       <Filter>simulation</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\src\Simulation\trimesh_icp_simulation\run.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

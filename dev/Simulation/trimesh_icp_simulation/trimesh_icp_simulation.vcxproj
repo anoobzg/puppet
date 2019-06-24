@@ -197,6 +197,9 @@
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\task.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\trimeshgeometrycreator.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\src\Simulation\trimesh_icp_simulation\run.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

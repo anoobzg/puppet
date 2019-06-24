@@ -59,6 +59,9 @@ void SlamVO::ProcessFrame(trimesh::TriMesh* mesh)
 	trimesh::timestamp t0 = trimesh::now();
 	int type = 0;
 
+	static int lost = false;
+	if (lost) return;
+
 	RenderData* data = new RenderData();
 	if (m_last_mesh)
 	{
@@ -67,7 +70,10 @@ void SlamVO::ProcessFrame(trimesh::TriMesh* mesh)
 		m_icp->SetTarget(m_last_mesh.get());
 		float err_p = m_icp->Do(xf);
 
-		if (err_p < 0.0f) m_xf = trimesh::xform::identity();
+		if (err_p < 0.0f)
+		{
+			m_xf = trimesh::xform::identity();
+		}
 		else m_xf = m_xf * xf;
 	}else
 	{
