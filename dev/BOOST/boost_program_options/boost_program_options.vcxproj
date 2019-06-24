@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{34fac50e-f83b-485b-85d5-a676c89ccae5}</ProjectGuid>
-    <RootNamespace>trimesh_icp_simulation</RootNamespace>
+    <ProjectGuid>{d1a319ec-a691-49fa-8205-9d4cc9cf99d5}</ProjectGuid>
+    <RootNamespace>boost_program_options</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -39,13 +39,13 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -64,17 +64,9 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\OpenSceneGraph\OSG.props" />
-    <Import Project="..\..\trimesh\trimesh.props" />
-    <Import Project="..\..\GOOGLE_BASE\google_base.props" />
-    <Import Project="..\..\BOOST\BOOST.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\OpenSceneGraph\OSG.props" />
-    <Import Project="..\..\trimesh\trimesh.props" />
-    <Import Project="..\..\GOOGLE_BASE\google_base.props" />
-    <Import Project="..\..\BOOST\BOOST.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -102,7 +94,8 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\BOOST\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;BOOST_ALL_DYN_LINK;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,7 +126,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\BOOST\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;BOOST_ALL_DYN_LINK;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,56 +140,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\boundingbox.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\cmdicp.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\csvwriter.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\data.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpnode.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpscene.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\main.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\patchnode.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\reader.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\render.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\renderthread.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\resettask.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\scene.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\screenboundingbox.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\screengraph.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\screenlines.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\simulationscene.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\simulation_entry.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\slammer.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\slamparameters.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\slamvo.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\stepicptask.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\task.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\trimeshgeometrycreator.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\boundingbox.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\cmdicp.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\csvwriter.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\data.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpnode.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpscene.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\interface.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\patchnode.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\reader.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\render.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\renderthread.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\resettask.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\scene.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\screenboundingbox.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\screengraph.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\screenlines.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\simulationscene.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\simulation_entry.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\slammer.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\slamparameters.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\slamvo.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\stepicptask.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\task.h" />
-    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\trimeshgeometrycreator.h" />
+    <ClCompile Include="..\..\..\src\BOOST\libs\program_options\cmdline.cpp" />
+    <ClCompile Include="..\..\..\src\BOOST\libs\program_options\config_file.cpp" />
+    <ClCompile Include="..\..\..\src\BOOST\libs\program_options\convert.cpp" />
+    <ClCompile Include="..\..\..\src\BOOST\libs\program_options\options_description.cpp" />
+    <ClCompile Include="..\..\..\src\BOOST\libs\program_options\parsers.cpp" />
+    <ClCompile Include="..\..\..\src\BOOST\libs\program_options\positional_options.cpp" />
+    <ClCompile Include="..\..\..\src\BOOST\libs\program_options\split.cpp" />
+    <ClCompile Include="..\..\..\src\BOOST\libs\program_options\utf8_codecvt_facet.cpp" />
+    <ClCompile Include="..\..\..\src\BOOST\libs\program_options\value_semantic.cpp" />
+    <ClCompile Include="..\..\..\src\BOOST\libs\program_options\variables_map.cpp" />
+    <ClCompile Include="..\..\..\src\BOOST\libs\program_options\winmain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

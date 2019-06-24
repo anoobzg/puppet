@@ -72,6 +72,24 @@
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\slammer.cpp">
       <Filter>simulation</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\patchnode.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\reader.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\render.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\slamparameters.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\slamvo.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\trimeshgeometrycreator.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\boundingbox.h">
@@ -126,6 +144,24 @@
       <Filter>simulation</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\interface.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\patchnode.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\reader.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\render.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\slamparameters.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\slamvo.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\trimeshgeometrycreator.h">
       <Filter>simulation</Filter>
     </ClInclude>
   </ItemGroup>
