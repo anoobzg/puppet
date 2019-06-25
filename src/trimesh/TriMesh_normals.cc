@@ -132,7 +132,6 @@ static void normals_from_points(vector<point> &vertices, vector<vec> &normals)
 		kd.find_k_closest_to_pt(knn, k, vertices[i]);
 		int actual_k = knn.size();
 		if (actual_k < 3) {
-			TriMesh::dprintf("Warning: not enough points for vertex %d\n", i);
 			normals[i] = ref;
 			continue;
 		}
@@ -163,26 +162,16 @@ void TriMesh::need_normals(bool simple_area_weighted /* = false */)
 	if (!nv || int(normals.size()) == nv)
 		return;
 
-	dprintf("Computing normals... ");
 	normals.clear();
 	normals.resize(nv);
 
 	// TODO: direct handling of grids
-	if (!tstrips.empty()) {
-		if (simple_area_weighted)
-			normals_from_tstrips_area(tstrips, vertices, normals);
-		else
-			normals_from_tstrips_Max(tstrips, vertices, normals);
-	} else {
-		normals_from_points(vertices, normals);
-	}
+	normals_from_points(vertices, normals);
 
 	// Make them all unit-length
 #pragma omp parallel for
 	for (int i = 0; i < nv; i++)
 		normalize(normals[i]);
-
-	dprintf("Done.\n");
 }
 
 } // namespace trimesh

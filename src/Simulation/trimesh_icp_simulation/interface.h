@@ -17,7 +17,6 @@ public:
 struct LocateData
 {
 	bool lost;
-	trimesh::xform xf;
 	int locate_type;
 	int frame_count;
 };
@@ -25,7 +24,6 @@ struct LocateData
 struct RenderData
 {
 	TriMeshPtr mesh;
-	trimesh::xform xf;
 	bool lost;
 	int step;
 };

@@ -1,9 +1,13 @@
 #include "voimpl.h"
 #include "load_calib.h"
+#include <ppl.h>
 
 VOImpl::VOImpl()
 {
-	
+	m_fx = 0.0f;
+	m_fy = 0.0f;
+	m_cx = 0.0f;
+	m_cy = 0.0f;
 }
 
 VOImpl::~VOImpl()
@@ -13,43 +17,87 @@ VOImpl::~VOImpl()
 
 void VOImpl::Setup(const ICPParamters& parameters)
 {
-	float fx = 0.0f;
-	float fy = 0.0f;
-	float cx = 0.0f;
-	float cy = 0.0f;
+
 	trimesh::CameraData camera_data;
 	if (!load_camera_data_from_file(parameters.calib_file, camera_data))
 	{
 		std::cout << "Cabli Data Error." << std::endl;
 	}
 
-	fx = camera_data.m_fx;
-	fy = camera_data.m_fy;
-	cx = camera_data.m_cx;
-	cy = camera_data.m_cy;
+	m_fx = camera_data.m_fx;
+	m_fy = camera_data.m_fy;
+	m_cx = camera_data.m_cx;
+	m_cy = camera_data.m_cy;
 
-	m_icp.reset(new trimesh::ProjectionICP(fx, fy, cx, cy));
+	m_icp.reset(new trimesh::ProjectionICP(m_fx, m_fy, m_cx, m_cy));
 }
 
-bool VOImpl::Frame2Frame(TriMeshPtr& mesh, trimesh::xform& xf)
+bool VOImpl::Frame2Frame(TriMeshPtr& mesh)
 {
+	TriMeshPtr dest_mesh;
+	trimesh::xform xf;
+
 	m_icp->SetSource(mesh.get());
 	m_icp->SetTarget(m_last_mesh.get());
 	float err_p = m_icp->Do(xf);
 
-	if (err_p >= 0.1f || err_p < 0.0f)
+	if (err_p <= 0.1f && err_p >= 0.0f)
 	{
-		m_xf = trimesh::xform::identity();
-		xf = m_xf;
+		dest_mesh = m_last_mesh;
+	}
+	else
+	{
+		size_t size = m_key_frames.size();
+		if (size > 0)
+		{
+			std::vector<float> errors(size, -1.0f);
+			std::vector<trimesh::xform> matrixes(size);
+			Concurrency::parallel_for<size_t>(0, size, [this, &mesh, &matrixes, &errors](size_t i) {
+				trimesh::ProjectionICP icp(m_fx, m_fy, m_cx, m_cy);
+				icp.SetSource(mesh.get());
+				icp.SetTarget(m_key_frames.at(i).get());
+				errors.at(i) = icp.Do(matrixes.at(i));
+				});
+
+			float min_error = FLT_MAX;
+			int index = -1;
+			for (size_t i = 0; i < size; ++i)
+			{
+				float e = errors.at(i);
+				if (e <= 0.1f && e >= 0.0f && e < min_error)
+				{
+					min_error = e;
+					index = (int)i;
+				}
+			}
+
+			if (index >= 0 && index < (int)size)
+			{
+				dest_mesh = m_key_frames.at(index);
+				xf = matrixes.at(index);
+			}
+		}
+	}
+
+	if (dest_mesh)
+	{
+		mesh->global = xf * dest_mesh->global;
+		std::cout << mesh->frame << "  --->  " <<dest_mesh->frame<< std::endl;
+		return true;
+	}
+	else
+	{
+		std::cout << mesh->frame<<"  --->  -1" << std::endl;
 		return false;
 	}
-	
-	m_xf = m_xf * xf;
-	xf = m_xf;
-	return true;
 }
 
 void VOImpl::SetLastMesh(TriMeshPtr& mesh)
 {
 	m_last_mesh = mesh;
+	m_last_mesh->clear_grid();
+
+	static int count = 0;
+	if ((count + 1) % 3 == 0) m_key_frames.push_back(mesh);
+	++count;
 }

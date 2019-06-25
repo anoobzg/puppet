@@ -19,7 +19,7 @@ public:
 protected:
 	void ProcessFrame(trimesh::TriMesh* mesh);
 	void LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data);
-	void FusionFrame(TriMeshPtr& mesh, const trimesh::xform& xf);
+	void FusionFrame(TriMeshPtr& mesh);
 private:
 	VOTracer* m_tracer;
 	ICPParamters m_parameters;

@@ -46,6 +46,8 @@ void SlamVO::OnFrame(trimesh::TriMesh* mesh)
 
 void SlamVO::ProcessFrame(trimesh::TriMesh* mesh)
 {
+	m_state.IncFrame();
+	mesh->frame = m_state.Frame();
 	if (m_writer) m_writer->TickStart();
 
 	LocateData locate_data;
@@ -57,7 +59,7 @@ void SlamVO::ProcessFrame(trimesh::TriMesh* mesh)
 	LocateOneFrame(mesh_ptr, locate_data);
 
 	if (!locate_data.lost)
-		FusionFrame(mesh_ptr, locate_data.xf);
+		FusionFrame(mesh_ptr);
 
 	if (m_writer)
 	{
@@ -73,21 +75,21 @@ void SlamVO::LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
 	if (m_state.FirstFrame())
 	{//first frame
 		m_state.SetFirstFrame(false);
+		std::cout << "0  --->  0" << std::endl;
 	}
 	else
 	{
-		locate_data.lost = !m_vo_impl.Frame2Frame(mesh, locate_data.xf);
+		locate_data.lost = !m_vo_impl.Frame2Frame(mesh);
 	}
 }
 
-void SlamVO::FusionFrame(TriMeshPtr& mesh, const trimesh::xform& xf)
+void SlamVO::FusionFrame(TriMeshPtr& mesh)
 {
 	m_vo_impl.SetLastMesh(mesh);
 	if (m_tracer)
 	{
 		RenderData* render_data = new RenderData();
 		render_data->mesh = mesh;
-		render_data->xf = xf;
 		m_tracer->OnFrame(render_data);
 	}
 }

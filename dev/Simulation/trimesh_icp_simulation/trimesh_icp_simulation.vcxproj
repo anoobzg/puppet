@@ -170,6 +170,8 @@
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\stepicptask.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\task.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\trimeshgeometrycreator.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\voimpl.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\vostate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\boundingbox.h" />
@@ -196,6 +198,8 @@
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\stepicptask.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\task.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\trimeshgeometrycreator.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\voimpl.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\vostate.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\..\src\Simulation\trimesh_icp_simulation\run.txt" />

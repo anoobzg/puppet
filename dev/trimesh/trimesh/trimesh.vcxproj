@@ -147,18 +147,12 @@
     <ClCompile Include="..\..\..\src\trimesh\projectionicp.cpp" />
     <ClCompile Include="..\..\..\src\trimesh\projectionicpestimation.cpp" />
     <ClCompile Include="..\..\..\src\trimesh\projectionicpmapping.cpp" />
-    <ClCompile Include="..\..\..\src\trimesh\remove.cc" />
-    <ClCompile Include="..\..\..\src\trimesh\reorder_verts.cc" />
     <ClCompile Include="..\..\..\src\trimesh\space.cpp" />
     <ClCompile Include="..\..\..\src\trimesh\TriMesh_bounding.cc" />
-    <ClCompile Include="..\..\..\src\trimesh\TriMesh_connectivity.cc" />
     <ClCompile Include="..\..\..\src\trimesh\TriMesh_curvature.cc" />
-    <ClCompile Include="..\..\..\src\trimesh\TriMesh_grid.cc" />
     <ClCompile Include="..\..\..\src\trimesh\TriMesh_io.cc" />
     <ClCompile Include="..\..\..\src\trimesh\TriMesh_normals.cc" />
-    <ClCompile Include="..\..\..\src\trimesh\TriMesh_pointareas.cc" />
     <ClCompile Include="..\..\..\src\trimesh\TriMesh_stats.cc" />
-    <ClCompile Include="..\..\..\src\trimesh\TriMesh_tstrips.cc" />
     <ClCompile Include="..\..\..\src\trimesh\vector_util.cpp" />
   </ItemGroup>
   <ItemGroup>

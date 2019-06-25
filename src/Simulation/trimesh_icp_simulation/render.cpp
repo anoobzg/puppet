@@ -44,7 +44,7 @@ void Render::ShowOneFrame(RenderData* data)
 {
 	osg::Geometry* geometry = Create(data->mesh.get());
 	osg::Matrixf matrix = osg::Matrixf::identity();
-	Convert(matrix, data->xf);
+	Convert(matrix, data->mesh->global);
 	m_scene->ShowOneFrame(geometry, matrix);
 	delete data;
 }

@@ -45,13 +45,7 @@
     <ClCompile Include="..\..\..\src\trimesh\TriMesh_bounding.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\trimesh\TriMesh_connectivity.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\trimesh\TriMesh_curvature.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\src\trimesh\TriMesh_grid.cc">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\trimesh\TriMesh_io.cc">
@@ -60,19 +54,7 @@
     <ClCompile Include="..\..\..\src\trimesh\TriMesh_normals.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\trimesh\TriMesh_pointareas.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\trimesh\TriMesh_stats.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\src\trimesh\TriMesh_tstrips.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\src\trimesh\remove.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\src\trimesh\reorder_verts.cc">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\trimesh\space.cpp">

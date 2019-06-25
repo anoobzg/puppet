@@ -15,59 +15,10 @@ Various mesh-munging algorithms using TriMeshes
 
 namespace trimesh {
 
-// Optimally re-triangulate a mesh by doing edge flips
-extern void edgeflip(TriMesh *mesh);
-
-// Flip the order of vertices in each face.  Turns the mesh inside out.
-extern void faceflip(TriMesh *mesh);
-
-// One iteration of umbrella-operator smoothing
-extern void umbrella(TriMesh *mesh, float stepsize, bool tangent = false);
-
-// Taubin lambda/mu mesh smoothing
-extern void lmsmooth(TriMesh *mesh, int niters);
-
-// Umbrella operator on the normals
-extern void numbrella(TriMesh *mesh, float stepsize);
-
-// Remove the indicated vertices from the TriMesh.
-extern void remove_vertices(TriMesh *mesh, const ::std::vector<bool> &toremove);
-
-// Remove vertices that aren't referenced by any face
-extern void remove_unused_vertices(TriMesh *mesh);
-
-// Remove faces as indicated by toremove.  Should probably be
-// followed by a call to remove_unused_vertices()
-extern void remove_faces(TriMesh *mesh, const ::std::vector<bool> &toremove);
-
-// Remove long, skinny faces.  Should probably be followed by a
-// call to remove_unused_vertices()
-extern void remove_sliver_faces(TriMesh *mesh);
-
 // Perform one iteration of subdivision on a mesh.
 enum SubdivScheme { SUBDIV_PLANAR,
 	SUBDIV_LOOP, SUBDIV_LOOP_ORIG, SUBDIV_LOOP_NEW,
 	SUBDIV_BUTTERFLY, SUBDIV_BUTTERFLY_MODIFIED };
-extern void subdiv(TriMesh *mesh, SubdivScheme scheme = SUBDIV_LOOP);
-
-// Smooth the mesh geometry
-extern void smooth_mesh(TriMesh *themesh, float sigma);
-
-// Bilateral smoothing
-extern void bilateral_smooth_mesh(TriMesh *themesh, float sigma1, float sigma2);
-
-// Diffuse an arbitrary per-vertex vector (or scalar) field
-template <class T>
-extern void diffuse_vector(TriMesh *themesh, ::std::vector<T> &field, float sigma);
-
-// Diffuse the normals across the mesh
-extern void diffuse_normals(TriMesh *themesh, float sigma);
-
-// Diffuse the curvatures across the mesh
-extern void diffuse_curv(TriMesh *themesh, float sigma);
-
-// Diffuse the curvature derivatives across the mesh
-extern void diffuse_dcurv(TriMesh *themesh, float sigma);
 
 // Given a curvature tensor, find principal directions and curvatures
 extern void diagonalize_curv(const vec &old_u, const vec &old_v,

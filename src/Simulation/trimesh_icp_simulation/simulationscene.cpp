@@ -1,5 +1,4 @@
 #include "simulationscene.h"
-#include "patchnode.h"
 #include <osgWrapper\MatrixAnimation.h>
 
 SimulationScene::SimulationScene()
@@ -25,15 +24,18 @@ void SimulationScene::ShowOneFrame(osg::Geometry* geometry, const osg::Matrixf& 
 {
 	float time = 0.0f;
 	if (m_render_view) time = (float)m_render_view->getFrameStamp()->getSimulationTime();
-	PatchNode* node = new PatchNode();
-	node->AddChild(geometry);
-	node->UpdateMatrix(matrix);
-	node->SetTime(time);
 
+	if (m_current_node) m_current_node->SetCurrent(false);
+
+	m_current_node = new PatchNode();
+	m_current_node->AddChild(geometry);
+	m_current_node->UpdateMatrix(matrix);
+	m_current_node->SetTime(time);
+	m_current_node->SetCurrent(true);
 	//m_manipulable_node->SetMatrix(osg::Matrixf::inverse(matrix));
 
 	render_lock.Acquire();
-	m_render_node->AddChild(node);
+	m_render_node->AddChild(m_current_node);
 
 	if(m_render_node->getNumChildren() == 1)
 		UpdateCamera();

@@ -10,6 +10,7 @@ public:
 	void SetColor(const osg::Vec4f& color);
 	void UpdateMatrix(const osg::Matrixf& matrix);
 	void SetTime(float time);
+	void SetCurrent(bool current);
 protected:
 	osg::ref_ptr<osg::Uniform> m_color;
 	osg::ref_ptr<osg::Uniform> m_matrix_uniform;

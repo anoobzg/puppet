@@ -614,7 +614,6 @@ namespace trimesh {
 			vertices_g2[i] = xf2*cloud2->vertices[i];
 			normals_g2[i] = nxf2*cloud2->normals[i];
 			confidence_g2[i] = cloud2->confidences[i];
-			best_frame_idx_g2[i] = cloud2->best_frame_idx[i];
 		}
 
 #pragma omp parallel for num_threads(num_mp/2)
@@ -636,7 +635,6 @@ namespace trimesh {
 					if (cloud1->confidences[temp_con1[k][i]] > confidence_max)
 					{
 						confidence_max = cloud1->confidences[temp_con1[k][i]];
-						frame_idx_final = cloud1->best_frame_idx[temp_con1[k][i]];
 					}
 				}
 				vertices_g2[k] = (vertices_g2[k] / (/*temp_idx[k]*/temp_num + 1));
@@ -662,7 +660,6 @@ namespace trimesh {
 				vertices_1[k] = cloud1->vertices[i];
 				normals_1[k] = cloud1->normals[i];
 				confidence_1[k] = cloud1->confidences[i];
-				best_frame_idx_1[k] = cloud1->best_frame_idx[i];
 				k++;
 			}
 		}
@@ -670,12 +667,10 @@ namespace trimesh {
 		cloud1->vertices.clear();
 		cloud1->normals.clear();
 		cloud1->confidences.clear();
-		cloud1->best_frame_idx.clear();
 
 		vertices_1.swap(cloud1->vertices);
 		normals_1.swap(cloud1->normals);
 		confidence_1.swap(cloud1->confidences);
-		best_frame_idx_1.swap(cloud1->best_frame_idx);
 
 		for (int i = 0; i < nv2; i++)
 		{
@@ -684,10 +679,7 @@ namespace trimesh {
 			cloud1->vertices.push_back(vertices_g2[i]);
 			cloud1->normals.push_back(normals_g2[i]);
 			cloud1->confidences.push_back(confidence_g2[i]);
-			cloud1->best_frame_idx.push_back(best_frame_idx_g2[i]);
 		}
-
-		cout << "fusion time:" << double(clock() - t1) * 1000 / CLOCKS_PER_SEC << "ms" << endl;
 	}
 
 	void point_align_fusion_last(TriMesh *cloud1, TriMesh *cloud2, TriMesh *cloud_last,
@@ -1331,19 +1323,12 @@ namespace trimesh {
 		const size_t nv1 = cloud1->vertices.size(), nv2 = cloud2->vertices.size();
 		// Compute pairs
 		timestamp t1 = now();
-		if (verbose > 1) {
-			dprintf("Matching with maxdist = %g\n", maxdist);
-		}
 
 		vector<PtPair> pairs;
 		select_and_match(cloud1, cloud2, pts, fx, fy, cx, cy, xf1, xf2, pairs, e_left);
 		//cout << pairs[1].p1 << "      " << pairs[1].n1 << "      " << pairs[1].p2 << "      " << pairs[1].n2 << "      " << endl;
 		timestamp t2 = now();
 		int npairs = (int)pairs.size();
-		if (verbose > 1) {
-			cout << "Generated " << (unsigned long)npairs << "pairs in" <<
-				(t2 - t1) * 1000.0f << "msec." << endl;
-		}
 		if (npairs == 0)
 		{
 			return -1.0f;
@@ -1376,9 +1361,6 @@ namespace trimesh {
 		}*/
 
 		// Reject
-		if (verbose > 1)
-			dprintf("Rejecting pairs with dist > %g or angle > %.1f\n",
-			dist_thresh, degrees(acos(normdot_thresh)));
 		float err = 0.0f;
 		size_t next = 0;
 		
@@ -1397,17 +1379,10 @@ namespace trimesh {
 		npairs = pairs.size();
 		
 		if (npairs < MIN_PAIRS) {
-			if (verbose)
-				dprintf("Too few point pairs.\n");
 			return -1.0f;
 		}
 
 		err = sqrt(err / npairs);
-		
-		const char *dist_type = (iter_type == ICP_POINT_TO_POINT) ?
-			"point-to-point" : "point-to-plane";
-		if (verbose > 1)
-			dprintf("RMS %s error before alignment = %g\n", dist_type, err);
 
 		// Compute centroids and scale
 		point centroid1, centroid2;
@@ -1456,12 +1431,6 @@ namespace trimesh {
 		err = sqrt(mean(distances2));
 
 		timestamp t4 = now();
-		if (verbose > 1) {
-			cout << "Computed xform in " <<
-				(t4 - t3) * 1000.0f << "msec." << endl;
-			dprintf("RMS %s error after alignment = %g\n\n", dist_type, err);
-
-		}
 
 		return err;
 	}
@@ -1618,18 +1587,7 @@ namespace trimesh {
 				return err;
 			}
 		}
-		if (verbose == 1) {
-			dprintf("ICP error = %g\n", err);
-			cout << "Time for ICP: " << (now() - t_start) * 1000.0f <<
-				"msec." << endl;
-		}
-		else if (verbose > 1) {
-			// err already printed out in ICP_iter
-			cout << "Time for ICP: " << (now() - t_start) * 1000.0f <<
-				"msec." << endl;
-		}
-		//dprintf("Time for ICP: %.3f msec.\n\n",
-		//	(now() - t_start) * 1000.0f);
+
 		return err;
 	}
 

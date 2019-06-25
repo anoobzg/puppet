@@ -4,6 +4,7 @@
 #include <osgWrapper\AttributeUtilNode.h>
 #include <osgWrapper\Manipulator.h>
 #include <osgWrapper\AnimationScheduler.h>
+#include "patchnode.h"
 
 class SimulationScene : public RenderThreadBaseScene
 {
@@ -20,4 +21,6 @@ protected:
 	osg::ref_ptr<OSGWrapper::Manipulator> m_manipulator;
 	osg::ref_ptr<OSGWrapper::AttributeUtilNode> m_render_node;
 	osg::ref_ptr<OSGWrapper::AnimationScheduler> m_animation_scheduler;
+
+	osg::ref_ptr<PatchNode> m_current_node;
 };

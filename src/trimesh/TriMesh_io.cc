@@ -45,15 +45,12 @@ static bool slurp_verts_bin(FILE *f, TriMesh *mesh, bool need_swap,
 static bool read_verts_asc(FILE *f, TriMesh *mesh,
 	int nverts, int vert_len, int vert_pos, int vert_norm,
 	int vert_color, bool float_color, int vert_conf);
-static bool read_strips_bin(FILE *f, TriMesh *mesh, bool need_swap);
-static bool read_strips_asc(FILE *f, TriMesh *mesh);
 static bool read_grid_bin(FILE *f, TriMesh *mesh, bool need_swap);
 static bool read_grid_asc(FILE *f, TriMesh *mesh);
 
 static int ply_type_len(const char *buf, bool binary);
 static bool ply_property(const char *buf, int &len, bool binary);
 static void check_need_swap(const point &p, bool &need_swap);
-static void check_ind_range(TriMesh *mesh);
 static void skip_comments(FILE *f);
 
 static bool write_ply_ascii(TriMesh *mesh, FILE *f,
@@ -70,8 +67,6 @@ static bool write_verts_asc(TriMesh *mesh, FILE *f,
 static bool write_verts_bin(TriMesh *mesh, FILE *f, bool need_swap,
                             bool write_norm, bool write_color,
                             bool float_color, bool write_conf);
-static bool write_strips_asc(TriMesh *mesh, FILE *f);
-static bool write_strips_bin(TriMesh *mesh, FILE *f, bool need_swap);
 static bool write_grid_asc(TriMesh *mesh, FILE *f);
 static bool write_grid_bin(TriMesh *mesh, FILE *f, bool need_swap);
 
@@ -135,17 +130,13 @@ bool TriMesh::read_helper(const char *filename, TriMesh *mesh)
 	} else {
 		f = fopen(filename, "rb");
 		if (!f) {
-			eprintf("Error opening [%s] for reading: %s.\n", filename,
-				strerror(errno));
 			return false;
 		}
 	}
-	dprintf("Reading %s... ", filename);
 
 	// Else recognize based on header
 	c = fgetc(f);
 	if (c == EOF) {
-		eprintf("Can't read header.\n");
 		goto out;
 	}
 
@@ -153,7 +144,6 @@ bool TriMesh::read_helper(const char *filename, TriMesh *mesh)
 		// See if it's a ply file
 		char buf[4];
 		if (!fgets(buf, 4, f)) {
-			eprintf("Can't read header.\n");
 			goto out;
 		}
 		if (strncmp(buf, "ly", 2) == 0)
@@ -169,14 +159,12 @@ bool TriMesh::read_helper(const char *filename, TriMesh *mesh)
 		ungetc(c, f);
 		ok = read_obj(f, mesh);
 	} else {
-		eprintf("Unknown file type.\n");
 	}
 
 out:
 	if (f)
 		fclose(f);
 	if (!ok) {
-		eprintf("Error reading file [%s].\n", filename);
 		return false;
 	}
 
@@ -207,7 +195,6 @@ static bool read_ply(FILE *f, TriMesh *mesh)
 	} else if (LINE_IS("format ascii 1.0")) {
 		binary = false;
 	} else {
-		eprintf("Unknown ply format or version.\n");
 		return false;
 	}
 
@@ -239,7 +226,6 @@ static bool read_ply(FILE *f, TriMesh *mesh)
 	// Find number of vertices
 	result = sscanf(buf, "element vertex %d\n", &nverts);
 	if (result != 1) {
-		eprintf("Expected \"element vertex\".\n");
 		return false;
 	}
 
@@ -320,7 +306,6 @@ static bool read_ply(FILE *f, TriMesh *mesh)
 		if (sscanf(buf, "element range_grid %d\n", &ngrid) != 1)
 			return false;
 		if (ngrid != mesh->grid_width*mesh->grid_height) {
-			eprintf("Range grid size does not equal num_rows*num_cols.\n");
 			return false;
 		}
 		GET_LINE();
@@ -341,9 +326,6 @@ static bool read_ply(FILE *f, TriMesh *mesh)
 	// Skip to the end of the header
 	while (!LINE_IS("end_header"))
 		GET_LINE();
-	if (binary && buf[10] == '\r') {
-		eprintf("Warning: possibly corrupt file. (Transferred as ASCII instead of BINARY?)\n");
-	}
 
 	// Actually read everything in
 	if (skip1) {
@@ -496,7 +478,6 @@ static bool read_verts_bin(FILE *f, TriMesh *mesh, bool &need_swap,
 			swap_float(mesh->confidences[i]);
 	}
 
-	dprintf("\n  Reading %d vertices... ", nverts);
 	if (vert_len == 12 && sizeof(point) == 12 && nverts > 1)
 		return slurp_verts_bin(f, mesh, need_swap, nverts);
 	while (++i < new_nverts) {
@@ -574,7 +555,6 @@ static bool read_verts_asc(FILE *f, TriMesh *mesh,
 
 	char buf[1024];
 	skip_comments(f);
-	dprintf("\n  Reading %d vertices... ", nverts);
 	for (int i = old_nverts; i < new_nverts; i++) {
 		for (int j = 0; j < vert_len; j++) {
 			if (j == vert_pos) {
@@ -615,54 +595,9 @@ static bool read_verts_asc(FILE *f, TriMesh *mesh,
 	return true;
 }
 
-// Read triangle strips from a binary file
-static bool read_strips_bin(FILE *f, TriMesh *mesh, bool need_swap)
-{
-	int striplen;
-	COND_READ(true, striplen, 4);
-	if (need_swap)
-		swap_int(striplen);
-
-	int old_striplen = mesh->tstrips.size();
-	int new_striplen = old_striplen + striplen;
-	mesh->tstrips.resize(new_striplen);
-
-	dprintf("\n  Reading triangle strips... ");
-	COND_READ(true, mesh->tstrips[old_striplen], 4*striplen);
-	if (need_swap) {
-		for (int i = old_striplen; i < new_striplen; i++)
-			swap_int(mesh->tstrips[i]);
-	}
-
-	return true;
-}
-
-
-// Read triangle strips from an ASCII file
-static bool read_strips_asc(FILE *f, TriMesh *mesh)
-{
-	skip_comments(f);
-	int striplen;
-	if (fscanf(f, "%d", &striplen) != 1)
-		return false;
-	int old_striplen = mesh->tstrips.size();
-	int new_striplen = old_striplen + striplen;
-	mesh->tstrips.resize(new_striplen);
-
-	dprintf("\n  Reading triangle strips... ");
-	skip_comments(f);
-	for (int i = old_striplen; i < new_striplen; i++)
-		if (fscanf(f, "%d", &mesh->tstrips[i]) != 1)
-			return false;
-
-	return true;
-}
-
-
 // Read range grid data from a binary file
 static bool read_grid_bin(FILE *f, TriMesh *mesh, bool need_swap)
 {
-	dprintf("\n  Reading range grid... ");
 	int ngrid = mesh->grid_width * mesh->grid_height;
 	mesh->grid.resize(ngrid, TriMesh::GRID_INVALID);
 	for (int i = 0; i < ngrid; i++) {
@@ -685,7 +620,6 @@ static bool read_grid_bin(FILE *f, TriMesh *mesh, bool need_swap)
 // Read range grid data from an ASCII file
 static bool read_grid_asc(FILE *f, TriMesh *mesh)
 {
-	dprintf("\n  Reading range grid... ");
 	int ngrid = mesh->grid_width * mesh->grid_height;
 	mesh->grid.resize(ngrid, TriMesh::GRID_INVALID);
 	for (int i = 0; i < ngrid; i++) {
@@ -741,7 +675,6 @@ static bool ply_property(const char *buf, int &len, bool binary)
 		return true;
 	}
 
-	eprintf("Unsupported vertex property: [%s].\n", buf);
 	return false;
 }
 
@@ -770,7 +703,6 @@ static void check_need_swap(const point &p, bool &need_swap)
 	                            p1 > -BIGNUM && p1 < BIGNUM &&
 	                            p2 > -BIGNUM && p2 < BIGNUM);
 	if (makes_sense_swapped) {
-		dprintf("Compensating for bogus endianness...\n");
 		need_swap = !need_swap;
 	}
 }
@@ -800,12 +732,10 @@ static void skip_comments(FILE *f)
 bool TriMesh::write(const char *filename)
 {
 	if (!filename || *filename == '\0') {
-		eprintf("Can't write to empty filename.\n");
 		return false;
 	}
 
 	if (vertices.empty()) {
-		eprintf("Empty mesh - nothing to write.\n");
 		return false;
 	}
 
@@ -923,13 +853,9 @@ bool TriMesh::write(const char *filename)
 	} else {
 		f = fopen(filename, "wb");
 		if (!f) {
-			eprintf("Error opening [%s] for writing: %s.\n", filename,
-				strerror(errno));
 			return false;
 		}
 	}
-
-	dprintf("Writing %s... ", filename);
 
 	bool ok = false;
 	switch (filetype) {
@@ -948,11 +874,9 @@ bool TriMesh::write(const char *filename)
 
 	fclose(f);
 	if (!ok) {
-		eprintf("Error writing file [%s].\n", filename);
 		return false;
 	}
 
-	dprintf("Done.\n");
 	return true;
 }
 
@@ -994,9 +918,6 @@ static bool write_ply_header(TriMesh *mesh, FILE *f, const char *format,
 		int ngrid = mesh->grid_width * mesh->grid_height;
 		FPRINTF(f, "element range_grid %d\n", ngrid);
 		FPRINTF(f, "property list uchar int vertex_indices\n");
-	} else if (write_tstrips) {
-		FPRINTF(f, "element tristrips 1\n");
-		FPRINTF(f, "property list int int vertex_indices\n");
 	}
 	FPRINTF(f, "end_header\n");
 	return true;
@@ -1010,7 +931,7 @@ static bool write_ply_ascii(TriMesh *mesh, FILE *f, bool write_norm,
 	if (write_norm)
 		mesh->need_normals();
 
-	bool write_tstrips = !write_grid && !mesh->tstrips.empty();
+	bool write_tstrips = false;
 
 	if (!write_ply_header(mesh, f, "ascii", write_grid, write_tstrips,
 	                      write_norm, float_color))
@@ -1033,7 +954,7 @@ static bool write_ply_binary(TriMesh *mesh, FILE *f, bool little_endian,
 	if (write_norm)
 		mesh->need_normals();
 
-	bool write_tstrips = !write_grid && !mesh->tstrips.empty();
+	bool write_tstrips = false;
 	bool need_swap = little_endian ^ we_are_little_endian();
 
 	const char *format = little_endian ?
@@ -1169,33 +1090,6 @@ static bool write_verts_bin(TriMesh *mesh, FILE *f, bool need_swap,
 	return ok;
 }
 
-// Write tstrips to an ASCII file
-static bool write_strips_asc(TriMesh *mesh, FILE *f)
-{
-	for (size_t i = 0; i < mesh->tstrips.size(); i++) {
-		FPRINTF(f, "%d ", mesh->tstrips[i]);
-	}
-	FPRINTF(f, "\n");
-	return true;
-}
-
-
-// Write tstrips to a binary file
-static bool write_strips_bin(TriMesh *mesh, FILE *f, bool need_swap)
-{
-	if (need_swap) {
-		for (size_t i = 0; i < mesh->tstrips.size(); i++)
-			swap_int(mesh->tstrips[i]);
-	}
-	bool ok = (fwrite(&(mesh->tstrips[0]), 4*mesh->tstrips.size(), 1, f) == 1);
-	if (need_swap) {
-		for (size_t i = 0; i < mesh->tstrips.size(); i++)
-			swap_int(mesh->tstrips[i]);
-	}
-	return ok;
-}
-
-
 // Write range grid to an ASCII file
 static bool write_grid_asc(TriMesh *mesh, FILE *f)
 {
@@ -1227,79 +1121,6 @@ static bool write_grid_bin(TriMesh *mesh, FILE *f, bool need_swap)
 		}
 	}
 	return true;
-}
-
-
-// Debugging printout, controllable by a "verbose"ness parameter, and
-// hookable for GUIs
-#undef dprintf
-
-int TriMesh::verbose = 1;
-
-void TriMesh::set_verbose(int verbose_)
-{
-	verbose = verbose_;
-}
-
-void (*TriMesh::dprintf_hook)(const char *) = NULL;
-
-void TriMesh::set_dprintf_hook(void (*hook)(const char *))
-{
-	dprintf_hook = hook;
-}
-
-void TriMesh::dprintf(const char *format, ...)
-{
-	if (!verbose)
-		return;
-
-	va_list ap;
-	va_start(ap, format);
-	size_t required = 1 + vsnprintf(NULL, 0, format, ap);
-	va_end(ap);
-	char *buf = new char[required];
-	va_start(ap, format);
-	vsnprintf(buf, required, format, ap);
-	va_end(ap);
-
-	if (dprintf_hook) {
-		dprintf_hook(buf);
-	} else {
-		fprintf(stderr, "%s", buf);
-		fflush(stderr);
-	}
-	delete [] buf;
-}
-
-
-// Same as above, but fatal-error printout
-#undef eprintf
-
-void (*TriMesh::eprintf_hook)(const char *) = NULL;
-
-void TriMesh::set_eprintf_hook(void (*hook)(const char *))
-{
-	eprintf_hook = hook;
-}
-
-void TriMesh::eprintf(const char *format, ...)
-{
-	va_list ap;
-	va_start(ap, format);
-	size_t required = 1 + vsnprintf(NULL, 0, format, ap);
-	va_end(ap);
-	char *buf = new char[required];
-	va_start(ap, format);
-	vsnprintf(buf, required, format, ap);
-	va_end(ap);
-
-	if (eprintf_hook) {
-		eprintf_hook(buf);
-	} else {
-		fprintf(stderr, "%s", buf);
-		fflush(stderr);
-	}
-	delete [] buf;
 }
 
 } // namespace trimesh
