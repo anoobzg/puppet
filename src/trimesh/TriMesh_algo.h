@@ -44,13 +44,6 @@ extern void remove_faces(TriMesh *mesh, const ::std::vector<bool> &toremove);
 // call to remove_unused_vertices()
 extern void remove_sliver_faces(TriMesh *mesh);
 
-// Remap vertices according to the given table
-extern void remap_verts(TriMesh *mesh, const ::std::vector<int> &remap_table);
-
-// Reorder vertices in a mesh according to the order in which
-// they are referenced by the tstrips or faces.
-extern void reorder_verts(TriMesh *mesh);
-
 // Perform one iteration of subdivision on a mesh.
 enum SubdivScheme { SUBDIV_PLANAR,
 	SUBDIV_LOOP, SUBDIV_LOOP_ORIG, SUBDIV_LOOP_NEW,

@@ -119,48 +119,6 @@ static void normals_from_tstrips_area(vector<int> &tstrips,
 	}
 }
 
-
-// Compute from faces, Max-weighted
-static void normals_from_faces_Max(vector<TriMesh::Face> &faces,
-	vector<point> &vertices, vector<vec> &normals)
-{
-	int nf = faces.size();
-#pragma omp parallel for
-	for (int i = 0; i < nf; i++) {
-		const point &p0 = vertices[faces[i][0]];
-		const point &p1 = vertices[faces[i][1]];
-		const point &p2 = vertices[faces[i][2]];
-		vec a = p0 - p1, b = p1 - p2, c = p2 - p0;
-		float l2a = len2(a), l2b = len2(b), l2c = len2(c);
-		if (!l2a || !l2b || !l2c)
-			continue;
-		vec facenormal = a CROSS b;
-		normals[faces[i][0]] += facenormal * (1.0f / (l2a * l2c));
-		normals[faces[i][1]] += facenormal * (1.0f / (l2b * l2a));
-		normals[faces[i][2]] += facenormal * (1.0f / (l2c * l2b));
-	}
-}
-
-
-// Compute from faces, area-weighted
-static void normals_from_faces_area(vector<TriMesh::Face> &faces,
-	vector<point> &vertices, vector<vec> &normals)
-{
-	int nf = faces.size();
-#pragma omp parallel for
-	for (int i = 0; i < nf; i++) {
-		const point &p0 = vertices[faces[i][0]];
-		const point &p1 = vertices[faces[i][1]];
-		const point &p2 = vertices[faces[i][2]];
-		vec a = p0 - p1, b = p1 - p2;
-		vec facenormal = a CROSS b;
-		normals[faces[i][0]] += facenormal;
-		normals[faces[i][1]] += facenormal;
-		normals[faces[i][2]] += facenormal;
-	}
-}
-
-
 // Compute from points, fitting plane to k-nn
 static void normals_from_points(vector<point> &vertices, vector<vec> &normals)
 {
@@ -215,11 +173,6 @@ void TriMesh::need_normals(bool simple_area_weighted /* = false */)
 			normals_from_tstrips_area(tstrips, vertices, normals);
 		else
 			normals_from_tstrips_Max(tstrips, vertices, normals);
-	} else if (need_faces(), !faces.empty()) {
-		if (simple_area_weighted)
-			normals_from_faces_area(faces, vertices, normals);
-		else
-			normals_from_faces_Max(faces, vertices, normals);
 	} else {
 		normals_from_points(vertices, normals);
 	}

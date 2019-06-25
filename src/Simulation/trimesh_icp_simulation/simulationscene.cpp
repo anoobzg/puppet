@@ -1,5 +1,6 @@
 #include "simulationscene.h"
 #include "patchnode.h"
+#include <osgWrapper\MatrixAnimation.h>
 
 SimulationScene::SimulationScene()
 {
@@ -10,6 +11,9 @@ SimulationScene::SimulationScene()
 
 	m_render_node = new OSGWrapper::AttributeUtilNode();
 	m_manipulable_node->AddChild(m_render_node);
+
+	m_animation_scheduler = new OSGWrapper::AnimationScheduler();
+	setUpdateCallback(m_animation_scheduler);
 }
 
 SimulationScene::~SimulationScene()
@@ -19,16 +23,25 @@ SimulationScene::~SimulationScene()
 
 void SimulationScene::ShowOneFrame(osg::Geometry* geometry, const osg::Matrixf& matrix)
 {
+	float time = 0.0f;
+	if (m_render_view) time = (float)m_render_view->getFrameStamp()->getSimulationTime();
 	PatchNode* node = new PatchNode();
 	node->AddChild(geometry);
 	node->UpdateMatrix(matrix);
+	node->SetTime(time);
 
-	m_manipulable_node->SetMatrix(osg::Matrixf::inverse(matrix));
+	//m_manipulable_node->SetMatrix(osg::Matrixf::inverse(matrix));
+
 	render_lock.Acquire();
 	m_render_node->AddChild(node);
 
 	if(m_render_node->getNumChildren() == 1)
 		UpdateCamera();
+
+	m_animation_scheduler->Clear();
+	OSGWrapper::MatrixAnimation* animation = new OSGWrapper::MatrixAnimation(*m_manipulable_node);
+	animation->SetMatrix(osg::Matrixf::inverse(matrix));
+	m_animation_scheduler->StartAnimation(animation, (double)time);
 	render_lock.Release();
 }
 

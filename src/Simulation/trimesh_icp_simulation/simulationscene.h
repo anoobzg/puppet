@@ -3,6 +3,7 @@
 #include <osgWrapper\ManipulableNode.h>
 #include <osgWrapper\AttributeUtilNode.h>
 #include <osgWrapper\Manipulator.h>
+#include <osgWrapper\AnimationScheduler.h>
 
 class SimulationScene : public RenderThreadBaseScene
 {
@@ -18,4 +19,5 @@ protected:
 	osg::ref_ptr<OSGWrapper::ManipulableNode> m_manipulable_node;
 	osg::ref_ptr<OSGWrapper::Manipulator> m_manipulator;
 	osg::ref_ptr<OSGWrapper::AttributeUtilNode> m_render_node;
+	osg::ref_ptr<OSGWrapper::AnimationScheduler> m_animation_scheduler;
 };

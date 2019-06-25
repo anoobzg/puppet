@@ -115,11 +115,11 @@ static inline bool contains(const char *s1, const char *s2)
 		lower2[i] = tolower(s2[i]);
 	lower2[len2] = '\0';
 
-	bool found = (bool) strstr(lower1, lower2);
+	char* found = strstr(lower1, lower2);
 
 	delete [] lower2;
 	delete [] lower1;
-	return found;
+	return !found;
 }
 
 static inline bool contains(const ::std::string &s1, const ::std::string &s2)

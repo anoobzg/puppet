@@ -55,6 +55,15 @@ void AnimationScheduler::StartAnimation(Animation* animation)
 	}
 }
 
+void AnimationScheduler::StartAnimation(Animation* animation, double start_time)
+{
+	if (animation)
+	{
+		animation->Start(start_time);
+		m_animations.push_back(animation);
+	}
+}
+
 void AnimationScheduler::Clear()
 {
 	m_animations.clear();

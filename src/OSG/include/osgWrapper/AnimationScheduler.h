@@ -22,7 +22,8 @@ public:
 protected:
 	void operator()(osg::Node* node, osg::NodeVisitor* nv);
 public:
-	void StartAnimation(Animation* animation);
+	void StartAnimation(Animation* animation);//no used
+	void StartAnimation(Animation* animation, double start_time);
 	void StopAnimation(Animation* animation);
 	void Clear();
 protected:

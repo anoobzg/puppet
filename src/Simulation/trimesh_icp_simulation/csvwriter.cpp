@@ -28,6 +28,17 @@ void CSVWriter::PushData(double value)
 	m_values.push_back(value);
 }
 
+void CSVWriter::TickStart()
+{
+	m_start_time = trimesh::now();
+}
+
+void CSVWriter::TickEnd()
+{
+	float t = trimesh::now() - m_start_time;
+	m_values.push_back((double)t);
+}
+
 void CSVWriter::Output(const std::string& file)
 {
 	size_t head_size = m_headers.size();

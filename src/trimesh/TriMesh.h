@@ -26,10 +26,6 @@ static inline void clear_and_release(::std::vector<T> &v)
 
 class TriMesh {
 public:
-	//
-	// Types
-	//
-	typedef Vec<3,int> Face;
 	typedef Box<3,float> BBox;
 
 	struct BSphere {
@@ -65,7 +61,6 @@ public:
 
 	// The basics: vertices and faces
 	::std::vector<point> vertices;
-	::std::vector<Face> faces;
 
 	// Triangle strips
 	::std::vector<int> tstrips;
@@ -94,30 +89,7 @@ public:
 	BBox bbox;
 	BSphere bsphere;
 
-	// Connectivity structures:
-	//  For each vertex, all neighboring vertices
-	::std::vector< ::std::vector<int> > neighbors;
-	//  For each vertex, all neighboring faces
-	::std::vector< ::std::vector<int> > adjacentfaces;
-	//  For each face, the three faces attached to its edges
-	//  (for example, across_edge[3][2] is the number of the face
-	//   that's touching the edge opposite vertex 2 of face 3)
-	::std::vector<Face> across_edge;
-
-	//
-	// Compute all this stuff...
-	//
-	void need_faces()
-	{
-		if (!faces.empty())
-			return;
-		if (!tstrips.empty())
-			unpack_tstrips();
-		else if (!grid.empty())
-			triangulate_grid();
-	}
 	void need_tstrips(TstripRep rep = TSTRIP_LENGTH);
-	void convert_strips(TstripRep rep);
 	void unpack_tstrips();
 	void resize_grid(int width, int height)
 	{
@@ -128,20 +100,13 @@ public:
 	}
 	void triangulate_grid(bool remove_slivers = true);
 	void need_normals(bool simple_area_weighted = false);
-	void need_curvatures();
-	void need_dcurv();
-	void need_pointareas();
 	void need_bbox();
 	void need_bsphere();
-	void need_neighbors();
-	void need_adjacentfaces();
-	void need_across_edge();
 
 	//
 	// Delete everything and release storage
 	//
 	void clear_vertices()      { clear_and_release(vertices); }
-	void clear_faces()         { clear_and_release(faces); }
 	void clear_tstrips()       { clear_and_release(tstrips); }
 	void clear_grid()          { clear_and_release(grid);
 	                             grid_width = grid_height = -1;}
@@ -158,16 +123,12 @@ public:
 	                             clear_and_release(cornerareas); }
 	void clear_bbox()          { bbox.clear(); }
 	void clear_bsphere()       { bsphere.valid = false; }
-	void clear_neighbors()     { clear_and_release(neighbors); }
-	void clear_adjacentfaces() { clear_and_release(adjacentfaces); }
-	void clear_across_edge()   { clear_and_release(across_edge); }
 	void clear()
 	{
-		clear_vertices(); clear_faces(); clear_tstrips(); clear_grid();
+		clear_vertices(); clear_tstrips(); clear_grid();
 		clear_colors(); clear_confidences(); clear_flags();
 		clear_normals(); clear_curvatures(); clear_dcurv();
 		clear_pointareas(); clear_bbox(); clear_bsphere();
-		clear_neighbors(); clear_adjacentfaces(); clear_across_edge();
 		best_frame_idx.clear();
 	}
 
@@ -182,69 +143,8 @@ public:
 	bool write(const char *filename);
 	bool write(const ::std::string &filename);
 
-
-	//
-	// Useful queries
-	//
-
-	// Is vertex v on the mesh boundary?
-	inline bool is_bdy(int v)
-	{
-		if (unlikely(neighbors.empty())) need_neighbors();
-		if (unlikely(adjacentfaces.empty())) need_adjacentfaces();
-		return neighbors[v].size() != adjacentfaces[v].size();
-	}
-
-	// Centroid of face f
-	inline vec centroid(int f)
-	{
-		if (unlikely(faces.empty())) need_faces();
-		return (1.0f / 3.0f) *
-			(vertices[faces[f][0]] +
-			 vertices[faces[f][1]] +
-			 vertices[faces[f][2]]);
-	}
-
-	// Normal of face f
-	inline vec trinorm(int f)
-	{
-		if (unlikely(faces.empty())) need_faces();
-		return trimesh::trinorm(vertices[faces[f][0]],
-			vertices[faces[f][1]], vertices[faces[f][2]]);
-	}
-
-	// Angle of corner j in triangle i
-	inline float cornerangle(int i, int j)
-	{
-		using namespace ::std;
-
-		if (unlikely(faces.empty())) need_faces();
-		const point &p0 = vertices[faces[i][j]];
-		const point &p1 = vertices[faces[i][NEXT_MOD3(j)]];
-		const point &p2 = vertices[faces[i][PREV_MOD3(j)]];
-		return acos((p1 - p0) DOT (p2 - p0));
-	}
-
-	// Dihedral angle between face i and face across_edge[i][j]
-	inline float dihedral(int i, int j)
-	{
-		if (unlikely(across_edge.empty())) need_across_edge();
-		if (unlikely(across_edge[i][j] < 0)) return 0.0f;
-		vec mynorm = trinorm(i);
-		vec othernorm = trinorm(across_edge[i][j]);
-		float ang = angle(mynorm, othernorm);
-		vec towards = 0.5f * (vertices[faces[i][NEXT_MOD3(j)]] +
-		                      vertices[faces[i][PREV_MOD3(j)]]) -
-		              vertices[faces[i][j]];
-		if ((towards DOT othernorm) < 0.0f)
-			return M_PIf + ang;
-		else
-			return M_PIf - ang;
-	}
-
 	// Statistics
 	float stat(StatOp op, StatVal val);
-	float feature_size();
 
 	//
 	// Debugging

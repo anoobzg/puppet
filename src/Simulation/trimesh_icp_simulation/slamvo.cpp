@@ -1,6 +1,5 @@
 #include "slamvo.h"
 #include <base\bind.h>
-#include "load_calib.h"
 #include "timestamp.h"
 
 SlamVO::SlamVO()
@@ -18,18 +17,7 @@ void SlamVO::StartVO(const ICPParamters& parameters)
 {
 	m_parameters = parameters;
 
-	trimesh::CameraData camera_data;
-	if (!load_camera_data_from_file(parameters.calib_file, camera_data))
-	{
-		std::cout << "Cabli Data Error." << std::endl;
-	}
-
-	float fx = camera_data.m_fx;
-	float fy = camera_data.m_fy;
-	float cx = camera_data.m_cx;
-	float cy = camera_data.m_cy;
-	m_icp.reset(new trimesh::ProjectionICP(fx, fy, cx, cy));
-
+	m_vo_impl.Setup(m_parameters);
 	if (m_parameters.profile)
 	{
 		m_writer.reset(new CSVWriter());
@@ -37,6 +25,8 @@ void SlamVO::StartVO(const ICPParamters& parameters)
 		m_writer->PushHead("type");
 		m_writer->PushHead("time");
 	}
+
+	m_state.SetFirstFrame(true);
 	bool start = Start();
 }
 
@@ -56,42 +46,50 @@ void SlamVO::OnFrame(trimesh::TriMesh* mesh)
 
 void SlamVO::ProcessFrame(trimesh::TriMesh* mesh)
 {
-	trimesh::timestamp t0 = trimesh::now();
-	int type = 0;
+	if (m_writer) m_writer->TickStart();
 
-	static int lost = false;
-	if (lost) return;
+	LocateData locate_data;
+	locate_data.lost = false;
+	locate_data.locate_type = 0;
+	locate_data.frame_count = 0;
+	TriMeshPtr mesh_ptr(mesh);
 
-	RenderData* data = new RenderData();
-	if (m_last_mesh)
-	{
-		trimesh::xform xf;
-		m_icp->SetSource(mesh);
-		m_icp->SetTarget(m_last_mesh.get());
-		float err_p = m_icp->Do(xf);
+	LocateOneFrame(mesh_ptr, locate_data);
 
-		if (err_p < 0.0f)
-		{
-			m_xf = trimesh::xform::identity();
-		}
-		else m_xf = m_xf * xf;
-	}else
-	{
-		m_xf = trimesh::xform::identity();
-	}
+	if (!locate_data.lost)
+		FusionFrame(mesh_ptr, locate_data.xf);
 
-	m_last_mesh.reset(mesh);
-	data->mesh = m_last_mesh;
-	data->xf = m_xf;
-
-	trimesh::timestamp t1 = trimesh::now();
 	if (m_writer)
 	{
-		m_writer->PushData((double)mesh->vertices.size());
-		m_writer->PushData((double)type);
-		m_writer->PushData((double)(t1 - t0));
+		m_writer->PushData((double)locate_data.frame_count);
+		m_writer->PushData((double)locate_data.locate_type);
+		m_writer->TickEnd();
 	}
-	if (m_tracer) m_tracer->OnFrame(data);
+}
+
+void SlamVO::LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
+{
+	locate_data.frame_count = (int)mesh->vertices.size();
+	if (m_state.FirstFrame())
+	{//first frame
+		m_state.SetFirstFrame(false);
+	}
+	else
+	{
+		locate_data.lost = !m_vo_impl.Frame2Frame(mesh, locate_data.xf);
+	}
+}
+
+void SlamVO::FusionFrame(TriMeshPtr& mesh, const trimesh::xform& xf)
+{
+	m_vo_impl.SetLastMesh(mesh);
+	if (m_tracer)
+	{
+		RenderData* render_data = new RenderData();
+		render_data->mesh = mesh;
+		render_data->xf = xf;
+		m_tracer->OnFrame(render_data);
+	}
 }
 
 void SlamVO::SetVOTracer(VOTracer* tracer)

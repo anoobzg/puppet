@@ -35,13 +35,7 @@ namespace trimesh {
 
 // Forward declarations
 static bool read_ply(FILE *f, TriMesh *mesh);
-static bool read_3ds(FILE *f, TriMesh *mesh);
-static bool read_vvd(FILE *f, TriMesh *mesh);
-static bool read_ray(FILE *f, TriMesh *mesh);
 static bool read_obj(FILE *f, TriMesh *mesh);
-static bool read_off(FILE *f, TriMesh *mesh);
-static bool read_sm( FILE *f, TriMesh *mesh);
-static bool read_stl( FILE *f, TriMesh *mesh);
 
 static bool read_verts_bin(FILE *f, TriMesh *mesh, bool &need_swap,
 	int nverts, int vert_len, int vert_pos, int vert_norm,
@@ -51,10 +45,6 @@ static bool slurp_verts_bin(FILE *f, TriMesh *mesh, bool need_swap,
 static bool read_verts_asc(FILE *f, TriMesh *mesh,
 	int nverts, int vert_len, int vert_pos, int vert_norm,
 	int vert_color, bool float_color, int vert_conf);
-static bool read_faces_bin(FILE *f, TriMesh *mesh, bool need_swap,
-	int nfaces, int face_len, int face_count, int face_idx);
-static bool read_faces_asc(FILE *f, TriMesh *mesh, int nfaces,
-	int face_len, int face_count, int face_idx, bool read_to_eol = false);
 static bool read_strips_bin(FILE *f, TriMesh *mesh, bool need_swap);
 static bool read_strips_asc(FILE *f, TriMesh *mesh);
 static bool read_grid_bin(FILE *f, TriMesh *mesh, bool need_swap);
@@ -65,21 +55,11 @@ static bool ply_property(const char *buf, int &len, bool binary);
 static void check_need_swap(const point &p, bool &need_swap);
 static void check_ind_range(TriMesh *mesh);
 static void skip_comments(FILE *f);
-static void tess(const vector<point> &verts, const vector<int> &thisface,
-                 vector<TriMesh::Face> &tris);
 
 static bool write_ply_ascii(TriMesh *mesh, FILE *f,
 	bool write_norm, bool write_grid, bool float_color);
 static bool write_ply_binary(TriMesh *mesh, FILE *f,
 	bool little_endian, bool write_norm, bool write_grid, bool float_color);
-static bool write_ray(TriMesh *mesh, FILE *f);
-static bool write_obj(TriMesh *mesh, FILE *f, bool write_norm);
-static bool write_off(TriMesh *mesh, FILE *f);
-static bool write_sm(TriMesh *mesh, FILE *f);
-static bool write_stl(TriMesh *mesh, FILE *f);
-static bool write_cc(TriMesh *mesh, FILE *f, const char *filename,
-	bool write_norm, bool float_color);
-static bool write_dae(TriMesh *mesh, FILE *f);
 static bool write_verts_asc(TriMesh *mesh, FILE *f,
                             const char *before_vert,
                             const char *before_norm,
@@ -90,11 +70,6 @@ static bool write_verts_asc(TriMesh *mesh, FILE *f,
 static bool write_verts_bin(TriMesh *mesh, FILE *f, bool need_swap,
                             bool write_norm, bool write_color,
                             bool float_color, bool write_conf);
-static bool write_faces_asc(TriMesh *mesh, FILE *f,
-                            const char *before_face, const char *after_line);
-static bool write_faces_bin(TriMesh *mesh, FILE *f, bool need_swap,
-                            int before_face_len, const char *before_face,
-                            int after_face_len, const char *after_face);
 static bool write_strips_asc(TriMesh *mesh, FILE *f);
 static bool write_strips_bin(TriMesh *mesh, FILE *f, bool need_swap);
 static bool write_grid_asc(TriMesh *mesh, FILE *f);
@@ -167,12 +142,6 @@ bool TriMesh::read_helper(const char *filename, TriMesh *mesh)
 	}
 	dprintf("Reading %s... ", filename);
 
-	// STL
-	if (begins_with(filename, "stl:-") || ends_with(filename, ".stl")) {
-		ok = read_stl(f, mesh);
-		goto out;
-	}
-
 	// Else recognize based on header
 	c = fgetc(f);
 	if (c == EOF) {
@@ -189,51 +158,16 @@ bool TriMesh::read_helper(const char *filename, TriMesh *mesh)
 		}
 		if (strncmp(buf, "ly", 2) == 0)
 			ok = read_ply(f, mesh);
-	} else if (c == 0x4d) {
-		int c2 = fgetc(f);
-		ungetc(c2, f);
-		ungetc(c, f);
-		if (c2 == 0x4d)
-			ok = read_3ds(f, mesh);
-	} else if (c == 'V') {
-		char buf[5];
-		if (!fgets(buf, 5, f)) {
-			eprintf("Can't read header.\n");
-			goto out;
-		}
-		if (strncmp(buf, "IVID", 4) == 0)
-			ok = read_vvd(f, mesh);
 	} else if (c == '#') {
 		char buf[1024];
 		GET_LINE();
-		if (LINE_IS("material") || LINE_IS("vertex") ||
-		    LINE_IS("shape_")) {
-			// Assume a ray file
-			pushback(buf, f);
-			ungetc(c, f);
-			ok = read_ray(f, mesh);
-		} else {
-			// Assume an obj file
-			ok = read_obj(f, mesh);
-		}
+		// Assume an obj file
+		ok = read_obj(f, mesh);
 	} else if (c == 'v' || c == 'u' || c == 'f' || c == 'g' ||
 	           c == 's' || c == 'o' || c == 'm') {
 		// Assume an obj file
 		ungetc(c, f);
 		ok = read_obj(f, mesh);
-	} else if (c == 'O') {
-		// Assume an OFF file
-		char buf[3];
-		if (!fgets(buf, 3, f)) {
-			eprintf("Can't read header.\n");
-			goto out;
-		}
-		if (strncmp(buf, "FF", 2) == 0)
-			ok = read_off(f, mesh);
-	} else if (isdigit(c)) {
-		// Assume an old-style sm file
-		ungetc(c, f);
-		ok = read_sm(f, mesh);
 	} else {
 		eprintf("Unknown file type.\n");
 	}
@@ -246,8 +180,6 @@ out:
 		return false;
 	}
 
-	dprintf("Done.\n");
-	check_ind_range(mesh);
 	return true;
 }
 
@@ -449,27 +381,7 @@ static bool read_ply(FILE *f, TriMesh *mesh)
 			if (!read_grid_asc(f, mesh))
 				return false;
 		}
-	} else if (nstrips) {
-		if (binary) {
-			if (!read_strips_bin(f, mesh, need_swap))
-				return false;
-		} else {
-			if (!read_strips_asc(f, mesh))
-				return false;
-		}
-		mesh->convert_strips(TriMesh::TSTRIP_LENGTH);
-	} else if (nfaces) {
-		if (binary) {
-			if (!read_faces_bin(f, mesh, need_swap, nfaces,
-			                    face_len, face_count, face_idx))
-				return false;
-		} else {
-			if (!read_faces_asc(f, mesh, nfaces,
-			                    face_len, face_count, face_idx))
-				return false;
-		}
 	}
-
 	return true;
 }
 
@@ -480,171 +392,6 @@ static bool read_ply(FILE *f, TriMesh *mesh)
 #define CHUNK_3DS_MESH  0x4100u
 #define CHUNK_3DS_VERT  0x4110u
 #define CHUNK_3DS_FACE  0x4120u
-
-// Read a 3DS file.
-static bool read_3ds(FILE *f, TriMesh *mesh)
-{
-	bool need_swap = we_are_big_endian();
-	int mstart = 0;
-
-	while (1) {
-		unsigned short chunkid;
-		unsigned chunklen;
-		if (!fread(&chunkid, 2, 1, f) ||
-		    !fread(&chunklen, 4, 1, f))
-			return (feof(f) != 0);
-		if (need_swap) {
-			swap_ushort(chunkid);
-			swap_unsigned(chunklen);
-		}
-		//dprintf("Found chunk %x of length %d\n", chunkid, chunklen);
-		switch (chunkid) {
-			case CHUNK_3DS_MAIN:
-			case CHUNK_3DS_MODEL:
-				// Just recurse into this chunk
-				break;
-
-			case CHUNK_3DS_OBJ:
-				// Skip name, then recurse
-				while (!feof(f) && fgetc(f))
-					;
-				break;
-
-			case CHUNK_3DS_MESH:
-				mstart = mesh->vertices.size();
-				break;
-
-			case CHUNK_3DS_VERT: {
-				unsigned short nverts;
-				if (!fread(&nverts, 2, 1, f))
-					return false;
-				if (need_swap)
-					swap_ushort(nverts);
-				read_verts_bin(f, mesh, need_swap,
-				               nverts, 12, 0, -1, -1, false, -1);
-				break;
-			}
-			case CHUNK_3DS_FACE: {
-				unsigned short nfaces;
-				if (!fread(&nfaces, 2, 1, f))
-					return false;
-				if (need_swap)
-					swap_ushort(nfaces);
-				dprintf("\n  Reading %d faces... ", nfaces);
-				int old_nfaces = mesh->faces.size();
-				int new_nfaces = old_nfaces + nfaces;
-				mesh->faces.resize(new_nfaces);
-				for (int i = old_nfaces; i < new_nfaces; i++) {
-					unsigned short buf[4];
-					COND_READ(true, buf[0], 8);
-					if (need_swap) {
-						swap_ushort(buf[0]);
-						swap_ushort(buf[1]);
-						swap_ushort(buf[2]);
-					}
-					mesh->faces[i][0] = mstart + buf[0];
-					mesh->faces[i][1] = mstart + buf[1];
-					mesh->faces[i][2] = mstart + buf[2];
-				}
-				break;
-			}
-			default: {
-				// Skip over this chunk
-				fseek(f, chunklen-6, SEEK_CUR);
-			}
-		}
-	}
-	return true;
-}
-
-
-// Read a VVD file.
-static bool read_vvd(FILE *f, TriMesh *mesh)
-{
-	bool need_swap = we_are_little_endian();
-	const int skip = 127;
-	char buf[skip];
-	if (fread(buf, skip, 1, f) != 1)
-		return false;
-
-	int nverts;
-	if (fread(&nverts, 4, 1, f) != 1) {
-		eprintf("Couldn't read vertex count.\n");
-		return false;
-	}
-	if (need_swap)
-		swap_int(nverts);
-	mesh->vertices.resize(nverts);
-	dprintf("\n  Reading %d vertices... ", nverts);
-
-	for (int i = 0; i < nverts; i++) {
-		double v[3];
-		if (fread(&v[0], 24, 1, f) != 1) {
-			eprintf("Couldn't read vertex.\n");
-			return false;
-		}
-		if (need_swap) {
-			swap_double(v[0]);
-			swap_double(v[1]);
-			swap_double(v[2]);
-		}
-		mesh->vertices[i] = v;
-	}
-
-	int nfaces;
-	if (fread(&nfaces, 4, 1, f) != 1) {
-		eprintf("Couldn't read face count.\n");
-		return false;
-	}
-	if (need_swap)
-		swap_int(nfaces);
-	read_faces_bin(f, mesh, need_swap, nfaces, 4, 0, 4);
-
-	return true;
-}
-
-
-// Read a ray file
-static bool read_ray(FILE *f, TriMesh *mesh)
-{
-	vector<int> thisface;
-	while (!feof(f)) {
-		char buf[1024];
-		buf[0] = '\0';
-		if (fscanf(f, " %1023s", buf) == 0)
-			return true;
-		if (LINE_IS("#vertex_num")) {
-			// Do nothing
-		} else if (LINE_IS("#vertex")) {
-			float x, y, z;
-			if (fscanf(f, "%f %f %f", &x, &y, &z) != 3) {
-				return false;
-			}
-			mesh->vertices.push_back(point(x,y,z));
-		} else if (LINE_IS("#shape_triangle")) {
-			int f1, f2, f3, m;
-			if (fscanf(f, "%d %d %d %d", &m, &f1, &f2, &f3) != 4) {
-				return false;
-			}
-			mesh->faces.push_back(TriMesh::Face(f1,f2,f3));
-		} else if (LINE_IS("#shape_polygon")) {
-			int m, nverts;
-			if (fscanf(f, " %d %d", &m, &nverts) != 2)
-				return false;
-			thisface.clear();
-			thisface.reserve(nverts);
-			for (int i = 0; i < nverts; i++) {
-				int thisv;
-				if (fscanf(f, " %d", &thisv) != 1)
-					return false;
-				thisface.push_back(thisv);
-			}
-			tess(mesh->vertices, thisface, mesh->faces);
-		}
-	}
-	return true;
-}
-
 
 // Read an obj file
 static bool read_obj(FILE *f, TriMesh *mesh)
@@ -668,25 +415,6 @@ static bool read_obj(FILE *f, TriMesh *mesh)
 				return false;
 			}
 			mesh->normals.push_back(vec(x,y,z));
-		} else if (LINE_IS("f ") || LINE_IS("f\t") ||
-		           LINE_IS("t ") || LINE_IS("t\t")) {
-			thisface.clear();
-			char *c = buf;
-			while (1) {
-				while (*c && *c != '\n' && !isspace(*c))
-					c++;
-				while (*c && isspace(*c))
-					c++;
-				int thisf;
-				if (sscanf(c, " %d", &thisf) != 1)
-					break;
-				if (thisf < 0)
-					thisf += mesh->vertices.size();
-				else
-					thisf--;
-				thisface.push_back(thisf);
-			}
-			tess(mesh->vertices, thisface, mesh->faces);
 		}
 	}
 
@@ -700,80 +428,6 @@ static bool read_obj(FILE *f, TriMesh *mesh)
 
 	return true;
 }
-
-
-// Read an off file
-static bool read_off(FILE *f, TriMesh *mesh)
-{
-	skip_comments(f);
-	char buf[1024];
-	GET_LINE();
-	int nverts, nfaces, unused;
-	if (sscanf(buf, "%d %d %d", &nverts, &nfaces, &unused) < 2)
-		return false;
-	if (!read_verts_asc(f, mesh, nverts, 3, 0, -1, -1, false, -1))
-		return false;
-	if (!read_faces_asc(f, mesh, nfaces, 1, 0, 1, true))
-		return false;
-
-	return true;
-}
-
-
-// Read an sm file
-static bool read_sm(FILE *f, TriMesh *mesh)
-{
-	int nverts, nfaces;
-
-	if (fscanf(f, "%d", &nverts) != 1)
-		return false;
-
-	if (!read_verts_asc(f, mesh, nverts, 3, 0, -1, -1, false, -1))
-		return false;
-
-	skip_comments(f);
-	if (fscanf(f, "%d", &nfaces) != 1)
-		return true;
-	if (!read_faces_asc(f, mesh, nfaces, 0, -1, 0))
-		return false;
-
-	return true;
-}
-
-
-// Read a binary STL file
-static bool read_stl(FILE *f, TriMesh *mesh)
-{
-	bool need_swap = we_are_big_endian();
-
-	char header[80];
-	COND_READ(true, header, 80);
-
-	int nfacets;
-	COND_READ(true, nfacets, 4);
-	if (need_swap)
-		swap_int(nfacets);
-
-	mesh->faces.reserve(nfacets);
-	mesh->vertices.reserve(3*nfacets);
-	for (int i = 0; i < nfacets; i++) {
-		float fbuf[12];
-		COND_READ(true, fbuf, 48);
-		if (need_swap) {
-			for (int j = 3; j < 12; j++)
-				swap_float(fbuf[j]);
-		}
-		int v = mesh->vertices.size();
-		mesh->vertices.push_back(point(fbuf[3], fbuf[4], fbuf[5]));
-		mesh->vertices.push_back(point(fbuf[6], fbuf[7], fbuf[8]));
-		mesh->vertices.push_back(point(fbuf[9], fbuf[10], fbuf[11]));
-		mesh->faces.push_back(TriMesh::Face(v, v+1, v+2));
-		unsigned char att[2];
-		COND_READ(true, att, 2);
-	}
-	return true;
-}
-
 
 // Read nverts vertices from a binary file.
 // vert_len = total length of a vertex record in bytes
@@ -961,114 +615,6 @@ static bool read_verts_asc(FILE *f, TriMesh *mesh,
 	return true;
 }
 
-
-// Read nfaces faces from a binary file.
-// face_len = total length of face record, *not counting the indices*
-//  (Yes, this is bizarre, but there is potentially a variable # of indices...)
-// face_count = offset within record of the count of indices in this face
-//  (If this is -1, does not read a count and assumes triangles)
-// face_idx = offset within record of the indices themselves
-static bool read_faces_bin(FILE *f, TriMesh *mesh, bool need_swap,
-	int nfaces, int face_len, int face_count, int face_idx)
-{
-	if (nfaces < 0 || face_idx < 0)
-		return false;
-
-	if (nfaces == 0)
-		return true;
-
-	dprintf("\n  Reading %d faces... ", nfaces);
-
-	int old_nfaces = mesh->faces.size();
-	int new_nfaces = old_nfaces + nfaces;
-	mesh->faces.reserve(new_nfaces);
-
-	// face_len doesn't include the indices themeselves, since that's
-	// potentially variable-length
-	int face_skip = face_len - face_idx;
-
-	vector<unsigned char> buf(max(face_idx, face_skip));
-	vector<int> thisface;
-	for (int i = 0; i < nfaces; i++) {
-		COND_READ(face_idx > 0, buf[0], face_idx);
-
-		unsigned this_ninds = 3;
-		if (face_count >= 0) {
-			// Read count - either 1 or 4 bytes
-			if (face_idx - face_count == 4) {
-				this_ninds = * (unsigned *) &(buf[face_count]);
-				if (need_swap)
-					swap_unsigned(this_ninds);
-			} else {
-				this_ninds = buf[face_count];
-			}
-		}
-		thisface.resize(this_ninds);
-		COND_READ(true, thisface[0], 4*this_ninds);
-		if (need_swap) {
-			for (size_t j = 0; j < thisface.size(); j++)
-				swap_int(thisface[j]);
-		}
-		tess(mesh->vertices, thisface, mesh->faces);
-		COND_READ(face_skip > 0, buf[0], face_skip);
-	}
-
-	return true;
-}
-
-
-// Read a bunch of faces from an ASCII file
-static bool read_faces_asc(FILE *f, TriMesh *mesh, int nfaces,
-	int face_len, int face_count, int face_idx, bool read_to_eol /* = false */)
-{
-	if (nfaces < 0 || face_idx < 0)
-		return false;
-
-	if (nfaces == 0)
-		return true;
-
-	int old_nfaces = mesh->faces.size();
-	int new_nfaces = old_nfaces + nfaces;
-	mesh->faces.reserve(new_nfaces);
-
-	char buf[1024];
-	skip_comments(f);
-	dprintf("\n  Reading %d faces... ", nfaces);
-	vector<int> thisface;
-	for (int i = 0; i < nfaces; i++) {
-		thisface.clear();
-		int this_face_count = 3;
-		for (int j = 0; j < face_len + this_face_count; j++) {
-			if (j >= face_idx && j < face_idx + this_face_count) {
-				thisface.push_back(0);
-				if (!fscanf(f, " %d", &(thisface.back()))) {
-					dprintf("Couldn't read vertex index %d for face %d\n",
-						j - face_idx, i);
-					return false;
-				}
-			} else if (j == face_count) {
-				if (!fscanf(f, " %d", &this_face_count)) {
-					dprintf("Couldn't read vertex count for face %d\n", i);
-					return false;
-				}
-			} else {
-				GET_WORD();
-			}
-		}
-		tess(mesh->vertices, thisface, mesh->faces);
-		if (read_to_eol) {
-			while (1) {
-				int c = fgetc(f);
-				if (c == EOF || c == '\n')
-					break;
-			}
-		}
-	}
-
-	return true;
-}
-
-
 // Read triangle strips from a binary file
 static bool read_strips_bin(FILE *f, TriMesh *mesh, bool need_swap)
 {
@@ -1229,43 +775,6 @@ static void check_need_swap(const point &p, bool &need_swap)
 	}
 }
 
-
-// Check whether the indices in the file mistakenly go
-// from 1..N instead of 0..N-1
-static void check_ind_range(TriMesh *mesh)
-{
-	if (mesh->faces.empty())
-		return;
-	int min_ind = mesh->faces[0][0];
-	int max_ind = mesh->faces[0][0];
-	for (size_t i = 0; i < mesh->faces.size(); i++) {
-		for (int j = 0; j < 3; j++) {
-			min_ind = min(min_ind, mesh->faces[i][j]);
-			max_ind = max(max_ind, mesh->faces[i][j]);
-		}
-	}
-
-	int nv = mesh->vertices.size();
-
-	// All good
-	if (min_ind == 0 && max_ind == nv-1)
-		return;
-
-	// Simple fix: offset everything
-	if (max_ind - min_ind == nv-1) {
-		dprintf("Found indices ranging from %d through %d\n",
-		                 min_ind, max_ind);
-		dprintf("Remapping to %d through %d\n", 0, nv-1);
-		for (size_t i = 0; i < mesh->faces.size(); i++)
-			for (int j = 0; j < 3; j++)
-				mesh->faces[i][j] -= min_ind;
-		return;
-	}
-
-	// Else can't do anything...
-}
-
-
 // Skip comments in an ASCII file (lines beginning with #)
 static void skip_comments(FILE *f)
 {
@@ -1286,44 +795,6 @@ static void skip_comments(FILE *f)
 	}
 	ungetc(c, f);
 }
-
-
-// Tesselate an arbitrary n-gon.  Appends triangles to "tris".
-static void tess(const vector<point> &verts, const vector<int> &thisface,
-                 vector<TriMesh::Face> &tris)
-{
-	if (thisface.size() < 3)
-		return;
-	if (thisface.size() == 3) {
-		tris.push_back(TriMesh::Face(thisface[0],
-		                             thisface[1],
-		                             thisface[2]));
-		return;
-	}
-	if (thisface.size() == 4) {
-		// Triangulate in the direction that
-		// gives the shorter diagonal
-		const point &p0 = verts[thisface[0]], &p1 = verts[thisface[1]];
-		const point &p2 = verts[thisface[2]], &p3 = verts[thisface[3]];
-		float d02 = dist2(p0, p2);
-		float d13 = dist2(p1, p3);
-		int i = (d02 < d13) ? 0 : 1;
-		tris.push_back(TriMesh::Face(thisface[i],
-		                             thisface[(i+1)%4],
-		                             thisface[(i+2)%4]));
-		tris.push_back(TriMesh::Face(thisface[i],
-		                             thisface[(i+2)%4],
-		                             thisface[(i+3)%4]));
-		return;
-	}
-
-	// 5-gon or higher - just tesselate arbitrarily...
-	for (size_t i = 2; i < thisface.size(); i++)
-		tris.push_back(TriMesh::Face(thisface[0],
-		                             thisface[i-1],
-		                             thisface[i]));
-}
-
 
 // Write mesh to a file
 bool TriMesh::write(const char *filename)
@@ -1473,27 +944,6 @@ bool TriMesh::write(const char *filename)
 			ok = write_ply_binary(this, f,
 				true, write_norm, write_grid, float_color);
 			break;
-		case RAY:
-			ok = write_ray(this, f);
-			break;
-		case OBJ:
-			ok = write_obj(this, f, write_norm);
-			break;
-		case OFF:
-			ok = write_off(this, f);
-			break;
-		case SM:
-			ok = write_sm(this, f);
-			break;
-		case STL:
-			ok = write_stl(this, f);
-			break;
-		case CC:
-			ok = write_cc(this, f, filename, write_norm, float_color);
-			break;
-		case DAE:
-			ok = write_dae(this, f);
-			break;
 	}
 
 	fclose(f);
@@ -1547,13 +997,6 @@ static bool write_ply_header(TriMesh *mesh, FILE *f, const char *format,
 	} else if (write_tstrips) {
 		FPRINTF(f, "element tristrips 1\n");
 		FPRINTF(f, "property list int int vertex_indices\n");
-	} else {
-		mesh->need_faces();
-		if (!mesh->faces.empty()) {
-			FPRINTF(f, "element face %lu\n",
-				(unsigned long) mesh->faces.size());
-			FPRINTF(f, "property list uchar int vertex_indices\n");
-		}
 	}
 	FPRINTF(f, "end_header\n");
 	return true;
@@ -1577,15 +1020,9 @@ static bool write_ply_ascii(TriMesh *mesh, FILE *f, bool write_norm,
 		return false;
 	if (write_grid) {
 		return write_grid_asc(mesh, f);
-	} else if (write_tstrips) {
-		FPRINTF(f, "%lu ", (unsigned long) mesh->tstrips.size());
-		mesh->convert_strips(TriMesh::TSTRIP_TERM);
-		bool ok = write_strips_asc(mesh, f);
-		mesh->convert_strips(TriMesh::TSTRIP_LENGTH);
-		return ok;
-	}
+	} 
 	// else write faces
-	return write_faces_asc(mesh, f, "3 ", "");
+	return true;
 }
 
 
@@ -1609,305 +1046,15 @@ static bool write_ply_binary(TriMesh *mesh, FILE *f, bool little_endian,
 		return false;
 	if (write_grid) {
 		return write_grid_bin(mesh, f, need_swap);
-	} else if (write_tstrips) {
-		int s = mesh->tstrips.size();
-		if (need_swap)
-			swap_int(s);
-		FWRITE(&s, 4, 1, f);
-		mesh->convert_strips(TriMesh::TSTRIP_TERM);
-		bool ok = write_strips_bin(mesh, f, need_swap);
-		mesh->convert_strips(TriMesh::TSTRIP_LENGTH);
-		return ok;
-	}
-	// else write faces
-	char buf[1] = { 3 };
-	return write_faces_bin(mesh, f, need_swap, 1, buf, 0, 0);
-}
-
-
-// Write a ray file
-static bool write_ray(TriMesh *mesh, FILE *f)
-{
-	FPRINTF(f, "#camera 0 0 1 0 0 -1 0 1 0 0.2\n");
-	FPRINTF(f, "#background 0 0 0\n");
-	FPRINTF(f, "#ambient 0 0 0\n");
-	FPRINTF(f, "#material_num 1\n");
-	FPRINTF(f, "#material 0 0 0  1 1 1  0 0 0  0 0 0  0 0 1  -1  !!\n");
-	FPRINTF(f, "#vertex_num %lu\n", (unsigned long) mesh->vertices.size());
-	mesh->need_normals();
-	if (!write_verts_asc(mesh, f, "#vertex ", "  ", 0, false, 0, "  0 0"))
-		return false;
-	mesh->need_faces();
-	return write_faces_asc(mesh, f, "#shape_triangle 0  ", "");
-}
-
-
-// Write a obj file
-static bool write_obj(TriMesh *mesh, FILE *f, bool write_norm)
-{
-	FPRINTF(f, "# OBJ\n");
-	if (write_norm)
-		mesh->need_normals();
-	if (!write_verts_asc(mesh, f, "v ", write_norm ? "\nvn " : 0, 0, false, 0, ""))
-		return false;
-
-	mesh->need_faces();
-
-	// Indices in OBJ files are 1-based.  Temporarily increment them.
-	for (size_t i = 0; i < mesh->faces.size(); i++) {
-		mesh->faces[i][0]++;
-		mesh->faces[i][1]++;
-		mesh->faces[i][2]++;
-	}
-
-	bool ok = true;
-	if (!write_norm) {
-		ok = write_faces_asc(mesh, f, "f ", "");
-	} else {
-		for (size_t i = 0; i < mesh->faces.size(); i++) {
-			int n = fprintf(f, "f %d//%d %d//%d %d//%d\n",
-					mesh->faces[i][0], mesh->faces[i][0],
-					mesh->faces[i][1], mesh->faces[i][1],
-					mesh->faces[i][2], mesh->faces[i][2]);
-			if (n < 6) {
-				ok = false;
-				break;
-			}
-		}
-	}
-
-	// Put indices back
-	for (size_t i = 0; i < mesh->faces.size(); i++) {
-		mesh->faces[i][0]--;
-		mesh->faces[i][1]--;
-		mesh->faces[i][2]--;
-	}
-	return ok;
-}
-
-
-// Write a off file
-static bool write_off(TriMesh *mesh, FILE *f)
-{
-	FPRINTF(f, "OFF\n");
-	mesh->need_faces();
-	FPRINTF(f, "%lu %lu 0\n", (unsigned long) mesh->vertices.size(),
-		(unsigned long) mesh->faces.size());
-	return write_verts_asc(mesh, f, "", 0, 0, false, 0, "") &&
-	       write_faces_asc(mesh, f, "3 ", "");
-}
-
-
-// Write an SM file
-static bool write_sm(TriMesh *mesh, FILE *f)
-{
-	FPRINTF(f, "%lu\n", (unsigned long) mesh->vertices.size());
-	if (!write_verts_asc(mesh, f, "", 0, 0, false, 0, ""))
-		return false;
-	mesh->need_faces();
-	FPRINTF(f, "%lu\n", (unsigned long) mesh->faces.size());
-	if (!write_faces_asc(mesh, f, "", ""))
-		return false;
-	FPRINTF(f, "0 0\n");
-	return true;
-}
-
-
-// Write an STL file
-static bool write_stl(TriMesh *mesh, FILE *f)
-{
-	bool need_swap = we_are_big_endian();
-
-	char header[80];
-	memset(header, ' ', 80);
-	FWRITE(header, 80, 1, f);
-
-	int nfaces = mesh->faces.size();
-	if (need_swap)
-		swap_int(nfaces);
-	FWRITE(&nfaces, 4, 1, f);
-
-	for (size_t i = 0; i < mesh->faces.size(); i++) {
-		float fbuf[12];
-		vec tn = mesh->trinorm(i);
-		normalize(tn);
-		fbuf[0] = tn[0]; fbuf[1] = tn[1]; fbuf[2] = tn[2];
-		fbuf[3]  = mesh->vertices[mesh->faces[i][0]][0];
-		fbuf[4]  = mesh->vertices[mesh->faces[i][0]][1];
-		fbuf[5]  = mesh->vertices[mesh->faces[i][0]][2];
-		fbuf[6]  = mesh->vertices[mesh->faces[i][1]][0];
-		fbuf[7]  = mesh->vertices[mesh->faces[i][1]][1];
-		fbuf[8]  = mesh->vertices[mesh->faces[i][1]][2];
-		fbuf[9]  = mesh->vertices[mesh->faces[i][2]][0];
-		fbuf[10] = mesh->vertices[mesh->faces[i][2]][1];
-		fbuf[11] = mesh->vertices[mesh->faces[i][2]][2];
-		if (need_swap) {
-			for (int j = 0; j < 12; j++)
-				swap_float(fbuf[j]);
-		}
-		FWRITE(fbuf, 48, 1, f);
-		unsigned char att[2] = { 0, 0 };
-		FWRITE(att, 2, 1, f);
 	}
 	return true;
 }
-
 
 // Convert colors float -> uchar
 static unsigned char color2uchar(float p)
 {
 	return min(max(int(255.0f * p + 0.5f), 0), 255);
 }
-
-
-// Write C++ code
-static bool write_cc(TriMesh *mesh, FILE *f, const char *filename,
-	bool write_norm, bool float_color)
-{
-	mesh->need_faces();
-	if (write_norm)
-		mesh->need_normals();
-
-	char *meshname = new char[strlen(filename)+1];
-	strcpy(meshname, filename);
-	char *c = strrchr(meshname, '.');
-	if (c)
-		*c = '\0';
-	FPRINTF(f, "#include <cstring>\n");
-	FPRINTF(f, "#include \"TriMesh.h\"\n\n");
-	FPRINTF(f, "::trimesh::TriMesh *make_%s()\n{", meshname);
-	delete [] meshname;
-
-	FPRINTF(f, "\tstatic const float vertdata[][3] = {\n");
-	int nv = mesh->vertices.size(), nf = mesh->faces.size();
-	for (int i = 0; i < nv; i++) {
-		FPRINTF(f, "\t\t{ %.7g, %.7g, %.7g },\n",
-				mesh->vertices[i][0],
-				mesh->vertices[i][1],
-				mesh->vertices[i][2]);
-	}
-	FPRINTF(f, "\t};\n");
-	if (write_norm) {
-		FPRINTF(f, "\tstatic const float normdata[][3] = {\n");
-		for (int i = 0; i < nv; i++) {
-			FPRINTF(f, "\t\t{ %.7g, %.7g, %.7g },\n",
-					mesh->normals[i][0],
-					mesh->normals[i][1],
-					mesh->normals[i][2]);
-		}
-		FPRINTF(f, "\t};\n");
-	}
-	if (!mesh->colors.empty() && float_color) {
-		FPRINTF(f, "\tstatic const float colordata[][3] = {\n");
-		for (int i = 0; i < nv; i++) {
-			FPRINTF(f, "\t\t{ %.7g, %.7g, %.7g },\n",
-					mesh->colors[i][0],
-					mesh->colors[i][1],
-					mesh->colors[i][2]);
-		}
-		FPRINTF(f, "\t};\n");
-	}
-	if (!mesh->colors.empty() && !float_color) {
-		FPRINTF(f, "\tstatic const unsigned char colordata[][3] = {\n");
-		for (int i = 0; i < nv; i++) {
-			FPRINTF(f, "\t\t{ %d, %d, %d },\n",
-					color2uchar(mesh->colors[i][0]),
-					color2uchar(mesh->colors[i][1]),
-					color2uchar(mesh->colors[i][2]));
-		}
-		FPRINTF(f, "\t};\n");
-	}
-	FPRINTF(f, "\tstatic const int facedata[][3] = {\n");
-	for (int i = 0; i < nf; i++) {
-		FPRINTF(f, "\t\t{ %d, %d, %d },\n",
-				mesh->faces[i][0],
-				mesh->faces[i][1],
-				mesh->faces[i][2]);
-	}
-	FPRINTF(f, "\t};\n");
-	FPRINTF(f, "\n\t::trimesh::TriMesh *m = new ::trimesh::TriMesh;\n");
-	FPRINTF(f, "\tm->vertices.resize(%d);\n", nv);
-	FPRINTF(f, "\t::std::memcpy(&m->vertices[0][0], vertdata, sizeof(vertdata));\n");
-	if (!mesh->colors.empty()) {
-		FPRINTF(f, "\tm->colors.resize(%d);\n", nv);
-		FPRINTF(f, "\t::std::memcpy(&m->colors[0][0], colordata, sizeof(colordata));\n");
-	}
-	if (write_norm) {
-		FPRINTF(f, "\tm->normals.resize(%d);\n", nv);
-		FPRINTF(f, "\t::std::memcpy(&m->normals[0][0], normdata, sizeof(normdata));\n");
-	}
-	FPRINTF(f, "\tm->faces.resize(%d);\n", nf);
-	FPRINTF(f, "\t::std::memcpy(&m->faces[0][0], facedata, sizeof(facedata));\n");
-	FPRINTF(f, "\n\treturn m;\n");
-	FPRINTF(f, "}\n");
-	return true;
-}
-
-
-// Write COLLADA DAE
-static bool write_dae(TriMesh *mesh, FILE *f)
-{
-	mesh->need_faces();
-	int nv = mesh->vertices.size(), nf = mesh->faces.size();
-
-	FPRINTF(f, "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n");
-	FPRINTF(f, "<COLLADA xmlns=\"http://www.collada.org/2005/11/COLLADASchema\" version=\"1.4.1\">\n");
-	FPRINTF(f, "<asset>\n");
-	FPRINTF(f, " <contributor/>\n");
-	FPRINTF(f, " <created>2012-01-01T00:00:00Z</created>\n");
-	FPRINTF(f, " <modified>2012-01-01T00:00:00Z</modified>\n");
-	FPRINTF(f, "</asset>\n");
-	FPRINTF(f, "<library_geometries>\n");
-	FPRINTF(f, " <geometry id=\"geom\">\n");
-	FPRINTF(f, "  <mesh>\n");
-	FPRINTF(f, "   <source id=\"v\">\n");
-	FPRINTF(f, "    <float_array id=\"coords\" count=\"%d\">\n", 3*nv);
-	for (int i = 0; i < nv; i++) {
-		FPRINTF(f, "\t%.7g %.7g %.7g\n",
-			mesh->vertices[i][0],
-			mesh->vertices[i][1],
-			mesh->vertices[i][2]);
-	}
-	FPRINTF(f, "    </float_array>\n");
-	FPRINTF(f, "    <technique_common>\n");
-	FPRINTF(f, "     <accessor count=\"%d\" source=\"#coords\" stride=\"3\">\n", nv);
-	FPRINTF(f, "      <param name=\"X\" type=\"float\"/>\n");
-	FPRINTF(f, "      <param name=\"Y\" type=\"float\"/>\n");
-	FPRINTF(f, "      <param name=\"Z\" type=\"float\"/>\n");
-	FPRINTF(f, "     </accessor>\n");
-	FPRINTF(f, "    </technique_common>\n");
-	FPRINTF(f, "   </source>\n");
-	FPRINTF(f, "   <vertices id=\"vv\">\n");
-	FPRINTF(f, "    <input semantic=\"POSITION\" source=\"#v\"/>\n");
-	FPRINTF(f, "   </vertices>\n");
-	FPRINTF(f, "   <triangles count=\"%d\">\n", nf);
-	FPRINTF(f, "    <input offset=\"0\" semantic=\"VERTEX\" source=\"#vv\"/>\n");
-	FPRINTF(f, "    <p>\n");
-	for (int i = 0; i < nf; i++) {
-		FPRINTF(f, "\t%d %d %d\n",
-			mesh->faces[i][0],
-			mesh->faces[i][1],
-			mesh->faces[i][2]);
-	}
-	FPRINTF(f, "    </p>\n");
-	FPRINTF(f, "   </triangles>\n");
-	FPRINTF(f, "  </mesh>\n");
-	FPRINTF(f, " </geometry>\n");
-	FPRINTF(f, "</library_geometries>\n");
-	FPRINTF(f, "<library_visual_scenes>\n");
-	FPRINTF(f, " <visual_scene id=\"scene\">\n");
-	FPRINTF(f, "  <node>\n");
-	FPRINTF(f, "   <instance_geometry url=\"#geom\"/>\n");
-	FPRINTF(f, "  </node>\n");
-	FPRINTF(f, " </visual_scene>\n");
-	FPRINTF(f, "</library_visual_scenes>\n");
-	FPRINTF(f, "<scene>\n");
-	FPRINTF(f, " <instance_visual_scene url=\"#scene\"/>\n");
-	FPRINTF(f, "</scene>\n");
-	FPRINTF(f, "</COLLADA>\n");
-	return true;
-}
-
 
 // Write a bunch of vertices to an ASCII file
 static bool write_verts_asc(TriMesh *mesh, FILE *f,
@@ -2021,64 +1168,6 @@ static bool write_verts_bin(TriMesh *mesh, FILE *f, bool need_swap,
 		swap_vert_props(mesh, float_color);
 	return ok;
 }
-
-
-// Write a bunch of faces to an ASCII file
-static bool write_faces_asc(TriMesh *mesh, FILE *f,
-                            const char *before_face, const char *after_line)
-{
-	mesh->need_faces();
-	for (size_t i = 0; i < mesh->faces.size(); i++) {
-		FPRINTF(f, "%s%d %d %d%s\n", before_face, mesh->faces[i][0],
-			mesh->faces[i][1], mesh->faces[i][2], after_line);
-	}
-	return true;
-}
-
-
-// Write a bunch of faces to a binary file
-static bool write_faces_bin(TriMesh *mesh, FILE *f, bool need_swap,
-                            int before_face_len, const char *before_face,
-                            int after_face_len, const char *after_face)
-{
-	mesh->need_faces();
-	if (need_swap) {
-		for (size_t i = 0; i < mesh->faces.size(); i++) {
-			swap_int(mesh->faces[i][0]);
-			swap_int(mesh->faces[i][1]);
-			swap_int(mesh->faces[i][2]);
-		}
-	}
-	bool ok = true;
-	for (size_t i = 0; i < mesh->faces.size(); i++) {
-		if (before_face_len) {
-			if (fwrite(before_face, before_face_len, 1, f) != 1) {
-				ok = false;
-				goto out;
-			}
-		}
-		if (fwrite(&(mesh->faces[i][0]), 12, 1, f) != 1) {
-			ok = false;
-			goto out;
-		}
-		if (after_face_len) {
-			if (fwrite(after_face, after_face_len, 1, f) != 1) {
-				ok = false;
-				goto out;
-			}
-		}
-	}
-out:
-	if (need_swap) {
-		for (size_t i = 0; i < mesh->faces.size(); i++) {
-			swap_int(mesh->faces[i][0]);
-			swap_int(mesh->faces[i][1]);
-			swap_int(mesh->faces[i][2]);
-		}
-	}
-	return ok;
-}
-
 
 // Write tstrips to an ASCII file
 static bool write_strips_asc(TriMesh *mesh, FILE *f)
