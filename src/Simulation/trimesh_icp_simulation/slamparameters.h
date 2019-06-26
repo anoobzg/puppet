@@ -6,15 +6,18 @@ struct ReaderParameters
 	std::string directory;
 	std::string pattern;
 	float time;
-	int profile;
-	std::string profile_file;
 };
 
 struct ICPParamters
 {
 	std::string calib_file;
-	int profile;
-	std::string profile_file;
+};
+
+struct DebugParameters
+{
+	int debug;
+	std::string directory;
+	std::string out_directory;
 };
 
 namespace boost
@@ -35,8 +38,10 @@ public:
 
 	ReaderParameters reader_param;
 	ICPParamters icp_param;
+	DebugParameters debug_param;
 protected:
 	void LoadAllParameters(boost::program_options::options_description& options, bool inital);
 	void LoadReaderParameters(boost::program_options::options_description& options, bool inital);
 	void LoadICPParameters(boost::program_options::options_description& options, bool inital);
+	void LoadDebugParameters(boost::program_options::options_description& options, bool inital);
 };

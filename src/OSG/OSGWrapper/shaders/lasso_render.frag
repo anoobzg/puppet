@@ -5,7 +5,7 @@ out vec4 fragment_color;
 in vec3 view_direction;
 in vec3 normal;
 flat in float flag;
-uniform vec4 color = vec4(0.0, 1.0, 0.0, 1.0);
+uniform vec4 color = vec4(1.0, 1.0, 1.0, 1.0);
 
 uniform vec4 front_ambient = vec4(0.7, 0.7, 0.7, 1.0);
 uniform vec4 front_diffuse = vec4(0.3, 0.3, 0.3, 1.0);
@@ -15,24 +15,40 @@ uniform vec4 specular = vec4(0.5, 0.5, 0.5, 1.0);
 uniform float specular_power = 128.0;
 uniform vec3 light_direction = vec3(0.0, 0.0, 1.0);
 
-vec4 flag2color(float flag)
+vec4 flagtocolor(float flag)
 {
-	if(flag >= 2.0)
-		return vec4(0.0, 0.0, 1.0, 1.0);
-	else if(flag >= 1.0)
+	if(flag == 0.0)
+		return vec4(1.0, 1.0, 1.0, 1.0);
+	else if(flag == 1.0)
+		return vec4(0.0, 1.0, 0.0, 1.0);
+	else if(flag == 2.0)
 		return vec4(1.0, 0.0, 0.0, 1.0);
-	else
-		return color;
+	return vec4(0.0, 0.0, 1.0, 1.0);
+}
+
+vec4 colortest(float flag)
+{
+	return vec4(flag);
 }
 
 void main( void )
 {
-	vec4 core_color = flag2color(flag);
+	vec4 core_color = colortest(flag);
 	vec3 flight_direction = normalize(light_direction);
 	vec3 fnormal 		  =	normalize(normal);
 	vec4 ambient_color 	  = front_ambient;
 	vec4 diffuse_color    = front_diffuse;
 	vec4 specular_color   = specular;
+	
+	if(!gl_FrontFacing)
+	{
+		fnormal.z  = - fnormal.z;
+		ambient_color = back_ambient;
+		diffuse_color = back_diffuse;
+		specular_color = vec4(0.0, 0.0, 0.0, 1.0);
+	    
+		core_color = vec4(0.6, 0.6, 0.6, 1.0);
+	}
 	
 	float NdotL 		  = dot(fnormal, flight_direction);
 	ambient_color 		  = ambient_color * core_color;

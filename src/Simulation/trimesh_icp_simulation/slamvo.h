@@ -1,8 +1,6 @@
 #pragma once
 #include "interface.h"
 #include <base\threading\thread.h>
-#include "csvwriter.h"
-#include "vostate.h"
 #include "voimpl.h"
 
 class SlamVO : public base::Thread , public VO
@@ -16,14 +14,13 @@ public:
 
 	void OnFrame(trimesh::TriMesh* mesh);
 	void SetVOTracer(VOTracer* tracer);
+	void SetVOProfiler(VOProfiler* profiler);
 protected:
 	void ProcessFrame(trimesh::TriMesh* mesh);
-	void LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data);
-	void FusionFrame(TriMeshPtr& mesh);
 private:
-	VOTracer* m_tracer;
 	ICPParamters m_parameters;
-	std::unique_ptr<CSVWriter> m_writer;
-	VOState m_state;
+	VOProfiler* m_profiler;
 	VOImpl m_vo_impl;
+
+	VOTracer* m_tracer;
 };

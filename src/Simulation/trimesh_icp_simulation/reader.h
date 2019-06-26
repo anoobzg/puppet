@@ -12,7 +12,7 @@ public:
 	void StartRead(const ReaderParameters& parameters);
 	void StopRead();
 	void SetVO(VO* vo);
-
+	void SetReadTracer(ReadTracer* tracer);
 private:
 	void Read();
 	trimesh::TriMesh* LoadOneFrame();
@@ -22,5 +22,5 @@ protected:
 	int m_current_index;
 	bool m_stop;
 
-	std::unique_ptr<CSVWriter> m_writer;
+	ReadTracer* m_tracer;
 };

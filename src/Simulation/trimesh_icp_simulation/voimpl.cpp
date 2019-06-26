@@ -32,6 +32,47 @@ void VOImpl::Setup(const ICPParamters& parameters)
 	m_icp.reset(new trimesh::ProjectionICP(m_fx, m_fy, m_cx, m_cy));
 }
 
+void VOImpl::SetVOTracer(VOTracer* tracer)
+{
+	m_tracer = tracer;
+}
+
+void VOImpl::ProcessOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
+{
+	m_state.IncFrame();
+	mesh->frame = m_state.Frame();
+
+	LocateOneFrame(mesh, locate_data);
+
+	if (!locate_data.lost)
+		FusionFrame(mesh);
+}
+
+void VOImpl::LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
+{
+	if (m_state.FirstFrame())
+	{//first frame
+		locate_data.lost = false;
+		m_state.SetFirstFrame(false);
+		std::cout << "0  --->  0" << std::endl;
+	}
+	else
+	{
+		locate_data.lost = !Frame2Frame(mesh);
+	}
+}
+
+void VOImpl::FusionFrame(TriMeshPtr& mesh)
+{
+	SetLastMesh(mesh);
+	if (m_tracer)
+	{
+		RenderData* render_data = new RenderData();
+		render_data->mesh = mesh;
+		m_tracer->OnFrame(render_data);
+	}
+}
+
 bool VOImpl::Frame2Frame(TriMeshPtr& mesh)
 {
 	TriMeshPtr dest_mesh;

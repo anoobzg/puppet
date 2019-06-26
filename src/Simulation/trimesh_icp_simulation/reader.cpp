@@ -20,12 +20,6 @@ void Reader::StartRead(const ReaderParameters& parameters)
 {
 	m_parameters = parameters;
 
-	if (m_parameters.profile)
-	{
-		m_writer.reset(new CSVWriter());
-		m_writer->PushHead("time");
-	}
-
 	m_stop = false;
 	m_current_index = 0;
 	bool start = Start();
@@ -36,9 +30,14 @@ void Reader::StopRead()
 {
 	m_stop = true;
 	m_vo = nullptr;
-	if (m_writer) m_writer->Output(m_parameters.profile_file);
+	m_tracer = nullptr;
 
 	Stop();
+}
+
+void Reader::SetReadTracer(ReadTracer* tracer)
+{
+	m_tracer = tracer;
 }
 
 void Reader::Read()
@@ -47,7 +46,8 @@ void Reader::Read()
 
 	while (!m_stop)
 	{
-		trimesh::timestamp t0 = trimesh::now();
+		if (m_tracer) m_tracer->OnBeforeRead();
+
 		trimesh::TriMesh* mesh = LoadOneFrame();
 
 		if(mesh)
@@ -57,9 +57,10 @@ void Reader::Read()
 
 		if (m_vo) m_vo->OnFrame(mesh);
 
+		if (m_tracer) m_tracer->OnAfterRead();
+
 		trimesh::timestamp now_time = trimesh::now();
 		
-		if (m_writer) m_writer->PushData((double)(now_time - t0));
 		float dt = now_time - last_time;
 		last_time = now_time;
 		if (dt < m_parameters.time && dt > 0.0f)

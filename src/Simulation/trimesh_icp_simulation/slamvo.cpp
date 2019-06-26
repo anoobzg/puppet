@@ -3,7 +3,7 @@
 #include "timestamp.h"
 
 SlamVO::SlamVO()
-	:base::Thread("SlamVO"), m_tracer(NULL)
+	:base::Thread("SlamVO"), m_tracer(NULL), m_profiler(NULL)
 {
 
 }
@@ -18,24 +18,21 @@ void SlamVO::StartVO(const ICPParamters& parameters)
 	m_parameters = parameters;
 
 	m_vo_impl.Setup(m_parameters);
-	if (m_parameters.profile)
-	{
-		m_writer.reset(new CSVWriter());
-		m_writer->PushHead("count");
-		m_writer->PushHead("type");
-		m_writer->PushHead("time");
-	}
+	m_vo_impl.SetVOTracer(m_tracer);
 
-	m_state.SetFirstFrame(true);
 	bool start = Start();
 }
 
 void SlamVO::StopVO()
 {
-	if (m_writer)
-		m_writer->Output(m_parameters.profile_file);
+	m_profiler = NULL;
 	Stop();
 	m_tracer = NULL;
+}
+
+void SlamVO::SetVOProfiler(VOProfiler* profiler)
+{
+	m_profiler = profiler;
 }
 
 void SlamVO::OnFrame(trimesh::TriMesh* mesh)
@@ -46,51 +43,23 @@ void SlamVO::OnFrame(trimesh::TriMesh* mesh)
 
 void SlamVO::ProcessFrame(trimesh::TriMesh* mesh)
 {
-	m_state.IncFrame();
-	mesh->frame = m_state.Frame();
-	if (m_writer) m_writer->TickStart();
+	if (m_profiler)
+	{
+		m_profiler->OnMesh(*mesh);
+		m_profiler->OnBeforeLocate();
+	}
 
-	LocateData locate_data;
-	locate_data.lost = false;
-	locate_data.locate_type = 0;
-	locate_data.frame_count = 0;
 	TriMeshPtr mesh_ptr(mesh);
+	LocateData locate_data;
+	locate_data.lost = true;
+	locate_data.locate_type = 0;
 
-	LocateOneFrame(mesh_ptr, locate_data);
+	m_vo_impl.ProcessOneFrame(mesh_ptr, locate_data);
 
-	if (!locate_data.lost)
-		FusionFrame(mesh_ptr);
-
-	if (m_writer)
+	if (m_profiler)
 	{
-		m_writer->PushData((double)locate_data.frame_count);
-		m_writer->PushData((double)locate_data.locate_type);
-		m_writer->TickEnd();
-	}
-}
-
-void SlamVO::LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
-{
-	locate_data.frame_count = (int)mesh->vertices.size();
-	if (m_state.FirstFrame())
-	{//first frame
-		m_state.SetFirstFrame(false);
-		std::cout << "0  --->  0" << std::endl;
-	}
-	else
-	{
-		locate_data.lost = !m_vo_impl.Frame2Frame(mesh);
-	}
-}
-
-void SlamVO::FusionFrame(TriMeshPtr& mesh)
-{
-	m_vo_impl.SetLastMesh(mesh);
-	if (m_tracer)
-	{
-		RenderData* render_data = new RenderData();
-		render_data->mesh = mesh;
-		m_tracer->OnFrame(render_data);
+		m_profiler->OnLocateResult(locate_data);
+		m_profiler->OnAfterLocate();
 	}
 }
 

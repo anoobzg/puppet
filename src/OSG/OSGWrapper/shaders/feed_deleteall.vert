@@ -7,9 +7,9 @@ out float feedback_attribute;
 
 void main( void )
 {		
-	float value = ver_attribute_flag;
-	if(value == 0.0)
-		value = 1.0;
-		
-	feedback_attribute = value;
+	feedback_attribute = ver_attribute_flag;
+	if(feedback_attribute == 0.0)
+		feedback_attribute = 2.0;
+	else
+		feedback_attribute += 1.0;
 }

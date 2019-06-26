@@ -8,6 +8,7 @@
 #include "load_calib.h"
 #include "compute_boundingbox.h"
 #include "simulation_entry.h"
+#include "octree_entry.h"
 
 using namespace OSGWrapper;
 
@@ -15,6 +16,15 @@ int main(int argc, char* argv[])
 {
 	if (argc >= 2 && !strcmp("simulation", argv[1]))
 		return simulation_entry(argc, argv);
+
+	if (argc >= 2 && !strcmp("vo", argv[1]))
+		return vo(argc, argv);
+
+	if (argc >= 2 && !strcmp("octree", argv[1]))
+		return octree_entry(argc, argv);
+
+	if (argc >= 2 && !strcmp("cmd_octree", argv[1]))
+		return cmd_octree_entry(argc, argv);
 
 	if (argc < 4)
 		return EXIT_FAILURE;
@@ -62,7 +72,6 @@ int main(int argc, char* argv[])
 	view->SetCurrentScene(scene);
 
 	RenderService::Instance().addView(view);
-	RenderService::Instance().setKeyEventSetsDone(0);
 	return RenderService::Instance().Run();
 }
 //
