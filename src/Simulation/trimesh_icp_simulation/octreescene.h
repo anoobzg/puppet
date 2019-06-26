@@ -4,6 +4,7 @@
 #include <osgWrapper\AttributeUtilNode.h>
 #include <osgWrapper\Manipulator.h>
 #include "octreenode.h"
+#include "octreegrid.h"
 
 class OctreeWork;
 class OctreeScene : public OSGWrapper::RenderScene
@@ -14,6 +15,7 @@ public:
 
 	void AddPoint(osg::Node* point);
 	void RemovePoint(osg::Node* point);
+	void AddOctreeNode(osg::Node* node);
 private:
 	bool OnMouse(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa);
 	bool OnKey(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa);
@@ -29,4 +31,5 @@ private:
 
 	osg::ref_ptr<OSGWrapper::AttributeUtilNode> m_point_node;
 	osg::ref_ptr<OctreeNode> m_octree_node;
+	osg::ref_ptr<OctreeGrid> m_octree_grid;
 };

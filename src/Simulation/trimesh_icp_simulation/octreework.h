@@ -2,6 +2,7 @@
 #include "TriMesh.h"
 #include "octreescene.h"
 #include "pointsnode.h"
+#include "octree.h"
 
 class OctreeWork
 {
@@ -11,6 +12,7 @@ public:
 
 	void SetRenderScene(OctreeScene* scene);
 	void Move(int i);
+	void GenerateChunk();
 private:
 	osg::ref_ptr<OctreeScene> m_scene;
 public:
@@ -19,4 +21,6 @@ public:
 
 	int m_current;
 	osg::ref_ptr<PointsNode> m_current_node;
+
+	Octree m_octree;
 };

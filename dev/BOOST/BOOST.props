@@ -9,7 +9,7 @@
       <PreprocessorDefinitions>NOMINMAX;BOOST_ALL_DYN_LINK;BOOST_ALL_NO_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>boost_program_options.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>boost_program_options.lib;boost_file_system.lib;boost_system.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />

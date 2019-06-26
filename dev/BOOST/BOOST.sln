@@ -5,6 +5,13 @@ VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boost_program_options", "boost_program_options\boost_program_options.vcxproj", "{D1A319EC-A691-49FA-8205-9D4CC9CF99D5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boost_system", "boost_system\boost_system.vcxproj", "{25E853AC-7D77-4038-8715-10293A4CD698}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boost_file_system", "boost_file_system\boost_file_system.vcxproj", "{932A88DF-673D-4F6C-86AC-9F4A95BEBB6A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{25E853AC-7D77-4038-8715-10293A4CD698} = {25E853AC-7D77-4038-8715-10293A4CD698}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +28,22 @@ Global
 		{D1A319EC-A691-49FA-8205-9D4CC9CF99D5}.Release|x64.Build.0 = Release|x64
 		{D1A319EC-A691-49FA-8205-9D4CC9CF99D5}.Release|x86.ActiveCfg = Release|Win32
 		{D1A319EC-A691-49FA-8205-9D4CC9CF99D5}.Release|x86.Build.0 = Release|Win32
+		{25E853AC-7D77-4038-8715-10293A4CD698}.Debug|x64.ActiveCfg = Debug|x64
+		{25E853AC-7D77-4038-8715-10293A4CD698}.Debug|x64.Build.0 = Debug|x64
+		{25E853AC-7D77-4038-8715-10293A4CD698}.Debug|x86.ActiveCfg = Debug|Win32
+		{25E853AC-7D77-4038-8715-10293A4CD698}.Debug|x86.Build.0 = Debug|Win32
+		{25E853AC-7D77-4038-8715-10293A4CD698}.Release|x64.ActiveCfg = Release|x64
+		{25E853AC-7D77-4038-8715-10293A4CD698}.Release|x64.Build.0 = Release|x64
+		{25E853AC-7D77-4038-8715-10293A4CD698}.Release|x86.ActiveCfg = Release|Win32
+		{25E853AC-7D77-4038-8715-10293A4CD698}.Release|x86.Build.0 = Release|Win32
+		{932A88DF-673D-4F6C-86AC-9F4A95BEBB6A}.Debug|x64.ActiveCfg = Debug|x64
+		{932A88DF-673D-4F6C-86AC-9F4A95BEBB6A}.Debug|x64.Build.0 = Debug|x64
+		{932A88DF-673D-4F6C-86AC-9F4A95BEBB6A}.Debug|x86.ActiveCfg = Debug|Win32
+		{932A88DF-673D-4F6C-86AC-9F4A95BEBB6A}.Debug|x86.Build.0 = Debug|Win32
+		{932A88DF-673D-4F6C-86AC-9F4A95BEBB6A}.Release|x64.ActiveCfg = Release|x64
+		{932A88DF-673D-4F6C-86AC-9F4A95BEBB6A}.Release|x64.Build.0 = Release|x64
+		{932A88DF-673D-4F6C-86AC-9F4A95BEBB6A}.Release|x86.ActiveCfg = Release|Win32
+		{932A88DF-673D-4F6C-86AC-9F4A95BEBB6A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

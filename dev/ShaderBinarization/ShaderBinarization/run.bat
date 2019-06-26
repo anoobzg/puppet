@@ -1,0 +1,1 @@
+..\..\..\bin\x64\Release\ShaderBinarization.exe ..\..\..\src\OSG\OSGWrapper\shaders\ ..\..\..\src\OSG\OSGWrapper\

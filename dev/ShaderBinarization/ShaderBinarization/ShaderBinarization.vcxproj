@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{b807993f-2ce6-4998-b447-824f52939d97}</ProjectGuid>
-    <RootNamespace>OSGWrapper</RootNamespace>
+    <ProjectGuid>{7b3509ad-26ba-4cf0-8c23-0d036809a820}</ProjectGuid>
+    <RootNamespace>ShaderBinarization</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -39,13 +39,13 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -64,9 +64,11 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\BOOST\BOOST.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\BOOST\BOOST.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -94,14 +96,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OSG\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;OSG_LIBRARY;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBCS;WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OpenThread.lib;OSG.lib;OSGDB.lib;OSGGA.lib;OSGText.lib;OSGUtil.lib;OSGViewer.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -127,8 +127,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OSG\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;OSG_LIBRARY;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBCS;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,60 +136,15 @@
       <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OpenThread.lib;OSG.lib;OSGDB.lib;OSGGA.lib;OSGText.lib;OSGUtil.lib;OSGViewer.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\Animation.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\AnimationScheduler.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ArrayCreator.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\AttributeUtilNode.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ColorIndexPicker.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\EraseGeometry.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\FeedbackProgram.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\GeodeCreator.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\GeometryCreator.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ManipulableNode.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\Manipulator.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\MatrixAnimation.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\MatrixDeltaAnimation.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\OSGMathUtil.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\OSGWrapperExporter.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ProgramManager.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\RenderScene.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\RenderService.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\RenderView.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\SimMain.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\SimMain_Ex.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\SimpleRenderThread.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\Singleton.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\StateDeclare.h" />
-    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UtilCreator.h" />
-    <ClInclude Include="..\..\..\src\OSG\OSGWrapper\ProgramDef.h" />
-    <ClInclude Include="..\..\..\src\OSG\OSGWrapper\ShaderString.h" />
+    <ClCompile Include="..\..\..\src\ShaderBinarization\convert.cpp" />
+    <ClCompile Include="..\..\..\src\ShaderBinarization\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\Animation.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\AnimationScheduler.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ArrayCreator.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\AttributeUtilNode.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ColorIndexPicker.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\EraseGeometry.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\FeedbackProgram.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\GeodeCreator.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\GeometryCreator.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ManipulableNode.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\Manipulator.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\MatrixAnimation.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\MatrixDeltaAnimation.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\OSGMathUtil.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ProgramManager.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\RenderScene.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\RenderService.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\RenderView.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\SimpleRenderThread.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UtilCreator.cpp" />
+    <ClInclude Include="..\..\..\src\ShaderBinarization\convert.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

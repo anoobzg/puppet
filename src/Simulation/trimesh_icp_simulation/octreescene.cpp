@@ -22,9 +22,6 @@ OctreeScene::OctreeScene(OctreeWork& work)
 	m_render_node->AddChild(m_octree_node);
 
 	m_work.SetRenderScene(this);
-
-	SetBounding();
-	UpdateCamera();
 }
 
 OctreeScene::~OctreeScene()
@@ -52,11 +49,24 @@ bool OctreeScene::OnKey(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapte
 		return true;
 	}
 
+	if (KEY_DOWN(ea, osgGA::GUIEventAdapter::KEY_C))
+	{
+		m_work.GenerateChunk();
+		return true;
+	}
 	return true;
 }
 
 void OctreeScene::AddPoint(osg::Node* point)
 {
+	if (point && !m_octree_grid)
+	{
+		const osg::BoundingSpheref& sphere = point->getBound();
+		m_octree_grid = new OctreeGrid(sphere.center());
+		m_render_node->AddChild(m_octree_grid);
+
+		UpdateCamera();
+	}
 	m_point_node->AddChild(point);
 }
 
@@ -71,6 +81,8 @@ void OctreeScene::SetBounding()
 	box->AddUniform(new osg::Uniform("color", osg::Vec4f(1.0f, 1.0f, 1.0f, 1.0f)));
 	box->UpdateBoundingBox(osg::Vec3f(-500.0f, -500.0f, -500.0f), osg::Vec3f(500.0f, 500.0f, 500.0f));
 	m_render_node->AddChild(box);
+
+	UpdateCamera();
 }
 
 void OctreeScene::UpdateCamera()
@@ -88,4 +100,10 @@ void OctreeScene::UpdateCamera()
 
 	SetViewMatrix(view_matrix);
 	SetNearFar(0.1f, len + 10.0f * radius);
+}
+
+void OctreeScene::AddOctreeNode(osg::Node* node)
+{
+	m_octree_node->RemoveAll();
+	m_octree_node->AddChild(node);
 }
