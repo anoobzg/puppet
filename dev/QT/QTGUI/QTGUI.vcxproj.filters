@@ -121,9 +121,6 @@
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qopenglcontext.cpp">
       <Filter>kernel</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglfunctions_es2.cpp">
-      <Filter>opengl</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglgradientcache.cpp">
       <Filter>opengl</Filter>
     </ClCompile>
@@ -724,6 +721,69 @@
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontsubset_agl.cpp">
       <Filter>text</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qgenericplugin.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qgenericpluginfactory.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qgenericplugin.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformsharedgraphicscache.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qtextimagehandler_p.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qpdfwriter.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformbackingstore.cpp">
+      <Filter>painting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextodfwriter.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qfontdatabase.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qopengltexture.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qfont.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qkeysequence.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeymapper.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qkeymapper_p.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qpalette.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qtextformat.cpp">
+      <Filter>text</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qtouchdevice.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpicture.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpictureformatplugin.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpaintengine_pic.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qpictureformatplugin.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qcolor.h">
@@ -831,9 +891,6 @@
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qopenglcontext_p.h">
       <Filter>kernel</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglfunctions_es2.h">
-      <Filter>opengl</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglgradientcache_p.h">
       <Filter>opengl</Filter>
     </ClInclude>
@@ -856,9 +913,6 @@
       <Filter>opengl</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglshadercache_p.h">
-      <Filter>opengl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltexture.h">
       <Filter>opengl</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltexture_p.h">
@@ -960,17 +1014,11 @@
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpen_p.h">
       <Filter>painting</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfont.h">
-      <Filter>text</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfont_p.h">
       <Filter>text</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontmetrics.h">
       <Filter>text</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qpalette.h">
-      <Filter>kernel</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qwindow_p.h">
       <Filter>kernel</Filter>
@@ -979,12 +1027,6 @@
       <Filter>kernel</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qwindowdefs_win.h">
-      <Filter>kernel</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeysequence.h">
-      <Filter>kernel</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeysequence_p.h">
       <Filter>kernel</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qevent_p.h">
@@ -1010,9 +1052,6 @@
     </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qstroker_p.h">
       <Filter>painting</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextformat.h">
-      <Filter>text</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextformat_p.h">
       <Filter>text</Filter>
@@ -1069,9 +1108,6 @@
       <Filter>text</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontengineglyphcache_p.h">
-      <Filter>text</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontdatabase.h">
       <Filter>text</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontengine_p.h">
@@ -1158,9 +1194,6 @@
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsessionmanager.h">
       <Filter>kernel</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsharedgraphicscache.h">
-      <Filter>kernel</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsurface.h">
       <Filter>kernel</Filter>
     </ClInclude>
@@ -1208,9 +1241,6 @@
     </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qbezier_p.h">
       <Filter>painting</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qtouchdevice.h">
-      <Filter>kernel</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qtouchdevice_p.h">
       <Filter>kernel</Filter>
@@ -1260,9 +1290,6 @@
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qabstracttextdocumentlayout_p.h">
       <Filter>text</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qplatformbackingstore.h">
-      <Filter>painting</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qrasterizer_p.h">
       <Filter>painting</Filter>
     </ClInclude>
@@ -1296,9 +1323,6 @@
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpagelayout.h">
       <Filter>painting</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpdfwriter.h">
-      <Filter>painting</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpathclipper_p.h">
       <Filter>painting</Filter>
     </ClInclude>
@@ -1314,31 +1338,20 @@
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontsubset_p.h">
       <Filter>text</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qgenericpluginfactory.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qpicture.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qpicture_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qpaintengine_pic_p.h">
+      <Filter>image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessible.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessiblecache_p.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qoffscreensurface.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qsyntaxhighlighter.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsystemtrayicon.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformdialoghelper.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformnativeinterface.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qclipboard.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qdnd_p.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qdrag.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocument.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocumentlayout_p.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextobject.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qscreen.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qinputmethod.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\image\qiconengineplugin.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\image\qimage.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qevent.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qwindow.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglvertexarrayobject.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengldebug.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qopenglcontext.h" />
-    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\image\qimageiohandler.h" />
     <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessibleplugin.h">
       <Filter>accessible</Filter>
     </CustomBuild>
@@ -1407,6 +1420,117 @@
     </CustomBuild>
     <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qshapedpixmapdndwindow_p.h">
       <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessible.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessiblecache_p.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qclipboard.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qdnd_p.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qdrag.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qevent.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\image\qiconengineplugin.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\image\qimage.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\image\qimageiohandler.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qinputmethod.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qoffscreensurface.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qopenglcontext.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengldebug.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglvertexarrayobject.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformdialoghelper.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformnativeinterface.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsystemtrayicon.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qscreen.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qsyntaxhighlighter.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocument.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocumentlayout_p.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextobject.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qwindow.h">
+      <Filter>资源文件</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qgenericplugin.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsharedgraphicscache.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpdfwriter.h">
+      <Filter>painting</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\painting\qplatformbackingstore.h">
+      <Filter>painting</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontdatabase.h">
+      <Filter>text</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltexture.h">
+      <Filter>opengl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qfont.h">
+      <Filter>text</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeysequence.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeysequence_p.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeymapper_p.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qpalette.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextformat.h">
+      <Filter>text</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qtouchdevice.h">
+      <Filter>kernel</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\image\qpictureformatplugin.h">
+      <Filter>image</Filter>
     </CustomBuild>
   </ItemGroup>
 </Project>

@@ -27,15 +27,25 @@
     <ClCompile Include="..\..\..\src\qt\gen\moc_qdnd_p.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qdrag.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qevent.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qfont.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qfontdatabase.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qgenericplugin.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qiconengineplugin.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qimage.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qimageiohandler.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qinputdevicemanager_p.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qkeymapper_p.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qkeysequence.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qoffscreensurface.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qopenglengineshadermanager_p.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qopenglshaderprogram.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qopengltexture.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qopenglwindow.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qpaintdevicewindow.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qpalette.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qpdfwriter.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qpictureformatplugin.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformbackingstore.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformdialoghelper.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformgraphicsbuffer.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qplatforminputcontext.cpp" />
@@ -43,6 +53,7 @@
     <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformintegrationplugin.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformmenu.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformnativeinterface.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformsharedgraphicscache.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qplatformthemeplugin.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qrasterwindow.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qscreen.cpp" />
@@ -52,9 +63,12 @@
     <ClCompile Include="..\..\..\src\qt\gen\moc_qsurface.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qsurfaceformat.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qtextdocument.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qtextformat.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qtextimagehandler_p.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qtextlist.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qtextobject.cpp" />
     <ClCompile Include="..\..\..\src\qt\gen\moc_qtexttable.cpp" />
+    <ClCompile Include="..\..\..\src\qt\gen\moc_qtouchdevice.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessible.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessiblebridge.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\accessible\qaccessiblecache.cpp" />
@@ -76,6 +90,9 @@
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qimage_compat.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qimage_conversions.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qimage_ssse3.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpaintengine_pic.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpicture.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpictureformatplugin.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpixmap.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpixmapcache.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\image\qpixmap_blitter.cpp" />
@@ -91,11 +108,14 @@
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qdnd.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qdrag.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qevent.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qgenericplugin.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qgenericpluginfactory.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qguiapplication.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qguivariant.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qhighdpiscaling.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qinputdevicemanager.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qinputmethod.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeymapper.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeysequence.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qoffscreensurface.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qopenglcontext.cpp" />
@@ -154,7 +174,6 @@
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglengineshadermanager.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglframebufferobject.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglfunctions.cpp" />
-    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglfunctions_es2.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglgradientcache.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglpaintdevice.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglpaintengine.cpp" />
@@ -248,12 +267,41 @@
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextlayout.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextlist.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextobject.cpp" />
+    <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextodfwriter.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextoption.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qtexttable.cpp" />
     <ClCompile Include="..\..\..\src\qt\src\qbase\src\gui\text\qzip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformgraphicsbuffer.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qgenericplugin.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qpaintengine_pic_p.h" />
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qpicture.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\image\qpictureformatplugin.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\image\qpicture_p.h" />
+    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qgenericpluginfactory.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeymapper_p.h">
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
@@ -307,9 +355,23 @@
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpagesize.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpathclipper_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpathsimplifier_p.h" />
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpdfwriter.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpdfwriter.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpdf_p.h" />
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qplatformbackingstore.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\painting\qplatformbackingstore.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qrasterizer_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qrbtree_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qabstracttextdocumentlayout_p.h" />
@@ -421,7 +483,14 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
     </CustomBuild>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qtouchdevice.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qtouchdevice.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qtouchdevice_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qbackingstore.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qbezier_p.h" />
@@ -443,7 +512,14 @@
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformcursor.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformservices.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsessionmanager.h" />
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsharedgraphicscache.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsharedgraphicscache.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformsurface.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qharfbuzzng_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qplatformfontdatabase.h" />
@@ -563,7 +639,14 @@
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qtriangulator_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qcssparser_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qdistancefield_p.h" />
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontdatabase.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontdatabase.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontengineglyphcache_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontengine_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontengine_qpf2_p.h" />
@@ -594,7 +677,14 @@
     </CustomBuild>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocumentwriter.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextdocument_p.h" />
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextformat.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextformat.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextformat_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextlayout.h" />
     <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qtextlist.h">
@@ -673,9 +763,30 @@
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qevent_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qguiapplication.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qguiapplication_p.h" />
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeysequence.h" />
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeysequence_p.h" />
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qpalette.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeysequence.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qkeysequence_p.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qpalette.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformintegration.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qplatformintegrationfactory_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\kernel\qwindowsysteminterface.h" />
@@ -700,7 +811,14 @@
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qbrush.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpen.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\painting\qpen_p.h" />
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfont.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\text\qfont.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfontmetrics.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\text\qfont_p.h" />
     <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglvertexarrayobject.h">
@@ -736,7 +854,6 @@
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglframebufferobject.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglframebufferobject_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglfunctions.h" />
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglfunctions_es2.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglgradientcache_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglpaintdevice.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopenglpaintdevice_p.h" />
@@ -753,7 +870,14 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
     </CustomBuild>
-    <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltexture.h" />
+    <CustomBuild Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltexture.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(SolutionDir)..\..\src\qt\bin\moc.exe" "%(Fullpath)" -o "$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC %(Filename).h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC %(Filename).h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\..\src\qt\gen\moc_%(Filename).cpp</Outputs>
+    </CustomBuild>
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltextureblitter.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltexturecache_p.h" />
     <ClInclude Include="..\..\..\src\qt\src\qbase\src\gui\opengl\qopengltextureglyphcache_p.h" />

@@ -1,9 +1,9 @@
 #define QT_FEATURE_accessibility 1
 #define QT_NO_ACCESSIBILITY_ATSPI_BRIDGE 
 #define QT_FEATURE_action 1
-#define QT_FEATURE_opengles2 1
-#define QT_OPENGL_ES true
-#define QT_OPENGL_ES_2 true
+#define QT_FEATURE_opengles2 -1
+#define QT_FEATURE_dynamicgl 1
+#define QT_OPENGL_DYNAMIC true
 #define QT_FEATURE_angle 1
 #define QT_OPENGL_ES_2_ANGLE true
 #define QT_FEATURE_clipboard 1
@@ -14,7 +14,6 @@
 #define QT_FEATURE_desktopservices 1
 #define QT_FEATURE_imageformat_xpm 1
 #define QT_FEATURE_draganddrop 1
-#define QT_FEATURE_dynamicgl -1
 #define QT_FEATURE_opengl 1
 #define QT_NO_FONTCONFIG 
 #define QT_FEATURE_imageformatplugin 1
@@ -43,6 +42,6 @@
 #define QT_FEATURE_texthtmlparser 1
 #define QT_FEATURE_textodfwriter 1
 #define QT_FEATURE_validator 1
-#define QT_FEATURE_vulkan -1
+#define QT_FEATURE_vulkan 1
 #define QT_FEATURE_whatsthis 1
 #define QT_FEATURE_wheelevent 1
