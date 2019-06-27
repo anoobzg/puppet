@@ -13,7 +13,7 @@ SlamVO::~SlamVO()
 
 }
 
-void SlamVO::StartVO(const ICPParamters& parameters)
+void SlamVO::StartVO(const SlamParameters& parameters)
 {
 	m_parameters = parameters;
 

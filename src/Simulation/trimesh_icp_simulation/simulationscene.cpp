@@ -1,6 +1,6 @@
 #include "simulationscene.h"
 #include <osgWrapper\MatrixAnimation.h>
-
+#include <osg\Point>
 SimulationScene::SimulationScene()
 {
 	m_manipulable_node = new OSGWrapper::ManipulableNode();
@@ -10,6 +10,10 @@ SimulationScene::SimulationScene()
 
 	m_render_node = new OSGWrapper::AttributeUtilNode();
 	m_manipulable_node->AddChild(m_render_node);
+	m_patch_node = new OSGWrapper::AttributeUtilNode();
+	m_patch_node->SetRenderProgram("esscanning");
+	//m_patch_node->SetAttribute(new osg::Point(5.0f));
+	m_manipulable_node->AddChild(m_patch_node);
 
 	m_animation_scheduler = new OSGWrapper::AnimationScheduler();
 	setUpdateCallback(m_animation_scheduler);
@@ -47,6 +51,24 @@ void SimulationScene::ShowOneFrame(osg::Geometry* geometry, const osg::Matrixf& 
 	render_lock.Release();
 }
 
+void SimulationScene::UpdateMatrix(const osg::Matrixf& matrix, bool use_animation)
+{
+	render_lock.Acquire();
+	m_animation_scheduler->Clear();
+	if (use_animation)
+	{
+		float time = 0.0f;
+		if (m_render_view) time = (float)m_render_view->getFrameStamp()->getSimulationTime();
+		OSGWrapper::MatrixAnimation* animation = new OSGWrapper::MatrixAnimation(*m_manipulable_node);
+		animation->SetMatrix(osg::Matrixf::inverse(matrix));
+		m_animation_scheduler->StartAnimation(animation, (double)time);
+	}
+	else
+		m_manipulable_node->SetMatrix(osg::Matrixf::inverse(matrix));
+
+	render_lock.Release();
+}
+
 void SimulationScene::UpdateCamera()
 {
 	const osg::BoundingSphere& sphere = m_manipulable_node->getBound();
@@ -68,4 +90,34 @@ bool SimulationScene::OnMouse(const osgGA::GUIEventAdapter& ea, osgGA::GUIAction
 {
 	m_manipulator->OnMouse(ea, aa, *this);
 	return true;
+}
+
+void SimulationScene::AddPatch(osg::Geometry* geometry, bool update_camera)
+{
+	m_patch_node->AddChild(geometry);
+}
+
+void SimulationScene::UpdateCam()
+{
+	UpdateCamera();
+}
+
+void SimulationScene::Lock()
+{
+	render_lock.Acquire();
+}
+
+void SimulationScene::Unlock()
+{
+	render_lock.Release();
+}
+
+float SimulationScene::GetTime()
+{
+	float t = 0.0f;
+	if (m_render_view)
+	{
+		t = (float)m_render_view->getFrameStamp()->getSimulationTime();
+	}
+	return t;
 }

@@ -16,7 +16,7 @@ OctreeScene::OctreeScene(OctreeWork& work)
 	m_manipulable_node->AddChild(m_render_node);
 
 	m_point_node = new OSGWrapper::AttributeUtilNode();
-	m_point_node->AddUniform(new osg::Uniform("color", osg::Vec4f(0.0f, 0.0f, 1.0f, 1.0f)));
+	m_point_node->AddUniform(new osg::Uniform("color", osg::Vec4f(1.0f, 1.0f, 1.0f, 1.0f)));
 	m_octree_node = new OctreeNode();
 	m_render_node->AddChild(m_point_node);
 	m_render_node->AddChild(m_octree_node);
@@ -52,6 +52,18 @@ bool OctreeScene::OnKey(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapte
 	if (KEY_DOWN(ea, osgGA::GUIEventAdapter::KEY_C))
 	{
 		m_work.GenerateChunk();
+		return true;
+	}
+
+	if (KEY_DOWN(ea, osgGA::GUIEventAdapter::KEY_I))
+	{
+		m_work.InsertAll();
+		return true;
+	}
+
+	if (KEY_DOWN(ea, osgGA::GUIEventAdapter::KEY_O))
+	{
+		m_work.InsertAll();
 		return true;
 	}
 	return true;

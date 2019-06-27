@@ -15,11 +15,11 @@ VOImpl::~VOImpl()
 
 }
 
-void VOImpl::Setup(const ICPParamters& parameters)
+void VOImpl::Setup(const SlamParameters& parameters)
 {
-
+	const ICPParamters& icp_param = parameters.icp_param;
 	trimesh::CameraData camera_data;
-	if (!load_camera_data_from_file(parameters.calib_file, camera_data))
+	if (!load_camera_data_from_file(icp_param.calib_file, camera_data))
 	{
 		std::cout << "Cabli Data Error." << std::endl;
 	}
@@ -30,6 +30,19 @@ void VOImpl::Setup(const ICPParamters& parameters)
 	m_cy = camera_data.m_cy;
 
 	m_icp.reset(new trimesh::ProjectionICP(m_fx, m_fy, m_cx, m_cy));
+
+	const OctreeParameters& oct_param = parameters.octree_param;
+	int cell_depth = oct_param.cell_depth;
+	if (cell_depth < 2) cell_depth = 2;
+	else if (cell_depth > 6) cell_depth = 6;
+
+	float cell_resolution = 0.0f;
+	if (cell_depth == 2) cell_resolution = 1.6f;
+	if (cell_depth == 3) cell_resolution = 0.8f;
+	if (cell_depth == 4) cell_resolution = 0.4f;
+	if (cell_depth == 5) cell_resolution = 0.2f;
+	if (cell_depth == 6) cell_resolution = 0.1f;
+	m_octree.reset(new Octree(cell_depth, cell_resolution));
 }
 
 void VOImpl::SetVOTracer(VOTracer* tracer)
@@ -45,7 +58,7 @@ void VOImpl::ProcessOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
 	LocateOneFrame(mesh, locate_data);
 
 	if (!locate_data.lost)
-		FusionFrame(mesh);
+		FusionFrame(mesh, locate_data);
 }
 
 void VOImpl::LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
@@ -58,22 +71,50 @@ void VOImpl::LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
 	}
 	else
 	{
-		locate_data.lost = !Frame2Frame(mesh);
+		locate_data.lost = !Frame2Frame(mesh, locate_data);
 	}
 }
 
-void VOImpl::FusionFrame(TriMeshPtr& mesh)
+void VOImpl::FusionFrame(TriMeshPtr& mesh, const LocateData& locate_data)
 {
 	SetLastMesh(mesh);
+
+	if (!m_octree->m_initialized)
+		m_octree->Initialize(mesh->bbox.center());
+
+	std::vector<int> indexes(mesh->vertices.size(), -1);
+	m_octree->Insert(mesh->vertices, mesh->normals, mesh->global, indexes);
+
+	std::cout << "Octree nodes " << m_octree->m_current_index <<
+		" points " << m_octree->m_current_point_index << std::endl;
 	if (m_tracer)
 	{
-		RenderData* render_data = new RenderData();
-		render_data->mesh = mesh;
-		m_tracer->OnFrame(render_data);
+		//RenderData* render_data = new RenderData();
+		//render_data->mesh = mesh;
+		//m_tracer->OnFrame(render_data);
+
+		PatchRenderData* patch_data = new PatchRenderData();
+		patch_data->indices.swap(indexes);
+		patch_data->xf = mesh->global;
+		patch_data->step = locate_data.locate_type;
+		size_t size = patch_data->indices.size();
+		patch_data->normals.resize(size);
+		patch_data->points.resize(size);
+		for (size_t i = 0; i < size; ++i)
+		{
+			int index = patch_data->indices.at(i);
+			if (index >= 0)
+			{
+				patch_data->points.at(i) = m_octree->m_points.at(index);
+				patch_data->normals.at(i) = m_octree->m_normals.at(index);
+			}
+		}
+
+		m_tracer->OnFrame(patch_data);
 	}
 }
 
-bool VOImpl::Frame2Frame(TriMeshPtr& mesh)
+bool VOImpl::Frame2Frame(TriMeshPtr& mesh, LocateData& locate_data)
 {
 	TriMeshPtr dest_mesh;
 	trimesh::xform xf;
@@ -88,6 +129,8 @@ bool VOImpl::Frame2Frame(TriMeshPtr& mesh)
 	}
 	else
 	{
+		locate_data.locate_type = 1;
+
 		size_t size = m_key_frames.size();
 		if (size > 0)
 		{

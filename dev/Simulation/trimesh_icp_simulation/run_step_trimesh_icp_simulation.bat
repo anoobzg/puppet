@@ -1,0 +1,1 @@
+trimesh_icp_simulation.exe F:\Data\simulation\data\0.ply F:\Data\simulation\data\1.ply F:\Data\simulation\data\capture\KK_left_pr

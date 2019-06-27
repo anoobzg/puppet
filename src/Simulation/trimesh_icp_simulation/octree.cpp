@@ -1,13 +1,18 @@
 #include "octree.h"
 #include <assert.h>
 
-Octree::Octree()
-	:m_initialized(false), m_depth(13), m_cell_resolution(0.1f)
-	, m_len(m_cell_resolution * (1 << m_depth)), m_chunk_depth(7), m_chunk_size(1<<7)
-	, m_chunk_resolution(m_cell_resolution * (1<<6))
+Octree::Octree(int cell_depth, float cell_resolution)
+	:m_initialized(false), m_cell_depth(cell_depth), m_cell_resolution(cell_resolution)
+	, m_chunk_depth(7), m_chunk_size(1<<7)
+	, m_chunk_resolution(6.4f), m_len(6.4f * 128.0f)
 	, m_chunk_resolution_inv(1.0f / m_chunk_resolution), m_chunk_size2(m_chunk_size * m_chunk_size)
+	, m_current_index(0), m_current_point_index(0), m_cell_resolution_inv(1.0f / m_cell_resolution)
 {
+	assert(6.4f == (1 << m_cell_depth) * m_cell_resolution);
 	m_chunks.resize(m_chunk_size2 * m_chunk_size);
+	m_indexes.resize(5000000);
+	m_points.reserve(4000000);
+	m_normals.reserve(4000000);
 }
 
 Octree::~Octree()
@@ -33,13 +38,15 @@ void Octree::Initialize(const trimesh::vec3& center)
 	m_initialized = true;
 }
 
-void Octree::Insert(const std::vector<trimesh::vec3>& points)
+void Octree::Insert(const std::vector<trimesh::vec3>& points,
+	const std::vector<trimesh::vec3>& normals)
 {
 	assert(m_initialized);
 	size_t size = points.size();
 	for (size_t i = 0; i < size; ++i)
 	{
 		const trimesh::vec3& p = points.at(i);
+		const trimesh::vec3& n = normals.at(i);
 		trimesh::vec3 np = (p - m_min) * m_chunk_resolution_inv;
 		int x = (int)std::floorf(np.x);
 		int y = (int)std::floorf(np.y);
@@ -53,6 +60,106 @@ void Octree::Insert(const std::vector<trimesh::vec3>& points)
 		if (z >= m_chunk_size) z = m_chunk_size - 1;
 
 		int index = x + y * m_chunk_size + z * m_chunk_size2;
-		m_chunks.at(index).SetValid();
+
+		trimesh::vec3 offset = p - trimesh::vec3((float)x, (float)y, (float)z) * m_chunk_resolution - m_min;
+
+		IndexKey key;
+		trimesh::vec3 noffset = offset * m_cell_resolution_inv;
+		key.x = (int)std::floorf(noffset.x);
+		key.y = (int)std::floorf(noffset.y);
+		key.z = (int)std::floorf(noffset.z);
+
+		OctreeChunk& chunk = m_chunks.at(index);
+		chunk.SetValid();
+
+		int point_index = chunk.AddPoint(m_cell_depth, m_current_index, m_current_point_index, key, m_indexes);
+		if (point_index < 0)
+			continue;
+
+		if (point_index < m_current_point_index) //exist average
+		{
+			trimesh::vec3& pp = m_points.at(point_index);
+			pp += p;
+			pp /= 2.0f;
+		}
+
+		if (point_index == m_current_point_index) //new 
+		{
+			//trimesh::vec3 nnoffset = offset * m_cell_resolution_inv;
+			//int kx = (int)std::floorf(nnoffset.x);
+			//int ky = (int)std::floorf(nnoffset.y);
+			//int kz = (int)std::floorf(nnoffset.z);
+
+			//trimesh::vec3 pp = trimesh::vec3((float)x, (float)y, (float)z) * m_chunk_resolution
+			//	+ trimesh::vec3((float)kx, (float)ky, (float)kz) * m_cell_resolution + m_min;
+			//m_points.push_back(pp);
+			m_points.push_back(p);
+			m_normals.push_back(n);
+			++m_current_point_index;
+		}
+	}
+}
+
+void Octree::Insert(const std::vector<trimesh::vec3>& points,
+	const std::vector<trimesh::vec3>& normals, const trimesh::xform& xf,
+	std::vector<int>& indexes)
+{
+	assert(m_initialized);
+	size_t size = points.size();
+	trimesh::xform nxf = trimesh::norm_xf(xf);
+	for (size_t i = 0; i < size; ++i)
+	{
+		trimesh::vec3 p = xf * points.at(i);
+		trimesh::vec3 n = nxf * normals.at(i);
+
+		trimesh::vec3 np = (p - m_min) * m_chunk_resolution_inv;
+		int x = (int)std::floorf(np.x);
+		int y = (int)std::floorf(np.y);
+		int z = (int)std::floorf(np.z);
+
+		if (x < 0) x = 0;
+		if (x >= m_chunk_size) x = m_chunk_size - 1;
+		if (y < 0) y = 0;
+		if (y >= m_chunk_size) y = m_chunk_size - 1;
+		if (z < 0) z = 0;
+		if (z >= m_chunk_size) z = m_chunk_size - 1;
+
+		int index = x + y * m_chunk_size + z * m_chunk_size2;
+
+		trimesh::vec3 offset = p - trimesh::vec3((float)x, (float)y, (float)z) * m_chunk_resolution - m_min;
+
+		IndexKey key;
+		trimesh::vec3 noffset = offset * m_cell_resolution_inv;
+		key.x = (int)std::floorf(noffset.x);
+		key.y = (int)std::floorf(noffset.y);
+		key.z = (int)std::floorf(noffset.z);
+
+		OctreeChunk& chunk = m_chunks.at(index);
+		int point_index = chunk.AddPoint(m_cell_depth, m_current_index, m_current_point_index, key, m_indexes);
+
+		indexes.at(i) = point_index;
+		if (point_index < 0)
+			continue;
+
+		if (point_index < m_current_point_index) //exist average
+		{
+			trimesh::vec3& pp = m_points.at(point_index);
+			pp += p;
+			pp /= 2.0f;
+		}
+		if (point_index == m_current_point_index) //new 
+		{
+			//trimesh::vec3 nnoffset = offset * m_cell_resolution_inv;
+			//int kx = (int)std::floorf(nnoffset.x);
+			//int ky = (int)std::floorf(nnoffset.y);
+			//int kz = (int)std::floorf(nnoffset.z);
+
+			//trimesh::vec3 pp = trimesh::vec3((float)x, (float)y, (float)z) * m_chunk_resolution 
+			//	+ trimesh::vec3((float)kx, (float)ky, (float)kz) * m_cell_resolution + m_min;
+			//m_points.push_back(pp);
+			m_points.push_back(p);
+			m_normals.push_back(n);
+			++m_current_point_index;
+		}
 	}
 }

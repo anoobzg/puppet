@@ -1,0 +1,1 @@
+trimesh_icp_simulation.exe vo F:\Data\simulation\slam.ini

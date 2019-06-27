@@ -5,7 +5,7 @@ OctreeGrid::OctreeGrid(const osg::Vec3f& center)
 {
 	AddUniform(new osg::Uniform("color", osg::Vec4f(1.0f, 1.0f, 1.0f, 1.0f)));
 
-	float res = 0.1f * (1 << 11);
+	float res = 0.1f * (1 << 12);
 	int n = 1 << 1;
 	osg::Vec3i size = osg::Vec3i(n, n, n);
 	float len = (float)(n/2) * res;

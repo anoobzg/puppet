@@ -43,6 +43,7 @@ void SlamParameters::LoadAllParameters(boost::program_options::options_descripti
 {
 	LoadReaderParameters(options, inital);
 	LoadICPParameters(options, inital);
+	LoadOctreeParameters(options, inital);
 	LoadDebugParameters(options, inital);
 }
 
@@ -92,6 +93,20 @@ void SlamParameters::LoadDebugParameters(boost::program_options::options_descrip
 			("debug_param.debug", value<int>(&debug_param.debug))
 			("debug_param.directory", value<std::string>(&debug_param.directory))
 			("debug_param.out_directory", value<std::string>(&debug_param.out_directory))
+			;
+	}
+}
+
+void SlamParameters::LoadOctreeParameters(boost::program_options::options_description& options, bool inital)
+{
+	if (inital)
+	{
+		octree_param.cell_depth = 5;
+	}
+	else
+	{
+		options.add_options()
+			("octree_param.cell_depth", value<int>(&octree_param.cell_depth))
 			;
 	}
 }

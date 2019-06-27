@@ -20,6 +20,11 @@ struct DebugParameters
 	std::string out_directory;
 };
 
+struct OctreeParameters
+{
+	int cell_depth;
+};
+
 namespace boost
 {
 	namespace program_options
@@ -39,9 +44,11 @@ public:
 	ReaderParameters reader_param;
 	ICPParamters icp_param;
 	DebugParameters debug_param;
+	OctreeParameters octree_param;
 protected:
 	void LoadAllParameters(boost::program_options::options_description& options, bool inital);
 	void LoadReaderParameters(boost::program_options::options_description& options, bool inital);
 	void LoadICPParameters(boost::program_options::options_description& options, bool inital);
+	void LoadOctreeParameters(boost::program_options::options_description& options, bool inital);
 	void LoadDebugParameters(boost::program_options::options_description& options, bool inital);
 };

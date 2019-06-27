@@ -13,6 +13,8 @@ public:
 	void SetRenderScene(OctreeScene* scene);
 	void Move(int i);
 	void GenerateChunk();
+	void InsertAll();
+	void OctreeCell();
 private:
 	osg::ref_ptr<OctreeScene> m_scene;
 public:

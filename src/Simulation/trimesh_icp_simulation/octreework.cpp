@@ -1,6 +1,7 @@
 #include "octreework.h"
 #include "compute_boundingbox.h"
 #include <osgWrapper/GeometryCreator.h>
+#include <osgWrapper\ArrayCreator.h>
 
 OctreeWork::OctreeWork()
 	:m_current(0)
@@ -37,17 +38,19 @@ void OctreeWork::Move(int i)
 
 void OctreeWork::GenerateChunk()
 {
-	trimesh::TriMesh* mesh = m_meshes.at(0);
+	trimesh::TriMesh* mesh = m_meshes.at(1);
+	if (mesh->normals.size() != mesh->vertices.size())
+		mesh->normals.resize(mesh->vertices.size(), trimesh::vec3(1.0f, 0.0f, 0.0f));
 	trimesh::ComputeBoundingbox(mesh->vertices, mesh->bbox);
 	m_octree.Initialize(mesh->bbox.center());
 	
-	//m_octree.Insert(mesh->vertices);
+	m_octree.Insert(mesh->vertices, mesh->normals);
 
 	size_t size = m_octree.m_chunks.size();
 	std::vector<OctreeChunk*> chunks;
 	for (size_t i = 0; i < size; ++i)
 	{
-		if (i % 32 == 0) chunks.push_back(&m_octree.m_chunks.at(i));
+		if (m_octree.m_chunks.at(i).Valid()) chunks.push_back(&m_octree.m_chunks.at(i));
 	}
 
 	float len = m_octree.m_chunk_resolution;
@@ -108,4 +111,46 @@ void OctreeWork::GenerateChunk()
 	}
 	osg::Geometry* geometry = OSGWrapper::GeometryCreator::CreateIndexAttributeGeometry(draw_array, coord_array);
 	m_scene->AddOctreeNode(geometry);
+}
+
+void OctreeWork::InsertAll()
+{
+	for (size_t i = 0; i < m_meshes.size(); ++i)
+	{
+		trimesh::TriMesh* mesh = m_meshes.at(i);
+
+		if (!m_octree.m_initialized)
+		{
+			trimesh::ComputeBoundingbox(mesh->vertices, mesh->bbox);
+			m_octree.Initialize(mesh->bbox.center());
+		}
+
+
+		m_octree.Insert(mesh->vertices, mesh->vertices);
+	}
+
+	size_t vertex_num = m_octree.m_points.size();
+	osg::Array* coord_array = OSGWrapper::ArrayCreator::CreateVec3Array(vertex_num, (float*)&m_octree.m_points[0]);
+	osg::DrawArrays* draw_array = new osg::DrawArrays(GL_POINTS, 0, vertex_num);
+	osg::Geometry* geometry = OSGWrapper::GeometryCreator::CreateIndexAttributeGeometry(draw_array, coord_array);
+	m_scene->AddPoint(geometry);
+}
+
+void OctreeWork::OctreeCell()
+{
+	trimesh::TriMesh* mesh = m_meshes.at(0);
+
+	if (!m_octree.m_initialized)
+	{
+		trimesh::ComputeBoundingbox(mesh->vertices, mesh->bbox);
+		m_octree.Initialize(mesh->bbox.center());
+	}
+
+	m_octree.Insert(mesh->vertices, mesh->vertices);
+
+	size_t vertex_num = m_octree.m_points.size();
+	osg::Array* coord_array = OSGWrapper::ArrayCreator::CreateVec3Array(vertex_num, (float*)&m_octree.m_points[0]);
+	osg::DrawArrays* draw_array = new osg::DrawArrays(GL_POINTS, 0, vertex_num);
+	osg::Geometry* geometry = OSGWrapper::GeometryCreator::CreateIndexAttributeGeometry(draw_array, coord_array);
+	m_scene->AddPoint(geometry);
 }

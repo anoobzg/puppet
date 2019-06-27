@@ -25,7 +25,7 @@ void Slammer::Start(const std::string& config_file, VOTracer* tracer)
 
 	m_reader.SetVO(&m_vo);
 	m_vo.SetVOTracer(tracer);
-	m_vo.StartVO(m_parameters.icp_param);
+	m_vo.StartVO(m_parameters);
 	m_reader.StartRead(m_parameters.reader_param);
 }
 

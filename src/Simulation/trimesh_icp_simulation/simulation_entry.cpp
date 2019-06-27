@@ -41,7 +41,7 @@ int vo(int argc, char* argv[])
 	SlamParameters parameters;
 	parameters.LoadFromFile(config_file);
 	VOImpl m_vo_impl;
-	m_vo_impl.Setup(parameters.icp_param);
+	m_vo_impl.Setup(parameters);
 
 	int index = 0;
 	const ReaderParameters& read_parameters = parameters.reader_param;

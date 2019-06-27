@@ -9,7 +9,7 @@ public:
 	SlamVO();
 	virtual ~SlamVO();
 
-	void StartVO(const ICPParamters& parameters);
+	void StartVO(const SlamParameters& parameters);
 	void StopVO();
 
 	void OnFrame(trimesh::TriMesh* mesh);
@@ -18,7 +18,7 @@ public:
 protected:
 	void ProcessFrame(trimesh::TriMesh* mesh);
 private:
-	ICPParamters m_parameters;
+	SlamParameters m_parameters;
 	VOProfiler* m_profiler;
 	VOImpl m_vo_impl;
 

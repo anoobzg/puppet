@@ -27,12 +27,23 @@ struct RenderData
 	int step;
 };
 
+struct PatchRenderData
+{
+	std::vector<int> indices;
+	std::vector<trimesh::vec3> points;
+	std::vector<trimesh::vec3> normals;
+	trimesh::xform xf;
+	bool lost;
+	int step;
+};
+
 class VOTracer
 {
 public:
 	virtual ~VOTracer() {}
 
 	virtual void OnFrame(RenderData* data) = 0;
+	virtual void OnFrame(PatchRenderData* data) = 0;
 };
 
 class ReadTracer
