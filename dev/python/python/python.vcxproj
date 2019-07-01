@@ -23,6 +23,7 @@
     <ProjectGuid>{205abdbf-113b-4e70-abdc-f3f951833280}</ProjectGuid>
     <RootNamespace>python</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>pythoncore</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -92,16 +93,18 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\python\Include\;$(SolutionDir)..\..\src\python\PC\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4244;4267;4819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>version.lib;shlwapi.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -125,11 +128,12 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\python\Include\;$(SolutionDir)..\..\src\python\PC\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_USRDLL;Py_BUILD_CORE;Py_ENABLE_SHARED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4244;4267;4819;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,6 +143,7 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <AdditionalDependencies>version.lib;shlwapi.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -252,13 +257,220 @@
     <ClInclude Include="..\..\..\src\python\Include\unicodeobject.h" />
     <ClInclude Include="..\..\..\src\python\Include\warnings.h" />
     <ClInclude Include="..\..\..\src\python\Include\weakrefobject.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\cjkcodecs\alg_jisx0201.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\cjkcodecs\cjkcodecs.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\cjkcodecs\emu_jisx0213_2000.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\cjkcodecs\mappings_cn.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\cjkcodecs\mappings_hk.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\cjkcodecs\mappings_jisx0213_pair.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\cjkcodecs\mappings_jp.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\cjkcodecs\mappings_kr.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\cjkcodecs\mappings_tw.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\cjkcodecs\multibytecodec.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\hashlib.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\hashtable.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\rotatingtree.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\sre.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\sre_constants.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\sre_lib.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\_io\_iomodule.h" />
+    <ClInclude Include="..\..\..\src\python\Modules\_math.h" />
+    <ClInclude Include="..\..\..\src\python\Objects\dict-common.h" />
+    <ClInclude Include="..\..\..\src\python\Objects\unicodetype_db.h" />
+    <ClInclude Include="..\..\..\src\python\Parser\parser.h" />
+    <ClInclude Include="..\..\..\src\python\Parser\tokenizer.h" />
+    <ClInclude Include="..\..\..\src\python\PC\errmap.h" />
+    <ClInclude Include="..\..\..\src\python\PC\pyconfig.h" />
+    <ClInclude Include="..\..\..\src\python\Python\ceval_gil.h" />
+    <ClInclude Include="..\..\..\src\python\Python\condvar.h" />
+    <ClInclude Include="..\..\..\src\python\Python\importdl.h" />
+    <ClInclude Include="..\..\..\src\python\Python\thread_nt.h" />
+    <ClInclude Include="..\..\..\src\python\Python\wordcode_helpers.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\src\python\Include\pydtrace.d" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\python\Modules\arraymodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\atexitmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\audioop.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\binascii.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\cjkcodecs\multibytecodec.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\cjkcodecs\_codecs_cn.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\cjkcodecs\_codecs_hk.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\cjkcodecs\_codecs_iso2022.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\cjkcodecs\_codecs_jp.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\cjkcodecs\_codecs_kr.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\cjkcodecs\_codecs_tw.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\cmathmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\errnomodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\faulthandler.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\gcmodule.c" />
     <ClCompile Include="..\..\..\src\python\Modules\getbuildinfo.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\hashtable.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\itertoolsmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\main.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\mathmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\md5module.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\mmapmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\parsermodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\posixmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\rotatingtree.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\sha1module.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\sha256module.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\sha512module.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\signalmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\symtablemodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\timemodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\xxsubtype.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\zipimport.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_abc.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_bisectmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_blake2\blake2b_impl.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_blake2\blake2module.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_blake2\blake2s_impl.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_codecsmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_collectionsmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_contextvarsmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_csv.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_datetimemodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_functoolsmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_heapqmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_io\bufferedio.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_io\bytesio.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_io\fileio.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_io\iobase.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_io\stringio.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_io\textio.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_io\winconsoleio.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_io\_iomodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_json.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_localemodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_lsprof.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_math.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_opcode.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_operator.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_pickle.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_randommodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_sha3\sha3module.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_sre.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_stat.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_struct.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_threadmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_tracemalloc.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_weakref.c" />
+    <ClCompile Include="..\..\..\src\python\Modules\_winapi.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\abstract.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\accu.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\boolobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\bytearrayobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\bytesobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\bytes_methods.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\call.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\capsule.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\cellobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\classobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\codeobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\complexobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\descrobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\dictobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\enumobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\exceptions.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\fileobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\floatobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\frameobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\funcobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\genobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\iterobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\listobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\longobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\memoryobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\methodobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\moduleobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\namespaceobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\object.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\obmalloc.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\odictobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\rangeobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\setobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\sliceobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\structseq.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\tupleobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\typeobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\unicodectype.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\unicodeobject.c" />
+    <ClCompile Include="..\..\..\src\python\Objects\weakrefobject.c" />
+    <ClCompile Include="..\..\..\src\python\Parser\acceler.c" />
+    <ClCompile Include="..\..\..\src\python\Parser\bitset.c" />
+    <ClCompile Include="..\..\..\src\python\Parser\firstsets.c" />
+    <ClCompile Include="..\..\..\src\python\Parser\grammar.c" />
+    <ClCompile Include="..\..\..\src\python\Parser\grammar1.c" />
+    <ClCompile Include="..\..\..\src\python\Parser\listnode.c" />
+    <ClCompile Include="..\..\..\src\python\Parser\metagrammar.c" />
+    <ClCompile Include="..\..\..\src\python\Parser\myreadline.c" />
+    <ClCompile Include="..\..\..\src\python\Parser\node.c" />
+    <ClCompile Include="..\..\..\src\python\Parser\parser.c" />
+    <ClCompile Include="..\..\..\src\python\Parser\parsetok.c" />
+    <ClCompile Include="..\..\..\src\python\Parser\tokenizer.c" />
+    <ClCompile Include="..\..\..\src\python\PC\config.c" />
+    <ClCompile Include="..\..\..\src\python\PC\dl_nt.c" />
+    <ClCompile Include="..\..\..\src\python\PC\getpathp.c" />
+    <ClCompile Include="..\..\..\src\python\PC\invalid_parameter_handler.c" />
+    <ClCompile Include="..\..\..\src\python\PC\msvcrtmodule.c" />
+    <ClCompile Include="..\..\..\src\python\PC\winreg.c" />
+    <ClCompile Include="..\..\..\src\python\Python\asdl.c" />
+    <ClCompile Include="..\..\..\src\python\Python\ast.c" />
+    <ClCompile Include="..\..\..\src\python\Python\ast_opt.c" />
+    <ClCompile Include="..\..\..\src\python\Python\ast_unparse.c" />
+    <ClCompile Include="..\..\..\src\python\Python\bltinmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Python\bootstrap_hash.c" />
+    <ClCompile Include="..\..\..\src\python\Python\ceval.c" />
+    <ClCompile Include="..\..\..\src\python\Python\codecs.c" />
+    <ClCompile Include="..\..\..\src\python\Python\compile.c" />
+    <ClCompile Include="..\..\..\src\python\Python\context.c" />
+    <ClCompile Include="..\..\..\src\python\Python\dtoa.c" />
+    <ClCompile Include="..\..\..\src\python\Python\dynamic_annotations.c" />
+    <ClCompile Include="..\..\..\src\python\Python\dynload_win.c" />
+    <ClCompile Include="..\..\..\src\python\Python\errors.c" />
+    <ClCompile Include="..\..\..\src\python\Python\fileutils.c" />
+    <ClCompile Include="..\..\..\src\python\Python\formatter_unicode.c" />
+    <ClCompile Include="..\..\..\src\python\Python\frozen.c" />
+    <ClCompile Include="..\..\..\src\python\Python\future.c" />
+    <ClCompile Include="..\..\..\src\python\Python\getargs.c" />
+    <ClCompile Include="..\..\..\src\python\Python\getcompiler.c" />
+    <ClCompile Include="..\..\..\src\python\Python\getcopyright.c" />
+    <ClCompile Include="..\..\..\src\python\Python\getopt.c" />
+    <ClCompile Include="..\..\..\src\python\Python\getplatform.c" />
+    <ClCompile Include="..\..\..\src\python\Python\getversion.c" />
+    <ClCompile Include="..\..\..\src\python\Python\graminit.c" />
+    <ClCompile Include="..\..\..\src\python\Python\hamt.c" />
+    <ClCompile Include="..\..\..\src\python\Python\import.c" />
+    <ClCompile Include="..\..\..\src\python\Python\importdl.c" />
+    <ClCompile Include="..\..\..\src\python\Python\marshal.c" />
+    <ClCompile Include="..\..\..\src\python\Python\modsupport.c" />
     <ClCompile Include="..\..\..\src\python\Python\mysnprintf.c" />
+    <ClCompile Include="..\..\..\src\python\Python\mystrtoul.c" />
+    <ClCompile Include="..\..\..\src\python\Python\pathconfig.c" />
+    <ClCompile Include="..\..\..\src\python\Python\peephole.c" />
+    <ClCompile Include="..\..\..\src\python\Python\pyarena.c" />
+    <ClCompile Include="..\..\..\src\python\Python\pyctype.c" />
+    <ClCompile Include="..\..\..\src\python\Python\pyfpe.c" />
+    <ClCompile Include="..\..\..\src\python\Python\pyhash.c" />
+    <ClCompile Include="..\..\..\src\python\Python\pylifecycle.c" />
+    <ClCompile Include="..\..\..\src\python\Python\pymath.c" />
+    <ClCompile Include="..\..\..\src\python\Python\pystate.c" />
+    <ClCompile Include="..\..\..\src\python\Python\pystrcmp.c" />
+    <ClCompile Include="..\..\..\src\python\Python\pystrhex.c" />
+    <ClCompile Include="..\..\..\src\python\Python\pystrtod.c" />
+    <ClCompile Include="..\..\..\src\python\Python\Python-ast.c" />
+    <ClCompile Include="..\..\..\src\python\Python\pythonrun.c" />
+    <ClCompile Include="..\..\..\src\python\Python\pytime.c" />
+    <ClCompile Include="..\..\..\src\python\Python\structmember.c" />
+    <ClCompile Include="..\..\..\src\python\Python\symtable.c" />
+    <ClCompile Include="..\..\..\src\python\Python\sysmodule.c" />
+    <ClCompile Include="..\..\..\src\python\Python\thread.c" />
+    <ClCompile Include="..\..\..\src\python\Python\traceback.c" />
+    <ClCompile Include="..\..\..\src\python\Python\_warnings.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

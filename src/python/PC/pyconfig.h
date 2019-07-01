@@ -278,7 +278,7 @@ Py_NO_ENABLE_SHARED to find out.  Also support MS_NO_COREDLL for b/w compat */
 #                               pragma comment(lib,"python37.lib")
 #                       endif /* _DEBUG */
 #				elif defined(USER_LIB)
-#								pragma comment(lib, "python.lib")
+#								pragma comment(lib, "pythoncore.lib")
 #               endif /* _MSC_VER */
 #       endif /* Py_BUILD_CORE */
 #endif /* MS_COREDLL */
