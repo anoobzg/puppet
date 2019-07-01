@@ -1,30 +1,14 @@
 #include "octree_entry.h"
 #include <iostream>
 #include "TriMesh.h"
-#include <boost\format.hpp>
 #include <osgWrapper\RenderService.h>
 #include <osgWrapper\RenderView.h>
 #include "octreescene.h"
 #include "octreework.h"
 #include "octree.h"
-#include "compute_boundingbox.h"
 #include "csvwriter.h"
+#include "load_trimeshes.h"
 
-void load_trimeshes(int argc, char* argv[], std::vector<trimesh::TriMesh*>& meshes)
-{
-	std::string directory = argv[2];
-	int index = 0;
-	while (true)
-	{
-		std::string file = directory + "//" +
-			boost::str(boost::format("%d.ply") % index);
-		trimesh::TriMesh* mesh = trimesh::TriMesh::read(file);
-		if (mesh) meshes.push_back(mesh);
-		else break;
-
-		++index;
-	}
-}
 
 int octree_entry(int argc, char* argv[])
 {
@@ -33,7 +17,7 @@ int octree_entry(int argc, char* argv[])
 	OctreeWork work;
 	std::vector<trimesh::TriMesh*>& meshes = work.m_meshes;
 
-	load_trimeshes(argc, argv, meshes);
+	load_trimeshes(argv[2], meshes);
 	if (meshes.size() == 0) return EXIT_FAILURE;
 
 	osg::ref_ptr<OSGWrapper::RenderView> view = new OSGWrapper::RenderView();
@@ -51,7 +35,7 @@ int cmd_octree_entry(int argc, char* argv[])
 	if (argc < 4) return EXIT_FAILURE;
 
 	std::vector<trimesh::TriMesh*> meshes;
-	load_trimeshes(argc, argv, meshes);
+	load_trimeshes(argv[2], meshes);
 
 	if (meshes.size() == 0) return EXIT_FAILURE;
 
@@ -69,7 +53,6 @@ int cmd_octree_entry(int argc, char* argv[])
 		writer.TickStart();
 		if (i == 0)
 		{
-			trimesh::ComputeBoundingbox(mesh->vertices, mesh->bbox);
 			m_octree.Initialize(mesh->bbox.center());
 		}
 

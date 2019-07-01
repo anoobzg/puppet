@@ -24,7 +24,7 @@ bool StepICPTask::Execute()
 	static int tick = 0;
 
 	++tick;
-	if(tick % 100 == 0)
+	if(tick % 30 == 0)
 		return m_icp.Step();
 	return true;
 }
