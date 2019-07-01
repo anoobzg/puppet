@@ -132,6 +132,18 @@
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreechunk.cpp">
       <Filter>octree</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\parral.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreeindex.cpp">
+      <Filter>octree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\load_trimeshes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\chunkgeometry.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\boundingbox.h">
@@ -244,6 +256,18 @@
     </ClInclude>
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreechunk.h">
       <Filter>octree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\parral.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreeindex.h">
+      <Filter>octree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\load_trimeshes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\chunkgeometry.h">
+      <Filter>simulation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -147,20 +147,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\boundingbox.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\chunkgeometry.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\cmdicp.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\csvwriter.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\data.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\debugcenter.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpnode.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpscene.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\load_trimeshes.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\main.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octree.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreechunk.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreegrid.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreeindex.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreenode.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreescene.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreework.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octree_entry.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\parral.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\patchnode.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\pointsnode.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\reader.cpp" />
@@ -186,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\boundingbox.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\chunkgeometry.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\cmdicp.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\csvwriter.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\data.h" />
@@ -193,13 +198,16 @@
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpnode.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpscene.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\interface.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\load_trimeshes.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octree.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreechunk.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreegrid.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreeindex.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreenode.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreescene.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreework.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octree_entry.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\parral.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\patchnode.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\pointsnode.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\reader.h" />
