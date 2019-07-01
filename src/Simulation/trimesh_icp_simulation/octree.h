@@ -16,6 +16,8 @@ public:
 	void Insert(const std::vector<trimesh::vec3>& points,
 		const std::vector<trimesh::vec3>& normals,
 		const trimesh::xform& xf, std::vector<int>& indexes);
+
+	void QuickInsert(const std::vector<trimesh::vec3>& points, const std::vector<trimesh::vec3>& normals);
 protected:
 	
 public:
@@ -40,4 +42,6 @@ public:
 	std::vector<trimesh::vec3> m_normals;
 	int m_current_index;
 	int m_current_point_index;
+
+	std::vector<QuickIndex> m_quick_index;
 };

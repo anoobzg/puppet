@@ -15,6 +15,8 @@ public:
 
 	int AddPoint(int depth_max, int& current, int current_point_index, IndexKey& offset,
 		std::vector<OctreeIndex>& indexes);
+	int AddPoint(int depth_max, int& current, int current_point_index, std::vector<OctreeIndex>& indexes,
+		const std::vector<char>& cell_indexes);
 private:
 	bool m_valid;
 	int m_children[8];

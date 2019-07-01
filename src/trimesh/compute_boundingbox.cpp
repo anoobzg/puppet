@@ -31,6 +31,8 @@ namespace trimesh
 			if (p.z < box_min.z) box_min.z = p.z;
 			else if (p.z > box_max.z) box_max.z = p.z;
 		}
+
+		box.valid = true;
 	}
 
 	void TransformBoundingbox(const trimesh::box3& box, const trimesh::xform& xf,

@@ -1,4 +1,5 @@
 #include "octreechunk.h"
+#include <assert.h>
 
 OctreeChunk::OctreeChunk()
 	:m_valid(false)
@@ -65,6 +66,31 @@ int OctreeChunk::AddPoint(int depth_max, int& current, int current_point_index, 
 	}
 
 	int& point_index = current_oc->m_children[key.x * 4 + key.y * 2 + key.z];
+	if (point_index < 0)
+		point_index = current_point_index;
+	return point_index;
+}
+
+int OctreeChunk::AddPoint(int depth_max, int& current, int current_point_index, std::vector<OctreeIndex>& indexes,
+	const std::vector<char>& cell_indexes)
+{
+	int depth_size = (int)cell_indexes.size();
+	assert(depth_size >= 2);
+	int& index = m_children[cell_indexes.at(0)];
+	if (index < 0) index = current++;
+
+	OctreeIndex* current_oc = &indexes.at(index);
+
+	int depth = 0;
+	for (int i = 1; i <= depth_size - 2; ++i)
+	{
+		int& iindex = current_oc->m_children[cell_indexes.at(i)];
+		if (iindex < 0) iindex = current++;
+	
+		current_oc = &indexes.at(iindex);
+	}
+	
+	int& point_index = current_oc->m_children[cell_indexes.back()];
 	if (point_index < 0)
 		point_index = current_point_index;
 	return point_index;

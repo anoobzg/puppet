@@ -40,27 +40,35 @@ int cmd_octree_entry(int argc, char* argv[])
 	if (meshes.size() == 0) return EXIT_FAILURE;
 
 	Octree m_octree;
+	Octree m_quick_octree;
 
 	CSVWriter writer;
 	writer.PushHead("count");
-	writer.PushHead("time");
-	writer.PushHead("total");
+	writer.PushHead("time1");
+	writer.PushHead("time2");
+	writer.PushHead("total1");
+	writer.PushHead("total2");
 	for (size_t i = 0; i < meshes.size(); ++i)
 	{
 		trimesh::TriMesh* mesh = meshes.at(i);
 		mesh->normals.resize(mesh->vertices.size(), trimesh::vec3(1.0f, 0.0f, 1.0f));
 		writer.PushData((double)mesh->vertices.size());
-		writer.TickStart();
+		
 		if (i == 0)
 		{
 			m_octree.Initialize(mesh->bbox.center());
+			m_quick_octree.Initialize(mesh->bbox.center());
 		}
 
-
+		writer.TickStart();
 		m_octree.Insert(mesh->vertices, mesh->normals);
-
 		writer.TickEnd();
+		writer.TickStart();
+		m_quick_octree.QuickInsert(mesh->vertices, mesh->normals);
+		writer.TickEnd();
+
 		writer.PushData((double)m_octree.m_current_point_index);
+		writer.PushData((double)m_quick_octree.m_current_point_index);
 	}
 
 	std::string out_file(argv[3]);

@@ -44,7 +44,7 @@ void VOImpl::Setup(const SlamParameters& parameters)
 	if (cell_depth == 6) cell_resolution = 0.1f;
 	m_octree.reset(new Octree(cell_depth, cell_resolution));
 
-	m_layers.resize(4000000, 0);
+	m_layers.resize(8000000, 0);
 }
 
 void VOImpl::SetVOTracer(VOTracer* tracer)

@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 
 struct IndexKey
 {
@@ -14,4 +15,10 @@ public:
 	~OctreeIndex();
 
 	int m_children[8];
+};
+
+struct QuickIndex
+{
+	int chunk_index;
+	std::vector<char> cell_index;
 };
