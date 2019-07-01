@@ -43,6 +43,8 @@ void VOImpl::Setup(const SlamParameters& parameters)
 	if (cell_depth == 5) cell_resolution = 0.2f;
 	if (cell_depth == 6) cell_resolution = 0.1f;
 	m_octree.reset(new Octree(cell_depth, cell_resolution));
+
+	m_layers.resize(4000000, 0);
 }
 
 void VOImpl::SetVOTracer(VOTracer* tracer)
@@ -67,23 +69,60 @@ void VOImpl::LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
 	{//first frame
 		locate_data.lost = false;
 		m_state.SetFirstFrame(false);
-		std::cout << "0  --->  0" << std::endl;
 	}
 	else
 	{
-		locate_data.lost = !Frame2Frame(mesh, locate_data);
+		bool result = Frame2Frame(mesh);
+		if (result)
+		{
+			locate_data.locate_type = 0;
+			std::cout << mesh->frame << " continous success." << std::endl;
+		}
+		else
+		{
+			locate_data.locate_type = 1;
+			result = Relocate(mesh);
+		}
+
+		if(!result) std::cout << mesh->frame << " lost." << std::endl;
+		locate_data.lost = !result;
 	}
 }
 
 void VOImpl::FusionFrame(TriMeshPtr& mesh, const LocateData& locate_data)
 {
-	SetLastMesh(mesh);
-
 	if (!m_octree->m_initialized)
 		m_octree->Initialize(mesh->bbox.center());
 
 	std::vector<int> indexes(mesh->vertices.size(), -1);
 	m_octree->Insert(mesh->vertices, mesh->normals, mesh->global, indexes);
+
+	int new_count = 0;
+	size_t vsize = mesh->vertices.size();
+	for (size_t i = 0; i < vsize; ++i)
+	{
+		int index = indexes.at(i);
+		if (index >= 0 && m_layers.at(index) == 0)
+		{
+			++new_count;
+		}
+	}
+
+	bool use_as_keyframe = false;
+	if ((float)new_count / (float)vsize > 0.5f)
+		use_as_keyframe = true;
+	if (use_as_keyframe)
+	{
+		for (size_t i = 0; i < vsize; ++i)
+		{
+			int index = indexes.at(i);
+			if (index >= 0)
+			{
+				++m_layers.at(index);
+			}
+		}
+	}
+	SetLastMesh(mesh, use_as_keyframe);
 
 	std::cout << "Octree nodes " << m_octree->m_current_index <<
 		" points " << m_octree->m_current_point_index << std::endl;
@@ -114,74 +153,72 @@ void VOImpl::FusionFrame(TriMeshPtr& mesh, const LocateData& locate_data)
 	}
 }
 
-bool VOImpl::Frame2Frame(TriMeshPtr& mesh, LocateData& locate_data)
+bool VOImpl::Frame2Frame(TriMeshPtr& mesh)
 {
-	TriMeshPtr dest_mesh;
+	//frame 2 frame
 	trimesh::xform xf;
-
 	m_icp->SetSource(mesh.get());
 	m_icp->SetTarget(m_last_mesh.get());
 	float err_p = m_icp->Do(xf);
+	if (err_p > 0.1f || err_p < 0.0f)
+		return false;
 
-	if (err_p <= 0.1f && err_p >= 0.0f)
-	{
-		dest_mesh = m_last_mesh;
-	}
-	else
-	{
-		locate_data.locate_type = 1;
+	mesh->global = xf * m_last_mesh->global;
+	//frame 2 model
+	return true;
+}
 
-		size_t size = m_key_frames.size();
-		if (size > 0)
+bool VOImpl::Relocate(TriMeshPtr& mesh)
+{
+	TriMeshPtr dest_mesh;
+	trimesh::xform xf;
+	size_t size = m_key_frames.size();
+	if (size > 0)
+	{
+		std::vector<float> errors(size, -1.0f);
+		std::vector<trimesh::xform> matrixes(size);
+		Concurrency::parallel_for<size_t>(0, size, [this, &mesh, &matrixes, &errors](size_t i) {
+			trimesh::ProjectionICP icp(m_fx, m_fy, m_cx, m_cy);
+			icp.SetSource(mesh.get());
+			icp.SetTarget(m_key_frames.at(i).get());
+			errors.at(i) = icp.Do(matrixes.at(i));
+		});
+
+		float min_error = FLT_MAX;
+		int index = -1;
+		for (size_t i = 0; i < size; ++i)
 		{
-			std::vector<float> errors(size, -1.0f);
-			std::vector<trimesh::xform> matrixes(size);
-			Concurrency::parallel_for<size_t>(0, size, [this, &mesh, &matrixes, &errors](size_t i) {
-				trimesh::ProjectionICP icp(m_fx, m_fy, m_cx, m_cy);
-				icp.SetSource(mesh.get());
-				icp.SetTarget(m_key_frames.at(i).get());
-				errors.at(i) = icp.Do(matrixes.at(i));
-				});
-
-			float min_error = FLT_MAX;
-			int index = -1;
-			for (size_t i = 0; i < size; ++i)
+			float e = errors.at(i);
+			if (e <= 0.1f && e >= 0.0f && e < min_error)
 			{
-				float e = errors.at(i);
-				if (e <= 0.1f && e >= 0.0f && e < min_error)
-				{
-					min_error = e;
-					index = (int)i;
-				}
+				min_error = e;
+				index = (int)i;
 			}
+		}
 
-			if (index >= 0 && index < (int)size)
-			{
-				dest_mesh = m_key_frames.at(index);
-				xf = matrixes.at(index);
-			}
+		if (index >= 0 && index < (int)size)
+		{
+			dest_mesh = m_key_frames.at(index);
+			xf = matrixes.at(index);
 		}
 	}
 
 	if (dest_mesh)
 	{
 		mesh->global = xf * dest_mesh->global;
-		std::cout << mesh->frame << "  --->  " <<dest_mesh->frame<< std::endl;
+		std::cout << mesh->frame << " relocate success. ("<<dest_mesh->frame<<") at "<< size <<"key frames"<< std::endl;
 		return true;
 	}
 	else
 	{
-		std::cout << mesh->frame<<"  --->  -1" << std::endl;
 		return false;
 	}
 }
 
-void VOImpl::SetLastMesh(TriMeshPtr& mesh)
+void VOImpl::SetLastMesh(TriMeshPtr& mesh, bool use_as_keyframe)
 {
 	m_last_mesh = mesh;
 	m_last_mesh->clear_grid();
 
-	static int count = 0;
-	if ((count + 1) % 3 == 0) m_key_frames.push_back(mesh);
-	++count;
+	if(use_as_keyframe) m_key_frames.push_back(mesh);
 }

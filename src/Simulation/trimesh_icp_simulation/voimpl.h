@@ -17,13 +17,13 @@ public:
 	void SetVOTracer(VOTracer* tracer);
 
 	void ProcessOneFrame(TriMeshPtr& mesh, LocateData& locate_data);
-
 protected:
 	void LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data);
 	void FusionFrame(TriMeshPtr& mesh, const LocateData& locate_data);
 
-	bool Frame2Frame(TriMeshPtr& mesh, LocateData& locate_data);
-	void SetLastMesh(TriMeshPtr& mesh);
+	bool Frame2Frame(TriMeshPtr& mesh);
+	bool Relocate(TriMeshPtr& mesh);
+	void SetLastMesh(TriMeshPtr& mesh, bool use_as_keyframe);
 protected:
 	VOTracer* m_tracer;
 	TriMeshPtr m_last_mesh;
@@ -39,4 +39,5 @@ protected:
 	VOState m_state;
 
 	std::unique_ptr<Octree> m_octree;
+	std::vector<int> m_layers;
 };

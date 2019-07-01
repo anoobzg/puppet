@@ -9,6 +9,7 @@
 #include "compute_boundingbox.h"
 #include "simulation_entry.h"
 #include "octree_entry.h"
+#include "parral.h"
 
 using namespace OSGWrapper;
 
@@ -25,6 +26,9 @@ int main(int argc, char* argv[])
 
 	if (argc >= 2 && !strcmp("cmd_octree", argv[1]))
 		return cmd_octree_entry(argc, argv);
+
+	if (argc >= 2 && !strcmp("parral", argv[1]))
+		return test_parral(argc, argv);
 
 	if (argc < 4)
 		return EXIT_FAILURE;
