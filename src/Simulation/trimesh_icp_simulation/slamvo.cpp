@@ -67,3 +67,8 @@ void SlamVO::SetVOTracer(VOTracer* tracer)
 {
 	m_tracer = tracer;
 }
+
+void SlamVO::SetLocateTracer(LocateTracer* tracer)
+{
+	m_vo_impl.SetLocateTracer(tracer);
+}

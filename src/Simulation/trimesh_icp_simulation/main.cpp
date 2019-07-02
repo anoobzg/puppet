@@ -30,6 +30,9 @@ int main(int argc, char* argv[])
 	if (argc >= 2 && !strcmp("parral", argv[1]))
 		return test_parral(argc, argv);
 
+	if (argc >= 2 && !strcmp("testicp", argv[1]))
+		return config_test_icp(argc, argv);
+
 	if (argc < 4)
 		return EXIT_FAILURE;
 

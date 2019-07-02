@@ -21,6 +21,7 @@ void Slammer::Start(const std::string& config_file, VOTracer* tracer)
 		m_debug_center->SetParameters(debug_param);
 		m_reader.SetReadTracer(m_debug_center->GetReadTracer());
 		m_vo.SetVOProfiler(m_debug_center->GetVOProfiler());
+		m_vo.SetLocateTracer(m_debug_center->GetLocateTracer());
 	}
 
 	m_reader.SetVO(&m_vo);

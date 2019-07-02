@@ -4,6 +4,7 @@
 #include "timestamp.h"
 #include <assert.h>
 #include "csvwriter.h"
+#include "compute_boundingbox.h"
 
 class Tracer : public trimesh::ProjectionICPTracer
 {
@@ -113,4 +114,55 @@ void cmd_analysis_icp(trimesh::TriMesh* source, trimesh::TriMesh* target, const 
 		writer.Output(time_csv_file);
 	}
 	
+}
+
+int config_test_icp(int argc, char* argv[])
+{
+	if (argc < 6) return EXIT_FAILURE;
+
+	std::string source(argv[3]);
+	std::string target(argv[2]);
+	std::string cablifile(argv[4]);
+	std::string csvfile(argv[5]);
+	trimesh::TriMesh* source_mesh = trimesh::TriMesh::read(source);
+	trimesh::TriMesh* target_mesh = trimesh::TriMesh::read(target);
+
+	trimesh::ComputeBoundingbox(source_mesh->vertices, source_mesh->bbox);
+	trimesh::ComputeBoundingbox(target_mesh->vertices, target_mesh->bbox);
+	if (!source_mesh || !target_mesh)
+	{
+		std::cout << "Source or Target file error." << std::endl;
+		return EXIT_FAILURE;
+	}
+
+	trimesh::CameraData camera_data;
+	if (!load_camera_data_from_file(cablifile, camera_data))
+	{
+		std::cout << "Cabli Data Error." << std::endl;
+		return EXIT_FAILURE;
+	}
+
+	trimesh::ProjectionICP icp(camera_data.m_fx, camera_data.m_fy, camera_data.m_cx, camera_data.m_cy);
+	trimesh::xform xf2_p;
+	icp.SetSource(source_mesh);
+	icp.SetTarget(target_mesh);
+	icp.Do(xf2_p);
+	CSVWriter writer;
+	writer.PushHead("normal");
+	writer.PushHead("error1");
+	writer.PushHead("fast");
+	writer.PushHead("error2");
+	for (int i = 0; i < 500; ++i)
+	{
+		writer.TickStart();
+		float e1 = icp.Do(xf2_p);
+		writer.TickEnd();
+		writer.PushData((double)e1);
+		writer.TickStart();
+		float e2 = icp.FastDo(xf2_p);
+		writer.TickEnd();
+		writer.PushData((double)e2);
+	}
+	writer.Output(csvfile);
+	return EXIT_SUCCESS;
 }

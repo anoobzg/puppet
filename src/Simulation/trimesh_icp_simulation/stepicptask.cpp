@@ -3,7 +3,7 @@
 #include <osgWrapper/GeometryCreator.h>
 
 StepICPTask::StepICPTask(trimesh::CameraData& data, ICPNode* target, ICPNode* source, ScreenGraph* screen_graph)
-	:m_target(target), m_source(source), m_data(data)
+	:m_target(target), m_source(source), m_data(data), m_use_fast(false)
 	,m_icp(m_data.m_fx, m_data.m_fy, m_data.m_cx, m_data.m_cy)
 	,m_screen_graph(screen_graph)
 {
@@ -24,9 +24,19 @@ bool StepICPTask::Execute()
 	static int tick = 0;
 
 	++tick;
-	if(tick % 30 == 0)
-		return m_icp.Step();
+	if (tick % 30 == 0)
+	{
+		if (m_use_fast)
+			return m_icp.FastStep();
+		else
+			return m_icp.Step();
+	}
 	return true;
+}
+
+void StepICPTask::SetUseFast(bool use)
+{
+	m_use_fast = use;
 }
 
 void StepICPTask::OnPreStepCorrespondences(const std::vector<trimesh::PtPair>& correspondences)

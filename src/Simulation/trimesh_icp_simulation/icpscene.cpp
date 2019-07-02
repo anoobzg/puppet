@@ -68,6 +68,15 @@ bool ICPScene::OnKey(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& 
 		return true;
 	}
 
+	if (KEY_DOWN(ea, osgGA::GUIEventAdapter::KEY_F))
+	{
+		StepICPTask* t = new StepICPTask(m_data, m_target_node, m_source_node, m_screen_graph);
+		t->SetAttributeNode(m_space_lines);
+		t->SetUseFast(true);
+		m_task = t;
+		return true;
+	}
+
 	if (KEY_DOWN(ea, osgGA::GUIEventAdapter::KEY_R))
 	{
 		ResetICPTask* t = new ResetICPTask(m_source_node, m_screen_graph);

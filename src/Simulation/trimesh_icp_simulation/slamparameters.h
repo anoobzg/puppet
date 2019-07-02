@@ -11,6 +11,7 @@ struct ReaderParameters
 struct ICPParamters
 {
 	std::string calib_file;
+	int use_fast;
 };
 
 struct DebugParameters

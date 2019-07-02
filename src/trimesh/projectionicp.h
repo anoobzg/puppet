@@ -14,10 +14,14 @@ namespace trimesh
 		void SetTarget(trimesh::TriMesh* target);
 
 		float Do(trimesh::xform &source_form);
+		float FastDo(trimesh::xform & source_form);
+		float DefaultTimesDo(trimesh::xform & source_form, int times);
+		float FMQuickDo(trimesh::xform & source_form);
 		void SetTracer(ProjectionICPTracer* tracer);
 
 		//step functions
 		bool Step();
+		bool FastStep();
 		void SetStepInitialMatrix(const trimesh::xform& xf);
 		void ResetStep();
 	private:
@@ -27,6 +31,7 @@ namespace trimesh
 		float FinalInteration(trimesh::xform &source_form);
 		float MiddleInteration(trimesh::xform& source_form);
 		float InitialInteration(trimesh::xform &source_form);
+		float FastInteration(trimesh::xform &source_form);
 		float InnerDo(trimesh::xform& source_form);
 	protected:
 		ProjectionICPMapping m_mapping;
@@ -55,5 +60,8 @@ namespace trimesh
 
 		float m_step_min_err;
 		int m_step_iter_of_min_err;
+
+		float m_last_error;
+		int m_cinteration;
 	};
 }

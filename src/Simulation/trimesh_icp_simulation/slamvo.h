@@ -2,6 +2,7 @@
 #include "interface.h"
 #include <base\threading\thread.h>
 #include "voimpl.h"
+#include "locatetracerimpl.h"
 
 class SlamVO : public base::Thread , public VO
 {
@@ -15,6 +16,7 @@ public:
 	void OnFrame(trimesh::TriMesh* mesh);
 	void SetVOTracer(VOTracer* tracer);
 	void SetVOProfiler(VOProfiler* profiler);
+	void SetLocateTracer(LocateTracer* tracer);
 protected:
 	void ProcessFrame(trimesh::TriMesh* mesh);
 private:

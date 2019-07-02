@@ -29,12 +29,24 @@ VOProfiler* DebugCenter::GetVOProfiler()
 	return &m_vo_profiler;
 }
 
+LocateTracer* DebugCenter::GetLocateTracer()
+{
+	return &m_locate_tracer;
+}
+
 void DebugCenter::Save()
 {
 	std::string read_csv_file = m_debug_directory + "read.csv";
 	std::string icp_csv_file = m_debug_directory + "icp.csv";
+	std::string ff_csv_file = m_debug_directory + "ff.csv";
+	std::string fm_csv_file = m_debug_directory + "fm.csv";
+	std::string relocate_csv_file = m_debug_directory + "relocate.csv";
+
 	m_read_tracer.Write(read_csv_file);
 	m_vo_profiler.Write(icp_csv_file);
+	m_locate_tracer.SaveFF(ff_csv_file);
+	m_locate_tracer.SaveFM(fm_csv_file);
+	m_locate_tracer.SaveRelocate(relocate_csv_file);
 }
 
 std::string DebugCenter::TimeLine()

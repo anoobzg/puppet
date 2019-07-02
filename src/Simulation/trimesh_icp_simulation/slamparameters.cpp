@@ -70,11 +70,13 @@ void SlamParameters::LoadICPParameters(boost::program_options::options_descripti
 	if (inital)
 	{
 		icp_param.calib_file = "";
+		icp_param.use_fast = 0;
 	}
 	else
 	{
 		options.add_options()
 			("icp_param.calib_file", value<std::string>(&icp_param.calib_file))
+			("icp_param.use_fast", value<int>(&icp_param.use_fast))
 			;
 	}
 }

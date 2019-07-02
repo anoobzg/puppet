@@ -3,6 +3,7 @@
 #include <ppl.h>
 
 VOImpl::VOImpl()
+	:m_locate_tracer(NULL)
 {
 	m_fx = 0.0f;
 	m_fy = 0.0f;
@@ -18,6 +19,7 @@ VOImpl::~VOImpl()
 void VOImpl::Setup(const SlamParameters& parameters)
 {
 	const ICPParamters& icp_param = parameters.icp_param;
+	m_use_fast_icp = icp_param.use_fast == 1;
 	trimesh::CameraData camera_data;
 	if (!load_camera_data_from_file(icp_param.calib_file, camera_data))
 	{
@@ -61,6 +63,11 @@ void VOImpl::ProcessOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
 
 	if (!locate_data.lost)
 		FusionFrame(mesh, locate_data);
+}
+
+void VOImpl::SetLocateTracer(LocateTracer* tracer)
+{
+	m_locate_tracer = tracer;
 }
 
 void VOImpl::LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
@@ -144,8 +151,8 @@ void VOImpl::FusionFrame(TriMeshPtr& mesh, const LocateData& locate_data)
 			int index = patch_data->indices.at(i);
 			if (index >= 0)
 			{
-				patch_data->points.at(i) = m_octree->m_points.at(index);
-				patch_data->normals.at(i) = m_octree->m_normals.at(index);
+				patch_data->points.at(i) = m_octree->m_trimesh.vertices.at(index);
+				patch_data->normals.at(i) = m_octree->m_trimesh.normals.at(index);
 			}
 		}
 
@@ -159,12 +166,35 @@ bool VOImpl::Frame2Frame(TriMeshPtr& mesh)
 	trimesh::xform xf;
 	m_icp->SetSource(mesh.get());
 	m_icp->SetTarget(m_last_mesh.get());
-	float err_p = m_icp->Do(xf);
+
+	if (m_locate_tracer) m_locate_tracer->OnBeforeF2F();
+
+	float err_p = 0.0f;
+	if(m_use_fast_icp) err_p = m_icp->FastDo(xf);
+	else err_p = m_icp->Do(xf);
+
+	if (m_locate_tracer) m_locate_tracer->OnAfterF2F();
 	if (err_p > 0.1f || err_p < 0.0f)
 		return false;
 
 	mesh->global = xf * m_last_mesh->global;
 	//frame 2 model
+	return Frame2Model(mesh);
+}
+
+bool VOImpl::Frame2Model(TriMeshPtr& mesh)
+{
+	m_icp->SetSource(mesh.get());
+	m_icp->SetTarget(&m_octree->m_trimesh);
+
+	if (m_locate_tracer) m_locate_tracer->OnBeforeF2M();
+
+	float error = m_icp->Do(mesh->global);
+
+	if (m_locate_tracer) m_locate_tracer->OnAfterF2M();
+
+	if (error > 0.1f || error < 0.0f)
+		return false;
 	return true;
 }
 
@@ -173,15 +203,18 @@ bool VOImpl::Relocate(TriMeshPtr& mesh)
 	TriMeshPtr dest_mesh;
 	trimesh::xform xf;
 	size_t size = m_key_frames.size();
+
 	if (size > 0)
 	{
+		if (m_locate_tracer) m_locate_tracer->OnBeforeRelocate();
+
 		std::vector<float> errors(size, -1.0f);
 		std::vector<trimesh::xform> matrixes(size);
 		Concurrency::parallel_for<size_t>(0, size, [this, &mesh, &matrixes, &errors](size_t i) {
 			trimesh::ProjectionICP icp(m_fx, m_fy, m_cx, m_cy);
 			icp.SetSource(mesh.get());
 			icp.SetTarget(m_key_frames.at(i).get());
-			errors.at(i) = icp.Do(matrixes.at(i));
+			errors.at(i) = icp.DefaultTimesDo(matrixes.at(i), 10);
 		});
 
 		float min_error = FLT_MAX;
@@ -201,13 +234,17 @@ bool VOImpl::Relocate(TriMeshPtr& mesh)
 			dest_mesh = m_key_frames.at(index);
 			xf = matrixes.at(index);
 		}
+
+		if (m_locate_tracer) m_locate_tracer->OnAfterRelocate();
 	}
 
 	if (dest_mesh)
 	{
 		mesh->global = xf * dest_mesh->global;
-		std::cout << mesh->frame << " relocate success. ("<<dest_mesh->frame<<") at "<< size <<"key frames"<< std::endl;
-		return true;
+		bool f2m = Frame2Model(mesh);
+		if(f2m)
+			std::cout << mesh->frame << " relocate success. ("<<dest_mesh->frame<<") at "<< size <<"key frames"<< std::endl;
+		return f2m;
 	}
 	else
 	{

@@ -8,7 +8,7 @@
 #include "octree.h"
 #include "csvwriter.h"
 #include "load_trimeshes.h"
-
+#include "paraloctree.h"
 
 int octree_entry(int argc, char* argv[])
 {
@@ -40,7 +40,8 @@ int cmd_octree_entry(int argc, char* argv[])
 	if (meshes.size() == 0) return EXIT_FAILURE;
 
 	Octree m_octree;
-	Octree m_quick_octree;
+	//Octree m_quick_octree;
+	ParalOctree m_paral_octree;
 
 	CSVWriter writer;
 	writer.PushHead("count");
@@ -57,18 +58,18 @@ int cmd_octree_entry(int argc, char* argv[])
 		if (i == 0)
 		{
 			m_octree.Initialize(mesh->bbox.center());
-			m_quick_octree.Initialize(mesh->bbox.center());
+			m_paral_octree.Initialize(mesh->bbox.center());
 		}
 
 		writer.TickStart();
 		m_octree.Insert(mesh->vertices, mesh->normals);
 		writer.TickEnd();
 		writer.TickStart();
-		m_quick_octree.QuickInsert(mesh->vertices, mesh->normals);
+		m_paral_octree.QuickInsert(mesh->vertices, mesh->normals);
 		writer.TickEnd();
 
 		writer.PushData((double)m_octree.m_current_point_index);
-		writer.PushData((double)m_quick_octree.m_current_point_index);
+		writer.PushData((double)m_paral_octree.m_current_point_index);
 	}
 
 	std::string out_file(argv[3]);

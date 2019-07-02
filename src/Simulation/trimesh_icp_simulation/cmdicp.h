@@ -7,3 +7,5 @@ void cmd_test_icp(trimesh::TriMesh* source, trimesh::TriMesh* target,
 
 void cmd_analysis_icp(trimesh::TriMesh* source, trimesh::TriMesh* target, const trimesh::CameraData& data,
 	const std::string& error_csv_file, const std::string& time_csv_file);
+
+int config_test_icp(int argc, char* argv[]);

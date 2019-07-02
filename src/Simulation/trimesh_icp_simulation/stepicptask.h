@@ -13,6 +13,7 @@ public:
 
 	bool Execute();
 	void SetAttributeNode(OSGWrapper::AttributeUtilNode* node);
+	void SetUseFast(bool use);
 protected:
 	void OnPreStepCorrespondences(const std::vector<trimesh::PtPair>& correspondences);
 	void OnMatrix(const trimesh::xform& xf);
@@ -27,4 +28,5 @@ protected:
 	trimesh::ProjectionICP m_icp;
 
 	osg::Matrixf m_last_matrix;
+	bool m_use_fast;
 };

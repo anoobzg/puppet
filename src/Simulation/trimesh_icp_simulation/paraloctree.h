@@ -1,26 +1,23 @@
 #pragma once
+
 #include "Vec.h"
 #include "octreechunk.h"
 #include <vector>
+#include "paraloctreechunk.h"
 #include "octreeindex.h"
 #include "Xform.h"
-#include "TriMesh.h"
 
-class Octree
+class ParalOctree
 {
 public:
-	Octree(int cell_depth = 5, float cell_resolution = 0.2f);
-	~Octree();
+	ParalOctree(int cell_depth = 6, float cell_resolution = 0.2f);
+	~ParalOctree();
 
 	void Initialize(const trimesh::vec3& center);
-	void Insert(const std::vector<trimesh::vec3>& points, const std::vector<trimesh::vec3>& normals);
-	void Insert(const std::vector<trimesh::vec3>& points,
-		const std::vector<trimesh::vec3>& normals,
-		const trimesh::xform& xf, std::vector<int>& indexes);
 
 	void QuickInsert(const std::vector<trimesh::vec3>& points, const std::vector<trimesh::vec3>& normals);
 protected:
-	
+
 public:
 	bool m_initialized;
 	const int m_cell_depth;
@@ -36,17 +33,9 @@ public:
 	trimesh::vec3 m_center;
 	trimesh::vec3 m_min;
 
-	std::vector<OctreeChunk> m_chunks;
-
-	std::vector<OctreeIndex> m_indexes;
-
-	trimesh::TriMesh m_trimesh;
-	
-	//std::vector<trimesh::vec3> m_points;
-	//std::vector<trimesh::vec3> m_normals;
-
-	int m_current_index;
+	std::vector<trimesh::vec3> m_points;
+	std::vector<trimesh::vec3> m_normals;
 	int m_current_point_index;
 
-	std::vector<QuickIndex> m_quick_index;
+	std::vector<ParalOctreeChunk> m_chunks;
 };

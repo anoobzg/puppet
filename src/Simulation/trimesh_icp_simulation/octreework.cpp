@@ -129,8 +129,8 @@ void OctreeWork::InsertAll()
 		m_octree.Insert(mesh->vertices, mesh->vertices);
 	}
 
-	size_t vertex_num = m_octree.m_points.size();
-	osg::Array* coord_array = OSGWrapper::ArrayCreator::CreateVec3Array(vertex_num, (float*)&m_octree.m_points[0]);
+	size_t vertex_num = m_octree.m_trimesh.vertices.size();
+	osg::Array* coord_array = OSGWrapper::ArrayCreator::CreateVec3Array(vertex_num, (float*)&m_octree.m_trimesh.vertices[0]);
 	osg::DrawArrays* draw_array = new osg::DrawArrays(GL_POINTS, 0, vertex_num);
 	osg::Geometry* geometry = OSGWrapper::GeometryCreator::CreateIndexAttributeGeometry(draw_array, coord_array);
 	m_scene->AddPoint(geometry);
@@ -148,8 +148,8 @@ void OctreeWork::OctreeCell()
 
 	m_octree.Insert(mesh->vertices, mesh->vertices);
 
-	size_t vertex_num = m_octree.m_points.size();
-	osg::Array* coord_array = OSGWrapper::ArrayCreator::CreateVec3Array(vertex_num, (float*)&m_octree.m_points[0]);
+	size_t vertex_num = m_octree.m_trimesh.vertices.size();
+	osg::Array* coord_array = OSGWrapper::ArrayCreator::CreateVec3Array(vertex_num, (float*)&m_octree.m_trimesh.vertices[0]);
 	osg::DrawArrays* draw_array = new osg::DrawArrays(GL_POINTS, 0, vertex_num);
 	osg::Geometry* geometry = OSGWrapper::GeometryCreator::CreateIndexAttributeGeometry(draw_array, coord_array);
 	m_scene->AddPoint(geometry);

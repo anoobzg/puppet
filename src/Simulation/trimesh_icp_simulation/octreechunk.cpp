@@ -77,17 +77,24 @@ int OctreeChunk::AddPoint(int depth_max, int& current, int current_point_index, 
 	int depth_size = (int)cell_indexes.size();
 	assert(depth_size >= 2);
 	int& index = m_children[cell_indexes.at(0)];
-	if (index < 0) index = current++;
-
+	//if (index < 0) index = current++;
+	if (index < 0)
+	{
+		index = current;
+		++current;
+	}
 	OctreeIndex* current_oc = &indexes.at(index);
 
 	int depth = 0;
 	for (int i = 1; i <= depth_size - 2; ++i)
 	{
-		int& iindex = current_oc->m_children[cell_indexes.at(i)];
-		if (iindex < 0) iindex = current++;
-	
-		current_oc = &indexes.at(iindex);
+		int& iindex = current_oc->m_children[cell_indexes[i]];
+		if (iindex < 0)
+		{
+			iindex = current;
+			++current;
+		}
+		current_oc = &indexes[iindex];
 	}
 	
 	int& point_index = current_oc->m_children[cell_indexes.back()];

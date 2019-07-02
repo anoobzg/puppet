@@ -64,3 +64,18 @@ public:
 	virtual void OnMesh(const trimesh::TriMesh& mesh) = 0;
 	virtual void OnLocateResult(const LocateData& locate_data) = 0;
 };
+
+class LocateTracer
+{
+public:
+	virtual ~LocateTracer() {};
+	virtual void OnFF() = 0;
+	virtual void OnBeforeF2F() = 0;
+	virtual void OnAfterF2F() = 0;
+	virtual void OnFM() = 0;
+	virtual void OnBeforeF2M() = 0;
+	virtual void OnAfterF2M() = 0;
+	virtual void OnRelocate() = 0;
+	virtual void OnBeforeRelocate() = 0;
+	virtual void OnAfterRelocate() = 0;
+};
