@@ -3,6 +3,7 @@
 #include <osgWrapper\RenderView.h>
 #include <osgWrapper/ScreenQuad.h>
 #include <osgWrapper/ScreenDividingRule.h>
+#include <osgWrapper/ScreenSingleText.h>
 
 using namespace OSGWrapper;
 
@@ -58,15 +59,19 @@ public:
 
 osg::Node* CreateContent()
 {
-	OSGWrapper::ScreenDividingRule* rule = new OSGWrapper::ScreenDividingRule();
-	rule->setUpdateCallback(new DividingRuleAnimation());
-	rule->SetOrigin(osg::Vec2(400.0f, 200.0f));
-	rule->SetWidth(20.0f);
-	rule->SetHeight(500.0f);
-	return rule;
+	//OSGWrapper::ScreenDividingRule* rule = new OSGWrapper::ScreenDividingRule();
+	//rule->setUpdateCallback(new DividingRuleAnimation());
+	//rule->SetOrigin(osg::Vec2(400.0f, 200.0f));
+	//rule->SetWidth(20.0f);
+	//rule->SetHeight(500.0f);
+	//return rule;
 	//OSGWrapper::ScreenQuad* quad = new OSGWrapper::ScreenQuad();
 	//quad->setUpdateCallback(new TestAnimation());
 	//return quad;
+
+	OSGWrapper::ScreenSingleText* text = new OSGWrapper::ScreenSingleText();
+	text->SetOrigin(osg::Vec2f(600.0f, 400.0f));
+	return text;
 }
 
 int main(int argc, char* argv[])

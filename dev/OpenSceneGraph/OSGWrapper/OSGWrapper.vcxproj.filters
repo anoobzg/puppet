@@ -105,6 +105,15 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenDividingRule.h">
       <Filter>2D</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenSingleText.h">
+      <Filter>2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\FreetypeFont.h">
+      <Filter>2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\FreetypeFontManager.h">
+      <Filter>2D</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\MatrixDeltaAnimation.cpp">
@@ -171,6 +180,15 @@
       <Filter>2D</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenDividingRule.cpp">
+      <Filter>2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenSingleText.cpp">
+      <Filter>2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\FreetypeFont.cpp">
+      <Filter>2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\FreetypeFontManager.cpp">
       <Filter>2D</Filter>
     </ClCompile>
   </ItemGroup>

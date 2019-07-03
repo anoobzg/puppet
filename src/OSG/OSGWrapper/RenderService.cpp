@@ -1,5 +1,6 @@
 #include <osgWrapper\RenderService.h>
 #include <osgWrapper\ProgramManager.h>
+#include <osgWrapper\FreetypeFontManager.h>
 #include <iostream>
 namespace OSGWrapper
 {
@@ -42,6 +43,7 @@ RenderService::RenderService()
 	setReleaseContextAtEndOfFrameHint(false);
 
 	ProgramManager::Instance();
+	FreetypeFontManager::Instance();
 }
 
 RenderService::~RenderService()
@@ -49,6 +51,7 @@ RenderService::~RenderService()
 	StopRenderingThread();
 
 	ProgramManager::Release();
+	FreetypeFontManager::Release();
 }
 
 

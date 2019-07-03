@@ -149,6 +149,8 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ColorIndexPicker.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\EraseGeometry.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\FeedbackProgram.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\FreetypeFont.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\FreetypeFontManager.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\GeodeCreator.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\GeometryCreator.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ManipulableNode.h" />
@@ -163,6 +165,7 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\RenderView.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenDividingRule.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenQuad.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenSingleText.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\SimMain.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\SimMain_Ex.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\SimpleRenderThread.h" />
@@ -180,6 +183,8 @@
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ColorIndexPicker.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\EraseGeometry.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\FeedbackProgram.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\FreetypeFont.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\FreetypeFontManager.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\GeodeCreator.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\GeometryCreator.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ManipulableNode.cpp" />
@@ -193,6 +198,7 @@
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\RenderView.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenDividingRule.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenQuad.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenSingleText.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\SimpleRenderThread.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UtilCreator.cpp" />
   </ItemGroup>
