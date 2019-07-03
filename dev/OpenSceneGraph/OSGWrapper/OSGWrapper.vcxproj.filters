@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="2D">
+      <UniqueIdentifier>{788a6e3e-0d61-4967-bc7d-998d0a4dc2c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\SimMain.h">
@@ -96,6 +99,12 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UtilCreator.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenQuad.h">
+      <Filter>2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenDividingRule.h">
+      <Filter>2D</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\MatrixDeltaAnimation.cpp">
@@ -157,6 +166,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UtilCreator.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenQuad.cpp">
+      <Filter>2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenDividingRule.cpp">
+      <Filter>2D</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

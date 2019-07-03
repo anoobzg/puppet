@@ -14,6 +14,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lasso_lib", "lasso_lib\lass
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "trimesh_icp_simulation", "trimesh_icp_simulation\trimesh_icp_simulation.vcxproj", "{34FAC50E-F83B-485B-85D5-A676C89CCAE5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osg_2d_simulation", "osg_2d_simulation\osg_2d_simulation.vcxproj", "{9330B22A-3885-4CBD-8F2D-7170FAC3F4C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -54,6 +56,14 @@ Global
 		{34FAC50E-F83B-485B-85D5-A676C89CCAE5}.Release|x64.Build.0 = Release|x64
 		{34FAC50E-F83B-485B-85D5-A676C89CCAE5}.Release|x86.ActiveCfg = Release|Win32
 		{34FAC50E-F83B-485B-85D5-A676C89CCAE5}.Release|x86.Build.0 = Release|Win32
+		{9330B22A-3885-4CBD-8F2D-7170FAC3F4C8}.Debug|x64.ActiveCfg = Debug|x64
+		{9330B22A-3885-4CBD-8F2D-7170FAC3F4C8}.Debug|x64.Build.0 = Debug|x64
+		{9330B22A-3885-4CBD-8F2D-7170FAC3F4C8}.Debug|x86.ActiveCfg = Debug|Win32
+		{9330B22A-3885-4CBD-8F2D-7170FAC3F4C8}.Debug|x86.Build.0 = Debug|Win32
+		{9330B22A-3885-4CBD-8F2D-7170FAC3F4C8}.Release|x64.ActiveCfg = Release|x64
+		{9330B22A-3885-4CBD-8F2D-7170FAC3F4C8}.Release|x64.Build.0 = Release|x64
+		{9330B22A-3885-4CBD-8F2D-7170FAC3F4C8}.Release|x86.ActiveCfg = Release|Win32
+		{9330B22A-3885-4CBD-8F2D-7170FAC3F4C8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
