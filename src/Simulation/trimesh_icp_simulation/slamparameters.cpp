@@ -88,6 +88,7 @@ void SlamParameters::LoadDebugParameters(boost::program_options::options_descrip
 		debug_param.debug = 0;
 		debug_param.directory = "";
 		debug_param.out_directory = "";
+		debug_param.save_fm_failed = 0;
 	}
 	else
 	{
@@ -95,6 +96,7 @@ void SlamParameters::LoadDebugParameters(boost::program_options::options_descrip
 			("debug_param.debug", value<int>(&debug_param.debug))
 			("debug_param.directory", value<std::string>(&debug_param.directory))
 			("debug_param.out_directory", value<std::string>(&debug_param.out_directory))
+			("debug_param.save_fm_failed", value<int>(&debug_param.save_fm_failed))
 			;
 	}
 }

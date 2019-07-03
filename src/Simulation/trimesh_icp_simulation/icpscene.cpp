@@ -85,6 +85,15 @@ bool ICPScene::OnKey(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& 
 		return true;
 	}
 
+	if (KEY_DOWN(ea, osgGA::GUIEventAdapter::KEY_O))
+	{
+		trimesh::ProjectionICP icp(m_data.m_fx, m_data.m_fy, m_data.m_cx, m_data.m_cy);
+		icp.SetSource(&m_source_node->GetMesh());
+		icp.SetTarget(&m_target_node->GetMesh());
+		float error = icp.Do(m_source_node->GetMesh().global);
+		return true;
+	}
+
 	return true;
 }
 

@@ -16,7 +16,7 @@ namespace trimesh
 		float Do(trimesh::xform &source_form);
 		float FastDo(trimesh::xform & source_form);
 		float DefaultTimesDo(trimesh::xform & source_form, int times);
-		float FMQuickDo(trimesh::xform & source_form);
+		float FMQuickDo(trimesh::xform & source_form, int max_times);
 		void SetTracer(ProjectionICPTracer* tracer);
 
 		//step functions

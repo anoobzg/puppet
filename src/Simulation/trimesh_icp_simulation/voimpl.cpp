@@ -3,7 +3,7 @@
 #include <ppl.h>
 
 VOImpl::VOImpl()
-	:m_locate_tracer(NULL)
+	:m_locate_tracer(NULL), m_icp_tracer(NULL), m_keyframe_tracer(NULL)
 {
 	m_fx = 0.0f;
 	m_fy = 0.0f;
@@ -70,6 +70,11 @@ void VOImpl::SetLocateTracer(LocateTracer* tracer)
 	m_locate_tracer = tracer;
 }
 
+void VOImpl::SetKeyframeTracer(KeyFrameTracer* tracer)
+{
+	m_keyframe_tracer = tracer;
+}
+
 void VOImpl::LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
 {
 	if (m_state.FirstFrame())
@@ -130,6 +135,14 @@ void VOImpl::FusionFrame(TriMeshPtr& mesh, const LocateData& locate_data)
 		}
 	}
 	SetLastMesh(mesh, use_as_keyframe);
+	if (m_keyframe_tracer)
+	{//key frame
+		KeyFrameData* key_data = new KeyFrameData();
+		key_data->use_as_key_frame = use_as_keyframe;
+		key_data->locate = false;
+		key_data->mesh = mesh;
+		m_keyframe_tracer->OnKeyFrame(key_data);
+	}
 
 	std::cout << "Octree nodes " << m_octree->m_current_index <<
 		" points " << m_octree->m_current_point_index << std::endl;
@@ -182,19 +195,43 @@ bool VOImpl::Frame2Frame(TriMeshPtr& mesh)
 	return Frame2Model(mesh);
 }
 
-bool VOImpl::Frame2Model(TriMeshPtr& mesh)
+bool VOImpl::Frame2Model(TriMeshPtr& mesh, bool relocate)
 {
 	m_icp->SetSource(mesh.get());
 	m_icp->SetTarget(&m_octree->m_trimesh);
 
 	if (m_locate_tracer) m_locate_tracer->OnBeforeF2M();
 
-	float error = m_icp->Do(mesh->global);
+	float error = 0.0f;
+	if (relocate)
+	{
+		m_icp->SetTracer(m_icp_tracer);
+		error = m_icp->FMQuickDo(mesh->global, 7);
+		//error = m_icp->Do(mesh->global);
+		m_icp->SetTracer(NULL);
+	}
+	else
+	{
+		error = m_icp->FMQuickDo(mesh->global, 7);
+	}
+
+	//m_icp->SetTracer(m_icp_tracer);
+	//error = m_icp->FMQuickDo(mesh->global, 7);
+	//m_icp->SetTracer(NULL);
+
 
 	if (m_locate_tracer) m_locate_tracer->OnAfterF2M();
 
-	if (error > 0.1f || error < 0.0f)
-		return false;
+	if (relocate)
+	{
+		if (error > 0.3f || error < 0.0f)
+			return false;
+	}
+	else
+	{
+		if (error > 0.1f || error < 0.0f)
+			return false;
+	}
 	return true;
 }
 
@@ -214,7 +251,8 @@ bool VOImpl::Relocate(TriMeshPtr& mesh)
 			trimesh::ProjectionICP icp(m_fx, m_fy, m_cx, m_cy);
 			icp.SetSource(mesh.get());
 			icp.SetTarget(m_key_frames.at(i).get());
-			errors.at(i) = icp.DefaultTimesDo(matrixes.at(i), 10);
+			//errors.at(i) = icp.DefaultTimesDo(matrixes.at(i), 10);
+			errors.at(i) = icp.Do(matrixes.at(i));
 		});
 
 		float min_error = FLT_MAX;
@@ -241,9 +279,26 @@ bool VOImpl::Relocate(TriMeshPtr& mesh)
 	if (dest_mesh)
 	{
 		mesh->global = xf * dest_mesh->global;
-		bool f2m = Frame2Model(mesh);
+
+		std::cout << "ReLocate ##########################" << std::endl;
+		if (m_keyframe_tracer)
+		{//key frame
+			KeyFrameData* key_data = new KeyFrameData();
+			key_data->use_as_key_frame = false;
+			key_data->locate = true;
+			key_data->mesh = mesh;
+			m_keyframe_tracer->OnKeyFrame(key_data);
+		}
+
+		trimesh::xform init_matrix = mesh->global;
+		bool f2m = Frame2Model(mesh, true);
 		if(f2m)
 			std::cout << mesh->frame << " relocate success. ("<<dest_mesh->frame<<") at "<< size <<"key frames"<< std::endl;
+		else
+		{
+			if (m_locate_tracer)
+				m_locate_tracer->OnLocateFailed(mesh, init_matrix, &m_octree->m_trimesh);
+		}
 		return f2m;
 	}
 	else
@@ -258,4 +313,9 @@ void VOImpl::SetLastMesh(TriMeshPtr& mesh, bool use_as_keyframe)
 	m_last_mesh->clear_grid();
 
 	if(use_as_keyframe) m_key_frames.push_back(mesh);
+}
+
+void VOImpl::SetProjectionICPTracer(trimesh::ProjectionICPTracer* tracer)
+{
+	m_icp_tracer = tracer;
 }

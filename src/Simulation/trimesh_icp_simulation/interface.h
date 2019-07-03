@@ -37,6 +37,13 @@ struct PatchRenderData
 	int step;
 };
 
+struct KeyFrameData
+{
+	bool locate;
+	bool use_as_key_frame;
+	TriMeshPtr mesh;
+};
+
 class VOTracer
 {
 public:
@@ -44,6 +51,14 @@ public:
 
 	virtual void OnFrame(RenderData* data) = 0;
 	virtual void OnFrame(PatchRenderData* data) = 0;
+};
+
+class KeyFrameTracer
+{
+public:
+	virtual ~KeyFrameTracer() {}
+
+	virtual void OnKeyFrame(KeyFrameData* data) = 0;
 };
 
 class ReadTracer
@@ -78,4 +93,6 @@ public:
 	virtual void OnRelocate() = 0;
 	virtual void OnBeforeRelocate() = 0;
 	virtual void OnAfterRelocate() = 0;
+
+	virtual void OnLocateFailed(TriMeshPtr mesh, const trimesh::xform& init_matrix, trimesh::TriMesh* all_mesh) = 0;
 };

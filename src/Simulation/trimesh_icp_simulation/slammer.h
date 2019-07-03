@@ -9,7 +9,7 @@ public:
 	Slammer();
 	~Slammer();
 
-	void Start(const std::string& config_file, VOTracer* tracer = NULL);
+	void Start(const std::string& config_file, VOTracer* tracer = NULL, KeyFrameTracer* keyframe_tracer = NULL);
 	void Stop();
 private:
 	Reader m_reader;

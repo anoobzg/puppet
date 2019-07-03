@@ -10,6 +10,7 @@ StepICPTask::StepICPTask(trimesh::CameraData& data, ICPNode* target, ICPNode* so
 	m_icp.SetSource(&source->GetMesh());
 	m_icp.SetTarget(&target->GetMesh());
 	m_icp.SetTracer(this);
+	m_icp.SetStepInitialMatrix(source->GetMesh().global);
 
 	m_last_matrix = osg::Matrixf::identity();
 }
@@ -24,7 +25,7 @@ bool StepICPTask::Execute()
 	static int tick = 0;
 
 	++tick;
-	if (tick % 30 == 0)
+	if (tick % 50 == 0)
 	{
 		if (m_use_fast)
 			return m_icp.FastStep();
@@ -39,7 +40,7 @@ void StepICPTask::SetUseFast(bool use)
 	m_use_fast = use;
 }
 
-void StepICPTask::OnPreStepCorrespondences(const std::vector<trimesh::PtPair>& correspondences)
+void StepICPTask::OnStepCorrespondences(const std::vector<trimesh::PtPair>& correspondences)
 {
 	m_lines->RemoveAll();
 

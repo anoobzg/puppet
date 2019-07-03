@@ -10,7 +10,7 @@ Slammer::~Slammer()
 
 }
 
-void Slammer::Start(const std::string& config_file, VOTracer* tracer)
+void Slammer::Start(const std::string& config_file, VOTracer* tracer, KeyFrameTracer* keyframe_tracer)
 {
 	m_parameters.LoadFromFile(config_file);
 
@@ -22,10 +22,12 @@ void Slammer::Start(const std::string& config_file, VOTracer* tracer)
 		m_reader.SetReadTracer(m_debug_center->GetReadTracer());
 		m_vo.SetVOProfiler(m_debug_center->GetVOProfiler());
 		m_vo.SetLocateTracer(m_debug_center->GetLocateTracer());
+		m_vo.SetICPTracer(m_debug_center->GetProjectionICPTracer());
 	}
 
 	m_reader.SetVO(&m_vo);
 	m_vo.SetVOTracer(tracer);
+	m_vo.SetKeyFrameTracer(keyframe_tracer);
 	m_vo.StartVO(m_parameters);
 	m_reader.StartRead(m_parameters.reader_param);
 }

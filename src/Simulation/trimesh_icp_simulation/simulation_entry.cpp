@@ -1,6 +1,7 @@
 #include "simulation_entry.h"
 #include "renderthread.h"
 #include "render.h"
+#include "keyframerender.h"
 #include "slammer.h"
 #include <boost\format.hpp>
 #include "compute_boundingbox.h"
@@ -13,23 +14,37 @@ int simulation_entry(int argc, char* argv[])
 	base::WaitableEvent e(base::WaitableEvent::ResetPolicy::AUTOMATIC,
 		base::WaitableEvent::InitialState::NOT_SIGNALED);
 
+	std::string config_file;
+	bool use_keyframe_tracer = false;
+	if (argc >= 3) config_file = argv[2];
+	if (argc >= 4 && !strcmp("trace_keyframe", argv[3])) use_keyframe_tracer = true;
+
 	Render render;
 	RenderThread render_thread(e);
 	render_thread.StartRender(render.GetScene());
 
+	KeyFrameRender keyframe_render;
+	RenderThread keyframe_thread(e);
+	
+	KeyFrameTracer* keyframe_tracer = NULL;
 	::Sleep(1000);
-	std::string config_file;
-	if (argc >= 3) config_file = argv[2];
-
 	render.StartRender();
+	if (use_keyframe_tracer)
+	{
+		keyframe_thread.StartRender(keyframe_render.GetScene());
+		keyframe_render.StartRender();
+		keyframe_tracer = &keyframe_render;
+	}
 
 	Slammer slam;
-	slam.Start(config_file, &render);
+	slam.Start(config_file, &render, keyframe_tracer);
 	e.Wait();
 
 	slam.Stop();
 	render.StopRender();
+	keyframe_render.StopRender();
 	render_thread.StopRender();
+	keyframe_thread.StopRender();
 	return EXIT_SUCCESS;
 }
 

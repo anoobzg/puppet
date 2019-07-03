@@ -1,6 +1,7 @@
 #include "icpnode.h"
 #include <osgWrapper\ArrayCreator.h>
 #include <osgWrapper\GeometryCreator.h>
+#include "trimeshgeometrycreator.h"
 
 ICPNode::ICPNode(trimesh::TriMesh& mesh)
 	:m_mesh(mesh)
@@ -20,6 +21,7 @@ ICPNode::ICPNode(trimesh::TriMesh& mesh)
 	AddChild(m_bounding_box);
 
 	m_matrix = osg::Matrixf::identity();
+	T2OConvert(m_matrix, m_mesh.global);
 	m_matrix_uniform = new osg::Uniform("icp_matrix", m_matrix);
 	AddUniform(m_matrix_uniform);
 	m_bounding_box->UpdateBoundingBox(m_geometry->getBoundingBox(), m_matrix);

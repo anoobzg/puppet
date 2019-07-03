@@ -17,6 +17,8 @@ public:
 	void SetVOTracer(VOTracer* tracer);
 	void SetVOProfiler(VOProfiler* profiler);
 	void SetLocateTracer(LocateTracer* tracer);
+	void SetICPTracer(trimesh::ProjectionICPTracer* tracer);
+	void SetKeyFrameTracer(KeyFrameTracer* tracer);
 protected:
 	void ProcessFrame(trimesh::TriMesh* mesh);
 private:
@@ -25,4 +27,5 @@ private:
 	VOImpl m_vo_impl;
 
 	VOTracer* m_tracer;
+	KeyFrameTracer* m_keyframe_tracer;
 };
