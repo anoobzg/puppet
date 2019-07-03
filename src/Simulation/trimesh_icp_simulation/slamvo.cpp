@@ -4,6 +4,7 @@
 
 SlamVO::SlamVO()
 	:base::Thread("SlamVO"), m_tracer(NULL), m_profiler(NULL)
+	, m_keyframe_tracer(NULL)
 {
 
 }
@@ -19,7 +20,7 @@ void SlamVO::StartVO(const SlamParameters& parameters)
 
 	m_vo_impl.Setup(m_parameters);
 	m_vo_impl.SetVOTracer(m_tracer);
-
+	m_vo_impl.SetKeyframeTracer(m_keyframe_tracer);
 	bool start = Start();
 }
 
@@ -68,7 +69,17 @@ void SlamVO::SetVOTracer(VOTracer* tracer)
 	m_tracer = tracer;
 }
 
+void SlamVO::SetKeyFrameTracer(KeyFrameTracer* tracer)
+{
+	m_keyframe_tracer = tracer;
+}
+
 void SlamVO::SetLocateTracer(LocateTracer* tracer)
 {
 	m_vo_impl.SetLocateTracer(tracer);
+}
+
+void SlamVO::SetICPTracer(trimesh::ProjectionICPTracer* tracer)
+{
+	m_vo_impl.SetProjectionICPTracer(tracer);
 }

@@ -19,6 +19,7 @@ struct DebugParameters
 	int debug;
 	std::string directory;
 	std::string out_directory;
+	int save_fm_failed;
 };
 
 struct OctreeParameters

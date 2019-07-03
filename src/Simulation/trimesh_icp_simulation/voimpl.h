@@ -15,7 +15,9 @@ public:
 
 	void Setup(const SlamParameters& parameters);
 	void SetVOTracer(VOTracer* tracer);
+	void SetKeyframeTracer(KeyFrameTracer* tracer);
 	void SetLocateTracer(LocateTracer* tracer);
+	void SetProjectionICPTracer(trimesh::ProjectionICPTracer* tracer);
 
 	void ProcessOneFrame(TriMeshPtr& mesh, LocateData& locate_data);
 protected:
@@ -23,7 +25,7 @@ protected:
 	void FusionFrame(TriMeshPtr& mesh, const LocateData& locate_data);
 
 	bool Frame2Frame(TriMeshPtr& mesh);
-	bool Frame2Model(TriMeshPtr& mesh);
+	bool Frame2Model(TriMeshPtr& mesh, bool relocate = false);
 	bool Relocate(TriMeshPtr& mesh);
 	void SetLastMesh(TriMeshPtr& mesh, bool use_as_keyframe);
 protected:
@@ -45,4 +47,7 @@ protected:
 
 	bool m_use_fast_icp;
 	LocateTracer* m_locate_tracer;
+	trimesh::ProjectionICPTracer* m_icp_tracer;
+
+	KeyFrameTracer* m_keyframe_tracer;
 };

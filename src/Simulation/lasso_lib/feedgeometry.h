@@ -4,7 +4,7 @@
 class FeedGeometry : public osg::Geometry
 {
 public:
-	FeedGeometry(osg::Vec3Array* coord_array, osg::FloatArray* flag_array);
+	FeedGeometry(osg::Vec3Array* coord_array, osg::FloatArray* flag_array, osg::FloatArray* flag_array_ex);
 	~FeedGeometry();
 
 	void Exchange();
@@ -14,4 +14,5 @@ protected:
 private:
 	osg::ref_ptr<osg::Vec3Array> m_coord_array;
 	osg::ref_ptr<osg::FloatArray> m_in_array;
+	osg::ref_ptr<osg::FloatArray> m_out_array;
 };

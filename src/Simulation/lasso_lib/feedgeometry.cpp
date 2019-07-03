@@ -26,10 +26,14 @@ osg::BoundingBox FeedGeometry::computeBoundingBox() const
 	return osg::BoundingBox();
 }
 
-FeedGeometry::FeedGeometry(osg::Vec3Array* coord_array, osg::FloatArray* flag_array)
+FeedGeometry::FeedGeometry(osg::Vec3Array* coord_array, osg::FloatArray* flag_array, osg::FloatArray* flag_array_ex)
 {
 	m_in_array = flag_array;
-	m_in_array->setVertexBufferObject(new osg::VertexBufferObject());
+	m_out_array = flag_array_ex;
+	//m_out_array = new osg::FloatArray();
+	//m_out_array->resize(m_in_array->size(), 0.0f);
+	//m_out_array->setVertexBufferObject(new osg::VertexBufferObject());
+	//m_in_array->setVertexBufferObject(new osg::VertexBufferObject());
 	m_coord_array = coord_array;
 
 	setVertexAttribArray(0, m_coord_array, osg::Array::BIND_PER_VERTEX);
@@ -62,7 +66,7 @@ void FeedGeometry::drawImplementation(osg::RenderInfo& renderInfo) const
 	unsigned int contextID = renderInfo.getState()->getContextID();
 
 	osg::GLExtensions* buffer_ext = renderInfo.getState()->get<osg::GLExtensions>();
-	GLuint ubuff = m_in_array->getOrCreateGLBufferObject(contextID)->getGLObjectID();
+	GLuint ubuff = m_out_array->getOrCreateGLBufferObject(contextID)->getGLObjectID();
 
 	renderInfo.getState()->checkGLErrors("hello1");
 	glEnable(GL_RASTERIZER_DISCARD);

@@ -13,3 +13,10 @@ osg::Geometry* Create(trimesh::TriMesh* mesh)
 	osg::Geometry* geometry = OSGWrapper::GeometryCreator::CreateIndexAttributeGeometry(draw_array, coord_array, normal_array);
 	return geometry;
 }
+
+void T2OConvert(osg::Matrixf& matrix, const trimesh::xform& xf)
+{
+	for (int i = 0; i < 4; ++i)
+		for (int j = 0; j < 4; ++j)
+			matrix(i, j) = xf(j, i);
+}

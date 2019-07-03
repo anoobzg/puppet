@@ -220,23 +220,23 @@ namespace trimesh
 		return FastInteration(source_form);
 	}
 
-	float ProjectionICP::FMQuickDo(trimesh::xform & source_form)
+	float ProjectionICP::FMQuickDo(trimesh::xform & source_form, int max_times)
 	{
 		if (!m_mapping.Valid())
 			return -1.0f;
 
 		m_mapping.Setup();
 
-		float err = 0.0f;
-		m_estimation.SetDistThreshMult(m_dist_thresh_mult_final);
-		m_estimation.SetNormDotThresh(m_normdot_thresh_final);
-		for (int iter = 0; iter < m_final_iters; iter++)
-		{
-			err = InnerDo(source_form);
-			if (err < 0.0f) {
-				return err;
-			}
-		}
+		// First, do a few point-to-point iterations for stability in case the
+		// initial misalignment is big.
+		float err = InitialInteration(source_form);
+		if (err < 0.0f) return err;
+
+		err = FastInteration(source_form);
+		if (err < 0.0f) return err;
+
+		err = FinalInteration(source_form);
+
 		return err;
 	}
 

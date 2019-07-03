@@ -15,7 +15,7 @@ public:
 	void SetAttributeNode(OSGWrapper::AttributeUtilNode* node);
 	void SetUseFast(bool use);
 protected:
-	void OnPreStepCorrespondences(const std::vector<trimesh::PtPair>& correspondences);
+	void OnStepCorrespondences(const std::vector<trimesh::PtPair>& correspondences);
 	void OnMatrix(const trimesh::xform& xf);
 	void OnError(float error);
 protected:

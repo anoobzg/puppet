@@ -32,6 +32,8 @@ void RenderThread::StartRender(RenderThreadBaseScene* scene)
 
 void RenderThread::StopRender()
 {
+	m_viewer.setDone(true);
+
 	Stop();
 }
 
@@ -39,7 +41,7 @@ void RenderThread::RenderCircle()
 {
 	m_view = new OSGWrapper::RenderView();
 	m_view->SetBackgroundColor(osg::Vec4(0.3f, 0.3f, 0.3f, 1.0f));
-	m_view->setUpViewInWindow(0, 0, 1920, 1080);
+	m_view->setUpViewInWindow(10, 10, 1080, 720);
 	m_view->SetCurrentScene(m_scene);
 
 	m_viewer.addView(m_view);

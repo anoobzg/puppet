@@ -72,6 +72,19 @@ int main(int argc, char* argv[])
 		return EXIT_SUCCESS;
 	}
 
+	trimesh::xform init_xf;
+	if (argc >= 5)
+	{
+		std::string matrix_file(argv[4]);
+		std::fstream in;
+		in.open(matrix_file.c_str(), std::ios::binary | std::ios::in);
+		if (in.is_open())
+		{
+			in.read((char*)init_xf.data(), sizeof(double) * 16);
+		}
+		in.close();
+	}
+	source_mesh->global = init_xf;
 	osg::ref_ptr<RenderView> view = new RenderView();
 	osg::ref_ptr<RenderScene> scene = new ICPScene(camera_data, *source_mesh, *target_mesh);
 	view->SetBackgroundColor(osg::Vec4(0.3f, 0.3f, 0.3f, 1.0f));
