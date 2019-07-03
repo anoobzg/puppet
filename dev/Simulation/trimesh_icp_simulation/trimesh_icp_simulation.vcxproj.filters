@@ -144,6 +144,15 @@
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\chunkgeometry.cpp">
       <Filter>simulation</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\locatetracerimpl.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\paraloctree.cpp">
+      <Filter>octree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\paraloctreechunk.cpp">
+      <Filter>octree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\boundingbox.h">
@@ -268,6 +277,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\chunkgeometry.h">
       <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\locatetracerimpl.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\paraloctreechunk.h">
+      <Filter>octree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\paraloctree.h">
+      <Filter>octree</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

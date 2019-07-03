@@ -155,6 +155,7 @@
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpnode.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpscene.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\load_trimeshes.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\locatetracerimpl.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\main.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octree.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreechunk.cpp" />
@@ -164,6 +165,8 @@
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreescene.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreework.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\octree_entry.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\paraloctree.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\paraloctreechunk.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\parral.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\patchnode.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\pointsnode.cpp" />
@@ -199,6 +202,7 @@
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\icpscene.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\interface.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\load_trimeshes.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\locatetracerimpl.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octree.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreechunk.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreegrid.h" />
@@ -207,6 +211,8 @@
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreescene.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octreework.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\octree_entry.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\paraloctree.h" />
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\paraloctreechunk.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\parral.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\patchnode.h" />
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\pointsnode.h" />
