@@ -114,6 +114,9 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\FreetypeFontManager.h">
       <Filter>2D</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenDistanceIndicator.h">
+      <Filter>2D</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\MatrixDeltaAnimation.cpp">
@@ -189,6 +192,9 @@
       <Filter>2D</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\FreetypeFontManager.cpp">
+      <Filter>2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenDistanceIndicator.cpp">
       <Filter>2D</Filter>
     </ClCompile>
   </ItemGroup>

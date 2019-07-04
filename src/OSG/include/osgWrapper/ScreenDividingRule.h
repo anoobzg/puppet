@@ -15,6 +15,8 @@ namespace OSGWrapper
 
 		void SetDivide(int divide1, int divide2);
 		void SetDivideRatio(float d);
+		void SetUpperColor(const osg::Vec4f& color);
+		void SetLowerColor(const osg::Vec4f& color);
 	private:
 		void Create();
 		osg::Geometry* CreateInner();

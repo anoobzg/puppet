@@ -127,7 +127,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OSG\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\src\OSG\include\;$(SolutionDir)..\..\src\freetype\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;OSG_LIBRARY;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -137,7 +137,7 @@
       <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OpenThread.lib;OSG.lib;OSGDB.lib;OSGGA.lib;OSGText.lib;OSGUtil.lib;OSGViewer.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>OpenThread.lib;OSG.lib;OSGDB.lib;OSGGA.lib;OSGText.lib;OSGUtil.lib;OSGViewer.lib;opengl32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
@@ -163,6 +163,7 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\RenderScene.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\RenderService.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\RenderView.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenDistanceIndicator.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenDividingRule.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenQuad.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenSingleText.h" />
@@ -196,6 +197,7 @@
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\RenderScene.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\RenderService.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\RenderView.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenDistanceIndicator.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenDividingRule.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenQuad.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenSingleText.cpp" />

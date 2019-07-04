@@ -74,6 +74,20 @@ namespace OSGWrapper
 		}
 	}
 
+	void ScreenSingleText::SetText(wchar_t c)
+	{
+		if (m_font)
+		{
+			std::wstring text; text.push_back(c);
+			std::vector<osg::Vec2f> texcoord;
+			m_font->GenTextureCoord(text, texcoord);
+			m_texcoord_array->clear();
+			m_texcoord_array->push_back(texcoord.at(0));
+			m_texcoord_array->push_back(texcoord.at(1));
+			m_texcoord_array->push_back(texcoord.at(2));
+			m_texcoord_array->push_back(texcoord.at(3));
+		}
+	}
 	void ScreenSingleText::SetText(char c)
 	{
 		if (m_font)

@@ -24,8 +24,9 @@ namespace OSGWrapper
 
 		bool Init(const std::string& file);
 		void GenTextureCoord(const std::string& text, std::vector<osg::Vec2f>& texcoord);
+		void GenTextureCoord(const std::wstring& text, std::vector<osg::Vec2f>& texcoord);
 	private:
-		FreetypeGlygh* IsGlyghLoaded(char c);
+		FreetypeGlygh* IsGlyghLoaded(unsigned c);
 		void GenTextureCoord(const FreetypeGlygh& glygh, std::vector<osg::Vec2f>& texcoord);
 	protected:
 		const int m_size;

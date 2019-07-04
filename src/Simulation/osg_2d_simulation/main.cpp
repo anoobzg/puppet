@@ -5,6 +5,7 @@
 #include <osgWrapper/ScreenDividingRule.h>
 #include <osgWrapper/ScreenSingleText.h>
 #include <osgWrapper\FreetypeFontManager.h>
+#include <osgWrapper/ScreenDistanceIndicator.h>
 
 using namespace OSGWrapper;
 
@@ -58,6 +59,27 @@ public:
 	float d;
 };
 
+class IndicatorAnimation : public osg::NodeCallback
+{
+public:
+	IndicatorAnimation() :x(0.0f){}
+	~IndicatorAnimation() {}
+
+	virtual void operator()(osg::Node* node, osg::NodeVisitor* nv)
+	{
+		OSGWrapper::ScreenDistanceIndicator* indicator = dynamic_cast<OSGWrapper::ScreenDistanceIndicator*>(node);
+		if (indicator)
+		{
+			float value = 30.0f * sinf(x) + 60.0f;
+			indicator->SetCurrentValue(value);
+
+			x += 0.03f;
+		}
+	}
+
+	float x;
+};
+
 osg::Node* CreateContent()
 {
 	//OSGWrapper::ScreenDividingRule* rule = new OSGWrapper::ScreenDividingRule();
@@ -69,12 +91,18 @@ osg::Node* CreateContent()
 	//OSGWrapper::ScreenQuad* quad = new OSGWrapper::ScreenQuad();
 	//quad->setUpdateCallback(new TestAnimation());
 	//return quad;
-	OSGWrapper::ScreenSingleText* text = new OSGWrapper::ScreenSingleText();
-	text->SetOrigin(osg::Vec2f(600.0f, 400.0f));
-	text->SetFont("E:\\3th\\freetype-gl-master\\fonts\\Vera.ttf");
-	text->SetText('H');
-	text->SetColor(osg::Vec4f(0.0f, 1.0f, 1.0f, 1.0f));
-	return text;
+	//OSGWrapper::ScreenSingleText* text = new OSGWrapper::ScreenSingleText();
+	//text->SetOrigin(osg::Vec2f(600.0f, 400.0f));
+	//text->SetFont("D:\\Data\\Fonts\\1\\xingshu.ttf");
+	//text->SetText(L'\x8d39');
+	//text->SetColor(osg::Vec4f(0.0f, 1.0f, 1.0f, 1.0f));
+	//return text;
+
+	OSGWrapper::ScreenDistanceIndicator* indicator = new OSGWrapper::ScreenDistanceIndicator();
+	indicator->setUpdateCallback(new IndicatorAnimation());
+	indicator->SetActiveColor(osg::Vec4f(0.0f, 1.0f, 0.0f, 1.0f));
+	indicator->SetDefaultColor(osg::Vec4f(0.5f, 0.5f, 0.5f, 1.0f));
+	return indicator;
 }
 
 int main(int argc, char* argv[])

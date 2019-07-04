@@ -19,7 +19,9 @@ namespace OSGWrapper
 		m_origin_uniform = new osg::Uniform("origin", osg::Vec2f(0.0f, 0.0f));
 		m_width_uniform = new osg::Uniform("width", 100.0f);
 		m_height_uniform = new osg::Uniform("height", 100.0f);
+		m_color_uniform = new osg::Uniform("color", osg::Vec4f(0.2f, 0.2f, 0.2f, 1.0f));
 
+		AddUniform(m_color_uniform);
 		AddUniform(m_origin_uniform);
 		AddUniform(m_width_uniform);
 		AddUniform(m_height_uniform);
@@ -43,5 +45,10 @@ namespace OSGWrapper
 	void ScreenQuad::SetHeight(float height)
 	{
 		m_height_uniform->set(height);
+	}
+
+	void ScreenQuad::SetColor(const osg::Vec4f& color)
+	{
+		m_color_uniform->set(color);
 	}
 }

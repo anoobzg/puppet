@@ -37,14 +37,17 @@ namespace OSGWrapper
 		return true;
 	}
 
-	bool LoadGlygh(FreetypeGlygh& G, char c, FT_Face& face, unsigned char* data, int& line, int width, int height)
+	bool LoadGlygh(FreetypeGlygh& G, unsigned c, FT_Face& face, unsigned char* data, int& line, int width, int height)
 	{
 		if (line >= height - 200) return false;
 
 		FT_ULong code = (FT_ULong)c;
 
 		FT_Glyph glyph;
-		FT_Load_Glyph(face, FT_Get_Char_Index(face, c), FT_LOAD_DEFAULT);
+		FT_Select_Charmap(face, FT_ENCODING_UNICODE);
+
+		FT_UInt index = FT_Get_Char_Index(face, code);
+		FT_Load_Glyph(face, index, FT_LOAD_DEFAULT);
 		FT_Error error = FT_Get_Glyph(face->glyph, &glyph);
 		if (error) return false;
 
@@ -54,7 +57,7 @@ namespace OSGWrapper
 
 		float x = 0.0f;
 		float y = (float)line / (float)height;
-		float dx = (float)(bitmap.width - 1) / (float)width;
+		float dx = (float)(bitmap.width) / (float)width;
 		float dy = (float)bitmap.rows / (float)height;
 		G.x = x; G.y = y; G.wx = dx; G.wy = dy;
 
@@ -83,12 +86,12 @@ namespace OSGWrapper
 		m_texture->setSourceType(GL_UNSIGNED_BYTE);
 		m_texture->setResizeNonPowerOfTwoHint(false);
 
-		m_image_width = 200;
-		m_image_height = 400;
+		m_image_width = 150;
+		m_image_height = 10000;
 		m_image = new osg::Image();
 		m_image->allocateImage(m_image_width, m_image_height, 1, GL_RED, GL_UNSIGNED_BYTE);
 		unsigned char* data = m_image->data();
-		memset(data, 255, m_image_width * m_image_height);
+		memset(data, 0, m_image_width * m_image_height);
 		m_texture->setImage(m_image);
 	}
 
@@ -145,13 +148,12 @@ namespace OSGWrapper
 		return true;
 	}
 
-	FreetypeGlygh* FreetypeFont::IsGlyghLoaded(char c)
+	FreetypeGlygh* FreetypeFont::IsGlyghLoaded(unsigned c)
 	{
-		unsigned index = 0;
 		for (size_t i = 0; i < m_glyghs.size(); ++i)
 		{
 			FreetypeGlygh& glygh = m_glyghs.at(i);
-			if (glygh.code = index) return &glygh;
+			if (glygh.code = c) return &glygh;
 		}
 		return NULL;
 	}
@@ -160,10 +162,10 @@ namespace OSGWrapper
 	{
 		osg::Vec2f dmin = osg::Vec2f(glygh.x, glygh.y);
 		float dx = glygh.wx; float dy = glygh.wy;
-		texcoord.push_back(dmin);
-		texcoord.push_back(dmin + osg::Vec2f(dx, 0.0f));
-		texcoord.push_back(dmin + osg::Vec2f(dx, dy));
 		texcoord.push_back(dmin + osg::Vec2f(0.0f, dy));
+		texcoord.push_back(dmin + osg::Vec2f(dx, dy));
+		texcoord.push_back(dmin + osg::Vec2f(dx, 0.0f));
+		texcoord.push_back(dmin);
 	}
 
 	void FreetypeFont::GenTextureCoord(const std::string& text, std::vector<osg::Vec2f>& texcoord)
@@ -177,11 +179,43 @@ namespace OSGWrapper
 		bool need_update = false;
 		for (std::string::const_iterator it = text.begin(); it != text.end(); ++it)
 		{
-			FreetypeGlygh* glygh = IsGlyghLoaded(*it);
+			FreetypeGlygh* glygh = IsGlyghLoaded((unsigned)(*it));
 			if (!glygh)
 			{
 				FreetypeGlygh lg;
-				bool load = LoadGlygh(lg, *it, face, m_image->data(), m_line, m_image_width, m_image_height);
+				bool load = LoadGlygh(lg, (unsigned)(*it), face, m_image->data(), m_line, m_image_width, m_image_height);
+				if (load)
+				{
+					m_glyghs.push_back(lg);
+					glygh = &m_glyghs.back();
+					need_update = true;
+				}
+			}
+			if (glygh) GenTextureCoord(*glygh, texcoord);
+		}
+
+		if (need_update) m_texture->dirtyTextureObject();
+
+		FT_Done_Face(face);
+		FT_Done_FreeType(library);
+	}
+
+	void FreetypeFont::GenTextureCoord(const std::wstring& text, std::vector<osg::Vec2f>& texcoord)
+	{
+		FT_Library library;
+		FT_Face face;
+
+		if (!LoadFreetype(m_file, m_size, library, face))
+			return;
+
+		bool need_update = false;
+		for (std::wstring::const_iterator it = text.begin(); it != text.end(); ++it)
+		{
+			FreetypeGlygh* glygh = IsGlyghLoaded((unsigned)*it);
+			if (!glygh)
+			{
+				FreetypeGlygh lg;
+				bool load = LoadGlygh(lg, (unsigned)*it, face, m_image->data(), m_line, m_image_width, m_image_height);
 				if (load)
 				{
 					m_glyghs.push_back(lg);

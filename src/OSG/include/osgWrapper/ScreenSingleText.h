@@ -16,7 +16,7 @@ namespace OSGWrapper
 
 		void SetFont(const std::string& file);
 		void SetText(char c);
-
+		void SetText(wchar_t c);
 		void SetColor(const osg::Vec4& color);
 	protected:
 		osg::ref_ptr<osg::Geometry> m_geometry;

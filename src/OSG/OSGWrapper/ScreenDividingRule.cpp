@@ -51,6 +51,16 @@ namespace OSGWrapper
 		m_divide_uniform->set(d);
 	}
 
+	void ScreenDividingRule::SetUpperColor(const osg::Vec4f& color)
+	{
+		m_upper_color_uniform->set(color);
+	}
+
+	void ScreenDividingRule::SetLowerColor(const osg::Vec4f& color)
+	{
+		m_lower_color_uniform->set(color);
+	}
+
 	void ScreenDividingRule::Create()
 	{
 		RemoveAll();
