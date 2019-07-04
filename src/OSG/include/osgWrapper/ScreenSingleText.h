@@ -16,13 +16,16 @@ namespace OSGWrapper
 
 		void SetFont(const std::string& file);
 		void SetText(char c);
+
+		void SetColor(const osg::Vec4& color);
 	protected:
 		osg::ref_ptr<osg::Geometry> m_geometry;
 		osg::ref_ptr<osg::Vec2Array> m_texcoord_array;
 		osg::ref_ptr<osg::Uniform> m_origin_uniform;
 		osg::ref_ptr<osg::Uniform> m_width_uniform;
 		osg::ref_ptr<osg::Uniform> m_height_uniform;
+		osg::ref_ptr<osg::Uniform> m_color_uniform;
 
-		osg::ref_ptr<FreetypeFont> m_font;
+		FreetypeFont* m_font;
 	};
 }

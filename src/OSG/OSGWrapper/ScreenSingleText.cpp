@@ -5,6 +5,7 @@
 namespace OSGWrapper
 {
 	ScreenSingleText::ScreenSingleText()
+		:m_font(NULL)
 	{
 		SetRenderProgram("screensingletext");
 
@@ -26,11 +27,15 @@ namespace OSGWrapper
 		m_origin_uniform = new osg::Uniform("origin", osg::Vec2f(0.0f, 0.0f));
 		m_width_uniform = new osg::Uniform("width", 100.0f);
 		m_height_uniform = new osg::Uniform("height", 100.0f);
-
+		m_color_uniform = new osg::Uniform("color", osg::Vec4f(1.0f, 1.0f, 1.0f, 1.0f));
 		AddUniform(m_origin_uniform);
 		AddUniform(m_width_uniform);
 		AddUniform(m_height_uniform);
+		AddUniform(m_color_uniform);
 		AddUniform(new osg::Uniform("font", 0));
+
+
+		SetMode(GL_BLEND, osg::StateAttribute::ON);
 	}
 
 	ScreenSingleText::~ScreenSingleText()
@@ -53,10 +58,15 @@ namespace OSGWrapper
 		m_height_uniform->set(height);
 	}
 
+	void ScreenSingleText::SetColor(const osg::Vec4& color)
+	{
+		m_color_uniform->set(color);
+	}
+
 	void ScreenSingleText::SetFont(const std::string& file)
 	{
-		m_font = FreetypeFontManager::Instance().Get(file.c_str());
-
+		m_font = FreetypeFontManager::Instance().Get(file.c_str(), 32);
+		
 		if (m_font)
 		{
 			osg::Texture2D* texture = m_font->GetTexture();
@@ -66,6 +76,16 @@ namespace OSGWrapper
 
 	void ScreenSingleText::SetText(char c)
 	{
-
+		if (m_font)
+		{
+			std::string text; text.push_back(c);
+			std::vector<osg::Vec2f> texcoord;
+			m_font->GenTextureCoord(text, texcoord);
+			m_texcoord_array->clear();
+			m_texcoord_array->push_back(texcoord.at(0));
+			m_texcoord_array->push_back(texcoord.at(1));
+			m_texcoord_array->push_back(texcoord.at(2));
+			m_texcoord_array->push_back(texcoord.at(3));
+		}
 	}
 }

@@ -4,6 +4,7 @@
 #include <osgWrapper/ScreenQuad.h>
 #include <osgWrapper/ScreenDividingRule.h>
 #include <osgWrapper/ScreenSingleText.h>
+#include <osgWrapper\FreetypeFontManager.h>
 
 using namespace OSGWrapper;
 
@@ -68,9 +69,11 @@ osg::Node* CreateContent()
 	//OSGWrapper::ScreenQuad* quad = new OSGWrapper::ScreenQuad();
 	//quad->setUpdateCallback(new TestAnimation());
 	//return quad;
-
 	OSGWrapper::ScreenSingleText* text = new OSGWrapper::ScreenSingleText();
 	text->SetOrigin(osg::Vec2f(600.0f, 400.0f));
+	text->SetFont("E:\\3th\\freetype-gl-master\\fonts\\Vera.ttf");
+	text->SetText('H');
+	text->SetColor(osg::Vec4f(0.0f, 1.0f, 1.0f, 1.0f));
 	return text;
 }
 
@@ -80,7 +83,7 @@ int main(int argc, char* argv[])
 	osg::ref_ptr<RenderScene> scene = new RenderScene();
 	scene->addChild(CreateContent());
 
-	view->SetBackgroundColor(osg::Vec4(0.3f, 0.3f, 0.3f, 1.0f));
+	view->SetBackgroundColor(osg::Vec4(0.8f, 0.8f, 0.8f, 1.0f));
 	view->setUpViewInWindow(0, 0, 1920, 1080);
 	view->SetCurrentScene(scene);
 

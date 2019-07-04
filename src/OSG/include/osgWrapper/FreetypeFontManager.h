@@ -7,9 +7,10 @@ namespace OSGWrapper
 
 	class OSG_EXPORT FreetypeFontManager
 	{
-		typedef std::map<std::string, osg::ref_ptr<FreetypeFont> > FreetypeFonts;
+		typedef std::vector<FreetypeFont*> FreetypeFontFamily;
+		typedef std::map<std::string, FreetypeFontFamily> FreetypeFonts;
 		typedef FreetypeFonts::iterator FreetypeFontIter;
-		typedef std::pair<std::string, osg::ref_ptr<FreetypeFonts> > FreetypeFontPair;
+		typedef std::pair<std::string, FreetypeFontFamily> FreetypeFontPair;
 
 	protected:
 		FreetypeFontManager();
@@ -20,8 +21,9 @@ namespace OSGWrapper
 		static FreetypeFontManager& Instance();
 		static void Release();
 
-		FreetypeFont* Get(const char* name);
+		FreetypeFont* Get(const std::string& family_name, int size);
 	private:
+		FreetypeFont* Load(const std::string& family_name, int size);
 	private:
 		FreetypeFonts m_fonts;
 
