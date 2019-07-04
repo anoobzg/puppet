@@ -56,6 +56,9 @@ void VOImpl::SetVOTracer(VOTracer* tracer)
 
 void VOImpl::ProcessOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
 {
+	if (mesh->vertices.size() < 50000)
+		return;
+
 	m_state.IncFrame();
 	mesh->frame = m_state.Frame();
 

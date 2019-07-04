@@ -49,6 +49,8 @@ bool KeyFrameTracerScene::OnMouse(const osgGA::GUIEventAdapter& ea, osgGA::GUIAc
 
 void KeyFrameTracerScene::Locate(osg::Geometry* geometry, const osg::Matrixf& matrix)
 {
+	return;
+
 	render_lock.Acquire();
 
 	if (geometry)

@@ -38,10 +38,10 @@ namespace OSGWrapper
 		m_projection_matrix_uniform->set(matrix);
 	}
 
-	void RenderScene::SetNearFar(float near, float far)
+	void RenderScene::SetNearFar(float n, float f)
 	{
-		m_near = near;
-		m_far = far;
+		m_near = n;
+		m_far = f;
 		UpdateProjectionMatrix();
 	}
 
@@ -129,13 +129,13 @@ namespace OSGWrapper
 		SetViewMatrix(scene.getViewMatrix());
 
 		double fovy;
-		double near;
-		double far;
+		double n;
+		double f;
 		double ratio;
-		scene.getProjectionMatrixAsPerspective(fovy, ratio, near,far);
+		scene.getProjectionMatrixAsPerspective(fovy, ratio, n, f);
 
 		const osg::Viewport* view_port = scene.getViewport();
-		SetNearFar((float)near, (float)far);
+		SetNearFar((float)n, (float)f);
 		SetFovy(fovy);
 		if(view_port) SetSize(view_port->width(), view_port->height());
 	}
