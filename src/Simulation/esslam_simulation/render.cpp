@@ -50,7 +50,7 @@ void Render::ShowPatch(esslam::PatchRenderData* data)
 void Render::BuildPatch(esslam::PatchRenderData* data)
 {
 	m_scene->Lock();
-
+	m_scene->UpdateCountText((int)data->indices.size());
 	size_t exsit_size = m_geometries.size();
 	std::vector<int> flags;
 	if (exsit_size > 0) flags.resize(exsit_size, 0); //0: nothing,  1: update, 2: add

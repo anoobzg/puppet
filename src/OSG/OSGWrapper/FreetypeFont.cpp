@@ -60,6 +60,7 @@ namespace OSGWrapper
 		float dx = (float)(bitmap.width) / (float)width;
 		float dy = (float)bitmap.rows / (float)height;
 		G.x = x; G.y = y; G.wx = dx; G.wy = dy;
+		G.code = c;
 
 		unsigned char* b = bitmap.buffer;
 		for (unsigned int i = 0; i < bitmap.rows; ++i, ++line)
@@ -153,7 +154,7 @@ namespace OSGWrapper
 		for (size_t i = 0; i < m_glyghs.size(); ++i)
 		{
 			FreetypeGlygh& glygh = m_glyghs.at(i);
-			if (glygh.code = c) return &glygh;
+			if (glygh.code == c) return &glygh;
 		}
 		return NULL;
 	}

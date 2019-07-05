@@ -15,6 +15,9 @@ SimulationScene::SimulationScene()
 	//m_patch_node->SetAttribute(new osg::Point(5.0f));
 	m_manipulable_node->AddChild(m_patch_node);
 
+	m_line = new OSGWrapper::ScreenLineText("D:\\Data\\Fonts\\1\\xingshu.ttf", 7);
+	addChild(m_line);
+	m_line->SetText(L"1234567");
 	m_animation_scheduler = new OSGWrapper::AnimationScheduler();
 	setUpdateCallback(m_animation_scheduler);
 }
@@ -49,6 +52,15 @@ void SimulationScene::ShowOneFrame(osg::Geometry* geometry, const osg::Matrixf& 
 	animation->SetMatrix(osg::Matrixf::inverse(matrix));
 	m_animation_scheduler->StartAnimation(animation, (double)time);
 	render_lock.Release();
+}
+
+void SimulationScene::UpdateCountText(int count)
+{
+	wchar_t chars[64];
+	wsprintfW(chars, L"%d", count);
+
+	std::wstring text(chars);
+	m_line->SetText(text);
 }
 
 void SimulationScene::UpdateMatrix(const osg::Matrixf& matrix, bool use_animation)

@@ -165,6 +165,7 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\RenderView.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenDistanceIndicator.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenDividingRule.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenLineText.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenQuad.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ScreenSingleText.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\SimMain.h" />
@@ -199,6 +200,7 @@
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\RenderView.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenDistanceIndicator.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenDividingRule.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenLineText.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenQuad.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenSingleText.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\SimpleRenderThread.cpp" />

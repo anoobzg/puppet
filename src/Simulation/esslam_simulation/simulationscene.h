@@ -5,6 +5,7 @@
 #include <osgWrapper\Manipulator.h>
 #include <osgWrapper\AnimationScheduler.h>
 #include "patchnode.h"
+#include <osgWrapper/ScreenLineText.h>
 
 class SimulationScene : public simtool::RenderThreadBaseScene
 {
@@ -19,6 +20,8 @@ public:
 	void Lock();
 	void Unlock();
 	float GetTime();
+
+	void UpdateCountText(int count);
 private:
 	void UpdateCamera();
 	bool OnMouse(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa);
@@ -28,6 +31,7 @@ protected:
 	osg::ref_ptr<OSGWrapper::AttributeUtilNode> m_render_node;
 	osg::ref_ptr<OSGWrapper::AttributeUtilNode> m_patch_node;
 	osg::ref_ptr<OSGWrapper::AnimationScheduler> m_animation_scheduler;
+	osg::ref_ptr<OSGWrapper::ScreenLineText> m_line;
 
 	osg::ref_ptr<PatchNode> m_current_node;
 };
