@@ -96,6 +96,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)../../src/common/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>STRING_UTIL_DLL;WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,6 +129,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)../../src/common/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>STRING_UTIL_DLL;WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,10 +142,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\src\utils\string_utils\csvwriter.h" />
+    <ClInclude Include="..\..\..\src\utils\string_utils\stringtimeline.h" />
+    <ClInclude Include="..\..\..\src\utils\string_utils\stringtimestamp.h" />
     <ClInclude Include="..\..\..\src\utils\string_utils\stringutilblender.h" />
     <ClInclude Include="..\..\..\src\utils\string_utils\stringutilexporter.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\utils\string_utils\csvwriter.cpp" />
+    <ClCompile Include="..\..\..\src\utils\string_utils\stringtimeline.cpp" />
     <ClCompile Include="..\..\..\src\utils\string_utils\stringutilblender.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

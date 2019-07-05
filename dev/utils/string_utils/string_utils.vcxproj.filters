@@ -21,9 +21,24 @@
     <ClInclude Include="..\..\..\src\utils\string_utils\stringutilexporter.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\utils\string_utils\csvwriter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utils\string_utils\stringtimeline.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\utils\string_utils\stringtimestamp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\utils\string_utils\stringutilblender.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\utils\string_utils\csvwriter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\utils\string_utils\stringtimeline.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
