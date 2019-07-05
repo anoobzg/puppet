@@ -91,18 +91,18 @@ osg::Node* CreateContent()
 	//OSGWrapper::ScreenQuad* quad = new OSGWrapper::ScreenQuad();
 	//quad->setUpdateCallback(new TestAnimation());
 	//return quad;
-	//OSGWrapper::ScreenSingleText* text = new OSGWrapper::ScreenSingleText();
-	//text->SetOrigin(osg::Vec2f(600.0f, 400.0f));
-	//text->SetFont("D:\\Data\\Fonts\\1\\xingshu.ttf");
-	//text->SetText(L'\x8d39');
-	//text->SetColor(osg::Vec4f(0.0f, 1.0f, 1.0f, 1.0f));
-	//return text;
+	OSGWrapper::ScreenSingleText* text = new OSGWrapper::ScreenSingleText();
+	text->SetOrigin(osg::Vec2f(600.0f, 400.0f));
+	text->SetFont("F:\\Data\\SC-Light.otf");
+	text->SetText(L'\x8d39');
+	text->SetColor(osg::Vec4f(0.0f, 1.0f, 1.0f, 1.0f));
+	return text;
 
-	OSGWrapper::ScreenDistanceIndicator* indicator = new OSGWrapper::ScreenDistanceIndicator();
-	indicator->setUpdateCallback(new IndicatorAnimation());
-	indicator->SetActiveColor(osg::Vec4f(0.0f, 1.0f, 0.0f, 1.0f));
-	indicator->SetDefaultColor(osg::Vec4f(0.5f, 0.5f, 0.5f, 1.0f));
-	return indicator;
+	//OSGWrapper::ScreenDistanceIndicator* indicator = new OSGWrapper::ScreenDistanceIndicator();
+	//indicator->setUpdateCallback(new IndicatorAnimation());
+	//indicator->SetActiveColor(osg::Vec4f(0.0f, 1.0f, 0.0f, 1.0f));
+	//indicator->SetDefaultColor(osg::Vec4f(0.5f, 0.5f, 0.5f, 1.0f));
+	//return indicator;
 }
 
 int main(int argc, char* argv[])
