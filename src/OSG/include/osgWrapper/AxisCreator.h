@@ -1,5 +1,4 @@
 #pragma once
-#include <osgWrapper\OSGWrapperExporter.h>
 #include <osg\Geometry>
 
 namespace OSGWrapper
@@ -22,7 +21,7 @@ namespace OSGWrapper
 		}
 	};
 
-	class OSG_WRAPPER_API AxisCreator
+	class OSG_EXPORT AxisCreator
 	{
 	public:
 		static osg::Geometry* Create(const osg::BoundingSphere& bounding, const CreateConfig& config = CreateConfig());

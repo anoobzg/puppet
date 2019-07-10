@@ -128,11 +128,14 @@ bool RenderView::handleDoubleClickEvent(const osgGA::GUIEventAdapter& ea, osgGA:
 
 void RenderView::SetCurrentScene(RenderScene* scene, bool save_preview_scene)
 {
-	if(scene)
+	osg::Viewport* view_port = _camera->getViewport();
+	if (view_port)
 	{
-		osg::Viewport* view_port = _camera->getViewport();
-		if(view_port) scene->setViewport(view_port->x(), view_port->y(), view_port->width(), view_port->height());
+		m_width = (int)view_port->width();
+		m_height = (int)view_port->height();
 	}
+	if(scene && view_port)
+		if(view_port) scene->setViewport(view_port->x(), view_port->y(), view_port->width(), view_port->height());
 	
 	{
 		if(m_current_scene.get() && !save_preview_scene)

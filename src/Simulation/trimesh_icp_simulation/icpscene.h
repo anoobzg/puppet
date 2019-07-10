@@ -3,6 +3,7 @@
 #include <osgWrapper\ManipulableNode.h>
 #include <osgWrapper\Manipulator.h>
 #include <osgWrapper\AttributeUtilNode.h>
+#include <osgWrapper/AxisCreator.h>
 #include "icpnode.h"
 #include "task.h"
 #include "load_calib.h"
@@ -24,6 +25,7 @@ protected:
 
 	osg::ref_ptr<OSGWrapper::ManipulableNode> m_manipulable_node;
 	osg::ref_ptr<OSGWrapper::Manipulator> m_manipulator;
+	osg::ref_ptr<OSGWrapper::AttributeUtilNode> m_axis_node;
 	osg::ref_ptr<ICPNode> m_source_node;
 	osg::ref_ptr<ICPNode> m_target_node;
 	osg::ref_ptr<ScreenGraph> m_screen_graph;

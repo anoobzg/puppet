@@ -146,6 +146,7 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\AnimationScheduler.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ArrayCreator.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\AttributeUtilNode.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\AxisCreator.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ColorIndexPicker.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\EraseGeometry.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\FeedbackProgram.h" />
@@ -182,6 +183,7 @@
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\AnimationScheduler.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ArrayCreator.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\AttributeUtilNode.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\AxisCreator.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ColorIndexPicker.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\EraseGeometry.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\FeedbackProgram.cpp" />

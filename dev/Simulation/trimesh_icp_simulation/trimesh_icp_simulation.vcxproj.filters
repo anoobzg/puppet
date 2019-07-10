@@ -153,6 +153,21 @@
     <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\paraloctreechunk.cpp">
       <Filter>octree</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\keyframerender.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\keyframetracerscene.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\keyframenode.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\projectionicptracerimpl.cpp">
+      <Filter>simulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\trimesh_icp_simulation\mappingtask.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\boundingbox.h">
@@ -286,6 +301,21 @@
     </ClInclude>
     <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\paraloctree.h">
       <Filter>octree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\keyframerender.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\keyframetracerscene.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\keyframenode.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\projectionicptracerimpl.h">
+      <Filter>simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\trimesh_icp_simulation\mappingtask.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,8 @@
 #include "icpscene.h"
 #include "stepicptask.h"
 #include "resettask.h"
+#include "mappingtask.h"
+#include <osg/Point>
 
 ICPScene::ICPScene(trimesh::CameraData& data, trimesh::TriMesh& source, trimesh::TriMesh& target)
 	:m_data(data)
@@ -14,6 +16,8 @@ ICPScene::ICPScene(trimesh::CameraData& data, trimesh::TriMesh& source, trimesh:
 	m_target_node = new ICPNode(target);
 	m_source_node->SetColor(osg::Vec4f(1.0f, 0.0f, 0.0f, 1.0f));
 	m_target_node->SetColor(osg::Vec4f(0.0f, 1.0f, 0.0f, 1.0f));
+	m_source_node->SetAttribute(new osg::Point(2.0f));
+	m_target_node->SetAttribute(new osg::Point(2.0f));
 
 	m_manipulable_node->AddChild(m_target_node);
 	m_manipulable_node->AddChild(m_source_node);
@@ -25,6 +29,14 @@ ICPScene::ICPScene(trimesh::CameraData& data, trimesh::TriMesh& source, trimesh:
 	m_space_lines->SetRenderProgram("purecolor430");
 	m_space_lines->AddUniform(new osg::Uniform("color", osg::Vec4f(1.0f, 1.0f, 1.0f, 1.0f)));
 	m_manipulable_node->AddChild(m_space_lines);
+
+	osg::BoundingSphere sphere;
+	sphere.set(osg::Vec3f(0.0f, 0.0f, 0.0f), 400.0f);
+	m_axis_node = new OSGWrapper::AttributeUtilNode();
+	m_axis_node->setComputeBoundingSphereCallback(new osg::Node::ComputeBoundingSphereCallback());
+	m_axis_node->SetRenderProgram("purecolor430");
+	m_axis_node->AddChild(OSGWrapper::AxisCreator::Create(sphere));
+	m_manipulable_node->AddChild(m_axis_node);
 	UpdateCamera();
 }
 
@@ -94,6 +106,22 @@ bool ICPScene::OnKey(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& 
 		return true;
 	}
 
+	if (KEY_DOWN(ea, osgGA::GUIEventAdapter::KEY_M))
+	{
+		MappingTask* t = new MappingTask(m_data, m_target_node->GetMesh(), m_source_node->GetMesh());
+		t->SetAttributeNode(m_space_lines);
+		t->SetSelf(false);
+		m_task = t;
+		return true;
+	}
+	if (KEY_DOWN(ea, osgGA::GUIEventAdapter::KEY_S))
+	{
+		MappingTask* t = new MappingTask(m_data, m_target_node->GetMesh(), m_source_node->GetMesh());
+		t->SetAttributeNode(m_space_lines);
+		t->SetSelf(true);
+		m_task = t;
+		return true;
+	}
 	return true;
 }
 

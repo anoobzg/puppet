@@ -60,6 +60,9 @@
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\OctreeChunk.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\RenderProxy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\Esslam.cpp">
@@ -99,6 +102,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\OctreeChunk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\RenderProxy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -147,6 +147,7 @@
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\OctreeIndex.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\ProjectionicpTracerImpl.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\Reader.h" />
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\RenderProxy.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\SlamParameters.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\SlamVo.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\VoImpl.h" />
@@ -162,6 +163,7 @@
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\OctreeIndex.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\ProjectionicpTracerImpl.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\Reader.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\RenderProxy.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\SlamParameters.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\SlamVo.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\VoImpl.cpp" />
