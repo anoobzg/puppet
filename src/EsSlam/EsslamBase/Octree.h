@@ -16,6 +16,7 @@ namespace esslam
 		~Octree();
 
 		void Initialize(const trimesh::vec3& center);
+		void Clear();
 		void Insert(const std::vector<trimesh::vec3>& points, const std::vector<trimesh::vec3>& normals);
 		void Insert(const std::vector<trimesh::vec3>& points,
 			const std::vector<trimesh::vec3>& normals,
@@ -49,6 +50,7 @@ namespace esslam
 		//std::vector<trimesh::vec3> m_normals;
 
 		int m_current_index;
+		int m_last_point_index;
 		int m_current_point_index;
 
 		std::vector<QuickIndex> m_quick_index;

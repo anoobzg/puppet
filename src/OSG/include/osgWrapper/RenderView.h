@@ -30,6 +30,7 @@ public:
 	bool handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa);
 
 	void SetBackgroundColor(const osg::Vec4& color);
+	void SyncWork();
 protected:
 	void AddGlobalUniform(osg::Uniform* uniform);
 protected:

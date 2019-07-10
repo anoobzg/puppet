@@ -62,9 +62,9 @@ namespace esslam
 		}
 	}
 
-	void SlamVO::SetVisualTracer(IVisualTracer* tracer)
+	void SlamVO::SetVisualProcessor(VisualProcessor* processor)
 	{
-		m_vo_impl.SetVisualTracer(tracer);
+		m_vo_impl.SetVisualProcessor(processor);
 	}
 	
 	void SlamVO::SetLocateTracer(LocateTracer* tracer)
@@ -75,5 +75,15 @@ namespace esslam
 	void SlamVO::SetICPTracer(trimesh::ProjectionICPTracer* tracer)
 	{
 		m_vo_impl.SetProjectionICPTracer(tracer);
+	}
+
+	void SlamVO::Clear()
+	{
+		m_vo_impl.Clear();
+	}
+
+	void SlamVO::Build(IBuildTracer& tracer)
+	{
+		m_vo_impl.Build(tracer);
 	}
 }

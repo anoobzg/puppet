@@ -10,6 +10,17 @@ SimulationScene::SimulationScene()
 
 	m_render_node = new OSGWrapper::AttributeUtilNode();
 	m_manipulable_node->AddChild(m_render_node);
+	m_base_node = new OSGWrapper::AttributeUtilNode();
+	m_base_node->SetRenderProgram("phong430");
+	m_base_node->SetAttribute(new osg::Point(1.0f));
+	m_manipulable_node->AddChild(m_base_node);
+	m_current_frame = new OSGWrapper::AttributeUtilNode();
+	m_current_frame->SetRenderProgram("distancephong");
+	m_align_matrix = new osg::Uniform("align_matrix", osg::Matrixf::identity());
+	m_current_frame->AddUniform(m_align_matrix);
+	m_current_frame->SetAttribute(new osg::Point(8.0f));
+	m_manipulable_node->AddChild(m_current_frame);
+
 	m_patch_node = new OSGWrapper::AttributeUtilNode();
 	m_patch_node->SetRenderProgram("esscanning");
 	//m_patch_node->SetAttribute(new osg::Point(5.0f));
@@ -132,4 +143,36 @@ float SimulationScene::GetTime()
 		t = (float)m_render_view->getFrameStamp()->getSimulationTime();
 	}
 	return t;
+}
+
+void SimulationScene::ShowCurrentFrame(osg::Geometry* geometry, const osg::Matrixf& matrix)
+{
+	if (!geometry) return;
+
+	bool first_frame = m_current_frame->getNumChildren() == 0;
+	render_lock.Acquire();
+	m_current_frame->RemoveAll();
+	m_current_frame->AddChild(geometry);
+	if (first_frame)
+		UpdateCamera();
+
+	m_align_matrix->set(matrix);
+	m_animation_scheduler->Clear();
+	OSGWrapper::MatrixAnimation* animation = new OSGWrapper::MatrixAnimation(*m_manipulable_node);
+	animation->SetMatrix(osg::Matrixf::inverse(matrix));
+	float time = 0.0f;
+	if (m_render_view) time = (float)m_render_view->getFrameStamp()->getSimulationTime();
+	m_animation_scheduler->StartAnimation(animation, (double)time);
+	render_lock.Release();
+}
+
+void SimulationScene::AppendNewPoints(osg::Geometry* geometry)
+{
+	if (!geometry) return;
+	//render_lock.Acquire();
+	//if(index == (int)m_base_node->getNumChildren())
+		m_base_node->AddChild(geometry);
+	//else
+	//	m_base_node->replaceChild(m_base_node->getChild(index), geometry);
+	//render_lock.Release();
 }

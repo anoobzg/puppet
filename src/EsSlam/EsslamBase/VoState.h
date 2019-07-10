@@ -17,6 +17,7 @@ namespace esslam
 		inline bool RelocationState() { return m_lost_times > 2; }
 		inline void ResetRelocation() { m_lost_times = 0; }
 		inline void IncreLostTimes() { ++m_lost_times; }
+		inline void Reset() { m_first_frame = true; m_frame = -1; m_lost_times = 0; }
 	protected:
 		bool m_first_frame;
 		int m_frame;

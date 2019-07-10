@@ -12,9 +12,6 @@ int run_slam(esslam::IESSlam& slam, int argc, char* argv[])
 	base::WaitableEvent e(base::WaitableEvent::ResetPolicy::AUTOMATIC,
 		base::WaitableEvent::InitialState::NOT_SIGNALED);
 
-	if (!slam.Initialize())
-		return EXIT_FAILURE;
-
 	std::string config_file;
 	if (argc >= 2) config_file = argv[1];
 
@@ -25,7 +22,12 @@ int run_slam(esslam::IESSlam& slam, int argc, char* argv[])
 	render.StartRender();
 	slam.SetVisualTracer(&render);
 
-	slam.StartSelfConsistent(config_file);
+	esslam::SetupParameter parameters;
+	parameters.default_config = config_file;
+	parameters.type = esslam::e_load_from_file;
+
+	slam.SetupParameters(parameters);
+	slam.Start();
 	e.Wait();
 
 	slam.Stop();

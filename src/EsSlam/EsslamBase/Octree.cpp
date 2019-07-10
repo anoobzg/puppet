@@ -22,6 +22,11 @@ namespace esslam
 		m_trimesh.vertices.reserve(8000000);
 		m_trimesh.normals.reserve(8000000);
 		m_quick_index.reserve(500000);
+
+		m_current_index = 0;
+		m_current_point_index = 0;
+		m_last_point_index = 0;
+		m_initialized = false;
 	}
 
 	Octree::~Octree()
@@ -47,9 +52,21 @@ namespace esslam
 		m_initialized = true;
 	}
 
+	void Octree::Clear()
+	{
+		m_current_index = 0;
+		m_current_point_index = 0;
+		m_last_point_index = 0;
+		m_initialized = false;
+		m_trimesh.vertices.clear();
+		m_trimesh.normals.clear();
+	}
+
 	void Octree::Insert(const std::vector<trimesh::vec3>& points,
 		const std::vector<trimesh::vec3>& normals)
 	{
+		m_last_point_index = m_current_point_index;
+
 		assert(m_initialized);
 		size_t size = points.size();
 		for (size_t i = 0; i < size; ++i)
@@ -105,6 +122,8 @@ namespace esslam
 		const std::vector<trimesh::vec3>& normals, const trimesh::xform& xf,
 		std::vector<int>& indexes)
 	{
+		m_last_point_index = m_current_point_index;
+
 		assert(m_initialized);
 		size_t size = points.size();
 		trimesh::xform nxf = trimesh::norm_xf(xf);

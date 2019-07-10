@@ -89,6 +89,7 @@ bool RenderView::handleResizeEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIA
 		osg::Viewport* view_port = _camera->getViewport();
 		if(view_port) m_current_scene->setViewport(view_port->x(), view_port->y(), view_port->width(), view_port->height());
 
+		m_current_scene->UpdateViewport();
 		m_current_scene->OnResize(ea, aa);
 		m_current_scene->SetSize((unsigned)m_width, (unsigned)m_height);
 	}
@@ -152,6 +153,12 @@ void RenderView::SetCurrentScene(RenderScene* scene, bool save_preview_scene)
 	if(save_preview_scene)
 		m_preview_scene = m_current_scene;
 	m_current_scene = scene;
+
+	if (m_current_scene)
+	{
+		m_current_scene->UpdateViewport();
+		m_current_scene->SetSize((unsigned)m_width, (unsigned)m_height);
+	}
 }
 
 bool RenderView::RollbackScene()
@@ -165,5 +172,10 @@ bool RenderView::RollbackScene()
 	m_current_scene = m_preview_scene;
 	m_preview_scene = 0;
 	return true;
+}
+
+void RenderView::SyncWork()
+{
+	if (m_current_scene) m_current_scene->SyncWork();
 }
 }

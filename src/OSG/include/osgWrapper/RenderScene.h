@@ -38,10 +38,13 @@ namespace OSGWrapper
 
 		virtual void OnEnter();
 		virtual void OnEnterOut();
+		virtual void SyncWork() {}
 
 		void AttachRenderView(RenderView* view);
 
 		void GetRay(float x, float y, osg::Vec3f& eye, osg::Vec3f& center);
+
+		void UpdateViewport();
 	protected:
 		void UpdateProjectionMatrix();
 		void UpdateViewportMatrix();
@@ -56,9 +59,8 @@ namespace OSGWrapper
 		osg::ref_ptr<osg::Uniform> m_view_matrix_uniform;
 		osg::ref_ptr<osg::Uniform> m_projection_matrix_uniform;
 		osg::ref_ptr<osg::Uniform> m_viewport_matrix_uniform;
-
-		osg::ref_ptr<osg::Uniform> m_width_uniform;
-		osg::ref_ptr<osg::Uniform> m_height_uniform;
+		osg::ref_ptr<osg::Uniform> m_viewport_width;
+		osg::ref_ptr<osg::Uniform> m_viewport_height;
 	protected:
 		RenderView* m_render_view;
 	};
@@ -72,6 +74,7 @@ namespace OSGWrapper
 
 using namespace osgGA;
 #define KEY_DOWN(event, key) (event.getEventType()==osgGA::GUIEventAdapter::KEYDOWN && event.getKey()==key)
+#define KEY_UP(event, key) (event.getEventType()==osgGA::GUIEventAdapter::KEYUP && event.getKey()==key)
 
 #define LEFT_MOUSE_DOUBLE_CLICK(event) (event.getEventType()==osgGA::GUIEventAdapter::DOUBLECLICK && event.getButton()==osgGA::GUIEventAdapter::LEFT_MOUSE_BUTTON)
 }

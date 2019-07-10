@@ -17,10 +17,14 @@ namespace esslam
 		void StopVO();
 
 		void OnFrame(trimesh::TriMesh* mesh);
-		void SetVisualTracer(IVisualTracer* tracer);
+		void SetVisualProcessor(VisualProcessor* processor);
 		void SetVOProfiler(VOProfiler* profiler);
 		void SetLocateTracer(LocateTracer* tracer);
 		void SetICPTracer(trimesh::ProjectionICPTracer* tracer);
+
+		void Clear();
+
+		void Build(IBuildTracer& tracer);
 	protected:
 		void ProcessFrame(trimesh::TriMesh* mesh);
 	private:

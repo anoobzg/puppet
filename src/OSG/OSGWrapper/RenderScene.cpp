@@ -1,4 +1,5 @@
 #include <osgWrapper\RenderScene.h>
+#include <osgWrapper\RenderView.h>
 
 namespace OSGWrapper
 {
@@ -8,14 +9,14 @@ namespace OSGWrapper
 		m_view_matrix_uniform = new osg::Uniform("view_matrix", osg::Matrixf::identity());
 		m_projection_matrix_uniform = new osg::Uniform("projection_matrix", osg::Matrixf::identity());
 		m_viewport_matrix_uniform = new osg::Uniform("viewport_matrix", osg::Matrixf::identity());
+		m_viewport_width = new osg::Uniform("viewport_width", (float)m_width);
+		m_viewport_height = new osg::Uniform("viewport_height", (float)m_height);
 		getOrCreateStateSet()->addUniform(m_view_matrix_uniform, state_on);
 		getOrCreateStateSet()->addUniform(m_projection_matrix_uniform, state_on);
 		getOrCreateStateSet()->addUniform(m_viewport_matrix_uniform, state_on);
+		getOrCreateStateSet()->addUniform(m_viewport_width, state_on);
+		getOrCreateStateSet()->addUniform(m_viewport_height, state_on);
 
-		m_width_uniform = new osg::Uniform("viewport_width", (float)m_width);
-		m_height_uniform = new osg::Uniform("viewport_height", (float)m_height);
-		getOrCreateStateSet()->addUniform(m_width_uniform, state_on);
-		getOrCreateStateSet()->addUniform(m_height_uniform, state_on);
 		SetViewMatrix(osg::Matrixf::identity());
 		UpdateProjectionMatrix();
 		UpdateViewportMatrix();
@@ -57,8 +58,8 @@ namespace OSGWrapper
 		m_height = height;
 		UpdateProjectionMatrix();
 
-		m_width_uniform->set(float(m_width));
-		m_height_uniform->set(float(m_height));
+		m_viewport_width->set(float(m_width));
+		m_viewport_height->set(float(m_height));
 	}
 
 	float RenderScene::GetFovy()
@@ -91,6 +92,24 @@ namespace OSGWrapper
 		osg::Matrixf m = osg::Matrixf::perspective((double)m_fovy, (double)m_width/(double)m_height, (double)m_near, (double)m_far);
 		setProjectionMatrix(m);
 		m_projection_matrix_uniform->set(m);
+	}
+
+	void RenderScene::UpdateViewport()
+	{
+		if (m_render_view)
+		{
+			osg::Viewport* view_port = m_render_view->getCamera()->getViewport();
+			if (view_port)
+			{
+				setViewport(view_port->x(), view_port->y(), view_port->width(), view_port->height());
+				SetSize((unsigned int)view_port->width(), (unsigned int)view_port->height());
+			}
+		}
+
+		m_viewport_width->set((float)m_width);
+		m_viewport_height->set((float)m_height);
+
+		UpdateViewportMatrix();
 	}
 
 	void RenderScene::UpdateViewportMatrix()
@@ -129,13 +148,13 @@ namespace OSGWrapper
 		SetViewMatrix(scene.getViewMatrix());
 
 		double fovy;
-		double n;
-		double f;
+		double dnear;
+		double dfar;
 		double ratio;
-		scene.getProjectionMatrixAsPerspective(fovy, ratio, n, f);
+		scene.getProjectionMatrixAsPerspective(fovy, ratio, dnear,dfar);
 
 		const osg::Viewport* view_port = scene.getViewport();
-		SetNearFar((float)n, (float)f);
+		SetNearFar((float)dnear, (float)dfar);
 		SetFovy(fovy);
 		if(view_port) SetSize(view_port->width(), view_port->height());
 	}

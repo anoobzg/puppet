@@ -21,6 +21,19 @@ namespace esslam
 		int locate_type;
 	};
 
+	struct CurrentFrameData
+	{
+		bool lost;
+		TriMeshPtr mesh;
+	};
+
+	struct NewData
+	{
+		std::vector<trimesh::vec3> positions;
+		std::vector<trimesh::vec3> normals;
+		std::vector<unsigned char> colors;
+	};
+
 	class VOProfiler
 	{
 	public:
@@ -46,5 +59,14 @@ namespace esslam
 		virtual void OnAfterRelocate() = 0;
 
 		virtual void OnLocateFailed(TriMeshPtr mesh, const trimesh::xform& init_matrix, trimesh::TriMesh* all_mesh) = 0;
+	};
+
+	struct NewAppendData;
+	class VisualProcessor
+	{
+	public:
+		virtual ~VisualProcessor() {}
+		virtual void OnCurrentFrame(CurrentFrameData* data) = 0;
+		virtual void OnAppendNewPoints(NewAppendData* data) = 0;
 	};
 }

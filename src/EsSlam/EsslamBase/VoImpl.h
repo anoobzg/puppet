@@ -16,11 +16,14 @@ namespace esslam
 		~VOImpl();
 
 		void Setup(const SlamParameters& parameters);
-		void SetVisualTracer(IVisualTracer* tracer);
+		void SetVisualProcessor(VisualProcessor* processor);
 		void SetLocateTracer(LocateTracer* tracer);
 		void SetProjectionICPTracer(trimesh::ProjectionICPTracer* tracer);
 
 		void ProcessOneFrame(TriMeshPtr& mesh, LocateData& locate_data);
+
+		void Clear();
+		void Build(IBuildTracer& tracer);
 	protected:
 		void LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data);
 		void FusionFrame(TriMeshPtr& mesh, const LocateData& locate_data);
@@ -30,7 +33,7 @@ namespace esslam
 		bool Relocate(TriMeshPtr& mesh);
 		void SetLastMesh(TriMeshPtr& mesh, bool use_as_keyframe);
 	protected:
-		IVisualTracer* m_visual_tracer;
+		VisualProcessor* m_visual_processor;
 		TriMeshPtr m_last_mesh;
 		std::unique_ptr<trimesh::ProjectionICP> m_icp;
 

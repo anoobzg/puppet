@@ -9,7 +9,7 @@ namespace OSGWrapper
 	{
 		SetRenderProgram("screenlinetext");
 
-		m_font = FreetypeFontManager::Instance().Get(font.c_str(), 32);
+		m_font = FreetypeFontManager::Instance().Get(font.c_str(), 8);
 
 		if (m_font)
 		{
@@ -71,6 +71,12 @@ namespace OSGWrapper
 	void ScreenLineText::SetHeight(float height)
 	{
 		m_height_uniform->set(height);
+	}
+
+	void ScreenLineText::SetColor(const osg::Vec4& color)
+	{
+		for (size_t i = 0; i < m_color_array->size(); ++i)
+			m_color_array->at(i) = color;
 	}
 
 	void ScreenLineText::SetText(const std::wstring& text)

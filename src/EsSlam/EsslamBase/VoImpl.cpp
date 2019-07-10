@@ -1,3 +1,6 @@
+#include "../interface/slam_data.h"
+#include "../interface/slam_tracer.h"
+
 #include "VoImpl.h"
 #include "load_calib.h"
 #include <ppl.h>
@@ -6,7 +9,7 @@ namespace esslam
 {
 
 	VOImpl::VOImpl()
-		:m_visual_tracer(NULL),m_locate_tracer(NULL), 
+		:m_visual_processor(NULL),m_locate_tracer(NULL),
 		m_icp_tracer(NULL)
 	{
 		m_fx = 0.0f;
@@ -35,6 +38,7 @@ namespace esslam
 		m_cx = camera_data.m_cx;
 		m_cy = camera_data.m_cy;
 
+		std::cout << "fx fy cx cy " << m_fx << " " << m_fy << " " << m_cx << " " << m_cy << std::endl;
 		m_icp.reset(new trimesh::ProjectionICP(m_fx, m_fy, m_cx, m_cy));
 
 		const OctreeParameters& oct_param = parameters.octree_param;
@@ -53,9 +57,9 @@ namespace esslam
 		m_layers.resize(8000000, 0);
 	}
 
-	void VOImpl::SetVisualTracer(IVisualTracer* tracer)
+	void VOImpl::SetVisualProcessor(VisualProcessor* processor)
 	{
-		m_visual_tracer = tracer;
+		m_visual_processor = processor;
 	}
 
 	void VOImpl::ProcessOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
@@ -67,6 +71,14 @@ namespace esslam
 		mesh->frame = m_state.Frame();
 
 		LocateOneFrame(mesh, locate_data);
+
+		if (m_visual_processor)
+		{
+			CurrentFrameData* data = new CurrentFrameData();
+			data->lost = locate_data.lost;
+			data->mesh = mesh;
+			m_visual_processor->OnCurrentFrame(data);
+		}
 
 		if (!locate_data.lost)
 			FusionFrame(mesh, locate_data);
@@ -140,9 +152,22 @@ namespace esslam
 
 		std::cout << "Octree nodes " << m_octree->m_current_index <<
 			" points " << m_octree->m_current_point_index << std::endl;
-		if (m_visual_tracer)
+
+		int new_num = m_octree->m_current_point_index - m_octree->m_last_point_index;
+		if (m_visual_processor && new_num > 0)
 		{
-			PatchRenderData* patch_data = new PatchRenderData();
+			NewAppendData* new_data = new NewAppendData();
+			new_data->position.resize(new_num);
+			new_data->normals.resize(new_num);
+			for (int i = m_octree->m_last_point_index, j = 0; i < m_octree->m_current_point_index; ++i, ++j)
+			{
+				const trimesh::vec3& v = m_octree->m_trimesh.vertices.at(i);
+				const trimesh::vec3& n = m_octree->m_trimesh.normals.at(i);
+				new_data->position.at(j) = v;
+				new_data->normals.at(j) = n;
+			}
+			m_visual_processor->OnAppendNewPoints(new_data);
+			/*PatchRenderData* patch_data = new PatchRenderData();
 			patch_data->indices.swap(indexes);
 			for(int i = 0; i < 16; ++i)
 				patch_data->xf[i] = (float)mesh->global[i];
@@ -162,9 +187,9 @@ namespace esslam
 					*tp++ = v[0]; *tp++ = v[1]; *tp = v[2];
 					*tn++ = n[0]; *tn++ = n[1]; *tn = n[2];
 				}
-			}
+			}*/
 
-			m_visual_tracer->OnFrame(patch_data);
+			//m_visual_tracer->OnFrame(patch_data);
 		}
 	}
 
@@ -303,6 +328,27 @@ namespace esslam
 	void VOImpl::SetProjectionICPTracer(trimesh::ProjectionICPTracer* tracer)
 	{
 		m_icp_tracer = tracer;
+	}
+
+	void VOImpl::Clear()
+	{
+		m_state.Reset();
+		m_key_frames.clear();
+		m_last_mesh = NULL;
+		m_octree->Clear();
+		m_layers.clear();
+	}
+
+	void VOImpl::Build(IBuildTracer& tracer)
+	{
+		trimesh::TriMesh& mesh = m_octree->m_trimesh;
+		if (mesh.vertices.size() > 0 && mesh.normals.size() > 0)
+		{
+			int size = (int)mesh.vertices.size();
+			tracer.OnPoints(size, (float*)&mesh.vertices[0], (float*)&mesh.normals[0], 0);
+		}
+		else
+			tracer.OnPoints(0, 0, 0, 0);
 	}
 
 }

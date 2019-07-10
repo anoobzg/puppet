@@ -1,11 +1,13 @@
 #pragma once
 #include "../interface/slam_interface.h"
 #include "SlamParameters.h"
+#include <base\synchronization\lock.h>
 
 namespace esslam
 {
 	class Reader;
 	class SlamVO;
+	class RenderProxy;
 	class DebugCenter;
 	class ESSLAM_API Esslam : public IESSlam
 	{
@@ -13,23 +15,31 @@ namespace esslam
 		Esslam();
 		virtual ~Esslam();
 
-		bool Initialize();
+		void SetupParameters(const SetupParameter& parameter);
+
+		void Start();
+		void Stop();
+
+		void SetImageData(HandleScanImageData* data);
+		void SetModelData(BuildModelData* data);
+
+		void Build(IBuildTracer* tracer);
+		void Clear();
 
 		void SetVisualTracer(IVisualTracer* tracer);
-
-		void StartSelfConsistent(const std::string& config_file);
-		void StartHandheld();
-		void Stop();
 	private:
-		void StartInner(const std::string& file);
+		void StartInner();
 	protected:
 		SlamParameters m_parameters;
 
 		std::unique_ptr<Reader> m_reader;
 		std::unique_ptr<SlamVO> m_vo;
+		std::unique_ptr<RenderProxy> m_render_proxy;
 		std::unique_ptr<DebugCenter> m_debug_center;
 
 		bool m_consistent_mode;
 		bool m_running;
+
+		base::Lock m_state_lock;
 	};
 }

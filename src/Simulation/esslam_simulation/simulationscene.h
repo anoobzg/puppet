@@ -22,6 +22,8 @@ public:
 	float GetTime();
 
 	void UpdateCountText(int count);
+	void ShowCurrentFrame(osg::Geometry* geometry, const osg::Matrixf& matrix);
+	void AppendNewPoints(osg::Geometry* geometry);
 private:
 	void UpdateCamera();
 	bool OnMouse(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa);
@@ -30,8 +32,12 @@ protected:
 	osg::ref_ptr<OSGWrapper::Manipulator> m_manipulator;
 	osg::ref_ptr<OSGWrapper::AttributeUtilNode> m_render_node;
 	osg::ref_ptr<OSGWrapper::AttributeUtilNode> m_patch_node;
+	osg::ref_ptr<OSGWrapper::AttributeUtilNode> m_base_node;
+	osg::ref_ptr<OSGWrapper::AttributeUtilNode> m_current_frame;
 	osg::ref_ptr<OSGWrapper::AnimationScheduler> m_animation_scheduler;
 	osg::ref_ptr<OSGWrapper::ScreenLineText> m_line;
 
 	osg::ref_ptr<PatchNode> m_current_node;
+
+	osg::ref_ptr<osg::Uniform> m_align_matrix;
 };

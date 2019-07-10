@@ -15,6 +15,7 @@ namespace OSGWrapper
 		void SetHeight(float height);
 
 		void SetText(const std::wstring& text);
+		void SetColor(const osg::Vec4& color);
 	protected:
 		osg::ref_ptr<osg::Geometry> m_geometry;
 		osg::ref_ptr<osg::Vec2Array> m_texcoord_array;

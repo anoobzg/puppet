@@ -1,38 +1,42 @@
 #pragma once
 #include <string>
-#include <vector>
 
 namespace esslam
 {
-	struct PatchRenderData
+	enum ScanType
 	{
-		std::vector<int> indices;
-		std::vector<float> points;
-		std::vector<float> normals;
-		float xf[16];
-		bool lost;
-		int step;
+		e_load_from_file,
+		e_handheld,
+		e_fix
 	};
 
-	class IVisualTracer
+	struct SetupParameter
 	{
-	public:
-		virtual ~IVisualTracer() {}
-
-		virtual void OnFrame(PatchRenderData* data) = 0;
+		ScanType type;
+		std::string default_config;
+		std::string calib_file;
 	};
 
+	struct BuildModelData;
+	struct HandleScanImageData;
+	class IBuildTracer;
+	class IVisualTracer;
 	class IESSlam
 	{
 	public:
 		virtual ~IESSlam() {}
 
-		virtual bool Initialize() = 0;
-		virtual void SetVisualTracer(IVisualTracer* tracer) = 0;
-
-		virtual void StartSelfConsistent(const std::string& config_file) = 0;
-		virtual void StartHandheld() = 0;
+		virtual void SetupParameters(const SetupParameter& parameter) = 0;
+		virtual void Start() = 0;
 		virtual void Stop() = 0;
+
+		virtual void SetImageData(HandleScanImageData* data) = 0;
+		virtual void SetModelData(BuildModelData* data) = 0;
+
+		virtual void Build(IBuildTracer* tracer) = 0;
+		virtual void Clear() = 0;
+
+		virtual void SetVisualTracer(IVisualTracer* tracer) = 0;
 	};
 }
 
