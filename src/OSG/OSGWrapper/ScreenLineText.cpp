@@ -40,6 +40,7 @@ namespace OSGWrapper
 
 		osg::DrawArrays* draw_array = new osg::DrawArrays(GL_QUADS, 0, 4 * m_count);
 		m_geometry = GeometryCreator::CreateIndexAttributeGeometry(draw_array, coord_array, m_texcoord_array, m_color_array);
+		m_geometry->setComputeBoundingBoxCallback(new osg::Drawable::ComputeBoundingBoxCallback());
 		AddChild(m_geometry);
 
 		m_origin_uniform = new osg::Uniform("origin", osg::Vec2f(0.0f, 0.0f));

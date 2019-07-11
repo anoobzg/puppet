@@ -1,6 +1,7 @@
 #include "simulationscene.h"
 #include <osgWrapper\MatrixAnimation.h>
 #include <osg\Point>
+
 SimulationScene::SimulationScene()
 {
 	m_manipulable_node = new OSGWrapper::ManipulableNode();

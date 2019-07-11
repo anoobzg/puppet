@@ -21,9 +21,15 @@
     <ClCompile Include="..\..\..\src\Simulation\robot_simulation\scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\robot_simulation\parameterstext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\robot_simulation\scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\robot_simulation\parameterstext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

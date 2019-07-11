@@ -93,8 +93,8 @@ osg::Node* CreateContent()
 	//return quad;
 	OSGWrapper::ScreenSingleText* text = new OSGWrapper::ScreenSingleText();
 	text->SetOrigin(osg::Vec2f(600.0f, 400.0f));
-	text->SetFont("F:\\Data\\SC-Light.otf");
-	text->SetText(L'\x8d39');
+	text->SetFont("D:\\Data\\Fonts\\GenJyuuGothic-P-ExtraLight.ttf");
+	text->SetText(L'H');
 	text->SetColor(osg::Vec4f(0.0f, 1.0f, 1.0f, 1.0f));
 	return text;
 
