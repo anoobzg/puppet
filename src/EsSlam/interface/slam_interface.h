@@ -21,6 +21,7 @@ namespace esslam
 	struct HandleScanImageData;
 	class IBuildTracer;
 	class IVisualTracer;
+	class IReadTracer;
 	class IESSlam
 	{
 	public:
@@ -37,6 +38,7 @@ namespace esslam
 		virtual void Clear() = 0;
 
 		virtual void SetVisualTracer(IVisualTracer* tracer) = 0;
+		virtual void SetReadTracer(IReadTracer* tracer) = 0;
 	};
 }
 

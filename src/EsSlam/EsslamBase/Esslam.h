@@ -27,6 +27,7 @@ namespace esslam
 		void Clear();
 
 		void SetVisualTracer(IVisualTracer* tracer);
+		void SetReadTracer(IReadTracer* tracer);
 	private:
 		void StartInner();
 	protected:

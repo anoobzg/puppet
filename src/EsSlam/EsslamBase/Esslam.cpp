@@ -44,6 +44,13 @@ namespace esslam
 		m_state_lock.Release();
 	}
 
+	void Esslam::SetReadTracer(IReadTracer* tracer)
+	{
+		m_state_lock.Acquire();
+		if (!m_running) m_reader->SetReadTracer(tracer);
+		m_state_lock.Release();
+	}
+
 	void Esslam::Start()
 	{
 		m_state_lock.Acquire();
@@ -60,7 +67,8 @@ namespace esslam
 		{
 			m_debug_center.reset(new DebugCenter());
 			m_debug_center->SetParameters(debug_param);
-			m_vo->SetVOProfiler(m_debug_center->GetVOProfiler());
+
+			if(debug_param.profile_detail) m_vo->SetVOProfiler(m_debug_center->GetVOProfiler());
 			m_vo->SetLocateTracer(m_debug_center->GetLocateTracer());
 			m_vo->SetICPTracer(m_debug_center->GetProjectionICPTracer());
 		}
@@ -118,7 +126,11 @@ namespace esslam
 			trimesh::ComputeBoundingbox(mesh->vertices, mesh->bbox);
 			m_vo->OnFrame(mesh);
 		}
+		else
+			std::cout << "GONE" << std::endl;
 		m_state_lock.Release();
+
+		delete data;
 	}
 
 	//void Esslam::SetData(int size, float* position, float* normal,

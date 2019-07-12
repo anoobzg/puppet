@@ -24,6 +24,7 @@ namespace esslam
 	{
 		std::string calib_file;
 		int use_fast;
+		int least_frame_count;
 	};
 
 	struct DebugParameters
@@ -32,6 +33,7 @@ namespace esslam
 		std::string directory;
 		std::string out_directory;
 		int save_fm_failed;
+		int profile_detail;
 	};
 
 	struct OctreeParameters

@@ -3,12 +3,13 @@
 #include <boost\format.hpp>
 #include "compute_boundingbox.h"
 #include "timestamp.h"
+#include "..\interface\slam_tracer.h"
 
 namespace esslam
 {
 	Reader::Reader()
 		:base::Thread("Reader"), m_stop(false)
-		, m_current_index(0), m_vo(NULL)
+		, m_current_index(0), m_vo(NULL), m_tracer(NULL)
 	{
 
 	}
@@ -42,6 +43,11 @@ namespace esslam
 		m_vo = vo;
 	}
 
+	void Reader::SetReadTracer(IReadTracer* tracer)
+	{
+		m_tracer = tracer;
+	}
+
 	void Reader::Read()
 	{
 		trimesh::timestamp last_time = trimesh::now();
@@ -63,6 +69,8 @@ namespace esslam
 			if (dt < m_parameters.time && dt > 0.0f)
 				::Sleep(DWORD(1000.0f * (m_parameters.time - dt)));
 		}
+
+		if (m_tracer) m_tracer->OnFinished();
 	}
 
 	trimesh::TriMesh* Reader::LoadOneFrame()

@@ -5,6 +5,7 @@
 
 namespace esslam
 {
+	class IReadTracer;
 	class ESSLAM_API Reader : public base::Thread
 	{
 	public:
@@ -14,6 +15,7 @@ namespace esslam
 		void StartRead(const ReaderParameters& parameters);
 		void StopRead();
 		void SetVO(VO* vo);
+		void SetReadTracer(IReadTracer* tracer);
 	private:
 		void Read();
 		trimesh::TriMesh* LoadOneFrame();
@@ -23,5 +25,6 @@ namespace esslam
 		bool m_stop;
 
 		VO* m_vo;
+		IReadTracer* m_tracer;
 	};
 }

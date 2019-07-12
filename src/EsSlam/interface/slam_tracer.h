@@ -21,4 +21,11 @@ namespace esslam
 		virtual ~IBuildTracer() {}
 		virtual void OnPoints(int size, float* position, float* normal, unsigned char* color) = 0;
 	};
+
+	class IReadTracer
+	{
+	public:
+		virtual ~IReadTracer() {}
+		virtual void OnFinished() = 0;
+	};
 }

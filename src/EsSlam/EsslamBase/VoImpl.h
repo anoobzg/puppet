@@ -18,6 +18,7 @@ namespace esslam
 		void Setup(const SlamParameters& parameters);
 		void SetVisualProcessor(VisualProcessor* processor);
 		void SetLocateTracer(LocateTracer* tracer);
+		void SetVOProfiler(VOProfiler* profiler);
 		void SetProjectionICPTracer(trimesh::ProjectionICPTracer* tracer);
 
 		void ProcessOneFrame(TriMeshPtr& mesh, LocateData& locate_data);
@@ -33,6 +34,8 @@ namespace esslam
 		bool Relocate(TriMeshPtr& mesh);
 		void SetLastMesh(TriMeshPtr& mesh, bool use_as_keyframe);
 	protected:
+		ICPParamters m_icp_parameters;
+
 		VisualProcessor* m_visual_processor;
 		TriMeshPtr m_last_mesh;
 		std::unique_ptr<trimesh::ProjectionICP> m_icp;
@@ -52,5 +55,6 @@ namespace esslam
 		bool m_use_fast_icp;
 		LocateTracer* m_locate_tracer;
 		trimesh::ProjectionICPTracer* m_icp_tracer;
+		VOProfiler* m_profiler;
 	};
 }

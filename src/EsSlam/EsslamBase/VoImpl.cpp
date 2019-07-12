@@ -10,7 +10,7 @@ namespace esslam
 
 	VOImpl::VOImpl()
 		:m_visual_processor(NULL),m_locate_tracer(NULL),
-		m_icp_tracer(NULL)
+		m_icp_tracer(NULL), m_profiler(NULL)
 	{
 		m_fx = 0.0f;
 		m_fy = 0.0f;
@@ -25,10 +25,10 @@ namespace esslam
 
 	void VOImpl::Setup(const SlamParameters& parameters)
 	{
-		const ICPParamters& icp_param = parameters.icp_param;
-		m_use_fast_icp = icp_param.use_fast == 1;
+		m_icp_parameters = parameters.icp_param;
+		m_use_fast_icp = m_icp_parameters.use_fast == 1;
 		trimesh::CameraData camera_data;
-		if (!load_camera_data_from_file(icp_param.calib_file, camera_data))
+		if (!load_camera_data_from_file(m_icp_parameters.calib_file, camera_data))
 		{
 			std::cout << "Cabli Data Error." << std::endl;
 		}
@@ -64,7 +64,7 @@ namespace esslam
 
 	void VOImpl::ProcessOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
 	{
-		if (mesh->vertices.size() < 50000)
+		if (mesh->vertices.size() < m_icp_parameters.least_frame_count)
 			return;
 
 		m_state.IncFrame();
@@ -87,6 +87,11 @@ namespace esslam
 	void VOImpl::SetLocateTracer(LocateTracer* tracer)
 	{
 		m_locate_tracer = tracer;
+	}
+
+	void VOImpl::SetVOProfiler(VOProfiler* profiler)
+	{
+		m_profiler = profiler;
 	}
 
 	void VOImpl::LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
@@ -222,23 +227,7 @@ namespace esslam
 
 		if (m_locate_tracer) m_locate_tracer->OnBeforeF2M();
 
-		float error = 0.0f;
-		if (relocate)
-		{
-			m_icp->SetTracer(m_icp_tracer);
-			error = m_icp->FMQuickDo(mesh->global, 7);
-			//error = m_icp->Do(mesh->global);
-			m_icp->SetTracer(NULL);
-		}
-		else
-		{
-			error = m_icp->FMQuickDo(mesh->global, 7);
-		}
-
-		//m_icp->SetTracer(m_icp_tracer);
-		//error = m_icp->FMQuickDo(mesh->global, 7);
-		//m_icp->SetTracer(NULL);
-
+		float error = m_icp->FMQuickDo(mesh->global, 7);
 
 		if (m_locate_tracer) m_locate_tracer->OnAfterF2M();
 

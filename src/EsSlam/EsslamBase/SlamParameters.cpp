@@ -74,12 +74,14 @@ namespace esslam
 		{
 			icp_param.calib_file = "";
 			icp_param.use_fast = 0;
+			icp_param.least_frame_count = 50000;
 		}
 		else
 		{
 			options.add_options()
 				("icp_param.calib_file", value<std::string>(&icp_param.calib_file))
 				("icp_param.use_fast", value<int>(&icp_param.use_fast))
+				("icp_param.least_frame_count", value<int>(&icp_param.least_frame_count))
 				;
 		}
 	}
@@ -92,6 +94,7 @@ namespace esslam
 			debug_param.directory = "";
 			debug_param.out_directory = "";
 			debug_param.save_fm_failed = 0;
+			debug_param.profile_detail = 0;
 		}
 		else
 		{
@@ -100,6 +103,7 @@ namespace esslam
 				("debug_param.directory", value<std::string>(&debug_param.directory))
 				("debug_param.out_directory", value<std::string>(&debug_param.out_directory))
 				("debug_param.save_fm_failed", value<int>(&debug_param.save_fm_failed))
+				("debug_param.profile_detail", value<int>(&debug_param.profile_detail))
 				;
 		}
 	}

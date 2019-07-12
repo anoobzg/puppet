@@ -1,6 +1,7 @@
 #include "simulationscene.h"
 #include <osgWrapper\MatrixAnimation.h>
 #include <osg\Point>
+#include <osg\PolygonOffset>
 
 SimulationScene::SimulationScene()
 {
@@ -14,12 +15,20 @@ SimulationScene::SimulationScene()
 	m_base_node = new OSGWrapper::AttributeUtilNode();
 	m_base_node->SetRenderProgram("phong430");
 	m_base_node->SetAttribute(new osg::Point(1.0f));
+	m_base_node->SetMode(GL_POLYGON_OFFSET_POINT, state_off);
 	m_manipulable_node->AddChild(m_base_node);
 	m_current_frame = new OSGWrapper::AttributeUtilNode();
 	m_current_frame->SetRenderProgram("distancephong");
 	m_align_matrix = new osg::Uniform("align_matrix", osg::Matrixf::identity());
 	m_current_frame->AddUniform(m_align_matrix);
-	m_current_frame->SetAttribute(new osg::Point(8.0f));
+	m_current_frame->SetAttribute(new osg::Point(1.0f));
+	//m_current_frame->SetMode(GL_POLYGON_OFFSET_POINT, state_on);
+	//osg::PolygonOffset* offset = new osg::PolygonOffset();
+	//offset->setFactor(1.0f);
+	//offset->setUnits(1.0f);
+	//m_current_frame->getOrCreateStateSet()->setAttributeAndModes(offset, osg::StateAttribute::ON);
+	//m_current_frame->SetAttribute(offset);
+	//m_current_frame->SetMode(GL_DEPTH_TEST, state_off);
 	m_manipulable_node->AddChild(m_current_frame);
 
 	m_patch_node = new OSGWrapper::AttributeUtilNode();

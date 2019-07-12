@@ -17,8 +17,10 @@ namespace esslam
 	{
 		std::vector<trimesh::vec3> points;
 		std::vector<trimesh::vec3> normals;
+		std::vector<trimesh::vec3> colors;
 		int width;
 		int height;
+		int num_effective;
 		std::vector<int> grid;
 	};
 
