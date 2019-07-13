@@ -123,6 +123,9 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\AxisCreator.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ColorPanel.h">
+      <Filter>2D</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\MatrixDeltaAnimation.cpp">
@@ -208,6 +211,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\AxisCreator.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\include\osgWrapper\ColorPanel.cpp">
+      <Filter>2D</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
