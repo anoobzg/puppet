@@ -138,7 +138,10 @@
     <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\patchnode.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\render.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\runslam.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\runtslam.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\simulationscene.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\trender.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\tscene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\chunkgeometry.h" />
@@ -146,6 +149,8 @@
     <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\render.h" />
     <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\runslam.h" />
     <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\simulationscene.h" />
+    <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\trender.h" />
+    <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\tscene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

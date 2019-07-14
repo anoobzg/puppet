@@ -33,6 +33,15 @@
     <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\chunkgeometry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\runtslam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\trender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\tscene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\runslam.h">
@@ -48,6 +57,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\chunkgeometry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\trender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\tscene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

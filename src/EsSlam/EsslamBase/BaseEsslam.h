@@ -1,19 +1,16 @@
 #pragma once
 #include "../interface/slam_interface.h"
-#include "SlamParameters.h"
+#include "ModuleInterface.h"
 #include <base\synchronization\lock.h>
+#include "DefaultModule.h"
 
 namespace esslam
 {
-	class Reader;
-	class SlamVO;
-	class RenderProxy;
-	class DebugCenter;
-	class ESSLAM_API Esslam : public IESSlam
+	class ESSLAM_API BaseEsslam : public IESSlam
 	{
 	public:
-		Esslam();
-		virtual ~Esslam();
+		BaseEsslam();
+		virtual ~BaseEsslam();
 
 		void SetupParameters(const SetupParameter& parameter);
 
@@ -34,14 +31,17 @@ namespace esslam
 	protected:
 		SlamParameters m_parameters;
 
-		std::unique_ptr<Reader> m_reader;
-		std::unique_ptr<SlamVO> m_vo;
-		std::unique_ptr<RenderProxy> m_render_proxy;
-		std::unique_ptr<DebugCenter> m_debug_center;
-
 		bool m_consistent_mode;
 		bool m_running;
 
 		base::Lock m_state_lock;
+
+		IInput* m_input;
+		IProcessor* m_processor;
+		IVisual* m_visual;
+
+		DefaultInput m_default_input;
+		DefaultProcessor m_default_processor;
+		DefaultVisual m_default_visual;
 	};
 }

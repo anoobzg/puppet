@@ -44,16 +44,34 @@ namespace esslam
 
 	void SlamParameters::LoadAllParameters(boost::program_options::options_description& options, bool inital)
 	{
+		LoadImageParameters(options, inital);
 		LoadReaderParameters(options, inital);
 		LoadICPParameters(options, inital);
 		LoadOctreeParameters(options, inital);
 		LoadDebugParameters(options, inital);
 	}
 
+	void SlamParameters::LoadImageParameters(boost::program_options::options_description& options, bool inital)
+	{
+		if (inital)
+		{
+			image_param.width = 1920;
+			image_param.height = 1080;
+		}
+		else
+		{
+			options.add_options()
+				("image_param.width", value<int>(&image_param.width))
+				("image_param.height", value<int>(&image_param.height))
+				;
+		}
+	}
+
 	void SlamParameters::LoadReaderParameters(boost::program_options::options_description& options, bool inital)
 	{
 		if (inital)
 		{
+			reader_param.load_from_file = false;
 			reader_param.directory = "";
 			reader_param.pattern = "%d";
 			reader_param.time = 0.0f;

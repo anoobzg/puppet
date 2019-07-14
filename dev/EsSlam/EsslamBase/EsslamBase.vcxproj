@@ -138,34 +138,54 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\DebugCenter.h" />
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\DefaultModule.h" />
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\DFrame.h" />
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\DFramePool.h" />
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\DirectoryReader.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\Esslam.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\EsslamBaseExport.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\InnerInterface.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\LocateTracerImpl.h" />
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\ModuleInterface.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\Octree.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\OctreeChunk.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\OctreeIndex.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\ProjectionicpTracerImpl.h" />
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\BaseEsslam.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\Reader.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\RenderProxy.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\SlamParameters.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\SlamVo.h" />
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\TData.h" />
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\TEsslam.h" />
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\TProcessor.h" />
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\TReader.h" />
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\TVisual.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\VoImpl.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\VoProfilerImpl.h" />
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\VoState.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\DebugCenter.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\DefaultModule.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\DFrame.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\DFramePool.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\DirectoryReader.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\Esslam.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\LocateTracerImpl.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\Octree.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\OctreeChunk.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\OctreeIndex.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\ProjectionicpTracerImpl.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\BaseEsslam.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\Reader.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\RenderProxy.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\SlamParameters.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\SlamVo.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TEsslam.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TProcessor.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TReader.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TVisual.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\VoImpl.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\VoProfilerImpl.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\VoState.cpp" />

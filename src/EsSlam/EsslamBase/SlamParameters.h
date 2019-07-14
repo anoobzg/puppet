@@ -13,8 +13,15 @@ namespace boost
 
 namespace esslam
 {
+	struct ImageParameters
+	{
+		int width;
+		int height;
+	};
+
 	struct ReaderParameters
 	{
+		bool load_from_file;
 		std::string directory;
 		std::string pattern;
 		float time;
@@ -50,12 +57,14 @@ namespace esslam
 		void LoadDefault();
 		void LoadFromFile(const std::string& file);
 
+		ImageParameters image_param;
 		ReaderParameters reader_param;
 		ICPParamters icp_param;
 		DebugParameters debug_param;
 		OctreeParameters octree_param;
 	protected:
 		void LoadAllParameters(boost::program_options::options_description& options, bool inital);
+		void LoadImageParameters(boost::program_options::options_description& options, bool inital);
 		void LoadReaderParameters(boost::program_options::options_description& options, bool inital);
 		void LoadICPParameters(boost::program_options::options_description& options, bool inital);
 		void LoadOctreeParameters(boost::program_options::options_description& options, bool inital);

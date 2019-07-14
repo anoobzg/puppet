@@ -21,6 +21,7 @@ namespace esslam
 	struct HandleScanImageData;
 	class IBuildTracer;
 	class IVisualTracer;
+	class IOSGTracer;
 	class IReadTracer;
 	class IESSlam
 	{
@@ -37,10 +38,11 @@ namespace esslam
 		virtual void Build(IBuildTracer* tracer) = 0;
 		virtual void Clear() = 0;
 
-		virtual void SetVisualTracer(IVisualTracer* tracer) = 0;
+		virtual void SetVisualTracer(IVisualTracer* tracer) = 0; //old visual interface
+		virtual void SetOSGTracer(IOSGTracer* tracer) = 0; //osg visual interface
 		virtual void SetReadTracer(IReadTracer* tracer) = 0;
 	};
 }
 
-typedef esslam::IESSlam* (*CreateSlamFunc)();
+typedef esslam::IESSlam* (*CreateSlamFunc)(const char* name);
 typedef void (*DestroySlamFunc)(esslam::IESSlam* slam);

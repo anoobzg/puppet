@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="T">
+      <UniqueIdentifier>{93ed69a9-37a7-43a0-b8f8-7fdc1cc26377}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\Esslam.h">
@@ -63,6 +66,39 @@
     <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\RenderProxy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\ModuleInterface.h">
+      <Filter>T</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\DefaultModule.h">
+      <Filter>T</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\BaseEsslam.h">
+      <Filter>T</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\TEsslam.h">
+      <Filter>T</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\TReader.h">
+      <Filter>T</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\DirectoryReader.h">
+      <Filter>T</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\TData.h">
+      <Filter>T</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\DFrame.h">
+      <Filter>T</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\DFramePool.h">
+      <Filter>T</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\TProcessor.h">
+      <Filter>T</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\EsSlam\EsslamBase\TVisual.h">
+      <Filter>T</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\Esslam.cpp">
@@ -106,6 +142,33 @@
     </ClCompile>
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\RenderProxy.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\DefaultModule.cpp">
+      <Filter>T</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\BaseEsslam.cpp">
+      <Filter>T</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TEsslam.cpp">
+      <Filter>T</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TReader.cpp">
+      <Filter>T</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\DirectoryReader.cpp">
+      <Filter>T</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\DFrame.cpp">
+      <Filter>T</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\DFramePool.cpp">
+      <Filter>T</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TProcessor.cpp">
+      <Filter>T</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TVisual.cpp">
+      <Filter>T</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

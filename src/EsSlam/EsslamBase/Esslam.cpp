@@ -37,6 +37,11 @@ namespace esslam
 		m_state_lock.Release();
 	}
 
+	void Esslam::SetOSGTracer(IOSGTracer* tracer)
+	{
+
+	}
+
 	void Esslam::SetVisualTracer(IVisualTracer* tracer)
 	{
 		m_state_lock.Acquire();
