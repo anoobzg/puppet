@@ -116,7 +116,7 @@ namespace esslam
 
 	}
 
-	void DefaultVisual::FrameLocated(DFrame* frame)
+	void DefaultVisual::FrameLocated(DFrame* frame, LocateData* locate_data)
 	{
 
 	}

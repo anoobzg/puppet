@@ -1,4 +1,5 @@
 #include "TProcessor.h"
+#include "TData.h"
 
 namespace esslam
 {
@@ -35,6 +36,7 @@ namespace esslam
 
 	void TProcessor::ProcessFrame(DFrame* frame)
 	{
-		m_visual->FrameLocated(frame);
+		LocateData* locate_data = new LocateData();
+		m_visual->FrameLocated(frame, locate_data);
 	}
 }

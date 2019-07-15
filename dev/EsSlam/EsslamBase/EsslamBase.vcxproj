@@ -182,6 +182,7 @@
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\RenderProxy.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\SlamParameters.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\SlamVo.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TData.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TEsslam.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TProcessor.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TReader.cpp" />

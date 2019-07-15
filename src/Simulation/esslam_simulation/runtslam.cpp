@@ -15,22 +15,22 @@ int run_t_slam(esslam::IESSlam& slam, int argc, char* argv[])
 	std::string config_file;
 	if (argc >= 3) config_file = argv[2];
 
-	TRender render;
+	//TRender render;
+	osg::ref_ptr<TScene> scene = new TScene();
 	RenderThread render_thread(e);
-	render_thread.StartRender(render.GetScene());
+	render_thread.StartRender(scene);
 	::Sleep(1000);
-	render.StartRender();
 
 	esslam::SetupParameter parameters;
 	parameters.default_config = config_file;
 	parameters.type = esslam::e_load_from_file;
 
 	slam.SetupParameters(parameters);
+	slam.SetOSGTracer(scene.get());
 	slam.Start();
 	e.Wait();
 
 	slam.Stop();
-	render.StopRender();
 	render_thread.StopRender();
 
 	return EXIT_SUCCESS;

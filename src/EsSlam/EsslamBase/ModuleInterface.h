@@ -43,6 +43,7 @@ namespace esslam
 	};
 
 	class IOSGTracer;
+	class LocateData;
 	class IVisual
 	{
 	public:
@@ -53,6 +54,6 @@ namespace esslam
 		virtual void StartVisual(const SlamParameters& parameters) = 0;
 		virtual void StopVisual() = 0;
 
-		virtual void FrameLocated(DFrame* frame) = 0;
+		virtual void FrameLocated(DFrame* frame, LocateData* locate_data) = 0;
 	};
 }

@@ -42,6 +42,12 @@
     <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\tscene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\framenode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\framegeometry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\runslam.h">
@@ -63,6 +69,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\tscene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\framenode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\framegeometry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

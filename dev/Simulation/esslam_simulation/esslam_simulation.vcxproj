@@ -134,6 +134,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\chunkgeometry.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\framegeometry.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\framenode.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\main.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\patchnode.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\esslam_simulation\render.cpp" />
@@ -145,6 +147,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\chunkgeometry.h" />
+    <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\framegeometry.h" />
+    <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\framenode.h" />
     <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\patchnode.h" />
     <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\render.h" />
     <ClInclude Include="..\..\..\src\Simulation\esslam_simulation\runslam.h" />

@@ -170,5 +170,8 @@
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TVisual.cpp">
       <Filter>T</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TData.cpp">
+      <Filter>T</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

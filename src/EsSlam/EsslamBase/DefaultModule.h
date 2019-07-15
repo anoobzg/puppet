@@ -53,7 +53,7 @@ namespace esslam
 		void StartVisual(const SlamParameters& parameters);
 		void StopVisual();
 
-		void FrameLocated(DFrame* frame);
+		void FrameLocated(DFrame* frame, LocateData* locate_data);
 	protected:
 		IOSGTracer* m_tracer;
 		IInput* m_input;
