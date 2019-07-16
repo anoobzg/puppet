@@ -17,5 +17,7 @@ namespace esslam
 		void Clear();
 
 		void ProcessFrame(DFrame* frame);
+	protected:
+		void InnerProcessFrame(DFrame* frame);
 	};
 }

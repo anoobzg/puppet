@@ -12,6 +12,9 @@ namespace esslam
 		TEsslam();
 		virtual ~TEsslam();
 
+	protected:
+		void OnStart();
+		void OnStop();
 	private:
 		TReader m_t_reader;
 		TProcessor m_t_processor;

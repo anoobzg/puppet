@@ -70,9 +70,46 @@ osg::Program* ProgramManager::Get(const char* name)
 		program = new osg::Program();
 
 	bool result = Load(program, name);
+	if (!result)
+		result = LoadLocal(program, name);
 	if(!result)
 		result = LoadFromShaderSource(program, name);
 	return result ? program : 0;
+}
+
+bool ProgramManager::LoadLocal(osg::Program* program, const char* name)
+{
+	if (!program)
+		return false;
+
+	std::string prefix = ".\\";
+
+	static const char* extension[] = { ".vert", ".geom", ".frag", 0 };
+	static osg::Shader::Type type[] = { osg::Shader::VERTEX, osg::Shader::GEOMETRY, osg::Shader::FRAGMENT };
+
+	program->setName(name);
+	char** tmp = (char**)extension;
+	unsigned i = 0;
+	for (char* s = *tmp; s; s = *(++tmp), ++i)
+	{
+		std::string file_name = prefix + name + s;
+		osg::ref_ptr<osg::Shader> shader = OpenShader(file_name);
+
+		if (shader.valid())
+		{
+			shader->setType(type[i]);
+			program->addShader(shader);
+		}
+	}
+
+	if (program->getNumShaders() == 0)
+		return false;
+
+	std::pair<ProgramIter, bool> result = m_programs.insert(ProgramPair(name, program));
+	if (result.second == false)
+		return false;
+
+	return true;
 }
 
 bool ProgramManager::Load(osg::Program* program, const char* name)

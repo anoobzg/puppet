@@ -26,6 +26,9 @@ namespace esslam
 		void SetVisualTracer(IVisualTracer* tracer);
 		void SetOSGTracer(IOSGTracer* tracer);
 		void SetReadTracer(IReadTracer* tracer);
+	protected:
+		virtual void OnStart();
+		virtual void OnStop();
 	private:
 		void StartInner();
 	protected:

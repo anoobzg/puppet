@@ -14,5 +14,7 @@ namespace esslam
 		void StopVisual();
 
 		void FrameLocated(DFrame* frame, LocateData* locate_data);
+	protected:
+		void ProcessFrameLocated(DFrame* frame, LocateData* locate_data);
 	};
 }

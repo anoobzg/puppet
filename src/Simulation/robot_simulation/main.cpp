@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
 	osg::ref_ptr<RenderView> view = new RenderView();
 	osg::ref_ptr<RenderScene> scene = new Scene(geometry);
 	view->SetBackgroundColor(osg::Vec4(0.0f, 0.0f, 0.0f, 1.0f));
-	view->setUpViewInWindow(10, 10, 1920, 1080);
+	view->setUpViewInWindow(10, 10, 1080, 720);
 	view->SetCurrentScene(scene);
 
 	RenderService::Instance().addView(view);

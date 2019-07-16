@@ -1,6 +1,6 @@
 #include "TReader.h"
 #include "base/bind.h"
-#include "..//interface/slam_tracer.h"
+#include "../interface/slam_tracer.h"
 #include "DFrame.h"
 
 namespace esslam
@@ -52,7 +52,15 @@ namespace esslam
 	void TReader::Read()
 	{
 		DFrame* frame = m_dframe_pool.Get();
+
+#ifdef TRACE_SLAM
+		frame->begin_read = trimesh::now();
+#endif
 		bool result = m_reader.Load(*frame);
+
+#ifdef TRACE_SLAM
+		frame->end_read = trimesh::now();
+#endif
 		if (result)
 		{
 			trimesh::timestamp now_time = trimesh::now();
@@ -61,6 +69,9 @@ namespace esslam
 			if (dt < m_delta_time && dt > 0.0f)
 				::Sleep(DWORD(1000.0f * (m_delta_time - dt)));
 
+#ifdef TRACE_SLAM
+			frame->begin_process = trimesh::now();
+#endif
 			m_processor->ProcessFrame(frame);
 			task_runner()->PostTask(FROM_HERE, base::Bind(&TReader::Read, base::Unretained(this)));
 		}

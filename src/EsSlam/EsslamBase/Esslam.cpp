@@ -127,6 +127,8 @@ namespace esslam
 			mesh->vertices.swap(data->points);
 			mesh->normals.swap(data->normals);
 			mesh->grid.swap(data->grid);
+			mesh->grid_width = data->width;
+			mesh->grid_height = data->height;
 
 			trimesh::ComputeBoundingbox(mesh->vertices, mesh->bbox);
 			m_vo->OnFrame(mesh);

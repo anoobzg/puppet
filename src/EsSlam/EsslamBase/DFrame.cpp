@@ -12,6 +12,8 @@ namespace esslam
 		data.points.resize(size);
 		data.colors.resize(size);
 		data.num_effective = 0;
+		index = -1;
+		iindex = - 1;
 	}
 
 	DFrame::~DFrame()

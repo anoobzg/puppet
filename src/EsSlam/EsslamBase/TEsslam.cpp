@@ -13,4 +13,14 @@ namespace esslam
 	{
 
 	}
+
+	void TEsslam::OnStart()
+	{
+
+	}
+
+	void TEsslam::OnStop()
+	{
+
+	}
 }

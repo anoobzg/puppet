@@ -62,6 +62,7 @@ namespace esslam
 		m_running = true;
 		m_state_lock.Release();
 
+		OnStart();
 		StartInner();
 	}
 
@@ -84,6 +85,8 @@ namespace esslam
 		m_input->StopInput();
 		m_processor->StopProcessor();
 		m_visual->StopVisual();
+
+		OnStop();
 	}
 
 	void BaseEsslam::Clear()
@@ -111,5 +114,15 @@ namespace esslam
 		m_state_lock.Acquire();
 		if (!m_running && tracer) m_processor->Build(tracer);
 		m_state_lock.Release();
+	}
+
+	void BaseEsslam::OnStart()
+	{
+
+	}
+
+	void BaseEsslam::OnStop()
+	{
+
 	}
 }

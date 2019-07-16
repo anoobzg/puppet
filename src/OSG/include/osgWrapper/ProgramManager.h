@@ -27,6 +27,7 @@ public:
 	osg::Program* Get(const char* name);
 private:
 	bool Load(osg::Program* program, const char* name);
+	bool LoadLocal(osg::Program* program, const char* name);
 	void Insert(osg::Program* program);
 	osg::Shader* OpenShader(const std::string& name);
 
