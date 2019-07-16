@@ -1,5 +1,7 @@
 #include "RenderThread.h"
 #include <base/bind.h>
+#include "timestamp.h"
+#include <iostream>
 
 namespace simtool
 {
@@ -57,7 +59,11 @@ namespace simtool
 			if (m_scene)
 			{
 				m_scene->render_lock.Acquire();
+				trimesh::timestamp t1 = trimesh::now();
 				m_viewer.frame();
+				trimesh::timestamp t2 = trimesh::now();
+				if((t2 - t1) >= 0.03)
+					std::cout << (t2 - t1) << std::endl;
 				m_scene->render_lock.Release();
 			}
 			else

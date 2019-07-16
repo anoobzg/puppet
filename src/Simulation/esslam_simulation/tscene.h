@@ -10,6 +10,12 @@
 
 class TScene : public simtool::RenderThreadBaseScene , public esslam::IOSGTracer
 {
+	struct UpdateData
+	{
+		bool need_update;
+		bool lost;
+		bool first;
+	};
 public:
 	TScene();
 	virtual ~TScene();
@@ -22,8 +28,12 @@ private:
 	void Convert(osg::Matrixf& matrix, const trimesh::xform& xf);
 	void UpdateCamera();
 	bool OnMouse(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa);
+	bool OnFrame(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa);
 protected:
 	osg::ref_ptr<OSGWrapper::ManipulableNode> m_manipulable_node;
 	osg::ref_ptr<OSGWrapper::Manipulator> m_manipulator;
 	osg::ref_ptr<FrameNode> m_frame;
+
+	OpenThreads::Mutex m_mutex;
+	UpdateData m_update_data;
 };

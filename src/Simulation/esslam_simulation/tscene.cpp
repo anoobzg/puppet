@@ -9,6 +9,10 @@ TScene::TScene()
 
 	m_frame = new FrameNode();
 	m_manipulable_node->AddChild(m_frame);
+
+	m_update_data.lost = false;
+	m_update_data.need_update = false;
+	m_update_data.first = true;
 }
 
 TScene::~TScene()
@@ -24,17 +28,15 @@ void TScene::OnFrameLocated(int effect_num, const std::vector<trimesh::point3>& 
 	osg::Matrixf matrix = osg::Matrixf::identity();
 	Convert(matrix, xf);
 
-	if (!lost)
+	m_mutex.lock();
+	if (!m_update_data.need_update && !lost)
 	{
 		m_frame->UpdateGlobalMatrix(matrix);
 		FrameGeometry* geometry = m_frame->GetFreeGeometry();
 		geometry->Update(effect_num, vertexes, normals);
+		m_update_data.need_update = true;
 	}
-
-	render_lock.Acquire();
-	m_frame->Exchange(!lost);
-	if (first) UpdateCamera();
-	render_lock.Release();
+	m_mutex.unlock();
 }
 
 void TScene::Convert(osg::Matrixf& matrix, const trimesh::xform& xf)
@@ -64,5 +66,22 @@ void TScene::UpdateCamera()
 bool TScene::OnMouse(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
 {
 	m_manipulator->OnMouse(ea, aa, *this);
+	return true;
+}
+
+bool TScene::OnFrame(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
+{
+	m_mutex.lock();
+	if (m_update_data.need_update)
+	{
+		m_frame->Exchange(!m_update_data.lost);
+		if (m_update_data.first)
+		{
+			UpdateCamera();
+			m_update_data.first = false;
+		}
+		m_update_data.need_update = false;
+	}
+	m_mutex.unlock();
 	return true;
 }
