@@ -25,6 +25,7 @@ namespace esslam
 
 		void Clear();
 		void Build(IBuildTracer& tracer);
+		void SetFixMode();
 	protected:
 		void LocateOneFrame(TriMeshPtr& mesh, LocateData& locate_data);
 		void FusionFrame(TriMeshPtr& mesh, const LocateData& locate_data);
@@ -33,6 +34,8 @@ namespace esslam
 		bool Frame2Model(TriMeshPtr& mesh, bool relocate = false);
 		bool Relocate(TriMeshPtr& mesh);
 		void SetLastMesh(TriMeshPtr& mesh, bool use_as_keyframe);
+
+		void ProcessOneFrameFix(TriMeshPtr& mesh, LocateData& locate_data);
 	protected:
 		ICPParamters m_icp_parameters;
 
@@ -56,5 +59,8 @@ namespace esslam
 		LocateTracer* m_locate_tracer;
 		trimesh::ProjectionICPTracer* m_icp_tracer;
 		VOProfiler* m_profiler;
+
+		std::vector<trimesh::xform> m_xforms;
+		bool m_fix_mode;
 	};
 }

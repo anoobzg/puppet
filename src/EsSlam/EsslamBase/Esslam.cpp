@@ -9,7 +9,7 @@
 namespace esslam
 {
 	Esslam::Esslam()
-		:m_consistent_mode(true), m_running(false)
+		:m_scan_type(e_load_from_file), m_running(false)
 	{
 		m_reader.reset(new Reader());
 		m_vo.reset(new SlamVO());
@@ -26,12 +26,16 @@ namespace esslam
 		m_state_lock.Acquire();
 		if (!m_running)
 		{
-			m_consistent_mode = parameter.type == e_load_from_file;
+			m_scan_type = parameter.type;
 			const std::string& file = parameter.default_config;
 			m_parameters.LoadFromFile(file);
-			if (!m_consistent_mode)
+			if (m_scan_type != e_load_from_file)
 			{
 				m_parameters.icp_param.calib_file = parameter.calib_file;
+			}
+			if (m_scan_type == e_fix)
+			{
+				m_vo->SetFixMode();
 			}
 		}
 		m_state_lock.Release();
@@ -81,7 +85,7 @@ namespace esslam
 		m_render_proxy->StartProcess();
 		m_vo->SetVisualProcessor(m_render_proxy.get());
 		m_vo->StartVO(m_parameters);
-		if (m_consistent_mode)
+		if (m_scan_type == e_load_from_file)
 		{
 			m_reader->SetVO(m_vo.get());
 			m_reader->StartRead(m_parameters.reader_param);
@@ -94,7 +98,7 @@ namespace esslam
 		m_running = false;
 		m_state_lock.Release();
 
-		if (m_consistent_mode)
+		if (m_scan_type == e_load_from_file)
 			m_reader->StopRead();
 
 		m_vo->StopVO();

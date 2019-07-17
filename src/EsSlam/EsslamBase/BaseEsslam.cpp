@@ -4,6 +4,7 @@ namespace esslam
 {
 	BaseEsslam::BaseEsslam()
 		:m_consistent_mode(true), m_running(false),m_input(NULL), m_processor(NULL), m_visual(NULL)
+		, m_visual_tracer(NULL), m_osg_tracer(NULL), m_read_tracer(NULL)
 	{
 	}
 
@@ -28,11 +29,6 @@ namespace esslam
 			{
 				m_parameters.reader_param.load_from_file = true;
 			}
-
-			//make sure m_input, m_processor, m_visual are not null
-			if (!m_input) m_input = &m_default_input;
-			if (!m_processor) m_processor = &m_default_processor;
-			if (!m_visual) m_visual = &m_default_visual;
 		}
 		m_state_lock.Release();
 	}
@@ -45,14 +41,14 @@ namespace esslam
 	void BaseEsslam::SetOSGTracer(IOSGTracer* tracer)
 	{
 		m_state_lock.Acquire();
-		if (!m_running) m_visual->SetOSGTracer(tracer);
+		if (!m_running) m_osg_tracer = tracer;
 		m_state_lock.Release();
 	}
 
 	void BaseEsslam::SetReadTracer(IReadTracer* tracer)
 	{
 		m_state_lock.Acquire();
-		if (!m_running) m_input->SetInputTracer(tracer);
+		if (!m_running) m_read_tracer = tracer;
 		m_state_lock.Release();
 	}
 
@@ -63,11 +59,19 @@ namespace esslam
 		m_state_lock.Release();
 
 		OnStart();
+
+		//make sure m_input, m_processor, m_visual are not null
+		if (!m_input) m_input = &m_default_input;
+		if (!m_processor) m_processor = &m_default_processor;
+		if (!m_visual) m_visual = &m_default_visual;
+
 		StartInner();
 	}
 
 	void BaseEsslam::StartInner()
 	{
+		m_visual->SetOSGTracer(m_osg_tracer);
+		m_input->SetInputTracer(m_read_tracer);
 		m_visual->StartVisual(m_parameters);
 		m_visual->SetInput(m_input);
 		m_processor->SetVisual(m_visual);

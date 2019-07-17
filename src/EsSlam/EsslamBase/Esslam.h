@@ -39,7 +39,7 @@ namespace esslam
 		std::unique_ptr<RenderProxy> m_render_proxy;
 		std::unique_ptr<DebugCenter> m_debug_center;
 
-		bool m_consistent_mode;
+		ScanType m_scan_type;
 		bool m_running;
 
 		base::Lock m_state_lock;

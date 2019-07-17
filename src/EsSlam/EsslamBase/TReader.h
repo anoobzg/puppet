@@ -13,7 +13,7 @@ namespace esslam
 	class ESSLAM_API TReader : public base::Thread, public DefaultInput
 	{
 	public:
-		TReader();
+		TReader(DFramePool& pool);
 		virtual ~TReader();
 
 		void StartInput(const SlamParameters& parameters);
@@ -28,6 +28,6 @@ namespace esslam
 		trimesh::timestamp m_last_time;
 		float m_delta_time;
 
-		DFramePool m_dframe_pool;
+		DFramePool& m_dframe_pool;
 	};
 }

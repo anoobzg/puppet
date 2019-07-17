@@ -25,6 +25,7 @@ namespace esslam
 		std::string directory;
 		std::string pattern;
 		float time;
+		int use_t_vo;
 	};
 
 	struct ICPParamters

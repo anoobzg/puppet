@@ -1,12 +1,9 @@
 #include "TProcessor.h"
-#include "TData.h"
 #include <base\bind.h>
-#include "DFrame.h"
 
 namespace esslam
 {
 	TProcessor::TProcessor()
-		:base::Thread("TProcessor")
 	{
 
 	}
@@ -18,12 +15,16 @@ namespace esslam
 
 	void TProcessor::StartProcessor(const SlamParameters& parameters)
 	{
-		bool start = Start();
+		m_locator.SetVisualTracer(m_visual);
+		m_fusioner.SetVisualTracer(m_visual);
+		m_locator.StartLocate(parameters);
+		m_fusioner.StartFusion(parameters);
 	}
 
 	void TProcessor::StopProcessor()
 	{
-		Stop();
+		m_locator.StopLocate();
+		m_fusioner.StopFusion();
 	}
 
 	void TProcessor::Build(IBuildTracer* tracer)
@@ -38,18 +39,6 @@ namespace esslam
 
 	void TProcessor::ProcessFrame(DFrame* frame)
 	{
-		task_runner()->PostTask(FROM_HERE, base::Bind(&TProcessor::InnerProcessFrame, base::Unretained(this), frame));
-	}
-
-	void TProcessor::InnerProcessFrame(DFrame* frame)
-	{
-		LocateData* locate_data = new LocateData();
-		locate_data->lost = false;
-
-#ifdef TRACE_SLAM
-		frame->end_process = trimesh::now();
-		frame->begin_visual = trimesh::now();
-#endif
-		m_visual->FrameLocated(frame, locate_data);
+		m_locator.Locate(frame);
 	}
 }

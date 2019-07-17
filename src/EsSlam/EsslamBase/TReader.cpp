@@ -5,8 +5,8 @@
 
 namespace esslam
 {
-	TReader::TReader()
-		:base::Thread("TReader"), m_delta_time(0.01f)
+	TReader::TReader(DFramePool& pool)
+		:base::Thread("TReader"), m_delta_time(0.01f), m_dframe_pool(pool)
 	{
 
 	}
@@ -23,9 +23,6 @@ namespace esslam
 		const ReaderParameters& read_param = parameters.reader_param;
 		m_delta_time = read_param.time;
 
-		const ImageParameters& image_param = parameters.image_param;
-		m_dframe_pool.Melloc(3, image_param.width, image_param.height);
-
 		if (start && read_param.load_from_file)
 		{
 			m_reader.SetParameters(read_param.directory, read_param.pattern);
@@ -41,7 +38,7 @@ namespace esslam
 
 	void TReader::SetImageData(HandleScanImageData* data)
 	{
-
+		//empty
 	}
 
 	void TReader::Release(DFrame* frame)

@@ -4,10 +4,12 @@
 #include "InnerInterface.h"
 #include "SlamParameters.h"
 #include "VoImpl.h"
+#include "VOLocator.h"
+#include "VOFusion.h"
 
 namespace esslam
 {
-	class SlamVO : public base::Thread, public VO
+	class SlamVO : public base::Thread, public VO, public KeyFrameAdder
 	{
 	public:
 		SlamVO();
@@ -25,11 +27,19 @@ namespace esslam
 		void Clear();
 
 		void Build(IBuildTracer& tracer);
+		void SetFixMode();
+
+		void AddKeyFrame(TriMeshPtr mesh);
 	protected:
 		void ProcessFrame(trimesh::TriMesh* mesh);
+		void ProcessAddKeyFrame(TriMeshPtr mesh);
 	private:
 		SlamParameters m_parameters;
 		VOImpl m_vo_impl;
+		VOLocator m_vo_locator;
+		VOFusion m_vo_fusion;
 		VOProfiler* m_profiler;
+
+		VisualProcessor* m_visual_processor;
 	};
 }

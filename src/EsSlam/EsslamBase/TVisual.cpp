@@ -35,16 +35,21 @@ namespace esslam
 	void TVisual::ProcessFrameLocated(DFrame* frame, LocateData* locate_data)
 	{
 		const BuildModelData& data = frame->data;
+
+#ifdef TRACE_SLAM
+		frame->begin_visual = trimesh::now();
+#endif
 		if (m_tracer) m_tracer->OnFrameLocated(data.num_effective, data.points, data.normals, data.colors,
 			locate_data->xf, locate_data->lost);
+
+#ifdef TRACE_SLAM
+		frame->end_visual = trimesh::now();
+#endif
 
 		m_input->Release(frame);
 		delete locate_data;
 
-
 #ifdef TRACE_SLAM
-		frame->end_visual = trimesh::now();
-
 		std::cout << frame->data.num_effective<<" Read " << (frame->end_read - frame->begin_read) << " Process " << (frame->end_process - frame->begin_process)
 			<< " Visual " << (frame->end_visual - frame->begin_visual) << std::endl;
 #endif

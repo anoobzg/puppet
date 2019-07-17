@@ -73,6 +73,7 @@ namespace simtool
 			double dt = time - last_frame_time;
 			if (dt <= 0.03)
 				::Sleep(30 - (DWORD)(dt * 1000.0));
+
 			last_frame_time = time;
 		}
 

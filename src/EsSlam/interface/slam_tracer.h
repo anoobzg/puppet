@@ -1,4 +1,6 @@
 #pragma once
+#include "Xform.h"
+#include <vector>
 
 namespace esslam
 {
@@ -20,6 +22,8 @@ namespace esslam
 	public:
 		virtual ~IBuildTracer() {}
 		virtual void OnPoints(int size, float* position, float* normal, unsigned char* color) = 0;
+		virtual void OnXform(const std::vector<trimesh::xform>& xforms) = 0;
+		virtual void OnKeyFrames(const std::vector<int>& keyframes) = 0;
 	};
 
 	class IReadTracer

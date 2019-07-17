@@ -3,6 +3,7 @@
 #include "TReader.h"
 #include "TProcessor.h"
 #include "TVisual.h"
+#include "DFramePool.h"
 
 namespace esslam
 {
@@ -16,8 +17,10 @@ namespace esslam
 		void OnStart();
 		void OnStop();
 	private:
-		TReader m_t_reader;
-		TProcessor m_t_processor;
-		TVisual m_t_visual;
+		std::unique_ptr<TReader> m_t_reader;
+		std::unique_ptr<TProcessor> m_t_processor;
+		std::unique_ptr<TVisual> m_t_visual;
+
+		DFramePool m_dframe_pool;
 	};
 }

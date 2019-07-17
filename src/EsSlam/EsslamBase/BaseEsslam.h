@@ -46,5 +46,9 @@ namespace esslam
 		DefaultInput m_default_input;
 		DefaultProcessor m_default_processor;
 		DefaultVisual m_default_visual;
+
+		IVisualTracer* m_visual_tracer;
+		IOSGTracer* m_osg_tracer;
+		IReadTracer* m_read_tracer;
 	};
 }

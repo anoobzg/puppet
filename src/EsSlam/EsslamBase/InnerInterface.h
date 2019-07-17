@@ -69,4 +69,11 @@ namespace esslam
 		virtual void OnCurrentFrame(CurrentFrameData* data) = 0;
 		virtual void OnAppendNewPoints(NewAppendData* data) = 0;
 	};
+
+	class KeyFrameAdder
+	{
+	public:
+		virtual ~KeyFrameAdder() {}
+		virtual void AddKeyFrame(TriMeshPtr mesh) = 0;
+	};
 }

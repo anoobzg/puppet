@@ -29,6 +29,31 @@ private:
 	base::WaitableEvent& ee;
 };
 
+class Builder : public esslam::IBuildTracer
+{
+public:
+	Builder() {}
+	virtual ~Builder() {}
+
+	void OnPoints(int size, float* position, float* normal, unsigned char* color)
+	{
+
+	}
+
+	void OnXform(const std::vector<trimesh::xform>& xforms)
+	{
+
+	}
+
+	void OnKeyFrames(const std::vector<int>& keyframes)
+	{
+		std::cout << "All KeyFrames. " << keyframes.size() << std::endl;
+		for (size_t i = 0; i < keyframes.size(); ++i)
+			std::cout << keyframes.at(i) << " " << std::endl;
+	}
+
+};
+
 int run_slam(esslam::IESSlam& slam, int argc, char* argv[])
 {
 	base::AtExitManager exit_manager;
@@ -55,6 +80,10 @@ int run_slam(esslam::IESSlam& slam, int argc, char* argv[])
 		e.Wait();
 
 		slam.Stop();
+
+		Builder builder;
+		slam.Build(&builder);
+		slam.Clear();
 	}
 	else
 	{

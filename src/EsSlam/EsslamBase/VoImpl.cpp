@@ -4,13 +4,14 @@
 #include "VoImpl.h"
 #include "load_calib.h"
 #include <ppl.h>
-
+#include <set>
+#include <map>
 namespace esslam
 {
 
 	VOImpl::VOImpl()
 		:m_visual_processor(NULL),m_locate_tracer(NULL),
-		m_icp_tracer(NULL), m_profiler(NULL)
+		m_icp_tracer(NULL), m_profiler(NULL), m_fix_mode(false)
 	{
 		m_fx = 0.0f;
 		m_fy = 0.0f;
@@ -54,7 +55,9 @@ namespace esslam
 		if (cell_depth == 6) cell_resolution = 0.1f;
 		m_octree.reset(new Octree(cell_depth, cell_resolution));
 
-		m_layers.resize(8000000, 0);
+		m_layers.resize(8000000, -1);
+
+		m_xforms.reserve(2000);
 	}
 
 	void VOImpl::SetVisualProcessor(VisualProcessor* processor)
@@ -64,11 +67,15 @@ namespace esslam
 
 	void VOImpl::ProcessOneFrame(TriMeshPtr& mesh, LocateData& locate_data)
 	{
-		if (mesh->vertices.size() < m_icp_parameters.least_frame_count)
-			return;
-
 		m_state.IncFrame();
 		mesh->frame = m_state.Frame();
+		m_xforms.push_back(trimesh::xform());
+
+		if (m_fix_mode)
+			return ProcessOneFrameFix(mesh, locate_data);
+
+		if (mesh->vertices.size() < m_icp_parameters.least_frame_count)
+			return;
 
 		LocateOneFrame(mesh, locate_data);
 
@@ -122,6 +129,8 @@ namespace esslam
 
 	void VOImpl::FusionFrame(TriMeshPtr& mesh, const LocateData& locate_data)
 	{
+		m_xforms.at(mesh->frame) = mesh->global;
+
 		if (!m_octree->m_initialized)
 			m_octree->Initialize(mesh->bbox.center());
 
@@ -133,7 +142,7 @@ namespace esslam
 		for (size_t i = 0; i < vsize; ++i)
 		{
 			int index = indexes.at(i);
-			if (index >= 0 && m_layers.at(index) == 0)
+			if (index >= 0 && (m_layers.at(index) > 0 || m_layers.at(index) == -1))
 			{
 				++new_count;
 			}
@@ -142,23 +151,22 @@ namespace esslam
 		bool use_as_keyframe = false;
 		if ((float)new_count / (float)vsize > 0.5f)
 			use_as_keyframe = true;
-		if (use_as_keyframe)
+
+		int flag = use_as_keyframe ? 0 : mesh->frame;
+		for (size_t i = 0; i < vsize; ++i)
 		{
-			for (size_t i = 0; i < vsize; ++i)
-			{
-				int index = indexes.at(i);
-				if (index >= 0)
-				{
-					++m_layers.at(index);
-				}
-			}
+			int index = indexes.at(i);
+			if (index >= 0 && (m_layers.at(index) != 0))
+				m_layers.at(index) = flag;
 		}
+		
 		SetLastMesh(mesh, use_as_keyframe);
 
-		std::cout << "Octree nodes " << m_octree->m_current_index <<
-			" points " << m_octree->m_current_point_index << std::endl;
-
 		int new_num = m_octree->m_current_point_index - m_octree->m_last_point_index;
+		if (use_as_keyframe) std::cout << "Use as keyframe. " << new_count << " "<<new_num<< std::endl;
+		//std::cout << "Octree nodes " << m_octree->m_current_index <<
+		//	" points " << m_octree->m_current_point_index << std::endl;
+
 		if (m_visual_processor && new_num > 0)
 		{
 			NewAppendData* new_data = new NewAppendData();
@@ -338,6 +346,51 @@ namespace esslam
 		}
 		else
 			tracer.OnPoints(0, 0, 0, 0);
+
+		std::vector<int> keyframes;
+		int point_size = m_octree->m_current_point_index;
+		std::map<int, int> nooverlap;
+		for (int i = 0; i < point_size; ++i)
+		{
+			int index = m_layers.at(i);
+			if (index > 0)
+			{
+				std::map<int, int>::iterator it = nooverlap.find(index);
+				if (it != nooverlap.end()) ++(*it).second;
+				else nooverlap.insert(std::pair<int, int>(index, 1));
+			}
+		}
+		for (size_t i = 0; i < m_key_frames.size(); ++i)
+			keyframes.push_back(m_key_frames.at(i)->frame);
+		for (std::map<int, int>::iterator it = nooverlap.begin(); it != nooverlap.end(); ++it)
+		{
+			if ((*it).second > 3000)
+				keyframes.push_back((*it).first);
+			//std::cout << (*it).first << " " << (*it).second << std::endl;
+		}
+
+		tracer.OnXform(m_xforms);
+		tracer.OnKeyFrames(keyframes);
 	}
 
+	void VOImpl::SetFixMode()
+	{
+		m_fix_mode = true;
+	}
+
+	void VOImpl::ProcessOneFrameFix(TriMeshPtr& mesh, LocateData& locate_data)
+	{
+		locate_data.locate_type = 0;
+		locate_data.lost = false;
+
+		if (m_visual_processor)
+		{
+			CurrentFrameData* data = new CurrentFrameData();
+			data->lost = locate_data.lost;
+			data->mesh = mesh;
+			m_visual_processor->OnCurrentFrame(data);
+		}
+
+		FusionFrame(mesh, locate_data);
+	}
 }

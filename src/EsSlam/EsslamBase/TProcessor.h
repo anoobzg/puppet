@@ -1,10 +1,12 @@
 #pragma once
 #include <base\threading\thread.h>
 #include "DefaultModule.h"
+#include "TLocator.h"
+#include "TFusioner.h"
 
 namespace esslam
 {
-	class ESSLAM_API TProcessor : public base::Thread, public DefaultProcessor
+	class ESSLAM_API TProcessor : public DefaultProcessor
 	{
 	public:
 		TProcessor();
@@ -17,7 +19,8 @@ namespace esslam
 		void Clear();
 
 		void ProcessFrame(DFrame* frame);
-	protected:
-		void InnerProcessFrame(DFrame* frame);
+	private:
+		TLocator m_locator;
+		TFusioner m_fusioner;
 	};
 }

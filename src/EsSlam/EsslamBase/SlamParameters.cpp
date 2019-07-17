@@ -75,6 +75,7 @@ namespace esslam
 			reader_param.directory = "";
 			reader_param.pattern = "%d";
 			reader_param.time = 0.0f;
+			reader_param.use_t_vo = 1;
 		}
 		else
 		{
@@ -82,6 +83,7 @@ namespace esslam
 				("reader_param.directory", value<std::string>(&reader_param.directory))
 				("reader_param.pattern", value<std::string>(&reader_param.pattern))
 				("reader_param.time", value<float>(&reader_param.time))
+				("reader_param.use_t_vo", value<int>(&reader_param.use_t_vo))
 				;
 		}
 	}
