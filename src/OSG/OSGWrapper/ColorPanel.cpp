@@ -1,4 +1,4 @@
-#include "ColorPanel.h"
+#include <osgWrapper/ColorPanel.h>
 #include <osgWrapper/GeometryCreator.h>
 #include <osgWrapper/ArrayCreator.h>
 #include <osg/PolygonMode>

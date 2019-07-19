@@ -6,6 +6,7 @@
 #include <osgWrapper/ScreenSingleText.h>
 #include <osgWrapper\FreetypeFontManager.h>
 #include <osgWrapper/ScreenDistanceIndicator.h>
+#include "ui.h"
 
 using namespace OSGWrapper;
 
@@ -92,9 +93,9 @@ osg::Node* CreateContent()
 	//quad->setUpdateCallback(new TestAnimation());
 	//return quad;
 	OSGWrapper::ScreenSingleText* text = new OSGWrapper::ScreenSingleText();
-	text->SetOrigin(osg::Vec2f(600.0f, 400.0f));
-	text->SetFont("D:\\Data\\Fonts\\GenJyuuGothic-P-ExtraLight.ttf");
-	text->SetText(L'H');
+	text->SetOrigin(osg::Vec2f(1000.0f, 500.0f));
+	text->SetFont("F:\\Data\\SC-Light.otf");
+	text->SetText(L'\x8d39');
 	text->SetColor(osg::Vec4f(0.0f, 1.0f, 1.0f, 1.0f));
 	return text;
 
@@ -108,11 +109,12 @@ osg::Node* CreateContent()
 int main(int argc, char* argv[])
 {
 	osg::ref_ptr<RenderView> view = new RenderView();
+	view->SetGlobalUI(new UI());
 	osg::ref_ptr<RenderScene> scene = new RenderScene();
 	scene->addChild(CreateContent());
 
 	view->SetBackgroundColor(osg::Vec4(0.8f, 0.8f, 0.8f, 1.0f));
-	view->setUpViewInWindow(0, 0, 1920, 1080);
+	view->setUpViewInWindow(50, 50, 1680, 860);
 	view->SetCurrentScene(scene);
 
 	RenderService::Instance().addView(view);

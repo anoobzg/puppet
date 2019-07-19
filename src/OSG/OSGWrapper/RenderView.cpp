@@ -87,6 +87,8 @@ bool RenderView::handleResizeEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIA
 
 	m_width = w;
 	m_height = h;
+
+	m_ui_panel->Resize((float)m_width, (float)m_height);
 	if(m_current_scene)
 	{
 		osg::Viewport* view_port = _camera->getViewport();
@@ -103,20 +105,37 @@ bool RenderView::handleResizeEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIA
 bool RenderView::handleFrameEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
 {
 	++m_frame_id;
+
+	if (m_frame_id < 30)
+	{
+		osg::Viewport* view_port = _camera->getViewport();
+		if (view_port)
+		{
+			m_width = (int)view_port->width();
+			m_height = (int)view_port->height();
+			m_ui_panel->Resize(m_width, m_height);
+		}
+	}
 	//std::cout<<"OSG Frame Event."<<std::endl;
+	m_ui_panel->handleFrameEvent(ea, aa);
 	if(m_current_scene.valid()) m_current_scene->OnFrame(ea, aa);
+
 	return true;
 }
 
 bool RenderView::handleKeyEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
 {
 	//std::cout<<"OSG Key Event."<<std::endl;
+	if (m_ui_panel->handleKeyEvent(ea, aa))
+		return true;
 	if(m_current_scene.valid()) m_current_scene->OnKey(ea, aa);
 	return true;
 }
 
 bool RenderView::handleMouseEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
 {
+	if (m_ui_panel->handleMouseEvent(ea, aa))
+		return true;
 	if(m_current_scene.valid()) m_current_scene->OnMouse(ea, aa);
 	//std::cout<<"OSG Mouse Event."<<std::endl;
 	return true;
@@ -124,6 +143,8 @@ bool RenderView::handleMouseEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIAc
 
 bool RenderView::handleDoubleClickEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
 {
+	if (m_ui_panel->handleDoubleClickEvent(ea, aa))
+		return true;
 	if(m_current_scene.valid()) m_current_scene->OnDoubleClick(ea, aa);
 	//std::cout<<"OSG Double Click Event."<<std::endl;
 	return true;
@@ -154,7 +175,7 @@ void RenderView::SetCurrentScene(RenderScene* scene, bool save_preview_scene)
 			scene->AttachRenderView(this);
 			scene->OnEnter();
 			scene->OnEnterUI(m_ui_panel);
-			m_root->addChild(scene);
+			m_root->insertChild(0, scene);
 		}
 	}
 	
@@ -177,8 +198,9 @@ bool RenderView::RollbackScene()
 
 	m_root->removeChild(m_current_scene);
 	//m_root->removeChildren(0, m_root->getNumChildren());
-	m_root->addChild(m_preview_scene);
-	
+	//m_root->addChild(m_preview_scene);
+	m_root->insertChild(0, m_preview_scene);
+
 	m_current_scene = m_preview_scene;
 	m_preview_scene = 0;
 	return true;

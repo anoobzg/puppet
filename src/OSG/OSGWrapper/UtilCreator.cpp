@@ -74,4 +74,23 @@ namespace OSGWrapper
 		}
 		return OSGWrapper::GeometryCreator::CreateIndexAttributeGeometry(draw_array, coord_array);
 	}
+
+	osg::Vec2Array* UtilCreator::CreateUnitArray()
+	{
+		osg::Vec2Array* coord_array = new osg::Vec2Array();
+		coord_array->push_back(osg::Vec2(0.0f, 0.0f));
+		coord_array->push_back(osg::Vec2(1.0f, 0.0f));
+		coord_array->push_back(osg::Vec2(1.0f, 1.0f));
+		coord_array->push_back(osg::Vec2(0.0f, 1.0f));
+		return coord_array;
+	}
+
+	osg::Geometry* UtilCreator::CreateUnitQuad()
+	{
+		osg::Vec2Array* coord_array = CREATE_UNIT_ARRAY;
+		osg::Vec2Array* tex_array = CREATE_UNIT_ARRAY;
+		osg::DrawArrays* quad = new osg::DrawArrays(GL_QUADS, 0, 4);
+		osg::Geometry* geometry = OSGWrapper::GeometryCreator::CreateIndexAttributeGeometry(quad, coord_array, tex_array);
+		return geometry;
+	}
 }
