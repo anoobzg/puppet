@@ -9,6 +9,7 @@
 namespace OSGWrapper
 {
 	class RenderView;
+	class UIPanel;
 	class OSG_EXPORT RenderScene : public osg::Camera
 	{
 	public:
@@ -38,6 +39,8 @@ namespace OSGWrapper
 
 		virtual void OnEnter();
 		virtual void OnEnterOut();
+		virtual void OnEnterUI(UIPanel* panel) {}
+		virtual void OnEnterOutUI(UIPanel* panel) {}
 		virtual void SyncWork() {}
 
 		void AttachRenderView(RenderView* view);

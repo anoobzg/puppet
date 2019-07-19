@@ -3,6 +3,7 @@
 #include <osgViewer/View>
 #include <osgGA/GUIEventHandler>
 #include <osgWrapper/RenderScene.h>
+#include <osgWrapper/UIPanel.h>
 
 namespace OSGWrapper 
 {
@@ -31,6 +32,7 @@ public:
 
 	void SetBackgroundColor(const osg::Vec4& color);
 	void SyncWork();
+	void SetGlobalUI(UIItem* item);
 protected:
 	void AddGlobalUniform(osg::Uniform* uniform);
 protected:
@@ -45,6 +47,7 @@ protected:
 	osg::ref_ptr<RenderScene> m_preview_scene;
 
 	osg::ref_ptr<osg::ClearNode> m_root;
+	osg::ref_ptr<UIPanel> m_ui_panel;
 
 	bool m_suppress;
 

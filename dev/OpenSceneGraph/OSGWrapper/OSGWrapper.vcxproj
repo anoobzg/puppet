@@ -175,12 +175,15 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\SimpleRenderThread.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\Singleton.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\StateDeclare.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIItem.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIPanel.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UtilCreator.h" />
     <ClInclude Include="..\..\..\src\OSG\OSGWrapper\ProgramDef.h" />
     <ClInclude Include="..\..\..\src\OSG\OSGWrapper\ShaderString.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\OSG\include\osgWrapper\ColorPanel.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\include\osgWrapper\UIPanel.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\Animation.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\AnimationScheduler.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ArrayCreator.cpp" />
@@ -208,6 +211,7 @@
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenQuad.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenSingleText.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\SimpleRenderThread.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIItem.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UtilCreator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
