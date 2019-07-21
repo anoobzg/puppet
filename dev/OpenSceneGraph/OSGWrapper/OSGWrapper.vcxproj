@@ -182,14 +182,13 @@
     <ClInclude Include="..\..\..\src\OSG\OSGWrapper\ShaderString.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\OSG\include\osgWrapper\ColorPanel.cpp" />
-    <ClCompile Include="..\..\..\src\OSG\include\osgWrapper\UIPanel.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\Animation.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\AnimationScheduler.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ArrayCreator.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\AttributeUtilNode.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\AxisCreator.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ColorIndexPicker.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ColorPanel.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\EraseGeometry.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\FeedbackProgram.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\FreetypeFont.cpp" />
@@ -212,6 +211,7 @@
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenSingleText.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\SimpleRenderThread.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIItem.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIPanel.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UtilCreator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -34,6 +34,7 @@ namespace OSGWrapper
 		bool handleDoubleClickEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa);
 		UIItem* Hover(float x, float y);
 		void SetTexture(osg::Texture2D* texture);
+		void SetAlpha(float alpha);
 	private:
 		bool CheckIn(const osgGA::GUIEventAdapter& ea);
 		bool CheckIn(float x, float y);
@@ -52,6 +53,7 @@ namespace OSGWrapper
 		osg::Vec2 m_size;
 		osg::ref_ptr<osg::Uniform> m_uniform_offset;
 		osg::ref_ptr<osg::Uniform> m_uniform_size;
+		osg::ref_ptr<osg::Uniform> m_uniform_alpha;
 
 		bool m_capture;
 		ProcessMode m_process_mode;

@@ -93,8 +93,8 @@ osg::Node* CreateContent()
 	//quad->setUpdateCallback(new TestAnimation());
 	//return quad;
 	OSGWrapper::ScreenSingleText* text = new OSGWrapper::ScreenSingleText();
-	text->SetOrigin(osg::Vec2f(1000.0f, 500.0f));
-	text->SetFont("F:\\Data\\SC-Light.otf");
+	text->SetOrigin(osg::Vec2f(400.0f, 100.0f));
+	text->SetFont("D:\\Data\\Fonts\\pp.ttf");
 	text->SetText(L'\x8d39');
 	text->SetColor(osg::Vec4f(0.0f, 1.0f, 1.0f, 1.0f));
 	return text;
@@ -113,7 +113,7 @@ int main(int argc, char* argv[])
 	osg::ref_ptr<RenderScene> scene = new RenderScene();
 	scene->addChild(CreateContent());
 
-	view->SetBackgroundColor(osg::Vec4(0.8f, 0.8f, 0.8f, 1.0f));
+	view->SetBackgroundColor(osg::Vec4(0.2f, 0.2f, 0.2f, 1.0f));
 	view->setUpViewInWindow(50, 50, 1680, 860);
 	view->SetCurrentScene(scene);
 

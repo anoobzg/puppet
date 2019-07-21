@@ -218,13 +218,13 @@
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\AxisCreator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\OSG\include\osgWrapper\ColorPanel.cpp">
-      <Filter>2D</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\src\OSG\include\osgWrapper\UIPanel.cpp">
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIItem.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIItem.cpp">
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ColorPanel.cpp">
+      <Filter>2D</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIPanel.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

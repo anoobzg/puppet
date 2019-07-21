@@ -10,8 +10,10 @@ namespace OSGWrapper
 		m_offset = osg::Vec2(0.0f, 0.0f);
 		m_uniform_size = new osg::Uniform("size", m_size);
 		m_uniform_offset = new osg::Uniform("offset", m_offset);
+		m_uniform_alpha = new osg::Uniform("alpha", 1.0f);
 		AddUniform(m_uniform_offset);
 		AddUniform(m_uniform_size);
+		AddUniform(m_uniform_alpha);
 
 		AddUniform(new osg::Uniform("texture", 0));
 	}
@@ -243,5 +245,10 @@ namespace OSGWrapper
 	void UIItem::SetTexture(osg::Texture2D* texture)
 	{
 		SetTextureAttribute(0, texture);
+	}
+
+	void UIItem::SetAlpha(float alpha)
+	{
+		m_uniform_alpha->set(alpha);
 	}
 }

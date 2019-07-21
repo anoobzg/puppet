@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "esslam_simulation", "esslam
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "robot_simulation", "robot_simulation\robot_simulation.vcxproj", "{684B72AA-7712-4553-A235-C9412D419F49}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "time_simulation", "time_simulation\time_simulation.vcxproj", "{31F079F8-C91F-4051-890A-975AF7348F9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -97,6 +99,14 @@ Global
 		{684B72AA-7712-4553-A235-C9412D419F49}.Release|x64.Build.0 = Release|x64
 		{684B72AA-7712-4553-A235-C9412D419F49}.Release|x86.ActiveCfg = Release|Win32
 		{684B72AA-7712-4553-A235-C9412D419F49}.Release|x86.Build.0 = Release|Win32
+		{31F079F8-C91F-4051-890A-975AF7348F9F}.Debug|x64.ActiveCfg = Debug|x64
+		{31F079F8-C91F-4051-890A-975AF7348F9F}.Debug|x64.Build.0 = Debug|x64
+		{31F079F8-C91F-4051-890A-975AF7348F9F}.Debug|x86.ActiveCfg = Debug|Win32
+		{31F079F8-C91F-4051-890A-975AF7348F9F}.Debug|x86.Build.0 = Debug|Win32
+		{31F079F8-C91F-4051-890A-975AF7348F9F}.Release|x64.ActiveCfg = Release|x64
+		{31F079F8-C91F-4051-890A-975AF7348F9F}.Release|x64.Build.0 = Release|x64
+		{31F079F8-C91F-4051-890A-975AF7348F9F}.Release|x86.ActiveCfg = Release|Win32
+		{31F079F8-C91F-4051-890A-975AF7348F9F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -140,10 +140,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\Simulation\osg_2d_simulation\button.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\osg_2d_simulation\main.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\osg_2d_simulation\ui.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\src\Simulation\osg_2d_simulation\button.h" />
     <ClInclude Include="..\..\..\src\Simulation\osg_2d_simulation\ui.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

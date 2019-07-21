@@ -17,9 +17,15 @@
     <ClCompile Include="..\..\..\src\Simulation\osg_2d_simulation\ui.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\osg_2d_simulation\button.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\osg_2d_simulation\ui.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\osg_2d_simulation\button.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
