@@ -15,10 +15,14 @@ namespace esslam
 		ScanType type;
 		std::string default_config;
 		std::string calib_file;
+
+		int image_width;
+		int image_height;
 	};
 
 	struct BuildModelData;
 	struct HandleScanImageData;
+	struct HHScanData;
 	class IBuildTracer;
 	class IVisualTracer;
 	class IOSGTracer;
@@ -34,6 +38,9 @@ namespace esslam
 
 		virtual void SetImageData(HandleScanImageData* data) = 0;
 		virtual void SetModelData(BuildModelData* data) = 0;
+		
+		virtual HHScanData* GetScanData() = 0;
+		virtual void SetScanData(HHScanData* data) = 0;
 
 		virtual void Build(IBuildTracer* tracer) = 0;
 		virtual void Clear() = 0;

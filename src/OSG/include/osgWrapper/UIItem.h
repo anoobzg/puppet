@@ -3,17 +3,10 @@
 #include <osgGA\GUIActionAdapter>
 #include <osgGA\GUIEventAdapter>
 #include <osg\Texture2D>
+#include <osgWrapper\ProcessMode.h>
 
 namespace OSGWrapper
 {
-	enum ProcessMode
-	{
-		pm_none,
-		pm_left,
-		pm_right,
-		pm_middle
-	};
-
 	class OSG_EXPORT UIItem : public AttributeUtilNode
 	{
 		friend class UIPanel;

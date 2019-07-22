@@ -5,6 +5,7 @@
 #include "DebugCenter.h"
 #include "RenderProxy.h"
 #include "compute_boundingbox.h"
+#include "Profiler.h"
 
 namespace esslam
 {
@@ -66,6 +67,8 @@ namespace esslam
 		m_running = true;
 		m_state_lock.Release();
 
+		PROFILE_START
+
 		StartInner();
 	}
 
@@ -108,6 +111,8 @@ namespace esslam
 			m_debug_center->Save();
 			m_debug_center.reset();
 		}
+
+		PROFILE_OUTPUT
 	}
 
 	void Esslam::Clear()
@@ -142,6 +147,24 @@ namespace esslam
 		m_state_lock.Release();
 
 		delete data;
+	}
+
+	HHScanData* Esslam::GetScanData()
+	{
+		return NULL;
+	}
+	void Esslam::SetScanData(HHScanData* data)
+	{
+		m_state_lock.Acquire();
+		if (m_running)
+		{
+
+		}
+		else
+		{
+
+		}
+		m_state_lock.Release();
 	}
 
 	//void Esslam::SetData(int size, float* position, float* normal,

@@ -23,6 +23,7 @@ namespace esslam
 
 	struct CurrentFrameData
 	{
+		bool fix;
 		bool lost;
 		TriMeshPtr mesh;
 	};

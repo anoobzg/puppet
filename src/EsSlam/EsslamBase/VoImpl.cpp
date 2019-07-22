@@ -83,6 +83,7 @@ namespace esslam
 		{
 			CurrentFrameData* data = new CurrentFrameData();
 			data->lost = locate_data.lost;
+			data->fix = false;
 			data->mesh = mesh;
 			m_visual_processor->OnCurrentFrame(data);
 		}

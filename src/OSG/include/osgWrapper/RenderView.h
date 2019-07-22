@@ -4,6 +4,7 @@
 #include <osgGA/GUIEventHandler>
 #include <osgWrapper/RenderScene.h>
 #include <osgWrapper/UIPanel.h>
+#include <osgWrapper\UIRoot.h>
 
 namespace OSGWrapper 
 {
@@ -33,6 +34,7 @@ public:
 	void SetBackgroundColor(const osg::Vec4& color);
 	void SyncWork();
 	void SetGlobalUI(UIItem* item);
+	UIRoot* GetUIRoot();
 protected:
 	void AddGlobalUniform(osg::Uniform* uniform);
 protected:
@@ -53,6 +55,8 @@ protected:
 
 	int m_width;
 	int m_height;
+
+	osg::ref_ptr<UIRoot> m_ui_root;
 };
 
 }

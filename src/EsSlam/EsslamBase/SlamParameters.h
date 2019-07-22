@@ -33,6 +33,7 @@ namespace esslam
 		std::string calib_file;
 		int use_fast;
 		int least_frame_count;
+		int only_show_frame;
 	};
 
 	struct DebugParameters

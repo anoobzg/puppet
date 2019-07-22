@@ -33,6 +33,7 @@ namespace esslam
 	protected:
 		void ProcessFrame(trimesh::TriMesh* mesh);
 		void ProcessAddKeyFrame(TriMeshPtr mesh);
+		void ProcessFixMode(TriMeshPtr mesh);
 	private:
 		SlamParameters m_parameters;
 		VOImpl m_vo_impl;
@@ -41,5 +42,8 @@ namespace esslam
 		VOProfiler* m_profiler;
 
 		VisualProcessor* m_visual_processor;
+
+		bool m_fix_mode;
+		std::vector<TriMeshPtr> m_fix_mesh;
 	};
 }

@@ -22,6 +22,8 @@ namespace esslam
 
 		void SetImageData(HandleScanImageData* data);
 		void SetModelData(BuildModelData* data);
+		HHScanData* GetScanData();
+		void SetScanData(HHScanData* data);
 
 		void Build(IBuildTracer* tracer);
 		void Clear();

@@ -15,6 +15,7 @@ namespace esslam
 		virtual void OnFrame(PatchRenderData* data) = 0;
 		virtual void OnFrameLocated(FrameData* data) = 0;
 		virtual void OnNewPoints(NewAppendData* data) = 0;
+		virtual void OnFixFrame(FrameData* data) = 0;
 	};
 
 	class IBuildTracer

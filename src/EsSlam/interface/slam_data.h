@@ -49,4 +49,10 @@ namespace esslam
 		std::vector<trimesh::vec3> normals;
 		std::vector < trimesh::Vec<3, unsigned char>> colors;
 	};
+
+	struct HHScanData
+	{
+		unsigned char* buffer;
+		int buffer_size;
+	};
 }

@@ -24,6 +24,7 @@ namespace esslam
 		void Fusion(TriMeshPtr mesh, bool relocate);
 		void SetVisualProcessor(VisualProcessor* processor);
 		void SetKeyFrameAdder(KeyFrameAdder* adder);
+		void SetFixMode();
 	private:
 		void DoFusion(TriMeshPtr mesh, bool relocate);
 		bool Frame2Model(TriMeshPtr mesh, bool relocate);
@@ -43,5 +44,7 @@ namespace esslam
 		KeyFrameAdder* m_adder;
 
 		std::vector<trimesh::xform> m_xforms;
+
+		bool m_fix_mode;
 	};
 }

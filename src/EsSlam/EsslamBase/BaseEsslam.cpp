@@ -113,6 +113,16 @@ namespace esslam
 
 	}
 
+	HHScanData* BaseEsslam::GetScanData()
+	{
+		return NULL;
+	}
+
+	void BaseEsslam::SetScanData(HHScanData* data)
+	{
+		
+	}
+
 	void BaseEsslam::Build(IBuildTracer* tracer)
 	{
 		m_state_lock.Acquire();

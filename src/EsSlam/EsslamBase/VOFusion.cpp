@@ -2,11 +2,13 @@
 #include <base\bind.h>
 #include "load_calib.h"
 #include "../interface/slam_data.h"
+#include "Profiler.h"
 
 namespace esslam
 {
 	VOFusion::VOFusion()
 		:base::Thread("VOFusion"), m_visual_processor(NULL)
+		, m_fix_mode(false)
 	{
 		m_xforms.resize(2000);
 	}
@@ -40,6 +42,11 @@ namespace esslam
 		}
 
 		tracer.OnXform(m_xforms);
+	}
+
+	void VOFusion::SetFixMode()
+	{
+		m_fix_mode = true;
 	}
 
 	void VOFusion::Clear()
@@ -128,13 +135,17 @@ namespace esslam
 
 	void VOFusion::DoFusion(TriMeshPtr mesh, bool relocate)
 	{
-		if (m_octree->m_initialized)
+		//const trimesh::box3& box = mesh->bbox;
+		//std::cout << box.min << " "<<box.max << std::endl;
+		FUSION_TICK
+		if (!m_fix_mode && m_octree->m_initialized)
 		{
 			bool fm = Frame2Model(mesh, relocate);
 
 			if (!fm)
 			{
 				std::cout << "Frame 2 Model Failed." << std::endl;
+				FUSION_TICK
 				return;
 			}
 		}
@@ -177,8 +188,10 @@ namespace esslam
 		//std::cout << "Octree nodes " << m_octree->m_current_index <<
 		//	" points " << m_octree->m_current_point_index << std::endl;
 
+		//std::cout << "Fusion " << (int)vsize << std::endl;
 		if (m_visual_processor && new_num > 0)
 		{
+			//std::cout << "Append New Data " << new_num << std::endl;
 			NewAppendData* new_data = new NewAppendData();
 			new_data->position.resize(new_num);
 			new_data->normals.resize(new_num);
@@ -191,5 +204,7 @@ namespace esslam
 			}
 			m_visual_processor->OnAppendNewPoints(new_data);
 		}
+
+		FUSION_TICK
 	}
 }

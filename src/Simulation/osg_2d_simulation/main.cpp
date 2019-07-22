@@ -7,6 +7,7 @@
 #include <osgWrapper\FreetypeFontManager.h>
 #include <osgWrapper/ScreenDistanceIndicator.h>
 #include "ui.h"
+#include "quad.h"
 
 using namespace OSGWrapper;
 
@@ -109,7 +110,9 @@ osg::Node* CreateContent()
 int main(int argc, char* argv[])
 {
 	osg::ref_ptr<RenderView> view = new RenderView();
-	view->SetGlobalUI(new UI());
+	//view->SetGlobalUI(new UI());
+	UIRoot* root = view->GetUIRoot();
+	root->AddQuad(new Quad(), true);
 	osg::ref_ptr<RenderScene> scene = new RenderScene();
 	scene->addChild(CreateContent());
 

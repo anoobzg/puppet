@@ -61,7 +61,14 @@ namespace esslam
 			{
 				frame_data->distances.at(i) = mesh->vertices.at(i).x;
 			}
-			m_visual_tracer->OnFrameLocated(frame_data);
+
+			if (data->fix)
+			{
+				std::cout << "Fix Frame" << std::endl;
+				m_visual_tracer->OnFixFrame(frame_data);
+			}
+			else
+				m_visual_tracer->OnFrameLocated(frame_data);
 		}
 
 		delete data;

@@ -95,6 +95,7 @@ namespace esslam
 			icp_param.calib_file = "";
 			icp_param.use_fast = 0;
 			icp_param.least_frame_count = 50000;
+			icp_param.only_show_frame = 0;
 		}
 		else
 		{
@@ -102,6 +103,7 @@ namespace esslam
 				("icp_param.calib_file", value<std::string>(&icp_param.calib_file))
 				("icp_param.use_fast", value<int>(&icp_param.use_fast))
 				("icp_param.least_frame_count", value<int>(&icp_param.least_frame_count))
+				("icp_param.only_show_frame", value<int>(&icp_param.only_show_frame))
 				;
 		}
 	}
