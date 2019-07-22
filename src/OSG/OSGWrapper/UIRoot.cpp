@@ -38,7 +38,10 @@ namespace OSGWrapper
 
 	bool UIRoot::handleFrameEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
 	{
-		return true;
+		std::vector<osg::ref_ptr<UIQuad>>::iterator it = m_quads.begin();
+		for (; it != m_quads.end(); ++it)
+			(*it)->handleFrameEvent(ea, aa);
+		return false;
 	}
 
 	bool UIRoot::handleKeyEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
@@ -46,14 +49,61 @@ namespace OSGWrapper
 		return true;
 	}
 
+	void UIRoot::ProcessHover(float x, float y)
+	{
+		UIQuad* q = 0;
+		std::vector<osg::ref_ptr<UIQuad>>::iterator it = m_quads.begin();
+		for (; it != m_quads.end(); ++it)
+		{
+			bool hit = (*it)->HitTest(x, y);
+			if (hit)
+			{
+				q = (*it);
+				break;
+			}
+		}
+
+		if (m_hover_quad && q != m_hover_quad)
+			m_hover_quad->OnUnHover();
+		if (q != m_hover_quad)
+		{
+			m_hover_quad = q;
+			if (m_hover_quad) m_hover_quad->OnHover();
+		}
+	}
+
 	bool UIRoot::handleMouseEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
 	{
-		return true;
+		ProcessHover(ea.getX(), ea.getY());
+
+		osgGA::GUIEventAdapter::EventType type = ea.getEventType();
+		if (type == osgGA::GUIEventAdapter::RELEASE ||
+			type == osgGA::GUIEventAdapter::PUSH ||
+			type == osgGA::GUIEventAdapter::DRAG)
+		{
+			bool handled = false;
+
+			std::vector<osg::ref_ptr<UIQuad>>::iterator it = m_quads.begin();
+			for (; it != m_quads.end(); ++it)
+			{
+				handled = (*it)->handleMouseEvent(ea, aa);
+				if (handled) break;
+			}
+			return handled;
+		}
+		return false;
 	}
 
 	bool UIRoot::handleDoubleClickEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
 	{
-		return true;
+		bool handled = false;
+		std::vector<osg::ref_ptr<UIQuad>>::iterator it = m_quads.begin();
+		for (; it != m_quads.end(); ++it)
+		{
+			handled = (*it)->handleDoubleClickEvent(ea, aa);
+			if (handled) break;
+		}
+		return handled;
 	}
 
 	void UIRoot::AddQuad(UIQuad* quad, bool update)

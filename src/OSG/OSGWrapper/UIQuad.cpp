@@ -1,4 +1,5 @@
 #include <osgWrapper\UIQuad.h>
+#include <iostream>
 
 namespace OSGWrapper
 {
@@ -151,38 +152,45 @@ namespace OSGWrapper
 		return 0;
 	}
 
-	bool UIQuad::HitTest(float x, float y)
+	OSGWrapper::UIQuad* UIQuad::HitTest(float x, float y)
 	{
-		return false;
+		unsigned size = m_children_quads.size();
+		for (unsigned i = 0; i < size; ++i)
+		{
+			UIQuad* item = m_children_quads.at(i);
+			OSGWrapper::UIQuad* hit = item->HitTest(x, y);
+			if (hit) return hit;
+		}
+		return 0;
 	}
 
 	void UIQuad::OnDoubleClick()
 	{
-
+		std::cout << "OnDoubleClick." << std::endl;
 	}
 
 	void UIQuad::OnUnHover()
 	{
-
+		std::cout << "OnUnHover." << std::endl;
 	}
 
 	void UIQuad::OnHover()
 	{
-
+		std::cout << "OnHover." << std::endl;
 	}
 
 	void UIQuad::OnPushDown()
 	{
-
+		std::cout << "OnPushDown." << std::endl;
 	}
 
 	void UIQuad::OnPushUp()
 	{
-
+		std::cout << "OnPushUp." << std::endl;
 	}
 
 	void UIQuad::OnClick()
 	{
-
+		std::cout << "OnClick." << std::endl;
 	}
 }

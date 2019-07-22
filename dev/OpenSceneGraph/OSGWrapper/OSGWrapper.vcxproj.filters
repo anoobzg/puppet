@@ -132,6 +132,12 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIItem.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIQuad.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIRoot.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\MatrixDeltaAnimation.cpp">
@@ -225,6 +231,12 @@
       <Filter>2D</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIPanel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIQuad.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIRoot.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

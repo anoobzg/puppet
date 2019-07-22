@@ -177,6 +177,8 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\StateDeclare.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIItem.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIPanel.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIQuad.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIRoot.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UtilCreator.h" />
     <ClInclude Include="..\..\..\src\OSG\OSGWrapper\ProgramDef.h" />
     <ClInclude Include="..\..\..\src\OSG\OSGWrapper\ShaderString.h" />
@@ -212,6 +214,8 @@
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\SimpleRenderThread.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIItem.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIPanel.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIQuad.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIRoot.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UtilCreator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

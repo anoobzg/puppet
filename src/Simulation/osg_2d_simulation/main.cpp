@@ -8,6 +8,7 @@
 #include <osgWrapper/ScreenDistanceIndicator.h>
 #include "ui.h"
 #include "quad.h"
+#include "toolbar.h"
 
 using namespace OSGWrapper;
 
@@ -112,7 +113,10 @@ int main(int argc, char* argv[])
 	osg::ref_ptr<RenderView> view = new RenderView();
 	//view->SetGlobalUI(new UI());
 	UIRoot* root = view->GetUIRoot();
-	root->AddQuad(new Quad(), true);
+	ToolBar* t = new ToolBar();
+	//Quad* q = new Quad();
+	//q->SetRect(osg::Vec2f(50.0f, 50.0f), osg::Vec2f(300.0f, 300.0f));
+	root->AddQuad(t, true);
 	osg::ref_ptr<RenderScene> scene = new RenderScene();
 	scene->addChild(CreateContent());
 

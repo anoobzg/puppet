@@ -23,10 +23,15 @@ namespace OSGWrapper
 		void AddQuad(UIQuad* quad, bool update = false);
 		void RemoveQuad(UIQuad* quad, bool update = false);
 		void Rebuild();
+
+	protected:
+		void ProcessHover(float x, float y);
 	protected:
 		std::vector<osg::ref_ptr<UIQuad>> m_quads;
 
 		osg::ref_ptr<osg::Uniform> m_width;
 		osg::ref_ptr<osg::Uniform> m_height;
+
+		osg::ref_ptr<UIQuad> m_hover_quad;
 	};
 }

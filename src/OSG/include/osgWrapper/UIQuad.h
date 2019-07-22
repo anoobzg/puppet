@@ -20,6 +20,7 @@ namespace OSGWrapper
 
 	class OSG_EXPORT UIQuad : public osg::Referenced
 	{
+		friend class UIRoot;
 	public:
 		UIQuad();
 		virtual ~UIQuad();
@@ -34,7 +35,7 @@ namespace OSGWrapper
 		bool handleDoubleClickEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa);
 
 		virtual QuadAttributeUtilNode* Generate();
-		virtual bool HitTest(float x, float y);
+		virtual OSGWrapper::UIQuad* HitTest(float x, float y);
 	protected:
 		virtual void OnDoubleClick();
 		virtual void OnUnHover();
@@ -42,7 +43,7 @@ namespace OSGWrapper
 		virtual void OnPushDown();
 		virtual void OnPushUp();
 		virtual void OnClick();
-	private:
+	protected:
 		std::vector<osg::ref_ptr<UIQuad>> m_children_quads;
 		bool m_event_spread;
 
