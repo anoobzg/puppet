@@ -52,6 +52,9 @@ OSGWrapper::QuadAttributeUtilNode* Quad::Generate()
 
 OSGWrapper::UIQuad* Quad::HitTest(float x, float y)
 {
+	OSGWrapper::UIQuad* q = OSGWrapper::UIQuad::HitTest(x, y);
+	if (q) return q;
+
 	if (x >= m_offset.x() && x <= m_offset.x() + m_size.x() &&
 		y >= m_offset.y() && y <= m_offset.y() + m_size.y())
 		return this;

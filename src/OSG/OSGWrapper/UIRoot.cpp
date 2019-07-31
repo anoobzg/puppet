@@ -7,7 +7,7 @@ namespace OSGWrapper
 {
 	UIRoot::UIRoot()
 	{
-		getOrCreateStateSet()->setAttribute(ProgramManager::Instance().Get("screenui"), osg::StateAttribute::ON);
+		getOrCreateStateSet()->setAttribute(ProgramManager::Instance().Get("screenuit"), osg::StateAttribute::ON);
 		m_width = new osg::Uniform("viewport_width", 1920.0f);
 		m_height = new osg::Uniform("viewport_height", 1080.0f);
 
@@ -55,12 +55,9 @@ namespace OSGWrapper
 		std::vector<osg::ref_ptr<UIQuad>>::iterator it = m_quads.begin();
 		for (; it != m_quads.end(); ++it)
 		{
-			bool hit = (*it)->HitTest(x, y);
-			if (hit)
-			{
-				q = (*it);
+			q = (*it)->HitTest(x, y);
+			if (q)
 				break;
-			}
 		}
 
 		if (m_hover_quad && q != m_hover_quad)

@@ -138,6 +138,18 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIRoot.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\Quad.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\WrapperColor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\TextureManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UnionTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\MatrixDeltaAnimation.cpp">
@@ -237,6 +249,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIRoot.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\Quad.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\TextureManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UnionTexture.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

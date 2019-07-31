@@ -162,6 +162,7 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\OSGMathUtil.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\OSGWrapperExporter.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\ProgramManager.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\Quad.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\RenderScene.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\RenderService.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\RenderView.h" />
@@ -175,11 +176,14 @@
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\SimpleRenderThread.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\Singleton.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\StateDeclare.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\TextureManager.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIItem.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIPanel.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIQuad.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UIRoot.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UnionTexture.h" />
     <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\UtilCreator.h" />
+    <ClInclude Include="..\..\..\src\OSG\include\osgWrapper\WrapperColor.h" />
     <ClInclude Include="..\..\..\src\OSG\OSGWrapper\ProgramDef.h" />
     <ClInclude Include="..\..\..\src\OSG\OSGWrapper\ShaderString.h" />
   </ItemGroup>
@@ -203,6 +207,7 @@
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\MatrixDeltaAnimation.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\OSGMathUtil.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ProgramManager.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\Quad.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\RenderScene.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\RenderService.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\RenderView.cpp" />
@@ -212,10 +217,12 @@
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenQuad.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\ScreenSingleText.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\SimpleRenderThread.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\TextureManager.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIItem.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIPanel.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIQuad.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UIRoot.cpp" />
+    <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UnionTexture.cpp" />
     <ClCompile Include="..\..\..\src\OSG\OSGWrapper\UtilCreator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

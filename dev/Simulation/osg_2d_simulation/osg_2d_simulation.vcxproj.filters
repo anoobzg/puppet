@@ -26,6 +26,9 @@
     <ClCompile Include="..\..\..\src\Simulation\osg_2d_simulation\toolbar.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\osg_2d_simulation\esbutton.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\osg_2d_simulation\ui.h">
@@ -38,6 +41,9 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\Simulation\osg_2d_simulation\toolbar.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\osg_2d_simulation\esbutton.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

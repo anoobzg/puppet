@@ -89,8 +89,19 @@ namespace OSGWrapper
 	{
 		osg::Vec2Array* coord_array = CREATE_UNIT_ARRAY;
 		osg::Vec2Array* tex_array = CREATE_UNIT_ARRAY;
+		osg::Vec4Array* color_array = CREATE_COLOR_ARRAY;
 		osg::DrawArrays* quad = new osg::DrawArrays(GL_QUADS, 0, 4);
-		osg::Geometry* geometry = OSGWrapper::GeometryCreator::CreateIndexAttributeGeometry(quad, coord_array, tex_array);
+		osg::Geometry* geometry = OSGWrapper::GeometryCreator::CreateIndexAttributeGeometry(quad, coord_array, tex_array, color_array);
 		return geometry;
+	}
+
+	osg::Vec4Array* UtilCreator::CreateUnitColorArray()
+	{
+		osg::Vec4Array* color_array = new osg::Vec4Array();
+		color_array->push_back(osg::Vec4(1.0f, 1.0f, 1.0f, 1.0f));
+		color_array->push_back(osg::Vec4(1.0f, 1.0f, 1.0f, 1.0f));
+		color_array->push_back(osg::Vec4(1.0f, 1.0f, 1.0f, 1.0f));
+		color_array->push_back(osg::Vec4(1.0f, 1.0f, 1.0f, 1.0f));
+		return color_array;
 	}
 }

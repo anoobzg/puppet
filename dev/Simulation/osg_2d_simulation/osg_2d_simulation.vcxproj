@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\Simulation\osg_2d_simulation\button.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\osg_2d_simulation\esbutton.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\osg_2d_simulation\main.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\osg_2d_simulation\quad.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\osg_2d_simulation\toolbar.cpp" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\osg_2d_simulation\button.h" />
+    <ClInclude Include="..\..\..\src\Simulation\osg_2d_simulation\esbutton.h" />
     <ClInclude Include="..\..\..\src\Simulation\osg_2d_simulation\quad.h" />
     <ClInclude Include="..\..\..\src\Simulation\osg_2d_simulation\toolbar.h" />
     <ClInclude Include="..\..\..\src\Simulation\osg_2d_simulation\ui.h" />
