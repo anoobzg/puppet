@@ -6,6 +6,7 @@ namespace string_util
 {
 
 	CSVWriter::CSVWriter()
+	:m_index(0)
 	{
 
 	}
@@ -41,12 +42,37 @@ namespace string_util
 		float t = now() - m_start_time;
 		m_values.push_back((double)t);
 	}
+	
+	void CSVWriter::Start(timestamp* time)
+	{
+		m_index = 0;
+		m_flag_time = now();
+		if (time) m_flag_time = *time;
+	}
 
+	void CSVWriter::Tick()
+	{
+		static int i = 0;
+		if (i % 2 == 0)
+		{
+			m_values.push_back((double)m_index);
+			++m_index;
+		}
+		++i;
+
+		float t = now() - m_flag_time;
+		m_values.push_back((double)t);
+	}
 	void CSVWriter::Output(const std::string& file)
 	{
 		size_t head_size = m_headers.size();
 		size_t value_size = m_values.size();
-		if ((head_size == 0) || (value_size == 0) || (value_size % head_size != 0))
+		if ((head_size == 0) || (value_size == 0))
+		{
+			std::cout << "nothing need save." << std::endl;
+			return;
+		}
+		if ((value_size % head_size != 0))
 		{
 			std::cout << "head and value size error." << std::endl;
 			return;

@@ -33,7 +33,7 @@ namespace OSGWrapper
 		}
 	}
 
-	UnionTexture* D2TextureManager::Get(const std::string& name, UnionCoord*& coord)
+	UnionTexture* D2TextureManager::Get(const std::string& name, UnionCoord*& coord, bool only_one)
 	{
 		UnionTexture* texture = 0;
 		size_t size = m_textures.size();
@@ -53,6 +53,7 @@ namespace OSGWrapper
 		UnionTexture* t = new UnionTexture();
 		t->AddTexture(name, coord);
 		m_textures.push_back(t);
+		if (only_one) t->SetFull(true);
 		return t;
 	}
 }

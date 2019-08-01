@@ -1,5 +1,6 @@
 #include <osgWrapper/Quad.h>
 #include <osgWrapper\UtilCreator.h>
+#include <osgWrapper\TextureManager.h>
 
 namespace OSGWrapper
 {
@@ -62,6 +63,24 @@ namespace OSGWrapper
 		}
 	}
 
+	void Quad::SetTexCoord(UnionCoord* coord)
+	{
+		if (!coord) return;
+
+		osg::Vec2Array* coord_array = dynamic_cast<osg::Vec2Array*>(m_geometry->getVertexAttribArray(1));
+		if (coord_array)
+		{
+			osg::Vec2 dmin = coord->dmin;
+			osg::Vec2 dmax = coord->dmax;
+
+			coord_array->at(0) = dmin;
+			coord_array->at(1) = osg::Vec2f(dmax.x(), dmin.y());
+			coord_array->at(2) = dmax;
+			coord_array->at(3) = osg::Vec2f(dmin.x(), dmax.y());
+			coord_array->dirty();
+		}
+	}
+
 	OSGWrapper::QuadAttributeUtilNode* Quad::Generate()
 	{
 		return m_node;
@@ -88,5 +107,10 @@ namespace OSGWrapper
 	void Quad::SetTexture(const char* name)
 	{
 
+	}
+
+	void Quad::SetTexture(osg::Texture2D* tex)
+	{
+		m_node->SetTextureAttribute(0, tex);
 	}
 }

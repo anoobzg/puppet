@@ -3,7 +3,7 @@
 
 namespace OSGWrapper
 {
-
+	struct UnionCoord;
 	class OSG_EXPORT Quad : public OSGWrapper::UIQuad
 	{
 	public:
@@ -19,6 +19,8 @@ namespace OSGWrapper
 		OSGWrapper::UIQuad* HitTest(float x, float y);
 		void SetUseTexture(bool use);
 		void SetTexture(const char* name);
+		void SetTexture(osg::Texture2D* tex);
+		void SetTexCoord(UnionCoord* coord);
 	protected:
 		void UpdateGeometry();
 	private:

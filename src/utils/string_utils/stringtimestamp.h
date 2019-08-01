@@ -1,5 +1,5 @@
-#ifndef TIMESTAMP_H
-#define TIMESTAMP_H
+#ifndef UTIL_TIMESTAMP_H
+#define UTIL_TIMESTAMP_H
 /*
 Szymon Rusinkiewicz
 Princeton University
@@ -90,4 +90,4 @@ static inline timestamp now()
 
 } // namespace trimesh
 
-#endif
+#endif //

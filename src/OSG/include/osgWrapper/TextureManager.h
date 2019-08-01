@@ -14,7 +14,7 @@ namespace OSGWrapper
 		static void Setup();
 		static void Release();
 
-		UnionTexture* Get(const std::string& name, UnionCoord*& coord);
+		UnionTexture* Get(const std::string& name, UnionCoord*& coord, bool only_one = false);
 	private:
 		static D2TextureManager* m_d2_texture_manager;
 

@@ -13,6 +13,7 @@ namespace OSGWrapper
 
 		getOrCreateStateSet()->addUniform(m_width, osg::StateAttribute::ON);
 		getOrCreateStateSet()->addUniform(m_height, osg::StateAttribute::ON);
+		getOrCreateStateSet()->addUniform(new osg::Uniform("texture", 0), osg::StateAttribute::ON);
 		getOrCreateStateSet()->setMode(GL_DEPTH_TEST, osg::StateAttribute::OFF);
 		getOrCreateStateSet()->setMode(GL_BLEND, osg::StateAttribute::ON);
 
