@@ -8,6 +8,7 @@ namespace OSGWrapper
 	{
 		setFilter(osg::Texture::MIN_FILTER, osg::Texture::NEAREST);
 		setFilter(osg::Texture::MAG_FILTER, osg::Texture::NEAREST);
+		setResizeNonPowerOfTwoHint(false);
 	}
 
 	UnionTexture::~UnionTexture()

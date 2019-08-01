@@ -13,11 +13,13 @@ Scene::Scene(osg::Geometry* geometry, osg::Texture* texture)
 	m_manipulator = new OSGWrapper::Manipulator(*m_manipulable_node);
 	
 	m_render_node = new OSGWrapper::AttributeUtilNode();
-	m_render_node->SetRenderProgram("phongtexture");
+	m_render_node->SetRenderProgram("pointphong430");
 	m_render_node->SetTextureAttribute(0, texture);
 	m_render_node->AddUniform(new osg::Uniform("tex", 0));
 	m_manipulable_node->AddChild(m_render_node);
 	m_render_node->AddChild(geometry);
+
+	addChild(m_manipulable_node);
 	UpdateCamera();
 }
 

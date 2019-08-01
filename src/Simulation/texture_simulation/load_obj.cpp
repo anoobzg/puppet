@@ -4,8 +4,43 @@
 #include <fstream>
 #include <iostream>
 
+#include<vcg/complex/complex.h>
+#include<wrap/io_trimesh/import_obj.h>
+
+class MyVertex; class MyEdge; class MyFace;
+struct MyUsedTypes : public vcg::UsedTypes<vcg::Use<MyVertex>   ::AsVertexType,
+	vcg::Use<MyEdge>     ::AsEdgeType,
+	vcg::Use<MyFace>     ::AsFaceType> {};
+
+class MyVertex : public vcg::Vertex< MyUsedTypes, vcg::vertex::Coord3f, vcg::vertex::Normal3f, vcg::vertex::BitFlags  > {};
+class MyFace : public vcg::Face<   MyUsedTypes, vcg::face::FFAdj, vcg::face::VertexRef, vcg::face::BitFlags > {};
+class MyEdge : public vcg::Edge<   MyUsedTypes> {};
+
+class MyMesh : public vcg::tri::TriMesh< std::vector<MyVertex>, std::vector<MyFace>, std::vector<MyEdge>  > {};
+
+class MyVertex0 : public vcg::Vertex< MyUsedTypes, vcg::vertex::Coord3f, vcg::vertex::BitFlags  > {};
+class MyVertex1 : public vcg::Vertex< MyUsedTypes, vcg::vertex::Coord3f, vcg::vertex::Normal3f, vcg::vertex::BitFlags  > {};
+class MyVertex2 : public vcg::Vertex< MyUsedTypes, vcg::vertex::Coord3f, vcg::vertex::Color4b, vcg::vertex::CurvatureDirf,
+	vcg::vertex::Qualityf, vcg::vertex::Normal3f, vcg::vertex::BitFlags  > {};
+
+osg::Geometry* LoadFromVCG(const std::string& file)
+{
+	MyMesh m;
+
+	int load_mask = 0;
+	if (vcg::tri::io::ImporterOBJ<MyMesh>::Open(m, file.c_str(), load_mask, NULL) >= vcg::tri::io::ImporterOBJ<MyMesh>::E_CANTOPEN)
+	{
+		printf("Error reading file  %s\n", file.c_str());
+		return 0;
+	}
+
+	return 0;
+}
+
 osg::Geometry* LoadObj(const std::string& file)
 {
+	return LoadFromVCG(file);
+
 	std::fstream in(file.c_str(), std::ios::in);
 	if (!in.good()) return 0;
 
@@ -45,10 +80,11 @@ osg::Geometry* LoadObj(const std::string& file)
 				std::cout << "error face." << std::endl;
 
 			temp_primitive.push_back(osg::Vec3i(v1[0], v2[0], v3[0]));
-			temp_primitive_texcoord.push_back(osg::Vec3i(v1[0], v2[0], v3[0]));
+			temp_primitive_texcoord.push_back(osg::Vec3i(v1[1], v2[1], v3[1]));
 		}
 	}
 
+	size_t tsize = temp_coord.size();
 	if (temp_coord.size() == 0) return 0;
 	if (temp_texcoord.size() == 0) return 0;
 
@@ -57,39 +93,57 @@ osg::Geometry* LoadObj(const std::string& file)
 	osg::Vec3Array* coord_array = new osg::Vec3Array();
 	osg::Vec3Array* normal_array = new osg::Vec3Array();
 	osg::Vec2Array* texcoord_array = new osg::Vec2Array();
-	coord_array->resize(size);
-	normal_array->resize(size);
-	texcoord_array->resize(size);
+	coord_array->resize(tsize);
+	normal_array->resize(tsize);
+	texcoord_array->resize(tsize);
+	osg::DrawElementsUInt* primitive_set = new osg::DrawElementsUInt(GL_POINTS);
 
-	std::vector<bool> setted(size, false);
-	osg::DrawElementsUInt* primitive_set = new osg::DrawElementsUInt(GL_TRIANGLES);
-	primitive_set->reserve(3 * temp_primitive.size());
-	size_t psize = temp_primitive.size();
-	for (size_t i = 0; i < size; ++i)
-		texcoord_array->at(i) = temp_texcoord.at(i);
-	
-	for (size_t i = 0; i < psize; ++i)
+	for (size_t i = 0; i < tsize; ++i)
 	{
-		const osg::Vec3i& tcprimitive = temp_primitive_texcoord.at(i);
-		const osg::Vec3i& tprimitive = temp_primitive.at(i);
-
-		primitive_set->push_back(tcprimitive.x());
-		primitive_set->push_back(tcprimitive.y());
-		primitive_set->push_back(tcprimitive.z());
-
-		for (int j = 0; j < 3; ++j)
-		{
-			int index1 = tcprimitive[j];
-			int index2 = tprimitive[j];
-
-			if (!setted[index1] && index2 < temp_coord.size())
-			{
-				coord_array->at(index1) = temp_coord.at(index2);
-				normal_array->at(index1) = temp_normal.at(index2);
-				setted[index1] = true;
-			}
-		}
+		coord_array->at(i) = temp_coord.at(i);
+		normal_array->at(i) = temp_normal.at(i);
 	}
+
+	//std::vector<bool> setted(size, false);
+	primitive_set->reserve(3 * temp_primitive.size());
+	for (size_t i = 0; i < tsize; ++i)
+	{
+		//const osg::Vec3i& vec = temp_primitive.at(i);
+		//if (vec.x() < tsize && vec.y() < tsize && vec.z() < tsize)
+		//{
+		//	primitive_set->push_back(vec.x());
+		//	primitive_set->push_back(vec.y());
+		//	primitive_set->push_back(vec.z());
+		//}
+		primitive_set->push_back((int)i);
+	}
+	
+	//size_t psize = temp_primitive.size();
+	//for (size_t i = 0; i < size; ++i)
+	//	texcoord_array->at(i) = temp_texcoord.at(i);
+	//
+	//for (size_t i = 0; i < psize; ++i)
+	//{
+	//	const osg::Vec3i& tcprimitive = temp_primitive_texcoord.at(i);
+	//	const osg::Vec3i& tprimitive = temp_primitive.at(i);
+	//
+	//	primitive_set->push_back(tcprimitive.x());
+	//	primitive_set->push_back(tcprimitive.y());
+	//	primitive_set->push_back(tcprimitive.z());
+	//
+	//	for (int j = 0; j < 3; ++j)
+	//	{
+	//		int index1 = tcprimitive[j];
+	//		int index2 = tprimitive[j];
+	//
+	//		if (!setted[index1] && index2 < temp_coord.size())
+	//		{
+	//			coord_array->at(index1) = temp_coord.at(index2);
+	//			normal_array->at(index1) = temp_normal.at(index2);
+	//			setted[index1] = true;
+	//		}
+	//	}
+	//}
 
 	osg::Geometry* geometry = OSGWrapper::GeometryCreator::CreateIndexAttributeGeometry(primitive_set, coord_array, normal_array, texcoord_array);
 	return geometry;

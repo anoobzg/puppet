@@ -89,12 +89,12 @@ struct BMPHeader {
  * Windows v3 header
  */
 enum BMPCOMPRESSION {
-    XX_BI_RGB = 0,
-    XX_BI_RLE8,
-    XX_BI_RLE4,
-    XX_BI_BITFIELDS,
-    XX_BI_JPEG,
-    XX_BI_PNG
+    BI_RGB = 0,
+    BI_RLE8,
+    BI_RLE4,
+    BI_BITFIELDS,
+    BI_JPEG,
+    BI_PNG
 };
 struct XXBITMAPINFOHEADER {
     //unsigned int hdrSize;
