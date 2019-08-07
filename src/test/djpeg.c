@@ -602,6 +602,7 @@ main (int argc, char **argv)
   progress.pub.completed_passes = progress.pub.total_passes;
 #endif
 
+  string_util::timestamp t2 = string_util::now();
   /* Finish decompression and release memory.
    * I must do it in this order because output module has allocated memory
    * of lifespan JPOOL_IMAGE; it needs to finish before releasing memory.
@@ -610,8 +611,8 @@ main (int argc, char **argv)
   (void) jpeg_finish_decompress(&cinfo);
   jpeg_destroy_decompress(&cinfo);
 
-  string_util::timestamp t2 = string_util::now();
-  printf("time %f", t2 - t1);
+  string_util::timestamp t3 = string_util::now();
+  printf("decompress %f, save %f", t2 - t1, t3 - t2);
 
   /* Close files, if we opened them */
   if (input_file != stdin)
