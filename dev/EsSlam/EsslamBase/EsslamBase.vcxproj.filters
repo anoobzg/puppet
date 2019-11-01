@@ -173,5 +173,20 @@
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TData.cpp">
       <Filter>T</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\Profiler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\VOFusion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\VOLocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TLocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TFusioner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

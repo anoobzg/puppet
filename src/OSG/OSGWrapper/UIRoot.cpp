@@ -47,7 +47,7 @@ namespace OSGWrapper
 
 	bool UIRoot::handleKeyEvent(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdapter& aa)
 	{
-		return true;
+		return false;
 	}
 
 	void UIRoot::ProcessHover(float x, float y)

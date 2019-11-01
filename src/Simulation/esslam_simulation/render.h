@@ -13,6 +13,7 @@ public:
 	void OnFrame(esslam::PatchRenderData* data);
 	void OnFrameLocated(esslam::FrameData* data);
 	void OnNewPoints(esslam::NewAppendData* data);
+	void OnFixFrame(esslam::FrameData* data);
 
 	void StartRender();
 	void StopRender();

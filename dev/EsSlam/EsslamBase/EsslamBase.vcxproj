@@ -176,6 +176,7 @@
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\Octree.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\OctreeChunk.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\OctreeIndex.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\Profiler.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\ProjectionicpTracerImpl.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\BaseEsslam.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\Reader.cpp" />
@@ -184,10 +185,14 @@
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\SlamVo.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TData.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TEsslam.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TFusioner.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TLocator.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TProcessor.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TReader.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\TVisual.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\VOFusion.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\VoImpl.cpp" />
+    <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\VOLocator.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\VoProfilerImpl.cpp" />
     <ClCompile Include="..\..\..\src\EsSlam\EsslamBase\VoState.cpp" />
   </ItemGroup>

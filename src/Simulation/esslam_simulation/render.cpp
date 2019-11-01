@@ -36,6 +36,11 @@ void Render::OnNewPoints(esslam::NewAppendData* data)
 	task_runner()->PostTask(FROM_HERE, base::Bind(&Render::AppendNewPoints, base::Unretained(this), data));
 }
 
+void Render::OnFixFrame(esslam::FrameData* data)
+{
+
+}
+
 void Render::ShowCurrentFrame(esslam::FrameData* data)
 {
 	osg::Array* coord_array = CreateTrimeshArray(data->position);

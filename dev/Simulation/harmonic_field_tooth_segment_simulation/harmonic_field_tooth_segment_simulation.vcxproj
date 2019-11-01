@@ -76,6 +76,7 @@
     <Import Project="..\..\Geometry\Geometry\Geometry.props" />
     <Import Project="..\..\BOOST\BOOST.props" />
     <Import Project="..\..\Eigen\EIGEN.props" />
+    <Import Project="..\..\CGAL\CGAL.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
