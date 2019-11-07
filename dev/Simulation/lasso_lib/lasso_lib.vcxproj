@@ -141,20 +141,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\src\Simulation\lasso_lib\copyoperation.h" />
+    <ClInclude Include="..\..\..\src\Simulation\lasso_lib\deletealloperation.h" />
+    <ClInclude Include="..\..\..\src\Simulation\lasso_lib\deleteoperation.h" />
+    <ClInclude Include="..\..\..\src\Simulation\lasso_lib\eraseoperation.h" />
     <ClInclude Include="..\..\..\src\Simulation\lasso_lib\feedgeometry.h" />
+    <ClInclude Include="..\..\..\src\Simulation\lasso_lib\flipoperation.h" />
     <ClInclude Include="..\..\..\src\Simulation\lasso_lib\lassonode.h" />
     <ClInclude Include="..\..\..\src\Simulation\lasso_lib\lassoscene.h" />
     <ClInclude Include="..\..\..\src\Simulation\lasso_lib\operation.h" />
+    <ClInclude Include="..\..\..\src\Simulation\lasso_lib\quaderaseoperation.h" />
+    <ClInclude Include="..\..\..\src\Simulation\lasso_lib\reserveoperation.h" />
     <ClInclude Include="..\..\..\src\Simulation\lasso_lib\selectalloperation.h" />
     <ClInclude Include="..\..\..\src\Simulation\lasso_lib\trackballcenter.h" />
+    <ClInclude Include="..\..\..\src\Simulation\lasso_lib\triangleoperation.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\Simulation\lasso_lib\copyoperation.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\lasso_lib\deletealloperation.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\lasso_lib\deleteoperation.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\lasso_lib\eraseoperation.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\lasso_lib\feedgeometry.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\lasso_lib\flipoperation.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\lasso_lib\lassonode.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\lasso_lib\lassoscene.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\lasso_lib\operation.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\lasso_lib\quaderaseoperation.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\lasso_lib\reserveoperation.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\lasso_lib\selectalloperation.cpp" />
     <ClCompile Include="..\..\..\src\Simulation\lasso_lib\trackballcenter.cpp" />
+    <ClCompile Include="..\..\..\src\Simulation\lasso_lib\triangleoperation.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

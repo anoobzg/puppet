@@ -16,7 +16,7 @@ LassoScene::LassoScene()
 	m_render_node = new OSGWrapper::AttributeUtilNode();
 	m_render_node->SetRenderProgram("lasso");
 	//m_render_node->SetMode(GL_BLEND, state_on);
-	m_render_node->SetAttribute(new osg::Point(3.0f));
+	m_render_node->SetAttribute(new osg::Point(1.0f));
 
 	m_lasso_node = new LassoNode();
 	m_manipulable_node->AddChild(m_render_node);
@@ -163,7 +163,7 @@ void LassoScene::EnterCircleEraseMode()
 {
 	if (m_lasso_type == elasso_circle) return;
 	EnterOutCurrentMode(false);
-	m_lasso_type == elasso_circle;
+	m_lasso_type = elasso_circle;
 	EnterOutCurrentMode(true);
 }
 
@@ -171,7 +171,7 @@ void LassoScene::EnterQuadEraseMode()
 {
 	if (m_lasso_type == elasso_quad) return;
 	EnterOutCurrentMode(false);
-	m_lasso_type == elasso_quad;
+	m_lasso_type = elasso_quad;
 	EnterOutCurrentMode(true);
 }
 
@@ -179,14 +179,14 @@ void LassoScene::EnterFreeEraseMode()
 {
 	if (m_lasso_type == elasso_free) return;
 	EnterOutCurrentMode(false);
-	m_lasso_type == elasso_free;
+	m_lasso_type = elasso_free;
 	EnterOutCurrentMode(true);
 }
 
 void LassoScene::EnterNoneMode()
 {
 	EnterOutCurrentMode(false);
-	m_lasso_type == elasso_none;
+	m_lasso_type = elasso_none;
 }
 
 void LassoScene::Delete()

@@ -29,6 +29,8 @@ void Convert(Mesh& mesh, osg::Vec3Array*& coord_array, osg::Vec3Array*& normal_a
 			on.x() = *n++; on.y() = *n++; on.z() = *n++;
 		}
 	}
+
+	std::cout << "Total count : " << vertex_num << std::endl;
 }
 
 int main(int argc, char* argv[])

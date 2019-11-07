@@ -4,4 +4,8 @@
     <LocalDebuggerCommandArguments>D:\Data\simulation\data\2.ply D:\Data\simulation\data\24.ply D:\Data\simulation\data\capture\KK_left_pr</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LocalDebuggerCommandArguments>D:\Data\simulation\data\2.ply D:\Data\simulation\data\24.ply D:\Data\simulation\data\capture\KK_left_pr</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>
