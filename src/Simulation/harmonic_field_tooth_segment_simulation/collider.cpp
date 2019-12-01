@@ -76,3 +76,12 @@ bool Collider::QueryVertex(float* ray_position, float* ray_direction, float x, f
 	}
 	return result;
 }
+
+osg::Vec3f Collider::GetVertex(unsigned handle)
+{
+	Mesh& mesh = m_mesh_segmentor.m_mesh;
+
+	float* v0 = mesh.vertex_position + 3 * handle;
+	osg::Vec3f p(*v0, *(v0 + 1), *(v0 + 2));
+	return p;
+}

@@ -6,6 +6,8 @@
 #include <osgWrapper\GeometryCreator.h>
 
 #include "mesh_segmentor.h"
+#include <osgWrapper/MatrixAnimation.h>
+#include "scaleanimation.h"
 HarmonicFieldToothSegmentScene::HarmonicFieldToothSegmentScene(MeshSegmentor& segmentor, RenderView* view, const std::string& file_name)
 	:m_mesh_segmentor(segmentor)
 {
@@ -36,6 +38,9 @@ HarmonicFieldToothSegmentScene::HarmonicFieldToothSegmentScene(MeshSegmentor& se
 	ResetCamera();
 
 	if (!file_name.empty()) SegFromFile(file_name.c_str());
+
+	m_scheduler = new OSGWrapper::AnimationScheduler();
+	m_manipulable_node->setUpdateCallback(m_scheduler);
 }
 
 HarmonicFieldToothSegmentScene::~HarmonicFieldToothSegmentScene()
@@ -92,7 +97,49 @@ bool HarmonicFieldToothSegmentScene::OnKey(const osgGA::GUIEventAdapter& ea, osg
 		SegFromFile_R("info2.bin");
 	if (KEY_DOWN(ea, osgGA::GUIEventAdapter::KEY_T))
 		m_mesh_segmentor.WritePatchControlPoint();
+	if (KEY_DOWN(ea, osgGA::GUIEventAdapter::KEY_S))
+		ScaleCenter(ea);
 	return true;
+}
+
+void HarmonicFieldToothSegmentScene::ScaleCenter(const osgGA::GUIEventAdapter& ea)
+{
+	unsigned vertex_handle = -1;
+	m_collider->QueryVertex(ea.getX(), ea.getY(), 0, vertex_handle);
+	if (vertex_handle >= 0 && vertex_handle != -1)
+	{
+		osg::Vec3f p = m_collider->GetVertex(vertex_handle);
+		osg::Vec3f center = m_manipulable_node->getBound().center();
+		osg::Matrix m = m_manipulable_node->GetLocalMatrix();
+		osg::Vec3f pp = p * m;
+		osg::Vec3f cc = center * m;
+		osg::Matrix d = osg::Matrix::translate(pp - cc);
+		osg::Matrix rd = osg::Matrix::translate(cc - pp);
+
+
+		float time = 0.0f;
+		if (m_render_view) time = (float)m_render_view->getFrameStamp()->getSimulationTime();
+		ScaleAnimation* ani = new ScaleAnimation(*m_manipulable_node);
+
+		osg::BoundingSphere sphere = m_manipulable_node->getBound();
+
+		osg::Vec3 shpere_center = sphere.center();
+
+
+		osg::Matrix local_matrix = osg::Matrix::translate(-pp)/* * osg::Matrix::scale(1.4f, 1.4f, 1.4f) * osg::Matrix::translate(pp)*/;
+		osg::Matrix final_matrix = local_matrix * m;
+
+		osg::Vec3f ocenter = pp;
+		final_matrix = m * osg::Matrixf::translate(-ocenter) *
+			osg::Matrixf::scale(1.4f, 1.4f, 1.4f) * osg::Matrixf::translate(ocenter);
+
+		//ani->SetMatrix(final_matrix);
+		ani->SetCenter(pp);
+		m_scheduler->Clear();
+		m_scheduler->StartAnimation(ani, (double)time);
+		//m_manipulable_node->SetMatrix(final_matrix);
+		std::cout << "Scale" << std::endl;
+	}
 }
 
 void HarmonicFieldToothSegmentScene::ShowMesh(Mesh& mesh)

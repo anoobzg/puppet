@@ -42,6 +42,9 @@
     <ClCompile Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\control_group_geode.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\scaleanimation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\harmonic_caculator.h">
@@ -72,6 +75,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\export.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\scaleanimation.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

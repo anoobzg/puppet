@@ -10,6 +10,7 @@
 #include "harmonic_geode.h"
 #include "scene_logic_interface.h"
 #include "collider.h"
+#include <osgWrapper/AnimationScheduler.h>
 
 using namespace OSGWrapper;
 class MeshSegmentor;
@@ -34,6 +35,7 @@ protected:
 	void SegFromFile(const char* file);
 	void SegFromPatchesFile(const char* file);
 	void SegFromFile_R(const char* file);
+	void ScaleCenter(const osgGA::GUIEventAdapter& ea);
 private:
 	MeshSegmentor& m_mesh_segmentor;
 
@@ -46,4 +48,6 @@ private:
 	osg::ref_ptr<HarmonicGeode> m_harmonic_geode;
 
 	std::auto_ptr<Collider> m_collider;
+
+	osg::ref_ptr<OSGWrapper::AnimationScheduler> m_scheduler;
 };

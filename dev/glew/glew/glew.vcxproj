@@ -20,36 +20,36 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{6dc68715-f4b7-4f65-8f6d-ab09dcd2c99c}</ProjectGuid>
-    <RootNamespace>harmonic_field_tooth_segment_simulation</RootNamespace>
+    <ProjectGuid>{eb940c74-ec08-42cb-99d6-a6221fa43e15}</ProjectGuid>
+    <RootNamespace>glew</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -64,19 +64,9 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\OpenSceneGraph\OSG.props" />
-    <Import Project="..\..\Geometry\Geometry\Geometry.props" />
-    <Import Project="..\..\CGAL\CGAL.props" />
-    <Import Project="..\..\BOOST\BOOST.props" />
-    <Import Project="..\..\Eigen\EIGEN.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\OpenSceneGraph\OSG.props" />
-    <Import Project="..\..\Geometry\Geometry\Geometry.props" />
-    <Import Project="..\..\BOOST\BOOST.props" />
-    <Import Project="..\..\Eigen\EIGEN.props" />
-    <Import Project="..\..\CGAL\CGAL.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -104,14 +94,14 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DisableSpecificWarnings>4267;4819;4244;4251;</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../src/glew/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDLL;GLEW_BUILD;WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>CGAL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -137,8 +127,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DisableSpecificWarnings>4267;4819;4244;4251;</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../src/glew/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDLL;GLEW_BUILD;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,34 +137,17 @@
       <ImportLibrary>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\lib\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
-      <AdditionalDependencies>CGAL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\collider.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\control_ball.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\control_group_geode.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\harmonic_caculator.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\harmonic_field_tooth_segment_scene.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\harmonic_geode.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\main.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\mesh_segmentor.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\scaleanimation.cpp" />
-    <ClCompile Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\scene_logic_interface.cpp" />
+    <ClInclude Include="..\..\..\src\glew\include\GL\eglew.h" />
+    <ClInclude Include="..\..\..\src\glew\include\GL\glew.h" />
+    <ClInclude Include="..\..\..\src\glew\include\GL\glxew.h" />
+    <ClInclude Include="..\..\..\src\glew\include\GL\wglew.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\collider.h" />
-    <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\control_ball.h" />
-    <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\control_group_geode.h" />
-    <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\export.h" />
-    <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\harmonic_caculator.h" />
-    <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\harmonic_field_tooth_segment_scene.h" />
-    <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\harmonic_geode.h" />
-    <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\harmonic_polygon_header.h" />
-    <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\mesh_segmentor.h" />
-    <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\scaleanimation.h" />
-    <ClInclude Include="..\..\..\src\Simulation\harmonic_field_tooth_segment_simulation\scene_logic_interface.h" />
+    <ClCompile Include="..\..\..\src\glew\src\glew.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
