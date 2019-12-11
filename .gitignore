@@ -32,3 +32,5 @@ dev/python/.vs/
 dev/EsSlam/.vs/
 dev/Lua/.vs/
 dev/glew/.vs/
+dev/PCL/.vs/
+dev/poisson/.vs/

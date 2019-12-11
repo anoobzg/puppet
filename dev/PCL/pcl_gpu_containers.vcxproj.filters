@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\src\extern\PCL\src\gpu\containers\src\device_memory.cpp" />
+    <ClCompile Include="..\..\src\extern\PCL\src\gpu\containers\src\error.cpp" />
+    <ClCompile Include="..\..\src\extern\PCL\src\gpu\containers\src\initialization.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{89f5e1b7-3a1d-4dbe-b42e-935637fc44cd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\extern\PCL\include\gpu\containers\include\pcl\gpu\containers\device_array.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\PCL\include\gpu\containers\include\pcl\gpu\containers\device_memory.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\PCL\include\gpu\containers\include\pcl\gpu\containers\initialization.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\PCL\include\gpu\containers\include\pcl\gpu\containers\kernel_containers.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\PCL\include\gpu\containers\include\pcl\gpu\containers\impl\device_array.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\PCL\include\gpu\containers\include\pcl\gpu\containers\impl\device_memory.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

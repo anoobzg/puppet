@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="utils">
+      <UniqueIdentifier>{b308541c-706f-40d2-bf12-b100017725d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cuda">
+      <UniqueIdentifier>{1f5199c6-8675-4567-ab1c-38ee04600a8b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\extern\PCL\src\gpu\octree\src\utils\bitonic_sort.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\PCL\src\gpu\octree\src\utils\boxutils.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\PCL\src\gpu\octree\src\utils\copygen.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\PCL\src\gpu\octree\src\utils\emulation.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\PCL\src\gpu\octree\src\utils\morton.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\PCL\src\gpu\octree\src\utils\priority_octree_iterator.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\PCL\src\gpu\octree\src\utils\scan_block.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\PCL\src\gpu\octree\src\utils\warp_reduce.hpp">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\extern\PCL\src\gpu\octree\src\cuda\octree_iterator.hpp">
+      <Filter>cuda</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\extern\PCL\src\gpu\octree\src\cuda\approx_nsearch.cu">
+      <Filter>cuda</Filter>
+    </None>
+    <None Include="..\..\src\extern\PCL\src\gpu\octree\src\cuda\bfrs.cu">
+      <Filter>cuda</Filter>
+    </None>
+    <None Include="..\..\src\extern\PCL\src\gpu\octree\src\cuda\knn_search.cu">
+      <Filter>cuda</Filter>
+    </None>
+    <None Include="..\..\src\extern\PCL\src\gpu\octree\src\cuda\octree_builder.cu">
+      <Filter>cuda</Filter>
+    </None>
+    <None Include="..\..\src\extern\PCL\src\gpu\octree\src\cuda\octree_host.cu">
+      <Filter>cuda</Filter>
+    </None>
+    <None Include="..\..\src\extern\PCL\src\gpu\octree\src\cuda\radius_search.cu">
+      <Filter>cuda</Filter>
+    </None>
+  </ItemGroup>
+</Project>
