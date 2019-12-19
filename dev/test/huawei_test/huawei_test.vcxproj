@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{10368663-5ef8-4929-9fbe-e32395a9e662}</ProjectGuid>
-    <RootNamespace>cpu_parallel</RootNamespace>
+    <ProjectGuid>{162e5e04-2c33-48f3-91d0-ecbbfc083393}</ProjectGuid>
+    <RootNamespace>huawei_test</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -64,19 +64,9 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\Geometry\Geometry\Geometry.props" />
-    <Import Project="..\..\BOOST\BOOST.props" />
-    <Import Project="..\..\Eigen\EIGEN.props" />
-    <Import Project="..\..\PCL\pcl.props" />
-    <Import Project="..\..\trimesh\trimesh.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\Geometry\Geometry\Geometry.props" />
-    <Import Project="..\..\BOOST\BOOST.props" />
-    <Import Project="..\..\Eigen\EIGEN.props" />
-    <Import Project="..\..\PCL\pcl.props" />
-    <Import Project="..\..\trimesh\trimesh.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -104,7 +94,6 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>_SILENCE_FPOS_SEEKPOS_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,7 +124,6 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>_SILENCE_FPOS_SEEKPOS_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,41 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\boundingbox_calculator.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\data.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\index_key_caculator.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\main.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\node_neighbors.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\node_slicer_builder.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\octree_vertex_builder.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\paralled_octree_edges.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\parallel_data_octree.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\parallel_octree_faces.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\parallel_octree_nodes.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\parallel_octree_vertex.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\points_normalization.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\point_loader.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\raw_point_cloud.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\unique_nodes_builder.cpp" />
-    <ClCompile Include="..\..\..\src\poisson\cpu_parallel\validator.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\boundingbox_calculator.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\data.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\index_key_caculator.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\node_neighbors.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\node_slicer_builder.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\octree_vertex_builder.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\paralled_octree_edges.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\parallel_data_octree.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\parallel_octree_faces.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\parallel_octree_nodes.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\parallel_octree_vertex.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\points_normalization.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\point_loader.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\raw_point_cloud.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\unique_nodes_builder.h" />
-    <ClInclude Include="..\..\..\src\poisson\cpu_parallel\validator.h" />
+    <ClCompile Include="..\..\..\src\test\huawei\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

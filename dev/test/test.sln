@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "es_test", "es_test\es_test.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "histgram_test", "histgram_test\histgram_test.vcxproj", "{BF70BCB3-1CE4-4151-87AB-874D8548BB76}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "huawei_test", "huawei_test\huawei_test.vcxproj", "{162E5E04-2C33-48F3-91D0-ECBBFC083393}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{BF70BCB3-1CE4-4151-87AB-874D8548BB76}.Release|x64.Build.0 = Release|x64
 		{BF70BCB3-1CE4-4151-87AB-874D8548BB76}.Release|x86.ActiveCfg = Release|Win32
 		{BF70BCB3-1CE4-4151-87AB-874D8548BB76}.Release|x86.Build.0 = Release|Win32
+		{162E5E04-2C33-48F3-91D0-ECBBFC083393}.Debug|x64.ActiveCfg = Debug|x64
+		{162E5E04-2C33-48F3-91D0-ECBBFC083393}.Debug|x64.Build.0 = Debug|x64
+		{162E5E04-2C33-48F3-91D0-ECBBFC083393}.Debug|x86.ActiveCfg = Debug|Win32
+		{162E5E04-2C33-48F3-91D0-ECBBFC083393}.Debug|x86.Build.0 = Debug|Win32
+		{162E5E04-2C33-48F3-91D0-ECBBFC083393}.Release|x64.ActiveCfg = Release|x64
+		{162E5E04-2C33-48F3-91D0-ECBBFC083393}.Release|x64.Build.0 = Release|x64
+		{162E5E04-2C33-48F3-91D0-ECBBFC083393}.Release|x86.ActiveCfg = Release|Win32
+		{162E5E04-2C33-48F3-91D0-ECBBFC083393}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,11 +1,8 @@
 #include <iostream>
-#include <PointCloudLoader.h>
 
-#include <pcl/io/auto_io.h>
-#include <pcl/point_types.h>
-#include <pcl/point_cloud.h>
-
-#include "TriMesh.h"
+#include "point_loader.h"
+#include "validator.h"
+#include "parallel_data_octree.h"
 
 int main(int argc, const char* argv[])
 {
@@ -15,15 +12,21 @@ int main(int argc, const char* argv[])
 		return EXIT_FAILURE;
 	}
 
-	std::string file(argv[1]);
-	//pcl::PointCloud<pcl::PointXYZINormal> point_cloud;
-	//if(pcl::io::loadPLYFile(file, point_cloud) != 0)
-	std::unique_ptr<trimesh::TriMesh> mesh(trimesh::TriMesh::read(file));
-	if(!mesh.get())
+	std::vector<trimesh::vec3> positions;
+	std::vector<trimesh::vec3> normals;
+	PointLoader::LoadFromFile(argv[1], positions, normals);
+
+	size_t psize = positions.size();
+	size_t nsize = normals.size();
+	if ((psize == 0) || (nsize == 0) || (psize != nsize))
 	{
-		std::cout << "Can't Open PointCloud." << std::endl;
+		std::cout << "Input Cloud Error. psize "<<psize<<" nsize "<<nsize << std::endl;
 		return EXIT_FAILURE;
 	}
 
+	Validator::Validate(positions, normals);
+
+	ParallelDataOctree octree;
+	octree.BuildFromPoints(positions, normals);
 	return EXIT_SUCCESS;
 }
